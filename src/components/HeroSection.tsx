@@ -5,11 +5,12 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-end pb-20 md:items-center md:pb-0">
       {/* Background */}
       <div className="absolute inset-0">
-        <div
-          className="w-full h-full bg-no-repeat bg-center"
-          role="img"
-          aria-label="パーソナルジムSalute御所南のトレーニング風景"
-          style={{ backgroundImage: `url(${heroImage})`, backgroundSize: '110% auto' }}
+        <img
+          src={heroImage}
+          alt="パーソナルジムSalute御所南のトレーニング風景"
+          width={1920}
+          height={1080}
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gym-dark via-gym-dark/60 to-gym-dark/30" />
       </div>
