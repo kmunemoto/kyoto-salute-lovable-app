@@ -20,12 +20,12 @@ const MobileCTABar = () => {
     >
       <div className="gold-gradient flex items-center justify-center h-[60px] px-4">
         <a
-          href="https://page.line.me/393blgip"
+          href="https://kyoto-salute.lovable.app/trial"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gym-dark font-medium font-body text-sm flex items-center gap-2"
         >
-          LINEで無料体験を予約 →
+          初回無料体験を予約 →
         </a>
       </div>
     </div>
