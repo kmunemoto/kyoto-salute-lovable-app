@@ -71,17 +71,39 @@ const FeaturesSection = () => {
               } items-center`}
             >
               <div className="lg:w-1/2 w-full">
-                <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
-                    Feature.{feature.number}
+                {feature.isApp ? (
+                  <div className="relative flex justify-center items-center py-8">
+                    {/* iPhone mockup frame */}
+                    <div className="relative w-[240px] md:w-[280px] rounded-[2.5rem] border-[6px] border-foreground/80 bg-foreground/80 shadow-2xl overflow-hidden">
+                      {/* Notch */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-foreground/80 rounded-b-2xl z-10" />
+                      {/* Screen */}
+                      <div className="rounded-[2rem] overflow-hidden">
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          loading="lazy"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
+                      Feature.{feature.number}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
+                      Feature.{feature.number}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="lg:w-1/2 w-full">
