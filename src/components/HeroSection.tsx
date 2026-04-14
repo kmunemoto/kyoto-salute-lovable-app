@@ -10,7 +10,7 @@ const HeroSection = () => {
           alt="パーソナルジムSalute御所南のトレーニング風景"
           width={1920}
           height={1080}
-          className="w-full h-full object-contain object-center"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gym-dark via-gym-dark/60 to-gym-dark/30" />
       </div>
