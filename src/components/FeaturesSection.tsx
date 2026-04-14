@@ -1,7 +1,8 @@
-import { Shirt, Smartphone, Salad, Users, ClipboardList } from "lucide-react";
+import { Shirt, Smartphone, Salad } from "lucide-react";
 import featureTraining from "@/assets/feature-training.jpg";
 import featureNutrition from "@/assets/feature-nutrition.jpg";
 import featureApp from "@/assets/feature-app.jpg";
+import gymInterior from "@/assets/gym-interior.jpg";
 
 const mainFeatures = [
   {
@@ -30,29 +31,31 @@ const mainFeatures = [
   },
 ];
 
-const subFeatures = [
-  {
-    icon: Users,
-    title: "マンツーマン指導",
-    description: "プロとの1対1だから楽しく続けられ、怪我も防げます。",
-  },
-  {
-    icon: ClipboardList,
-    title: "あなた専用のトレーニングプラン",
-    description: "目的や体質に合わせた専用メニューで安全に目標へ導きます。",
-  },
-];
-
 const FeaturesSection = () => {
   return (
     <section id="features" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Features</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
             Salute御所南の特徴
           </h2>
+        </div>
+
+        {/* Gym interior photo */}
+        <div className="mb-16">
+          <div className="rounded-sm overflow-hidden">
+            <img
+              src={gymInterior}
+              alt="Salute御所南の店内設備"
+              loading="lazy"
+              className="w-full h-48 md:h-80 object-cover"
+            />
+          </div>
+          <p className="text-center text-muted-foreground text-sm font-body mt-3">
+            充実した設備で効率的なトレーニングを
+          </p>
         </div>
 
         {/* Main feature cards */}
@@ -93,26 +96,15 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        {/* Sub features */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {subFeatures.map((sf) => (
-            <div
-              key={sf.title}
-              className="flex items-start gap-4 p-6 rounded-sm border border-border bg-card"
-            >
-              <sf.icon className="w-6 h-6 text-gold shrink-0 mt-1" strokeWidth={1.5} />
-              <div>
-                <h4 className="font-body font-semibold text-foreground mb-1">{sf.title}</h4>
-                <p className="text-muted-foreground text-sm font-body leading-relaxed">
-                  {sf.description}
-                </p>
-              </div>
-            </div>
-          ))}
+        {/* Supplementary note */}
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground font-body text-base leading-relaxed max-w-2xl mx-auto">
+            すべてのプランで、完全マンツーマンの指導と、お客様一人ひとりに合わせたオーダーメイドのトレーニングメニューをご提供しています。
+          </p>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <a
             href="https://kyoto-salute.lovable.app/trial"
             target="_blank"
