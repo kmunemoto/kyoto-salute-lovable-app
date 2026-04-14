@@ -13,12 +13,12 @@ const Footer = () => {
 
         <div className="flex gap-6">
           <a
-            href="https://airrsv.net/personalgymsalute/calendar"
+            href="https://kyoto-salute.lovable.app/auth"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
           >
-            ご予約
+            公式アプリ
           </a>
           <a
             href="https://page.line.me/393blgip"
