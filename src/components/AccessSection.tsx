@@ -16,7 +16,7 @@ const AccessSection = () => {
           {/* Map */}
           <div className="rounded-sm overflow-hidden aspect-[4/3]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d815.8!2d135.76558!3d35.01578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108a5c1000001%3A0xd15b1e78e7a78e29!2z44OR44O844K944OK44Or44K444OgU2FsdXRl5b6h5omA5Y2X!5e0!3m2!1sja!2sjp!4v1"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=パーソナルジムSalute御所南+京都市中京区毘沙門町533-1+プラザ御所南&zoom=17"
               width="100%"
               height="100%"
               style={{ border: 0, filter: "grayscale(0.3) contrast(1.1)" }}
