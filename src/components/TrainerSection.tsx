@@ -1,3 +1,5 @@
+import trainerPhoto from "@/assets/trainer.jpg";
+
 const TrainerSection = () => {
   return (
     <section id="trainer" className="section-padding section-dark">
@@ -10,15 +12,13 @@ const TrainerSection = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-4xl mx-auto">
-          {/* Photo placeholder */}
           <div className="lg:w-2/5 w-full">
-            <div className="aspect-[3/4] rounded-sm overflow-hidden bg-gym-dark-soft border border-gym-dark-foreground/10 flex items-center justify-center">
-              <div className="text-center text-gym-dark-foreground/30 font-body">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gym-dark-foreground/10 flex items-center justify-center">
-                  <span className="text-4xl">👤</span>
-                </div>
-                <p className="text-sm">写真準備中</p>
-              </div>
+            <div className="aspect-[3/4] rounded-sm overflow-hidden">
+              <img
+                src={trainerPhoto}
+                alt="宗本 寛太 - Salute御所南 代表トレーナー"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
