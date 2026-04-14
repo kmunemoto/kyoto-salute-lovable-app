@@ -3,7 +3,7 @@
 const Footer = () => {
   return (
     <footer className="bg-gym-dark border-t border-gold/10 px-6 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
         <div>
           <span className="font-heading text-2xl text-white"><span className="text-gold">Salute</span>御所南</span>
           <p className="text-gym-dark-foreground/40 text-xs mt-2 font-body">
