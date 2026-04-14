@@ -25,7 +25,7 @@ const MobileCTABar = () => {
           rel="noopener noreferrer"
           className="text-gym-dark font-medium font-body text-sm flex items-center gap-2"
         >
-          初回無料体験を予約 →
+          LINEで初回無料体験を予約 →
         </a>
       </div>
     </div>
