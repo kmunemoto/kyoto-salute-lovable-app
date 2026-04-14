@@ -2,21 +2,15 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    gender: "30代女性",
-    period: "3ヶ月",
-    comment: "運動経験ゼロでしたが、丁寧に教えていただき楽しく続けられています。",
+    comment: "的確にトレーナーさんに指導していただけるところがパーソナルトレーニングならではの良いところで、続けやすい料金と回数設定なので初心者でも始めやすいです。ジムへ通っていた時よりも短期間で効果も感じられ、毎回楽しみながらトレーニングさせてもらっています。",
     rating: 5,
   },
   {
-    gender: "40代男性",
-    period: "6ヶ月",
-    comment: "仕事帰りに手ぶらで通えるのが本当に便利。体重も-5kg達成しました。",
+    comment: "通い始めて4か月ほどになります。普通の月額制のジムも通っていましたが続かず、パーソナルトレーニングは強制力があり自分には合っているようです。毎回同じトレーニングではなく少しずつ変えて調整してもらえるので毎回効果を感じています。自分では気づきにくい正しいフォームも教えてもらいながらたくさん褒めてもらえるのでモチベーションも上がり、筋トレの意欲が高まります！",
     rating: 5,
   },
   {
-    gender: "20代女性",
-    period: "2ヶ月",
-    comment: "食事のアドバイスが的確で、無理なく食生活が改善できました。",
+    comment: "筋トレ初心者ですが、楽しく通っています。トレーナーは、優しく感じのいい方です。筋トレだけでなく食事のアドバイスもしてくれるので、食事内容も意識するようになりました。ウェア、シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。内装はおしゃれで窓からは御所の緑が見え雰囲気もいいです。",
     rating: 5,
   },
 ];
@@ -50,14 +44,8 @@ const TestimonialsSection = () => {
                 「{t.comment}」
               </p>
 
-              {/* Meta */}
+              {/* Source */}
               <div className="border-t border-border pt-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-foreground font-body text-sm font-medium">{t.gender}</span>
-                  <span className="text-muted-foreground font-body text-xs">
-                    通った期間：{t.period}
-                  </span>
-                </div>
                 <p className="text-muted-foreground/60 font-body text-xs">Google口コミより</p>
               </div>
             </div>
