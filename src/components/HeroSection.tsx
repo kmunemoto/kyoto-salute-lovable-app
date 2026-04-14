@@ -27,10 +27,13 @@ const HeroSection = () => {
           <br />
           充実した人生を
         </h1>
-        <p className="text-gym-dark-foreground/70 text-base md:text-lg max-w-xl mb-10 animate-fade-up animate-delay-200 font-body leading-relaxed">
+        <p className="text-gym-dark-foreground/70 text-base md:text-lg max-w-xl mb-4 animate-fade-up animate-delay-200 font-body leading-relaxed">
           あなたの"なりたい"をカタチにします。
-          <br />
-          京都最安値・コスパ最強のパーソナルジム。
+        </p>
+        <p className="animate-fade-up animate-delay-200 mb-10">
+          <span className="inline-block gold-gradient text-gym-dark font-heading text-xl md:text-2xl px-5 py-2 rounded-sm tracking-wide">
+            京都最安値・コスパ最強のパーソナルジム
+          </span>
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animate-delay-300">
           <a

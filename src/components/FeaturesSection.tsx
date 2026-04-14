@@ -2,6 +2,8 @@ import { Shirt, Smartphone, Salad, Users, ClipboardList } from "lucide-react";
 import featureTraining from "@/assets/feature-training.jpg";
 import featureNutrition from "@/assets/feature-nutrition.jpg";
 import featureApp from "@/assets/feature-app.jpg";
+import featurePersonal from "@/assets/feature-personal.jpg";
+import featurePlan from "@/assets/feature-plan.jpg";
 
 const features = [
   {
@@ -34,6 +36,7 @@ const features = [
     title: "マンツーマン指導でモチベーション維持",
     description:
       "プロとのマンツーマンなら楽しみながら続けられます。怪我を防ぎ、目標に着実に近づけます。",
+    image: featurePersonal,
   },
   {
     number: "05",
@@ -41,6 +44,7 @@ const features = [
     title: "一人ひとりに合わせたトレーニングプラン",
     description:
       "あなたの目的や体にぴったりの専用メニューを作成。安全に運動を楽しめるようサポートします。",
+    image: featurePlan,
   },
 ];
 
