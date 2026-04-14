@@ -1,5 +1,4 @@
 import { MapPin, Clock, Train, Phone } from "lucide-react";
-import gymInterior from "@/assets/gym-interior.jpg";
 
 const AccessSection = () => {
   return (
@@ -85,20 +84,6 @@ const AccessSection = () => {
           </div>
         </div>
 
-        {/* Gym interior */}
-        <div className="mt-16">
-          <div className="rounded-sm overflow-hidden">
-            <img
-              src={gymInterior}
-              alt="パーソナルジムSalute御所南の店内設備"
-              loading="lazy"
-              className="w-full h-64 md:h-96 object-cover"
-            />
-          </div>
-          <p className="text-center text-gym-dark-foreground/50 text-sm font-body mt-3">
-            充実した設備で効率的なトレーニングを
-          </p>
-        </div>
       </div>
     </section>
   );

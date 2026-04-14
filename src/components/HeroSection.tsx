@@ -30,7 +30,7 @@ const HeroSection = () => {
         <p className="text-gym-dark-foreground/70 text-base md:text-lg max-w-xl mb-10 animate-fade-up animate-delay-200 font-body leading-relaxed">
           あなたの"なりたい"をカタチにします。
           <br />
-          京都最安値・コスパ最強のパーソナルジム。
+          1回あたり¥4,000〜。京都・御所南で通いやすい価格のパーソナルジム。
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animate-delay-300">
           <a

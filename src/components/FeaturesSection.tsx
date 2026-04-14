@@ -2,10 +2,8 @@ import { Shirt, Smartphone, Salad, Users, ClipboardList } from "lucide-react";
 import featureTraining from "@/assets/feature-training.jpg";
 import featureNutrition from "@/assets/feature-nutrition.jpg";
 import featureApp from "@/assets/feature-app.jpg";
-import featurePersonal from "@/assets/feature-personal.jpg";
-import featurePlan from "@/assets/feature-plan.jpg";
 
-const features = [
+const mainFeatures = [
   {
     number: "01",
     icon: Shirt,
@@ -30,21 +28,18 @@ const features = [
       "コンビニ食や外食が多い方でも無理なく続けられる「一生モノの知識」をお伝えします。",
     image: featureNutrition,
   },
+];
+
+const subFeatures = [
   {
-    number: "04",
     icon: Users,
-    title: "マンツーマン指導でモチベーション維持",
-    description:
-      "プロとのマンツーマンなら楽しみながら続けられます。怪我を防ぎ、目標に着実に近づけます。",
-    image: featurePersonal,
+    title: "マンツーマン指導",
+    description: "プロとの1対1だから楽しく続けられ、怪我も防げます。",
   },
   {
-    number: "05",
     icon: ClipboardList,
-    title: "一人ひとりに合わせたトレーニングプラン",
-    description:
-      "あなたの目的や体にぴったりの専用メニューを作成。安全に運動を楽しめるようサポートします。",
-    image: featurePlan,
+    title: "あなた専用のトレーニングプラン",
+    description: "目的や体質に合わせた専用メニューで安全に目標へ導きます。",
   },
 ];
 
@@ -56,46 +51,33 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Features</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            パーソナルジムSalute御所南の特徴
+            Salute御所南の特徴
           </h2>
         </div>
 
-        {/* Feature cards */}
+        {/* Main feature cards */}
         <div className="space-y-20">
-          {features.map((feature, index) => (
+          {mainFeatures.map((feature, index) => (
             <div
               key={feature.number}
               className={`flex flex-col gap-8 ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } items-center`}
             >
-              {/* Image or icon placeholder */}
-              {feature.image ? (
-                <div className="lg:w-1/2 w-full">
-                  <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
-                      Feature.{feature.number}
-                    </div>
+              <div className="lg:w-1/2 w-full">
+                <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
+                    Feature.{feature.number}
                   </div>
                 </div>
-              ) : (
-                <div className="lg:w-1/2 w-full">
-                  <div className="relative overflow-hidden rounded-sm aspect-[4/3] bg-secondary flex items-center justify-center">
-                    <feature.icon className="w-24 h-24 text-gold/40" strokeWidth={1} />
-                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
-                      Feature.{feature.number}
-                    </div>
-                  </div>
-                </div>
-              )}
+              </div>
 
-              {/* Text */}
               <div className="lg:w-1/2 w-full">
                 <span className="font-heading text-6xl text-gold/15 block mb-2">
                   {feature.number}
@@ -105,6 +87,24 @@ const FeaturesSection = () => {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed font-body text-base">
                   {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Sub features */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {subFeatures.map((sf) => (
+            <div
+              key={sf.title}
+              className="flex items-start gap-4 p-6 rounded-sm border border-border bg-card"
+            >
+              <sf.icon className="w-6 h-6 text-gold shrink-0 mt-1" strokeWidth={1.5} />
+              <div>
+                <h4 className="font-body font-semibold text-foreground mb-1">{sf.title}</h4>
+                <p className="text-muted-foreground text-sm font-body leading-relaxed">
+                  {sf.description}
                 </p>
               </div>
             </div>

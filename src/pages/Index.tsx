@@ -1,23 +1,31 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import GymGallerySection from "@/components/GymGallerySection";
 import FeaturesSection from "@/components/FeaturesSection";
+import TrainerSection from "@/components/TrainerSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import AccessSection from "@/components/AccessSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import MobileCTABar from "@/components/MobileCTABar";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <GymGallerySection />
       <FeaturesSection />
+      <TrainerSection />
+      <TestimonialsSection />
       <PricingSection />
       <FAQSection />
       <AccessSection />
       <CTASection />
       <Footer />
+      <MobileCTABar />
     </div>
   );
 };
