@@ -20,7 +20,7 @@ const MobileCTABar = () => {
     >
       <div className="gold-gradient flex items-center justify-center h-[60px] px-4">
         <a
-          href="https://kyoto-salute.lovable.app/trial"
+          href="https://page.line.me/393blgip"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gym-dark font-medium font-body text-sm flex items-center gap-2"
