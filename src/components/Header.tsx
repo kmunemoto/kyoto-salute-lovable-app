@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "特徴", href: "#features" },
@@ -14,10 +15,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gym-dark/90 backdrop-blur-md border-b border-gold/10">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-xl tracking-wider text-gold">
-          <span className="text-gym-dark-foreground/60 text-sm font-body font-light mr-1">パーソナルジム</span>
-          Salute
-          <span className="text-gym-dark-foreground text-sm ml-1 font-body font-light">御所南</span>
+        <a href="#">
+          <img src={logo} alt="パーソナルジムSalute御所南" className="h-10 w-auto" />
         </a>
 
         {/* Desktop */}

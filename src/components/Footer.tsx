@@ -1,11 +1,11 @@
+import logo from "@/assets/logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-gym-dark border-t border-gold/10 px-6 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <span className="text-gym-dark-foreground/60 text-sm font-body mr-1">パーソナルジム</span>
-          <span className="font-heading text-xl tracking-wider text-gold">Salute</span>
-          <span className="text-gym-dark-foreground/60 text-sm ml-1 font-body">御所南</span>
+          <img src={logo} alt="パーソナルジムSalute御所南" className="h-12 w-auto" />
           <p className="text-gym-dark-foreground/40 text-xs mt-2 font-body">
             京都市中京区毘沙門町533-1 プラザ御所南 2階
           </p>
