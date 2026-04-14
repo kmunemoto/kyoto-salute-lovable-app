@@ -3,6 +3,7 @@ const Footer = () => {
     <footer className="bg-gym-dark border-t border-gold/10 px-6 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
+          <span className="text-gym-dark-foreground/60 text-sm font-body mr-1">パーソナルジム</span>
           <span className="font-heading text-xl tracking-wider text-gold">Salute</span>
           <span className="text-gym-dark-foreground/60 text-sm ml-1 font-body">御所南</span>
           <p className="text-gym-dark-foreground/40 text-xs mt-2 font-body">
