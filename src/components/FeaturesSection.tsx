@@ -12,6 +12,7 @@ const mainFeatures = [
     description:
       "ウェア、シューズ、タオル、お水、ヘアゴム、ボディシートなど、すべて無料でご用意。お仕事帰りでも荷物は一切不要です。",
     image: featureTraining,
+    isApp: false,
   },
   {
     number: "02",
@@ -20,6 +21,7 @@ const mainFeatures = [
     description:
       "トレーニング記録、体の変化、食事のPFCバランスをAIが自動解析。毎月届くレポートで成長を振り返れます。",
     image: featureApp,
+    isApp: true,
   },
   {
     number: "03",
@@ -28,6 +30,7 @@ const mainFeatures = [
     description:
       "コンビニ食や外食が多い方でも無理なく続けられる「一生モノの知識」をお伝えします。",
     image: featureNutrition,
+    isApp: false,
   },
 ];
 
