@@ -52,7 +52,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Features</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            Salute御所南の特徴
+            パーソナルジムSalute御所南の特徴
           </h2>
         </div>
 
