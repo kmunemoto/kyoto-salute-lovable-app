@@ -1,0 +1,56 @@
+const TrainerSection = () => {
+  return (
+    <section id="trainer" className="section-padding section-dark">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Trainer</p>
+          <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">
+            トレーナー紹介
+          </h2>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center gap-12 max-w-4xl mx-auto">
+          {/* Photo placeholder */}
+          <div className="lg:w-2/5 w-full">
+            <div className="aspect-[3/4] rounded-sm overflow-hidden bg-gym-dark-soft border border-gym-dark-foreground/10 flex items-center justify-center">
+              <div className="text-center text-gym-dark-foreground/30 font-body">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gym-dark-foreground/10 flex items-center justify-center">
+                  <span className="text-4xl">👤</span>
+                </div>
+                <p className="text-sm">写真準備中</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Info */}
+          <div className="lg:w-3/5 w-full">
+            <h3 className="font-heading text-2xl md:text-3xl text-gym-dark-foreground mb-2">
+              （名前準備中）
+            </h3>
+            <p className="text-gold text-sm font-body tracking-wide mb-6">
+              Salute御所南 代表トレーナー
+            </p>
+
+            <div className="space-y-4 mb-8">
+              <div>
+                <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">保有資格</h4>
+                <p className="text-gym-dark-foreground/70 font-body text-sm">
+                  栄養士
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">経歴・メッセージ</h4>
+                <p className="text-gym-dark-foreground/70 font-body text-sm leading-relaxed">
+                  （メッセージ準備中）お客様一人ひとりの目標に寄り添い、最適なトレーニングと食事指導をご提供いたします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TrainerSection;
