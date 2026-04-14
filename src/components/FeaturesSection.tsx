@@ -53,7 +53,7 @@ const FeaturesSection = () => {
               src={gymInterior}
               alt="Salute御所南の店内設備"
               loading="lazy"
-              className="w-full h-48 md:h-80 object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
           <p className="text-center text-muted-foreground text-sm font-body mt-3">
