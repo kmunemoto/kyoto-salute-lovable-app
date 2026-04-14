@@ -25,8 +25,9 @@ const TrainerSection = () => {
           {/* Info */}
           <div className="lg:w-3/5 w-full">
             <h3 className="font-heading text-2xl md:text-3xl text-gym-dark-foreground mb-2">
-              （名前準備中）
+              宗本 寛太
             </h3>
+            <p className="text-gym-dark-foreground/50 text-sm font-body mb-1">Munemoto Kanta</p>
             <p className="text-gold text-sm font-body tracking-wide mb-6">
               Salute御所南 代表トレーナー
             </p>
@@ -40,9 +41,16 @@ const TrainerSection = () => {
               </div>
 
               <div>
-                <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">経歴・メッセージ</h4>
+                <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">経歴</h4>
                 <p className="text-gym-dark-foreground/70 font-body text-sm leading-relaxed">
-                  （メッセージ準備中）お客様一人ひとりの目標に寄り添い、最適なトレーニングと食事指導をご提供いたします。
+                  四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">メッセージ</h4>
+                <p className="text-gym-dark-foreground/70 font-body text-sm leading-relaxed italic">
+                  「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」
                 </p>
               </div>
             </div>

@@ -4,19 +4,19 @@ const testimonials = [
   {
     gender: "30代女性",
     period: "3ヶ月",
-    comment: "運動が苦手でしたが、トレーナーさんが丁寧に教えてくれるので楽しく通えています。体重も落ちてきて嬉しいです！",
+    comment: "運動経験ゼロでしたが、丁寧に教えていただき楽しく続けられています。",
     rating: 5,
   },
   {
     gender: "40代男性",
     period: "6ヶ月",
-    comment: "仕事帰りに手ぶらで通えるのが最高です。食事指導も的確で、健康診断の数値が改善しました。",
+    comment: "仕事帰りに手ぶらで通えるのが本当に便利。体重も-5kg達成しました。",
     rating: 5,
   },
   {
     gender: "20代女性",
     period: "2ヶ月",
-    comment: "アプリで記録が残るので、自分の成長が目に見えてモチベーションが続きます。ジムの雰囲気もおしゃれで気に入っています。",
+    comment: "食事のアドバイスが的確で、無理なく食生活が改善できました。",
     rating: 5,
   },
 ];
@@ -51,11 +51,14 @@ const TestimonialsSection = () => {
               </p>
 
               {/* Meta */}
-              <div className="border-t border-border pt-4 flex items-center justify-between">
-                <span className="text-foreground font-body text-sm font-medium">{t.gender}</span>
-                <span className="text-muted-foreground font-body text-xs">
-                  通った期間：{t.period}
-                </span>
+              <div className="border-t border-border pt-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-foreground font-body text-sm font-medium">{t.gender}</span>
+                  <span className="text-muted-foreground font-body text-xs">
+                    通った期間：{t.period}
+                  </span>
+                </div>
+                <p className="text-muted-foreground/60 font-body text-xs">Google口コミより</p>
               </div>
             </div>
           ))}
