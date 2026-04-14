@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-gym-dark border-t border-gold/10 px-6 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <span className="font-heading text-2xl text-foreground">Salute<span className="text-gold">御所南</span></span>
+          <span className="font-heading text-2xl text-foreground">パーソナルジム<span className="text-gold">Salute</span>御所南</span>
           <p className="text-gym-dark-foreground/40 text-xs mt-2 font-body">
             京都市中京区毘沙門町533-1 プラザ御所南 2階
           </p>
