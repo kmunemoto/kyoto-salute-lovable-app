@@ -13,11 +13,11 @@ const TrainerSection = () => {
 
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-4xl mx-auto">
           <div className="lg:w-2/5 w-full">
-            <div className="aspect-[3/4] rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <img
                 src={trainerPhoto}
                 alt="宗本 寛太 - Salute御所南 代表トレーナー"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
