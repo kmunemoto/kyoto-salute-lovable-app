@@ -20,9 +20,6 @@ const CTASection = () => {
               loading="lazy"
               className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
-              Free Trial
-            </div>
           </div>
 
           {/* Text + CTAs */}
