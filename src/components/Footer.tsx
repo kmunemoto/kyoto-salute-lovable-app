@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           <a
             href="https://kyoto-salute.lovable.app/auth"
             target="_blank"
@@ -33,6 +33,12 @@ const Footer = () => {
             className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
           >
             プライバシーポリシー
+          </Link>
+          <Link
+            to="/tokusho"
+            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
+          >
+            特定商取引法に基づく表記
           </Link>
         </div>
 
