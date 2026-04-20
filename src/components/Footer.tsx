@@ -34,6 +34,12 @@ const Footer = () => {
           >
             プライバシーポリシー
           </Link>
+          <Link
+            to="/tokusho"
+            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
+          >
+            特定商取引法に基づく表記
+          </Link>
         </div>
 
         <p className="text-gym-dark-foreground/30 text-xs font-body">
