@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,6 +28,12 @@ const Footer = () => {
           >
             LINE
           </a>
+          <Link
+            to="/privacy-policy"
+            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
+          >
+            プライバシーポリシー
+          </Link>
         </div>
 
         <p className="text-gym-dark-foreground/30 text-xs font-body">
