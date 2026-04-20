@@ -11,41 +11,51 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-          <a
-            href="https://kyoto-salute.lovable.app/auth"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
-          >
-            公式アプリ
-          </a>
-          <a
-            href="https://page.line.me/393blgip"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
-          >
-            LINE
-          </a>
-          <Link
-            to="/terms"
-            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
-          >
-            利用規約
-          </Link>
-          <Link
-            to="/privacy-policy"
-            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
-          >
-            プライバシーポリシー
-          </Link>
-          <Link
-            to="/tokusho"
-            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
-          >
-            特定商取引法に基づく表記
-          </Link>
+        <div className="w-full flex flex-col items-center gap-5">
+          {/* 1段目：機能リンク */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <a
+              href="https://kyoto-salute.lovable.app/auth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gym-dark-foreground/60 hover:text-gold text-sm transition-colors font-body"
+            >
+              公式アプリ
+            </a>
+            <a
+              href="https://page.line.me/393blgip"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gym-dark-foreground/60 hover:text-gold text-sm transition-colors font-body"
+            >
+              LINE
+            </a>
+          </div>
+
+          {/* 区切り線 */}
+          <div className="w-12 h-px bg-gold/10" />
+
+          {/* 2段目：法的ページリンク */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link
+              to="/terms"
+              className="text-gym-dark-foreground/35 hover:text-gold text-xs transition-colors font-body"
+            >
+              利用規約
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="text-gym-dark-foreground/35 hover:text-gold text-xs transition-colors font-body"
+            >
+              プライバシーポリシー
+            </Link>
+            <Link
+              to="/tokusho"
+              className="text-gym-dark-foreground/35 hover:text-gold text-xs transition-colors font-body"
+            >
+              特定商取引法に基づく表記
+            </Link>
+          </div>
         </div>
 
         <p className="text-gym-dark-foreground/30 text-xs font-body">
