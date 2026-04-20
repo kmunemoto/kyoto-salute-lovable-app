@@ -7,7 +7,7 @@ const CTASection = () => {
         <div className="text-center mb-12">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Trial</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            まずは、無料体験へ
+            無料体験で、まずはお試しください。
           </h2>
         </div>
 
