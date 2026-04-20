@@ -29,6 +29,12 @@ const Footer = () => {
             LINE
           </a>
           <Link
+            to="/terms"
+            className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
+          >
+            利用規約
+          </Link>
+          <Link
             to="/privacy-policy"
             className="text-gym-dark-foreground/50 hover:text-gold text-sm transition-colors font-body"
           >
