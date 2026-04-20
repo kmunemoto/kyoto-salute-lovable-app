@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           <a
             href="https://kyoto-salute.lovable.app/auth"
             target="_blank"
