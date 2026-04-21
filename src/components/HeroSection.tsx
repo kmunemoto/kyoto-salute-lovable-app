@@ -2,95 +2,54 @@ import heroImage from "@/assets/hero-gym.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="bg-background">
-      {/* Diagonal photo block */}
-      <div
-        className="relative w-full pt-20 md:pt-24"
-        style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 0 100%)" }}
-      >
-        <div className="relative w-full h-[78vh] min-h-[520px] md:h-[82vh] md:min-h-[620px] overflow-hidden">
-          <img
-            src={heroImage}
-            alt="パーソナルジムSalute御所南のトレーニング空間"
-            width={2100}
-            height={1200}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-          {/* Subtle wash for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-transparent" aria-hidden="true" />
-
-          {/* Text overlay */}
-          <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex items-center md:items-end pb-16 md:pb-28">
-            <div className="max-w-2xl w-full">
-              {/* Tagline pill */}
-              <div className="animate-fade-up inline-block">
-                <span className="inline-block bg-[hsl(var(--footer))] text-[hsl(var(--footer-foreground))] text-[12px] md:text-[13px] tracking-[0.15em] font-body font-medium px-[14px] py-[6px]">
-                  京都市中京区・御所南のパーソナルジム
-                </span>
-              </div>
-
-              {/* Main copy on translucent white */}
-              <h1 className="animate-fade-up animate-delay-100 mt-2 inline-block bg-white/[0.92] text-foreground font-heading font-bold leading-[1.15] px-6 py-4 text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[3.75rem]">
-                運動が初めても、
-                <br />
-                安心して通える
-                <br />
-                パーソナルジム。
-              </h1>
-
-              {/* Sub catch — terracotta, offset to right */}
-              <div className="animate-fade-up animate-delay-200 mt-3 md:-mt-2 md:ml-16 inline-block">
-                <span className="inline-block bg-gold text-white text-sm md:text-base font-body font-medium px-4 py-2">
-                  栄養士資格を持つトレーナーが丁寧にサポート
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="パーソナルジムSalute御所南のトレーニング空間"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for legibility */}
+        <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
       </div>
 
-      {/* Below-the-fold block on cream background */}
-      <div className="bg-background pt-10 md:pt-14 pb-20 md:pb-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <p className="animate-fade-up text-center md:text-left text-muted-foreground text-base md:text-lg font-body">
-            あなたのペースに合わせて、一緒に始めませんか?
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
+        <div className="max-w-3xl">
+          <p className="animate-fade-up text-gold text-sm md:text-base font-body tracking-wider mb-4">
+            京都市中京区・御所南のパーソナルジム
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 animate-fade-up animate-delay-100">
+          <h1 className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+            過去の自分を超える、
+            <br />
+            <span className="text-gold">史上最高のカラダ</span>で
+            <br />
+            充実した人生を
+          </h1>
+
+          <p className="animate-fade-up animate-delay-200 text-white/90 text-base md:text-lg font-body leading-relaxed mb-10 max-w-xl">
+            あなたの"なりたい"をカタチにします。
+            <br />
+            1回あたり¥4,000〜。京都市中京区・御所南エリアで通いやすい価格のパーソナルジム。
+          </p>
+
+          <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
             <a
               href="https://kyoto-salute.lovable.app/trial"
               target="_blank"
               rel="noopener noreferrer"
-              className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base"
+              className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1"
             >
-              まずは無料カウンセリングから
+              無料体験を予約する
             </a>
             <a
               href="#features"
-              className="border border-gold text-gold hover:bg-gold hover:text-white transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent"
+              className="border border-white/70 text-white hover:bg-white/10 transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent flex-1"
             >
               Saluteの特徴を見る
             </a>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-12 md:mt-16 animate-fade-up animate-delay-200">
-            <div className="grid grid-cols-3 divide-x divide-[hsl(var(--dark))]">
-              {[
-                { value: "140+", label: "月間指導実績(組)" },
-                { value: "¥4,000〜", label: "1回あたりの料金" },
-                { value: "¥0", label: "入会金・事務手数料" },
-              ].map((stat) => (
-                <div key={stat.label} className="px-3 md:px-6 first:pl-0 last:pr-0 text-center">
-                  <div className="font-heading font-bold text-foreground text-2xl sm:text-3xl md:text-4xl leading-tight">
-                    {stat.value}
-                  </div>
-                  <div className="mt-2 text-[11px] md:text-xs text-muted-foreground tracking-wide">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
