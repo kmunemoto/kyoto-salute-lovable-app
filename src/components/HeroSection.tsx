@@ -32,7 +32,10 @@ const HeroSection = () => {
           <p className="animate-fade-up animate-delay-200 text-white/90 text-base md:text-lg font-body leading-relaxed mb-10 max-w-xl">
             あなたの"なりたい"をカタチにします。
             <br />
-            1回あたり¥4,000〜。京都市中京区・御所南エリアで通いやすい価格のパーソナルジム。
+            1回あたり¥4,000〜。京都市中京区・御所南エリアで
+            <br />
+            <span className="text-gold font-bold text-[1.15em] whitespace-nowrap">通いやすい価格</span>
+            のパーソナルジム。
           </p>
 
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
