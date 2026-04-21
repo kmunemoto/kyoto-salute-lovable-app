@@ -6,40 +6,50 @@
 
 @layer base {
   :root {
-    --background: 30 15% 97%;
-    --foreground: 30 10% 10%;
+    /* Warm beige + terracotta palette */
+    --background: 35 33% 94%;            /* #F5F1EB warm beige */
+    --foreground: 25 14% 15%;            /* #2C2621 deep brown */
 
-    --card: 30 20% 98%;
-    --card-foreground: 30 10% 10%;
+    --card: 35 33% 94%;
+    --card-foreground: 25 14% 15%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 30 10% 10%;
+    --popover: 35 33% 94%;
+    --popover-foreground: 25 14% 15%;
 
-    --primary: 30 30% 20%;
-    --primary-foreground: 40 30% 95%;
+    --primary: 16 53% 53%;               /* #C96442 terracotta */
+    --primary-foreground: 0 0% 100%;     /* white text on terracotta */
 
-    --secondary: 35 20% 92%;
-    --secondary-foreground: 30 30% 20%;
+    --secondary: 33 26% 90%;             /* #EDE7DD softer beige */
+    --secondary-foreground: 25 14% 15%;
 
-    --muted: 30 15% 94%;
-    --muted-foreground: 30 8% 45%;
+    --muted: 33 26% 90%;
+    --muted-foreground: 27 11% 49%;      /* #8B7F70 subtle text */
 
-    --accent: 38 70% 50%;
-    --accent-foreground: 30 30% 10%;
+    --accent: 16 53% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 38 70% 50%;
+    --border: 33 22% 84%;
+    --input: 33 22% 84%;
+    --ring: 16 53% 53%;
 
     --radius: 0.5rem;
 
-    --gold: 38 70% 50%;
-    --gold-light: 40 60% 70%;
-    --dark: 30 15% 8%;
-    --dark-soft: 30 10% 15%;
+    /* Brand accents — keep "gold" token name for backwards compat, now terracotta */
+    --gold: 16 53% 53%;                  /* #C96442 */
+    --gold-light: 17 49% 36%;            /* #8B4A30 deeper terracotta */
+
+    /* "Dark" tokens repurposed: alternating beige sections (Trainer/Pricing/Access) */
+    --dark: 33 26% 90%;                  /* #EDE7DD */
+    --dark-soft: 35 30% 85%;             /* slightly tinted card bg */
+    --dark-foreground-color: 25 14% 15%; /* dark brown text on beige */
+
+    /* True dark surfaces (Footer, Hero overlay) */
+    --footer: 25 14% 15%;                /* #2C2621 */
+    --footer-foreground: 35 33% 94%;     /* #F5F1EB */
+    --hero-overlay: 25 14% 15%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
