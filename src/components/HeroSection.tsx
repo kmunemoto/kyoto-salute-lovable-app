@@ -12,7 +12,7 @@ const HeroSection = () => {
           height={1080}
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gym-dark via-gym-dark/60 to-gym-dark/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.6)] to-[hsl(var(--hero-overlay)/0.3)]" />
       </div>
 
       {/* Content */}
@@ -20,14 +20,14 @@ const HeroSection = () => {
         <p className="text-gold text-sm md:text-base tracking-[0.3em] uppercase mb-4 animate-fade-up font-body">
           京都市中京区・御所南のパーソナルジム
         </p>
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-gym-dark-foreground leading-tight mb-6 animate-fade-up animate-delay-100">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6 animate-fade-up animate-delay-100">
           過去の自分を超える、
           <br />
           <span className="gold-text">史上最高のカラダ</span>で
           <br />
           充実した人生を
         </h1>
-        <p className="text-gym-dark-foreground/70 text-base md:text-lg max-w-xl mb-10 animate-fade-up animate-delay-200 font-body leading-relaxed">
+        <p className="text-white/80 text-base md:text-lg max-w-xl mb-10 animate-fade-up animate-delay-200 font-body leading-relaxed">
           あなたの"なりたい"をカタチにします。
           <br />
           1回あたり¥4,000〜。京都市中京区・御所南エリアで通いやすい価格のパーソナルジム。
@@ -37,13 +37,13 @@ const HeroSection = () => {
             href="https://kyoto-salute.lovable.app/trial"
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-gradient px-8 py-4 text-gym-dark font-medium rounded-sm hover:opacity-90 transition-opacity text-center"
+            className="gold-gradient px-8 py-4 text-white font-medium rounded-sm transition-opacity text-center"
           >
             無料体験を予約する
           </a>
           <a
             href="#features"
-            className="border border-gym-dark-foreground/30 px-8 py-4 text-gym-dark-foreground hover:border-gold hover:text-gold transition-colors rounded-sm text-center"
+            className="border border-white/40 px-8 py-4 text-white hover:border-gold hover:text-gold transition-colors rounded-sm text-center"
           >
             Saluteの特徴を見る
           </a>

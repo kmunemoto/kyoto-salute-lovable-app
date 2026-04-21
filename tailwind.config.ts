@@ -58,7 +58,12 @@ export default {
         gym: {
           dark: "hsl(var(--dark))",
           "dark-soft": "hsl(var(--dark-soft))",
-          "dark-foreground": "hsl(40 30% 95%)",
+          /* Now dark brown text on beige sections */
+          "dark-foreground": "hsl(25 14% 15%)",
+        },
+        footer: {
+          DEFAULT: "hsl(var(--footer))",
+          foreground: "hsl(var(--footer-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

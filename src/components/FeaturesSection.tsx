@@ -87,7 +87,7 @@ const FeaturesSection = () => {
                         />
                       </div>
                     </div>
-                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
+                    <div className="absolute top-4 left-4 gold-gradient text-white px-3 py-1 text-xs font-medium rounded-sm font-body">
                       Feature.{feature.number}
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const FeaturesSection = () => {
                       loading="lazy"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 gold-gradient text-gym-dark px-3 py-1 text-xs font-medium rounded-sm font-body">
+                    <div className="absolute top-4 left-4 gold-gradient text-white px-3 py-1 text-xs font-medium rounded-sm font-body">
                       Feature.{feature.number}
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const FeaturesSection = () => {
             href="https://kyoto-salute.lovable.app/trial"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block gold-gradient px-10 py-4 text-gym-dark font-medium rounded-sm hover:opacity-90 transition-opacity"
+            className="inline-block gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity"
           >
             無料体験予約はこちら
           </a>
