@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Burgundy + cream palette */
+    /* Tiffany Blue + cream palette */
     --background: 35 47% 92%;            /* #F5EDE0 cream */
-    --foreground: 351 39% 17%;           /* #3D1A1F deep burgundy */
+    --foreground: 200 60% 15%;           /* #0F2E3D deep navy */
 
     --card: 35 47% 92%;
-    --card-foreground: 351 39% 17%;
+    --card-foreground: 200 60% 15%;
 
     --popover: 35 47% 92%;
-    --popover-foreground: 351 39% 17%;
+    --popover-foreground: 200 60% 15%;
 
-    --primary: 5 51% 53%;                /* #C4564A coral red */
+    --primary: 178 89% 38%;              /* #0ABAB5 Tiffany Blue */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 35 39% 88%;             /* #EDE3D2 deeper cream */
-    --secondary-foreground: 351 39% 17%;
+    --secondary-foreground: 200 60% 15%;
 
     --muted: 35 39% 88%;
-    --muted-foreground: 351 17% 47%;     /* #8B6168 soft greyish */
+    --muted-foreground: 200 30% 35%;     /* muted navy */
 
-    --accent: 5 51% 53%;
+    --accent: 178 89% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,23 +33,23 @@
 
     --border: 35 30% 82%;
     --input: 35 30% 82%;
-    --ring: 5 51% 53%;
+    --ring: 178 89% 38%;
 
     --radius: 0.5rem;
 
-    /* Brand accents — keep "gold" token name for backwards compat, now coral burgundy */
-    --gold: 5 51% 53%;                   /* #C4564A coral red */
-    --gold-light: 354 45% 33%;           /* #7A2E35 deep burgundy accent */
+    /* Brand accents — keep "gold" token name for backwards compat, now Tiffany Blue */
+    --gold: 178 89% 38%;                 /* #0ABAB5 Tiffany Blue */
+    --gold-light: 178 90% 30%;           /* #078F8B darker Tiffany */
 
     /* "Dark" tokens repurposed: alternating cream sections */
     --dark: 35 39% 88%;                  /* #EDE3D2 */
     --dark-soft: 35 35% 84%;
-    --dark-foreground-color: 351 39% 17%;
+    --dark-foreground-color: 200 60% 15%;
 
     /* True dark surfaces (Footer, Hero overlay) */
-    --footer: 351 39% 17%;               /* #3D1A1F deep burgundy */
+    --footer: 200 60% 15%;               /* #0F2E3D deep navy */
     --footer-foreground: 35 47% 92%;     /* #F5EDE0 cream */
-    --hero-overlay: 351 39% 17%;
+    --hero-overlay: 200 47% 23%;         /* #1E4655 */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
