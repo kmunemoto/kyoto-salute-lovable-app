@@ -115,7 +115,8 @@
   }
 
   .section-dark {
-    @apply bg-gym-dark text-gym-dark-foreground;
+    /* Alternating beige section (re-themed from original dark sections) */
+    @apply bg-secondary text-foreground;
   }
 
   .section-light {
@@ -123,7 +124,15 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    /* Solid terracotta CTA per new brand palette */
+    background: hsl(var(--gold));
+    color: #ffffff;
+    transition: background-color 200ms ease;
+  }
+
+  .gold-gradient:hover {
+    background: hsl(var(--gold-light));
+    opacity: 1;
   }
 
   .gold-text {
