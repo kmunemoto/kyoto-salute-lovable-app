@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    /* Warm beige + terracotta palette */
-    --background: 35 33% 94%;            /* #F5F1EB warm beige */
-    --foreground: 25 14% 15%;            /* #2C2621 deep brown */
+    /* Burgundy + cream palette */
+    --background: 35 47% 92%;            /* #F5EDE0 cream */
+    --foreground: 351 39% 17%;           /* #3D1A1F deep burgundy */
 
-    --card: 35 33% 94%;
-    --card-foreground: 25 14% 15%;
+    --card: 35 47% 92%;
+    --card-foreground: 351 39% 17%;
 
-    --popover: 35 33% 94%;
-    --popover-foreground: 25 14% 15%;
+    --popover: 35 47% 92%;
+    --popover-foreground: 351 39% 17%;
 
-    --primary: 16 53% 53%;               /* #C96442 terracotta */
-    --primary-foreground: 0 0% 100%;     /* white text on terracotta */
+    --primary: 5 51% 53%;                /* #C4564A coral red */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 33 26% 90%;             /* #EDE7DD softer beige */
-    --secondary-foreground: 25 14% 15%;
+    --secondary: 35 39% 88%;             /* #EDE3D2 deeper cream */
+    --secondary-foreground: 351 39% 17%;
 
-    --muted: 33 26% 90%;
-    --muted-foreground: 27 11% 49%;      /* #8B7F70 subtle text */
+    --muted: 35 39% 88%;
+    --muted-foreground: 351 17% 47%;     /* #8B6168 soft greyish */
 
-    --accent: 16 53% 53%;
+    --accent: 5 51% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 33 22% 84%;
-    --input: 33 22% 84%;
-    --ring: 16 53% 53%;
+    --border: 35 30% 82%;
+    --input: 35 30% 82%;
+    --ring: 5 51% 53%;
 
     --radius: 0.5rem;
 
-    /* Brand accents — keep "gold" token name for backwards compat, now terracotta */
-    --gold: 16 53% 53%;                  /* #C96442 */
-    --gold-light: 17 49% 36%;            /* #8B4A30 deeper terracotta */
+    /* Brand accents — keep "gold" token name for backwards compat, now coral burgundy */
+    --gold: 5 51% 53%;                   /* #C4564A coral red */
+    --gold-light: 354 45% 33%;           /* #7A2E35 deep burgundy accent */
 
-    /* "Dark" tokens repurposed: alternating beige sections (Trainer/Pricing/Access) */
-    --dark: 33 26% 90%;                  /* #EDE7DD */
-    --dark-soft: 35 30% 85%;             /* slightly tinted card bg */
-    --dark-foreground-color: 25 14% 15%; /* dark brown text on beige */
+    /* "Dark" tokens repurposed: alternating cream sections */
+    --dark: 35 39% 88%;                  /* #EDE3D2 */
+    --dark-soft: 35 35% 84%;
+    --dark-foreground-color: 351 39% 17%;
 
     /* True dark surfaces (Footer, Hero overlay) */
-    --footer: 25 14% 15%;                /* #2C2621 */
-    --footer-foreground: 35 33% 94%;     /* #F5F1EB */
-    --hero-overlay: 25 14% 15%;
+    --footer: 351 39% 17%;               /* #3D1A1F deep burgundy */
+    --footer-foreground: 35 47% 92%;     /* #F5EDE0 cream */
+    --hero-overlay: 351 39% 17%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
