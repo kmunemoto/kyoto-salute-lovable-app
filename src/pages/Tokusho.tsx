@@ -199,16 +199,18 @@ const Tokusho = () => {
                 </h2>
 
                 <h3 className="text-base md:text-lg font-heading text-foreground mt-6 mb-2">
-                  月額料金について
+                  料金について
                 </h3>
-                <p>月額制のため、月途中での返金はいたしかねます。</p>
+                <p>
+                  各プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。有効期間途中での返金はいたしかねます。
+                </p>
 
                 <h3 className="text-base md:text-lg font-heading text-foreground mt-6 mb-2">
                   解約について
                 </h3>
                 <p>
-                  翌月以降の解約をご希望の場合は、
-                  <span className="text-foreground font-medium">次回の1回目の予約までに</span>
+                  次回分以降の継続を希望されない場合は、
+                  <span className="text-foreground font-medium">現在の有効期間最終日までに</span>
                   お申し出ください。
                 </p>
 

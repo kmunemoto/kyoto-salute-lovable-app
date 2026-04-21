@@ -125,11 +125,14 @@ const Terms = () => {
               <section>
                 <ArticleHeading id="art4" num="第4条" title="プランのセッション数と有効期間" />
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
-                  <li>各プランのセッション数は、月の初日から末日までの期間内に消化していただくものとします。</li>
                   <li>
-                    <strong className="text-foreground">月内に消化できなかった未消化分のセッションは、翌月に繰り越されず消滅します</strong>のでご了承ください。
+                    各プランのセッション数は、<strong className="text-foreground">その月の1回目のトレーニング日から起算して1ヶ月間</strong>が有効期間となります（例：10月15日が1回目のトレーニング日の場合、翌11月14日までが有効期間）。
                   </li>
-                  <li>プランの変更をご希望の場合は、月単位でのプラン変更が可能です。</li>
+                  <li>
+                    <strong className="text-foreground">有効期間内に消化できなかった未消化分のセッションは、翌期間に繰り越されず消滅します</strong>のでご了承ください。
+                  </li>
+                  <li>有効期間終了後も継続して本サービスをご利用される場合は、改めて次の1ヶ月分の料金をお支払いいただきます。</li>
+                  <li>プランの変更をご希望の場合は、次回の料金お支払い時にお申し出ください。</li>
                 </ol>
               </section>
 
@@ -159,9 +162,9 @@ const Terms = () => {
                 <ArticleHeading id="art7" num="第7条" title="解約・退会" />
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>
-                    翌月以降の解約をご希望の場合は、<strong className="text-foreground">次回の1回目の予約までに</strong>お申し出ください。
+                    <strong className="text-foreground">次回分以降の継続を希望されない場合は、現在の有効期間最終日までに</strong>お申し出ください。お申し出がない場合、継続の意思があるものとして扱います。
                   </li>
-                  <li>月途中での解約の場合でも、当月分の返金はいたしかねます。</li>
+                  <li>有効期間途中での解約の場合でも、当期間分の料金の返金はいたしかねます。</li>
                   <li>解約のお申し出は、公式LINEまたはメールにて承ります。</li>
                 </ol>
               </section>
