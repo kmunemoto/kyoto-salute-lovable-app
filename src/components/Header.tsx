@@ -12,9 +12,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gym-dark/90 backdrop-blur-md border-b border-gold/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-xl text-white">
+        <a href="#" className="font-heading text-xl text-foreground">
           <span className="text-gold">Salute</span>御所南
         </a>
 
@@ -24,7 +24,7 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-gym-dark-foreground/80 hover:text-gold transition-colors font-body"
+              className="text-sm text-foreground/80 hover:text-gold transition-colors font-body"
             >
               {item.label}
             </a>
@@ -33,7 +33,7 @@ const Header = () => {
             href="https://kyoto-salute.lovable.app/trial"
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-gradient px-5 py-2.5 text-sm font-medium text-gym-dark rounded-sm hover:opacity-90 transition-opacity"
+            className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity"
           >
             無料体験実施中
           </a>
@@ -42,7 +42,7 @@ const Header = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gym-dark-foreground"
+          className="md:hidden text-foreground"
           aria-label="メニュー"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -51,13 +51,13 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <nav className="md:hidden bg-gym-dark/95 backdrop-blur-md border-t border-gold/10 px-6 py-6 space-y-4">
+        <nav className="md:hidden bg-background/95 backdrop-blur-md border-t border-border px-6 py-6 space-y-4">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block text-gym-dark-foreground/80 hover:text-gold transition-colors font-body"
+              className="block text-foreground/80 hover:text-gold transition-colors font-body"
             >
               {item.label}
             </a>
@@ -66,7 +66,7 @@ const Header = () => {
             href="https://kyoto-salute.lovable.app/trial"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center gold-gradient px-5 py-2.5 text-sm font-medium text-gym-dark rounded-sm"
+            className="block text-center gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm"
           >
             無料体験実施中
           </a>

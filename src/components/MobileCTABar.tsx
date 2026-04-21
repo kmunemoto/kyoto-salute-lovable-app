@@ -23,7 +23,7 @@ const MobileCTABar = () => {
           href="https://page.line.me/393blgip"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gym-dark font-medium font-body text-sm flex items-center gap-2"
+          className="text-white font-medium font-body text-sm flex items-center gap-2"
         >
           LINEで初回無料体験を予約 →
         </a>

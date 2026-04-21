@@ -60,12 +60,12 @@ const PricingSection = () => {
               key={plan.name}
               className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${
                 plan.popular
-                  ? "border-gold bg-gym-dark-soft"
-                  : "border-gym-dark-foreground/10 bg-gym-dark-soft/50"
+                  ? "border-gold bg-background shadow-md"
+                  : "border-border bg-background/70"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 gold-gradient text-gym-dark text-xs font-medium px-4 py-1 rounded-full">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 gold-gradient text-white text-xs font-medium px-4 py-1 rounded-full">
                   おすすめ
                 </div>
               )}
@@ -96,7 +96,7 @@ const PricingSection = () => {
                 rel="noopener noreferrer"
                 className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${
                   plan.popular
-                    ? "gold-gradient text-gym-dark hover:opacity-90"
+                    ? "gold-gradient text-white"
                     : "border border-gold/40 text-gold hover:bg-gold/10"
                 }`}
               >

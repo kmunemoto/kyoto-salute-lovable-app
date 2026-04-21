@@ -40,7 +40,7 @@ const CTASection = () => {
                 href="https://kyoto-salute.lovable.app/trial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-gradient px-10 py-4 text-gym-dark font-medium rounded-sm hover:opacity-90 transition-opacity font-body text-center"
+                className="gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity font-body text-center"
               >
                 WEBから予約
               </a>
