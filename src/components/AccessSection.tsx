@@ -58,7 +58,7 @@ const AccessSection = () => {
               <div>
                 <h3 className="text-gym-dark-foreground font-body font-semibold mb-1">営業時間</h3>
                 <p className="text-gym-dark-foreground/70 font-body">
-                  10:00〜21:30（完全予約制）
+                  10:00〜22:00（完全予約制）
                 </p>
                 <p className="text-gym-dark-foreground/50 font-body text-sm mt-1">
                   不定休 / 営業時間外もご予約を承れる場合がございます
