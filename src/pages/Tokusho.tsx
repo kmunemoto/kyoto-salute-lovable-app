@@ -136,7 +136,7 @@ const Tokusho = () => {
                 <h2 className="text-xl md:text-2xl font-heading text-foreground mb-4 pb-3 border-b border-border">
                   <span className="text-accent mr-3">7.</span>営業時間
                 </h2>
-                <p>10:00〜21:30（完全予約制）</p>
+                <p>10:00〜22:00（完全予約制）</p>
                 <p className="text-sm text-muted-foreground mt-1">
                   不定休 / 営業時間外もご予約を承れる場合がございます
                 </p>
