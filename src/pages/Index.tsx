@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -11,6 +12,11 @@ import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
 
 const Index = () => {
+  useEffect(() => {
+    document.title =
+      "京都市中京区・御所南のパーソナルジム Salute御所南｜月額¥20,000～・入会金無料";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
