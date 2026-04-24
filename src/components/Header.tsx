@@ -3,9 +3,12 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "特徴", href: "#features" },
-  { label: "料金プラン", href: "#pricing" },
+  { label: "トレーナー", href: "#trainer" },
+  { label: "お客様の声", href: "#voice" },
+  { label: "料金プラン", href: "#plan" },
   { label: "よくあるご質問", href: "#faq" },
   { label: "アクセス", href: "#access" },
+  { label: "無料カウンセリング", href: "#consultation" },
 ];
 
 const Header = () => {

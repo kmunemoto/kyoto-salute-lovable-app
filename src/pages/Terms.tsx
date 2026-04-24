@@ -33,7 +33,7 @@ const ArticleHeading = ({ id, num, title }: { id: string; num: string; title: st
 
 const Terms = () => {
   useEffect(() => {
-    document.title = "利用規約 | パーソナルジムSalute御所南";
+    document.title = "利用規約 | パーソナルジム Salute御所南｜京都市中京区";
     const meta = document.querySelector('meta[name="description"]');
     const original = meta?.getAttribute("content") ?? "";
     meta?.setAttribute(

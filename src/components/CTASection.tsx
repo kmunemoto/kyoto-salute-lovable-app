@@ -2,12 +2,12 @@ import trialImage from "@/assets/trial-gym.jpg";
 
 const CTASection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section id="consultation" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Trial</p>
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Consultation</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            無料体験実施中
+            無料カウンセリング・体験実施中
           </h2>
         </div>
 
@@ -16,7 +16,7 @@ const CTASection = () => {
           <div className="relative rounded-sm overflow-hidden group">
             <img
               src={trialImage}
-              alt="Salute御所南の店内・トレーニング設備"
+              alt="京都市中京区のパーソナルジムSalute御所南の体験トレーニング"
               loading="lazy"
               className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
             />

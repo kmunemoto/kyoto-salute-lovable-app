@@ -51,14 +51,14 @@ const FeaturesSection = () => {
           <div className="rounded-sm overflow-hidden">
             <img
               src={gymInterior}
-              alt="Salute御所南の店内設備"
+              alt="京都市中京区のパーソナルジムSalute御所南の店内・トレーニング設備"
               loading="lazy"
               className="w-full h-auto object-cover"
             />
           </div>
-          <p className="text-center text-muted-foreground text-sm font-body mt-3">
+          <h3 className="text-center text-muted-foreground text-sm font-body mt-3 font-normal">
             充実した設備で効率的なトレーニングを
-          </p>
+          </h3>
         </div>
 
         {/* Main feature cards */}
@@ -81,7 +81,7 @@ const FeaturesSection = () => {
                       <div className="rounded-[2rem] overflow-hidden">
                         <img
                           src={feature.image}
-                          alt={feature.title}
+                          alt="Salute御所南 専用アプリの画面"
                           loading="lazy"
                           className="w-full h-auto object-cover"
                         />
@@ -95,7 +95,7 @@ const FeaturesSection = () => {
                   <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
                     <img
                       src={feature.image}
-                      alt={feature.title}
+                      alt={feature.number === "01" ? "無料レンタルのウェアとシューズ 手ぶらで通えるパーソナルジム" : "栄養士資格を持つトレーナーによる食事アドバイス"}
                       loading="lazy"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />

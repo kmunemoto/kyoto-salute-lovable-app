@@ -17,7 +17,7 @@ const sections = [
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    document.title = "プライバシーポリシー | パーソナルジムSalute御所南";
+    document.title = "プライバシーポリシー | パーソナルジム Salute御所南｜京都市中京区";
     const meta = document.querySelector('meta[name="description"]');
     const original = meta?.getAttribute("content") ?? "";
     meta?.setAttribute(
