@@ -28,7 +28,7 @@ const Row = ({ label, children }: { label: string; children: React.ReactNode }) 
 
 const Tokusho = () => {
   useEffect(() => {
-    document.title = "特定商取引法に基づく表記 | パーソナルジムSalute御所南";
+    document.title = "特定商取引法に基づく表記 | パーソナルジム Salute御所南｜京都市中京区";
     const meta = document.querySelector('meta[name="description"]');
     const original = meta?.getAttribute("content") ?? "";
     meta?.setAttribute(
