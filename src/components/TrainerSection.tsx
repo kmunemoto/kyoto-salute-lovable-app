@@ -16,7 +16,8 @@ const TrainerSection = () => {
             <div className="rounded-sm overflow-hidden">
               <img
                 src={trainerPhoto}
-                alt="宗本 寛太 - Salute御所南 代表トレーナー"
+                alt="Salute御所南 代表トレーナー 宗本寛太"
+                loading="lazy"
                 className="w-full h-auto object-contain"
               />
             </div>
