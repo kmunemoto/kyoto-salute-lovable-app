@@ -48,6 +48,14 @@ const PricingSection = () => {
           <p className="text-gym-dark-foreground/60 mt-4 max-w-lg mx-auto font-body">
             入会金・事務手数料 <span className="text-gold font-semibold text-lg">¥0</span>
           </p>
+          <div className="mt-6 mb-2 max-w-3xl mx-auto text-center">
+            <h3 className="font-body text-sm font-semibold text-seo-muted mb-3">
+              京都で通いやすい価格のパーソナルジム
+            </h3>
+            <p className="text-sm leading-relaxed text-seo-muted font-body">
+              Salute御所南は、1回あたり¥4,000～と京都市内のパーソナルジムの中でも通いやすい価格帯です。入会金¥0、ウェア・シューズ・タオル・お水もすべて無料なので、表示価格以外の追加費用は一切かかりません。縛りもなく月単位でプラン変更・解約が可能なので、「まずは試してみたい」という方にも安心です。
+            </p>
+          </div>
           <p className="text-gym-dark-foreground/50 mt-2 text-sm font-body">
             4つのプランからお客様の目標に合わせてお選びいただけます。
           </p>
