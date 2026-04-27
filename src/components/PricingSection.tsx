@@ -84,10 +84,10 @@ const PricingSection = () => {
                 {plan.description}
               </p>
               <div className="mb-1">
-                <span className="text-3xl font-heading text-gold">{plan.price}</span>
+                <span className="text-3xl font-body font-bold text-gold">{plan.price}</span>
                 <span className="text-gym-dark-foreground/50 text-sm font-body">（税込）/月</span>
               </div>
-              <p className="text-gold/70 text-xs mb-6 font-body">{plan.perSession}</p>
+              <p className="text-gold/70 text-xs mb-6 font-body font-bold">{plan.perSession}</p>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
