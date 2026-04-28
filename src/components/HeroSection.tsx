@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="max-w-3xl">
           <h1 className="animate-fade-up text-gold text-sm md:text-base font-body tracking-wider mb-4 font-normal">
-            京都市中京区・御所南で安いパーソナルジム Salute御所南｜無料体験実施中
+            京都市中京区・御所南のパーソナルジム Salute御所南
           </h1>
 
           <p className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
@@ -31,11 +31,11 @@ const HeroSection = () => {
           </p>
 
           <p className="animate-fade-up animate-delay-200 text-white/90 text-base md:text-lg font-body leading-relaxed mb-6 max-w-xl">
-            栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,000～の通いやすい価格で、入会金・レンタル費用もすべて無料です。
+            あなたの"なりたい"をカタチにします。1回あたり¥4,000～。京都市中京区・御所南エリアで通いやすい価格のパーソナルジム。
           </p>
 
           <p className="animate-fade-up animate-delay-200 font-body mb-10 max-w-xl" style={{ fontSize: "12px", color: "#8B7F70" }}>
-            京都市中京区・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は1回¥4,000～・入会金¥0で通えるパーソナルジムです。無料体験トレーニングを実施中。入会前にトレーニング内容やトレーナーとの相性をお試しいただけます。御所南の落ち着いた環境で、栄養士資格を持つ専属トレーナーがマンツーマンで指導します。
+            京都市中京区・御所南エリアの完全個室・マンツーマンパーソナルトレーニングジム
           </p>
 
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
