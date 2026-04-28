@@ -8,6 +8,7 @@ const navItems = [
   { label: "料金プラン", href: "#plan" },
   { label: "よくあるご質問", href: "#faq" },
   { label: "アクセス", href: "#access" },
+  { label: "ブログ", href: "/blog" },
   { label: "無料カウンセリング", href: "#consultation" },
 ];
 

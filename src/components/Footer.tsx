@@ -14,6 +14,12 @@ const Footer = () => {
         <div className="w-full flex flex-col items-center gap-5">
           {/* 1段目：機能リンク */}
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <Link
+              to="/blog"
+              className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body"
+            >
+              ブログ
+            </Link>
             <a
               href="https://kyoto-salute.lovable.app/auth"
               target="_blank"
