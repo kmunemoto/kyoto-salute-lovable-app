@@ -8,9 +8,10 @@ const navItems = [
   { label: "料金プラン", href: "/#plan" },
   { label: "よくあるご質問", href: "/#faq" },
   { label: "アクセス", href: "/#access" },
-  { label: "ブログ", href: "/blog" },
   { label: "無料カウンセリング", href: "/#consultation" },
 ];
+
+const mobileNavItems = [...navItems, { label: "ブログ", href: "/blog" }];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
 
         {/* Desktop */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {mobileNavItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
