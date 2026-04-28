@@ -32,6 +32,15 @@ const mainFeatures = [
     image: featureNutrition,
     isApp: false,
   },
+  {
+    number: "04",
+    icon: Shirt,
+    title: "入会金無料・追加費用なし。京都で続けやすい価格設定",
+    description:
+      "パーソナルジムの継続において、料金は重要なポイントです。Salute御所南は、1回あたり¥4,000～の月額制。入会金・事務手数料¥0、ウェア・シューズ・タオル・お水も無料。表示価格以外の費用は一切かかりません。縛りなしで月単位の解約が可能なので、「まずは1ヶ月だけ」という始め方もできます。",
+    image: gymInterior,
+    isApp: false,
+  },
 ];
 
 const FeaturesSection = () => {
@@ -42,7 +51,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-12">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Features</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            京都・御所南のパーソナルジムSaluteが選ばれる理由
+            Salute御所南の特徴
           </h2>
         </div>
 
@@ -98,7 +107,9 @@ const FeaturesSection = () => {
                       alt={
                         feature.number === "01"
                           ? "無料レンタルのウェアとシューズ 手ぶらで通えるパーソナルジム"
-                          : "栄養士資格を持つトレーナーによる食事アドバイス"
+                          : feature.number === "04"
+                            ? "京都で安いパーソナルジムSalute御所南の月額¥20,000からの料金プラン"
+                            : "栄養士資格を持つトレーナーによる食事アドバイス"
                       }
                       loading="lazy"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
