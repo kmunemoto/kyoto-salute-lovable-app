@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "特徴", href: "#features" },
-  { label: "トレーナー", href: "#trainer" },
-  { label: "お客様の声", href: "#voice" },
-  { label: "料金プラン", href: "#plan" },
-  { label: "よくあるご質問", href: "#faq" },
-  { label: "アクセス", href: "#access" },
+  { label: "特徴", href: "/#features" },
+  { label: "トレーナー", href: "/#trainer" },
+  { label: "お客様の声", href: "/#voice" },
+  { label: "料金プラン", href: "/#plan" },
+  { label: "よくあるご質問", href: "/#faq" },
+  { label: "アクセス", href: "/#access" },
   { label: "ブログ", href: "/blog" },
-  { label: "無料カウンセリング", href: "#consultation" },
+  { label: "無料カウンセリング", href: "/#consultation" },
 ];
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-xl text-foreground">
+        <a href="/" className="font-heading text-xl text-foreground">
           <span className="text-gold">Salute</span>御所南
         </a>
 
