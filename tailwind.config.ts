@@ -42,6 +42,9 @@ export default {
         seo: {
           muted: "hsl(var(--seo-muted))",
         },
+        article: {
+          foreground: "hsl(var(--article-foreground))",
+        },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
