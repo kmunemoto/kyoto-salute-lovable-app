@@ -7,7 +7,7 @@ const TrainerSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Trainer</p>
           <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">
-            トレーナー紹介
+            中京区・御所南のパーソナルジムを支える専属トレーナー
           </h2>
         </div>
 
