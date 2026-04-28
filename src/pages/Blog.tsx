@@ -35,13 +35,18 @@ const Blog = () => {
                 to={`/blog/${post.slug}`}
                 className="group block overflow-hidden rounded-sm border border-border bg-background/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="aspect-[16/10] overflow-hidden bg-secondary">
+                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                   <img
                     src={post.thumbnail}
                     alt={`${post.title}のサムネイル`}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                  <div className="absolute inset-x-0 bottom-0 overflow-hidden bg-footer/85 px-4 py-3">
+                    <p className="truncate font-body text-sm font-bold leading-relaxed text-footer-foreground">
+                      {post.title}
+                    </p>
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-body text-muted-foreground">
