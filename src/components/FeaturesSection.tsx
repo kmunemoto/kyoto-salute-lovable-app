@@ -51,7 +51,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-12">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Features</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            京都・御所南のパーソナルジムSaluteが選ばれる理由
+            Salute御所南の特徴
           </h2>
         </div>
 
