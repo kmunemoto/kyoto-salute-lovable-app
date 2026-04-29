@@ -1,7 +1,7 @@
-import blogCost from "@/assets/blog-cost.png";
-import blogBeginner from "@/assets/blog-beginner.png";
-import blogDiet from "@/assets/blog-diet.png";
-import blogTebura from "@/assets/blog-tebura.png";
+import blogCost from "@/assets/blog-cost-v2.jpg";
+import blogBeginner from "@/assets/blog-beginner-v2.jpg";
+import blogDiet from "@/assets/blog-diet-v2.jpg";
+import blogTebura from "@/assets/blog-tebura-v2.jpg";
 import blogFreeTrial from "@/assets/blog-free-trial.jpg";
 
 export type BlogPost = {
