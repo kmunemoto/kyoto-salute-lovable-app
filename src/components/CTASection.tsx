@@ -24,6 +24,9 @@ const CTASection = () => {
 
           {/* Text + CTAs */}
           <div className="text-center lg:text-left">
+            <p className="text-muted-foreground font-body leading-relaxed mb-6">
+              京都市中京区・御所南のパーソナルジムSalute御所南では、初めての方も安心して始められるよう無料体験トレーニングをご用意しています。実際のトレーニング内容・ジムの雰囲気・トレーナーとの相性を体感してから、ご入会をご検討いただけます。京都で安いパーソナルジムをお探しの方も、まずはお気軽に無料体験へお越しください。無理な勧誘は一切ございません。
+            </p>
             <p className="text-muted-foreground font-body leading-relaxed mb-4">
               ・運動が苦手で不安…
               <br />
