@@ -7,7 +7,7 @@ const AccessSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Access</p>
           <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">
-            アクセス
+            京都市中京区・御所南のパーソナルジムSaluteへのアクセス
           </h2>
         </div>
 
