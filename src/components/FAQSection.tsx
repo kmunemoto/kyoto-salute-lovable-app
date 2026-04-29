@@ -65,7 +65,7 @@ const FAQSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Q&A</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            よくあるご質問
+            京都・御所南のパーソナルジムSalute よくある質問
           </h2>
         </div>
 
