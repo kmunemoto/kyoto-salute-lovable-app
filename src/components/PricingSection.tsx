@@ -43,7 +43,7 @@ const PricingSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Plan</p>
           <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">
-            京都市中京区で安いパーソナルジムの料金プラン
+            料金プラン
           </h2>
           <p className="text-gym-dark-foreground/60 mt-4 max-w-lg mx-auto font-body">
             入会金・事務手数料 <span className="text-gold font-semibold text-lg">¥0</span>
