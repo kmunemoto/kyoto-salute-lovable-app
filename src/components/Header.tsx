@@ -8,7 +8,7 @@ const navItems = [
   { label: "料金プラン", href: "/#plan" },
   { label: "よくあるご質問", href: "/#faq" },
   { label: "アクセス", href: "/#access" },
-  { label: "無料カウンセリング", href: "/#consultation" },
+  { label: "初回無料体験", href: "/#consultation" },
 ];
 
 const mobileNavItems = [...navItems, { label: "ブログ", href: "/blog" }];
