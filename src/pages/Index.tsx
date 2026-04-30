@@ -14,7 +14,7 @@ import MobileCTABar from "@/components/MobileCTABar";
 const Index = () => {
   useEffect(() => {
     document.title =
-      "京都で安いパーソナルジムならSalute御所南｜1回¥4,000～・入会金¥0｜京都市中京区";
+      "京都市中京区で安いパーソナルジムならSalute｜無料体験実施中｜御所南";
   }, []);
 
   return (
