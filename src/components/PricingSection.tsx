@@ -65,8 +65,8 @@ const PricingSection = () => {
               key={plan.name}
               className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${
                 plan.popular
-                  ? "border-gold bg-background shadow-md"
-                  : "border-border bg-background/70"
+                  ? "border-gold bg-white shadow-md"
+                  : "border-border bg-white"
               }`}
             >
               {plan.popular && (
