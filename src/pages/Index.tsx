@@ -14,7 +14,7 @@ import MobileCTABar from "@/components/MobileCTABar";
 const Index = () => {
   useEffect(() => {
     document.title =
-      "京都市中京区で安いパーソナルジムならSalute 御所南｜無料体験実施中｜河原町丸太町";
+      "京都市中京区の格安パーソナルジムならSalute 御所南｜無料体験実施中｜河原町丸太町";
   }, []);
 
   return (
