@@ -30,7 +30,7 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="rounded-sm border border-border bg-card p-6 hover:-translate-y-1 transition-transform duration-300"
+              className="rounded-sm border border-border bg-white p-6 hover:-translate-y-1 transition-transform duration-300"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
