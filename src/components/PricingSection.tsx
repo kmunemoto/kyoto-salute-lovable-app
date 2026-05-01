@@ -49,11 +49,8 @@ const PricingSection = () => {
             入会金・事務手数料 <span className="text-gold font-semibold text-lg">¥0</span>
           </p>
           <div className="mt-6 mb-2 max-w-3xl mx-auto text-center">
-            <h3 className="font-body text-sm font-semibold text-seo-muted mb-3">
-              京都市中京区で安いパーソナルジムをお探しの方へ
-            </h3>
             <p className="text-sm leading-relaxed text-seo-muted font-body">
-              京都市中京区で安いパーソナルジムをお探しなら、Salute御所南の料金プランをご覧ください。入会金・事務手数料は¥0。1回あたり¥4,000～と、相場より通いやすい価格です。まずは無料体験で実際のトレーニングをお試しください。
+              お客様の目標やライフスタイルに合わせて、4つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。
             </p>
           </div>
           <p className="text-gym-dark-foreground/50 mt-2 text-sm font-body">
