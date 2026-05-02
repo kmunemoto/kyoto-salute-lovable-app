@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="パーソナルジムSalute御所南のトレーニング設備"
+          alt="丸太町駅近く・御所南のパーソナルジムSalute御所南のトレーニング設備"
           fetchPriority="high"
           className="w-full h-full object-cover"
         />
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </p>
 
           <p className="animate-fade-up animate-delay-200 font-body mb-10 max-w-xl" style={{ fontSize: "12px", color: "#8B7F70" }}>
-            京都市中京区・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は1回¥4,000～・入会金¥0で通えるパーソナルジムです。無料体験トレーニングを実施中。入会前にトレーニング内容やトレーナーとの相性をお試しいただけます。御所南の落ち着いた環境で、栄養士資格を持つ専属トレーナーがマンツーマンで指導します。
+            烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,000～・入会金¥0で通えるパーソナルジムです。無料体験トレーニングを実施中。入会前にトレーニング内容やトレーナーとの相性をお試しいただけます。京都市中京区・丸太町・御所南の落ち着いた環境で、栄養士資格を持つ専属トレーナーがマンツーマンで指導します。
           </p>
 
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">

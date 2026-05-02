@@ -60,7 +60,7 @@ const FeaturesSection = () => {
           <div className="rounded-sm overflow-hidden">
             <img
               src={gymInterior}
-              alt="京都市中京区のパーソナルジムSalute御所南の店内・トレーニング設備"
+              alt="丸太町駅近く・京都市中京区のパーソナルジムSalute御所南の店内・トレーニング設備"
               loading="lazy"
               className="w-full h-auto object-cover"
             />
@@ -90,7 +90,7 @@ const FeaturesSection = () => {
                       <div className="rounded-[2rem] overflow-hidden">
                         <img
                           src={feature.image}
-                          alt="Salute御所南 専用アプリの画面"
+                          alt="丸太町駅近く・Salute御所南 専用アプリの画面"
                           loading="lazy"
                           className="w-full h-auto object-cover"
                         />
@@ -108,7 +108,7 @@ const FeaturesSection = () => {
                         feature.number === "01"
                           ? "無料レンタルのウェアとシューズ 手ぶらで通えるパーソナルジム"
                           : feature.number === "04"
-                            ? "京都で安いパーソナルジムSalute御所南の月額¥20,000からの料金プラン"
+                            ? "丸太町駅近く・京都で安いパーソナルジムSalute御所南の月額¥20,000からの料金プラン"
                             : "栄養士資格を持つトレーナーによる食事アドバイス"
                       }
                       loading="lazy"

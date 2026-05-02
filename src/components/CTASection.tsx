@@ -16,7 +16,7 @@ const CTASection = () => {
           <div className="relative rounded-sm overflow-hidden group">
             <img
               src={trialImage}
-              alt="京都市中京区のパーソナルジムSalute御所南の体験トレーニング"
+              alt="丸太町駅近く・京都市中京区のパーソナルジムSalute御所南の体験トレーニング"
               loading="lazy"
               className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
             />

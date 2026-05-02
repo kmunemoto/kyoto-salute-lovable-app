@@ -9,6 +9,9 @@ const AccessSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">
             アクセス
           </h2>
+          <p className="text-gym-dark-foreground/70 font-body text-sm md:text-base leading-relaxed mt-6 max-w-2xl mx-auto text-left md:text-center">
+            烏丸丸太町エリア、丸太町駅から徒歩8分。地下鉄「丸太町」駅の4番出口を出て北へ。丸太町通り沿いにあるプラザ御所南の2階です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -22,7 +25,7 @@ const AccessSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="パーソナルジムSalute御所南の地図"
+              title="丸太町駅近く・パーソナルジムSalute御所南の地図"
             />
           </div>
 
