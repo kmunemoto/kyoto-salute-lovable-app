@@ -12,7 +12,8 @@ const TrainerSection = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-4xl mx-auto">
-          <div className="lg:w-2/5 w-full">
+          {/* 写真は一時非表示 */}
+          <div className="lg:w-2/5 w-full hidden">
             <div className="rounded-sm overflow-hidden">
               <img
                 src={trainerPhoto}
@@ -24,7 +25,7 @@ const TrainerSection = () => {
           </div>
 
           {/* Info */}
-          <div className="lg:w-3/5 w-full">
+          <div className="w-full text-center lg:text-left">
             <h3 className="font-heading text-2xl md:text-3xl text-gym-dark-foreground mb-2">
               宗本 寛太
             </h3>
