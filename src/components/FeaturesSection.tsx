@@ -55,21 +55,6 @@ const FeaturesSection = () => {
           </h2>
         </div>
 
-        {/* Gym interior photo */}
-        <div className="mb-16">
-          <div className="rounded-sm overflow-hidden">
-            <img
-              src={gymInterior}
-              alt="丸太町駅近く・京都市中京区のパーソナルジムSalute御所南の店内・トレーニング設備"
-              loading="lazy"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <h3 className="text-center text-muted-foreground text-sm font-body mt-3 font-normal">
-            充実した設備で効率的なトレーニングを
-          </h3>
-        </div>
-
         {/* Main feature cards */}
         <div className="space-y-20">
           {mainFeatures.map((feature, index) => (
