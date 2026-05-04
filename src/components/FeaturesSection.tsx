@@ -17,7 +17,7 @@ const mainFeatures = [
   {
     number: "02",
     icon: Smartphone,
-    title: "「変わった」を数字で実感。Salute独自開発の専用アプリ",
+    title: "「変わった」を数字で実感。Salute御所南独自開発の専用アプリ",
     description:
       "トレーニング記録、体の変化、食事のPFCバランスをAIが自動解析。毎月届くレポートで成長を振り返れます。",
     image: featureApp,

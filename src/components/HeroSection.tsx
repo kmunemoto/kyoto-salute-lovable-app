@@ -51,7 +51,7 @@ const HeroSection = () => {
               href="#features"
               className="border border-white/70 text-white hover:bg-white/10 transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent flex-1"
             >
-              Saluteの特徴を見る
+              Salute御所南の特徴を見る
             </a>
           </div>
         </div>
