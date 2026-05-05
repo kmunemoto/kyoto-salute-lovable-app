@@ -11,15 +11,6 @@ const TrainerSection = () => {
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-16 space-y-5 text-gym-dark-foreground/80 font-body text-base leading-relaxed">
-          <p>これまで多くのお客様の体づくりをサポートする中で、繰り返し耳にしてきた2つの悩みがあります。</p>
-          <p>「自分に合ったやり方がわからない」、そして「続けられない」という声です。</p>
-          <p>自己流のダイエットで一時的に体重を落とせても、無理な食事制限や間違った運動で代謝が落ち、停滞期に入り、やがてリバウンド。以前より体重が増えてしまう——そんな悪循環を経験された方を、私はたくさん見てきました。</p>
-          <p>「体重は減ったのに、見た目がなかなか変わらない」という声も少なくありません。</p>
-          <p>Salute御所南では、こうした悩みを根本から解決するために、お客様一人ひとりの生活スタイルに合わせた「続けられるトレーニング」と「無理のない食事改善」をご提案しています。</p>
-          <p>健康的に、そしてしっかりと体を変えるための第一歩を、一緒に踏み出しましょう。</p>
-        </div>
-
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-4xl mx-auto">
           <div className="lg:w-2/5 w-full">
             <div className="rounded-sm overflow-hidden">
