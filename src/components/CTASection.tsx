@@ -27,16 +27,6 @@ const CTASection = () => {
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
               初めての方も安心の無料体験トレーニング。実際のトレーニング内容・ジムの雰囲気・トレーナーとの相性を体感してから、ご入会をご検討いただけます。無理な勧誘は一切ございません。
             </p>
-            <p className="text-muted-foreground font-body leading-relaxed mb-4">
-              ・運動が苦手で不安…
-              <br />
-              ・トレーナーはどんな人だろう…
-            </p>
-            <p className="text-muted-foreground font-body leading-relaxed mb-10">
-              ご入会前の様々な不安は、無料体験で解消できます。
-              <br />
-              ジムの雰囲気やトレーニングの内容を、ぜひ一度ご体感ください！
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
