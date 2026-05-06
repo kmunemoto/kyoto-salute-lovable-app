@@ -19,7 +19,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
       <AnnouncementBanner />
       <Header />
       <HeroSection />
