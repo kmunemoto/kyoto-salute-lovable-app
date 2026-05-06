@@ -23,7 +23,7 @@ const AnnouncementBanner = () => {
   return (
     <div
       ref={ref}
-      className="w-full text-white text-center relative z-[60]"
+      className="fixed top-0 left-0 right-0 text-white text-center z-[60]"
       style={{
         backgroundColor: "#0ABAB5",
         fontSize: "13px",
