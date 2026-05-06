@@ -87,6 +87,33 @@ const AccessSection = () => {
           </div>
         </div>
 
+        {/* 協賛企業 */}
+        <div className="mt-16 pt-12 border-t border-border">
+          <h3 className="text-sm tracking-[0.2em] uppercase mb-6 font-body text-muted-foreground">
+            協賛企業
+          </h3>
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            <a
+              href="https://kawakatsu-sangyo.co.jp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0ABAB5] hover:opacity-70 transition-opacity text-sm font-body flex items-center gap-2"
+            >
+              <span>■</span>
+              <span>有限会社川勝産業</span>
+            </a>
+            <a
+              href="https://fas-ao.co.jp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0ABAB5] hover:opacity-70 transition-opacity text-sm font-body flex items-center gap-2"
+            >
+              <span>■</span>
+              <span>株式会社FAS会計事務所</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   );
