@@ -33,15 +33,7 @@ const AnnouncementBanner = () => {
       }}
     >
       <span>
-        現在Googleマップの店舗情報が一時的に表示されません。当ジムは通常通り営業中です。無料体験のご予約は
-        <a
-          href="https://kyoto-salute.lovable.app/trial"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline font-bold text-white"
-        >
-          こちら
-        </a>
+        現在Googleマップの店舗情報が一時的に表示されません。当ジムは通常通り営業中です。
       </span>
       <button
         onClick={() => setVisible(false)}
