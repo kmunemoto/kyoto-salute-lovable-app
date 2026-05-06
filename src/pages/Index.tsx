@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TrainerSection from "@/components/TrainerSection";
@@ -19,6 +20,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <AnnouncementBanner />
       <Header />
       <HeroSection />
       <FeaturesSection />
