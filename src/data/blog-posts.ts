@@ -1,11 +1,11 @@
-import blogCost from "@/assets/blog-cost-v2.jpg";
-import blogBeginner from "@/assets/blog-beginner-v2.jpg";
-import blogDiet from "@/assets/blog-diet-v2.jpg";
-import blogTebura from "@/assets/blog-tebura-v2.jpg";
-import blogFreeTrial from "@/assets/blog-free-trial.jpg";
-import blogVsGym from "@/assets/blog-vs-gym.jpg";
-import blogGoshominamiArea from "@/assets/blog-goshominami-area.jpg";
-import blogMarutamachi from "@/assets/blog-marutamachi.jpg";
+import blogCost from "@/assets/blog/cost.jpg";
+import blogBeginner from "@/assets/blog/beginner.jpg";
+import blogDiet from "@/assets/blog/diet.jpg";
+import blogTebura from "@/assets/blog/tebura.jpg";
+import blogFreeTrial from "@/assets/blog/trial.jpg";
+import blogVsGym from "@/assets/blog/vsgym.jpg";
+import blogGoshominamiArea from "@/assets/blog/goshominami.jpg";
+import blogMarutamachi from "@/assets/blog/marutamachi.jpg";
 
 export type BlogPost = {
   slug: string;
