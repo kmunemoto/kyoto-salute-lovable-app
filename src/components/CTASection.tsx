@@ -25,7 +25,7 @@ const CTASection = () => {
           {/* Text + CTAs */}
           <div className="text-center lg:text-left">
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              初めての方も安心の無料体験トレーニング。実際のトレーニング内容・ジムの雰囲気・トレーナーとの相性を体感してから、ご入会をご検討いただけます。無理な勧誘は一切ございません。
+              まずは気軽に体験してみてください。あなたに合ったトレーニングを、実際に体感していただけます。無理な勧誘は一切ございません。
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -33,15 +33,15 @@ const CTASection = () => {
                 href="https://kyoto-salute.lovable.app/trial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity font-body text-center"
+                className="bg-primary hover:bg-primary/90 px-10 py-4 text-primary-foreground font-medium rounded-sm transition-colors font-body text-center"
               >
-                WEBから予約
+                WEBから無料体験を予約
               </a>
               <a
-                href="https://page.line.me/393blgip"
+                href="https://lin.ee/UMVDzWF"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-[hsl(140,60%,40%)] bg-[hsl(140,60%,40%)] px-10 py-4 text-primary-foreground font-medium rounded-sm hover:opacity-90 transition-opacity font-body text-center"
+                className="border border-primary bg-white px-10 py-4 text-primary font-medium rounded-sm hover:bg-primary/5 transition-colors font-body text-center"
               >
                 LINEから予約
               </a>

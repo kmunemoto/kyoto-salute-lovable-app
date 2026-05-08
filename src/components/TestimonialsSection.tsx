@@ -51,6 +51,15 @@ const TestimonialsSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 flex flex-col items-center gap-2">
+          <div className="flex gap-1">
+            {Array.from({ length: 5 }).map((_, j) => (
+              <Star key={j} className="w-5 h-5 fill-primary text-primary" />
+            ))}
+          </div>
+          <p className="font-body text-sm text-muted-foreground">Google口コミ 5.0（17件）</p>
+        </div>
       </div>
     </section>
   );
