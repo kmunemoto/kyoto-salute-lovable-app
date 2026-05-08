@@ -1,12 +1,24 @@
-import { MessageCircle, ClipboardCheck, Smile } from "lucide-react";
+import { CalendarCheck, ClipboardCheck, Smile } from "lucide-react";
+import type { ReactNode } from "react";
 
 const steps = [
   {
     number: "01",
-    icon: MessageCircle,
-    title: "LINEで予約",
-    description:
-      "LINEで友だち追加して「無料体験希望」とメッセージ。ご希望の日時を調整します。",
+    icon: CalendarCheck,
+    title: "WEBで予約",
+    description: (
+      <>
+        <a
+          href="https://kyoto-salute.lovable.app/trial"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline"
+        >
+          予約フォーム
+        </a>
+        からご希望の日時を選んで送信。最短30秒で予約完了です。
+      </>
+    ),
   },
   {
     number: "02",
@@ -22,7 +34,7 @@ const steps = [
     description:
       "体験後にプランをご案内します。その場で決める必要はありません。ご自宅でゆっくりご検討ください。",
   },
-];
+] as { number: string; icon: typeof CalendarCheck; title: string; description: ReactNode }[];
 
 const FlowSection = () => {
   return (
@@ -53,7 +65,7 @@ const FlowSection = () => {
         </div>
 
         <p className="text-center font-body text-muted-foreground mt-10 leading-relaxed">
-          所要時間は約75分。ウェア・シューズ・タオル・お水は無料でご用意しています。
+          所要時間は約60分。ウェア・シューズ・タオル・お水は無料でご用意しています。
         </p>
       </div>
     </section>
