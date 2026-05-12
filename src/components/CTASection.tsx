@@ -24,9 +24,15 @@ const CTASection = () => {
 
           {/* Text + CTAs */}
           <div className="text-center lg:text-left">
-            <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              まずは気軽に体験してみてください。あなたに合ったトレーニングを、実際に体感していただけます。無理な勧誘は一切ございません。
-            </p>
+            <div className="text-muted-foreground font-body leading-relaxed mb-6 space-y-4">
+              <p>無料体験で、まずはお試しください。</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>運動が苦手で不安…</li>
+                <li>トレーナーはどんな人だろう…</li>
+              </ul>
+              <p>ご入会前の様々な不安は、無料体験で解消できます。</p>
+              <p>ジムの雰囲気やトレーニングの内容を、ぜひ一度ご体感ください。</p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
