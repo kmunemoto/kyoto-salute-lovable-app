@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
-import AnnouncementBanner from "@/components/AnnouncementBanner";
 import HeroSection from "@/components/HeroSection";
 import ConcernSection from "@/components/ConcernSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -23,7 +22,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
-      <AnnouncementBanner />
       <Header />
       <HeroSection />
       <ConcernSection />
