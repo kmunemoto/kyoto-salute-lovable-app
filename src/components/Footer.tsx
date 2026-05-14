@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-footer text-footer-foreground border-t border-gold/10 px-6 py-12">
+    <footer className="bg-footer text-footer-foreground border-t border-gold/10 px-6 py-12 pb-32 md:pb-12">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
         <div>
           <span className="font-heading text-2xl text-footer-foreground"><span className="text-gold">Salute</span>御所南</span>
