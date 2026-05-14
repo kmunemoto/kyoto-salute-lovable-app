@@ -74,10 +74,11 @@ const Footer = () => {
             href="https://kantaapplab.lovable.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gold transition-colors underline-offset-2 hover:underline"
+            className="text-footer-foreground/60 underline underline-offset-2 hover:text-gold transition-colors"
           >
-            KantaAppLab｜小規模店舗向けWeb制作・アプリ開発
+            KantaAppLab
           </a>
+          ｜小規模店舗向けWeb制作・アプリ開発
         </p>
       </div>
     </footer>
