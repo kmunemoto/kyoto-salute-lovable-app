@@ -62,6 +62,17 @@ const Footer = () => {
               特定商取引法に基づく表記
             </Link>
           </div>
+
+          {/* 関連事業 */}
+          <div className="w-full pt-4 border-t border-white/10 flex justify-center">
+            <a
+              href="#"
+              className="font-body transition-colors hover:text-gold"
+              style={{ fontSize: "12px", color: "#9b8e82" }}
+            >
+              関連事業：KentaAppLab｜Webアプリ開発
+            </a>
+          </div>
         </div>
 
         <p className="text-footer-foreground/40 text-xs font-body">
