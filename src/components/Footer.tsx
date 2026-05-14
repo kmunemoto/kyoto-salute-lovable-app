@@ -78,7 +78,7 @@ const Footer = () => {
           >
             KantaAppLab
           </a>
-          ｜小規模店舗向けWeb制作・アプリ開発
+          ｜Web制作・Webアプリ開発
         </p>
       </div>
     </footer>
