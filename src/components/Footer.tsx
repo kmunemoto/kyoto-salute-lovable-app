@@ -67,6 +67,18 @@ const Footer = () => {
         <p className="text-footer-foreground/40 text-xs font-body">
           © {new Date().getFullYear()} パーソナルジム Salute御所南
         </p>
+
+        <p className="text-footer-foreground/35 text-[11px] font-body leading-relaxed px-4">
+          関連事業：
+          <a
+            href="https://kantaapplab.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold transition-colors underline-offset-2 hover:underline"
+          >
+            KantaAppLab｜小規模店舗向けWeb制作・アプリ開発
+          </a>
+        </p>
       </div>
     </footer>
   );
