@@ -71,7 +71,7 @@ const Footer = () => {
         <p className="text-footer-foreground/35 text-[11px] font-body leading-relaxed px-4">
           関連事業：
           <a
-            href="https://kantaapplab.com"
+            href="https://kantaapplab.lovable.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gold transition-colors underline-offset-2 hover:underline"
