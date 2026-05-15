@@ -22,12 +22,16 @@ const HeroSection = () => {
             京都市中京区・御所南で安いパーソナルジム Salute御所南｜無料体験実施中
           </h1>
 
-          <p className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-            過去の自分を超える、
+          <p className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.25] mb-4 text-[28px] md:text-[44px]">
+            運動が続かなかったあなたへ。
             <br />
-            <span className="text-gold">史上最高のカラダ</span>で
-            <br />
-            充実した人生を
+            <span className="text-gold">御所南の完全マンツーマンジム。</span>
+          </p>
+          <p
+            className="animate-fade-up animate-delay-150 font-body mb-6 text-[14px] md:text-[18px] leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.7)" }}
+          >
+            過去の自分を超える、史上最高のカラダで充実した人生を
           </p>
 
           <p className="animate-fade-up animate-delay-200 text-white/90 text-base md:text-lg font-body leading-relaxed mb-6 max-w-xl">
@@ -45,7 +49,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1"
             >
-              無料体験を予約する
+              まずは体験してみる
             </a>
             <a
               href="#features"

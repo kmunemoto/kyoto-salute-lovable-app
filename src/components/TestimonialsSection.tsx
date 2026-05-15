@@ -24,6 +24,19 @@ const TestimonialsSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">
             お客様の声
           </h2>
+          <div className="flex flex-col items-center justify-center mt-6">
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex gap-1">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <Star key={j} className="w-6 h-6 fill-current" style={{ color: "#0ABAB5" }} />
+                ))}
+              </div>
+              <span className="font-body" style={{ fontSize: "36px", fontWeight: 800 }}>5.0</span>
+            </div>
+            <p className="font-body mt-2" style={{ fontSize: "14px", color: "#9b8e82" }}>
+              Google口コミ 17件
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -52,14 +65,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-2">
-          <div className="flex gap-1">
-            {Array.from({ length: 5 }).map((_, j) => (
-              <Star key={j} className="w-5 h-5 fill-primary text-primary" />
-            ))}
-          </div>
-          <p className="font-body text-sm text-muted-foreground">Google口コミ 5.0（17件）</p>
-        </div>
       </div>
     </section>
   );
