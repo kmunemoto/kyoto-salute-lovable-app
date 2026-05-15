@@ -1,4 +1,4 @@
-import { CalendarCheck, ClipboardCheck, Smile } from "lucide-react";
+import { CalendarCheck, ClipboardCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 const steps = [
@@ -25,14 +25,7 @@ const steps = [
     icon: ClipboardCheck,
     title: "カウンセリング＋トレーニング",
     description:
-      "目標やお悩みをヒアリング後、60分間のパーソナルトレーニングを体験。手ぶらでOKです。",
-  },
-  {
-    number: "03",
-    icon: Smile,
-    title: "プランのご案内",
-    description:
-      "体験後にプランをご案内します。その場で決める必要はありません。ご自宅でゆっくりご検討ください。",
+      "カウンセリングで目標やお悩みをヒアリングした後、パーソナルトレーニングを体験。カウンセリングからトレーニングまで合計60分です。手ぶらでOK。",
   },
 ] as { number: string; icon: typeof CalendarCheck; title: string; description: ReactNode }[];
 
