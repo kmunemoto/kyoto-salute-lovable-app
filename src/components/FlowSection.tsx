@@ -1,4 +1,4 @@
-import { CalendarCheck, ClipboardCheck, Smile } from "lucide-react";
+import { CalendarCheck, ClipboardCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 const steps = [
@@ -25,14 +25,7 @@ const steps = [
     icon: ClipboardCheck,
     title: "カウンセリング＋トレーニング",
     description:
-      "目標やお悩みをヒアリング後、60分間のパーソナルトレーニングを体験。手ぶらでOKです。",
-  },
-  {
-    number: "03",
-    icon: Smile,
-    title: "プランのご案内",
-    description:
-      "体験後にプランをご案内します。その場で決める必要はありません。ご自宅でゆっくりご検討ください。",
+      "カウンセリングで目標やお悩みをヒアリングした後、パーソナルトレーニングを体験。カウンセリングからトレーニングまで合計60分です。手ぶらでOK。",
   },
 ] as { number: string; icon: typeof CalendarCheck; title: string; description: ReactNode }[];
 
@@ -45,7 +38,7 @@ const FlowSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">無料体験の流れ</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {steps.map((s) => {
             const Icon = s.icon;
             return (
@@ -65,7 +58,7 @@ const FlowSection = () => {
         </div>
 
         <p className="text-center font-body text-muted-foreground mt-10 leading-relaxed">
-          所要時間は約60分。ウェア・シューズ・タオル・お水は無料でご用意しています。
+          ウェア・シューズ・タオル・お水は無料でご用意しています。
         </p>
       </div>
     </section>
