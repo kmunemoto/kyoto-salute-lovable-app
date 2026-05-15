@@ -1,9 +1,10 @@
-import { Dumbbell, HelpCircle, UtensilsCrossed } from "lucide-react";
+import { Dumbbell, HelpCircle, UtensilsCrossed, Eye } from "lucide-react";
 
 const concerns = [
   { icon: Dumbbell, text: "ジムに通ったけど続かなかった" },
   { icon: HelpCircle, text: "何をすればいいかわからない" },
   { icon: UtensilsCrossed, text: "食事制限がつらくて挫折した" },
+  { icon: Eye, text: "大手ジムは人目が気になる" },
 ];
 
 const ConcernSection = () => {
@@ -15,7 +16,7 @@ const ConcernSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl">こんなお悩みありませんか？</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {concerns.map((c, i) => {
             const Icon = c.icon;
             return (
