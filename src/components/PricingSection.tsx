@@ -105,7 +105,7 @@ const PricingSection = () => {
                     : "border border-gold/40 text-gold hover:bg-gold/10"
                 }`}
               >
-                無料体験を申し込む
+                まずは体験してみる
               </a>
             </div>
           ))}
