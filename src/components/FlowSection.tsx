@@ -38,7 +38,7 @@ const FlowSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">無料体験の流れ</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {steps.map((s) => {
             const Icon = s.icon;
             return (
@@ -58,7 +58,7 @@ const FlowSection = () => {
         </div>
 
         <p className="text-center font-body text-muted-foreground mt-10 leading-relaxed">
-          所要時間は約60分。ウェア・シューズ・タオル・お水は無料でご用意しています。
+          ウェア・シューズ・タオル・お水は無料でご用意しています。
         </p>
       </div>
     </section>
