@@ -1,10 +1,10 @@
-import { Dumbbell, HelpCircle, UtensilsCrossed, Eye } from "lucide-react";
+import { Dumbbell, HelpCircle, UtensilsCrossed, Users } from "lucide-react";
 
 const concerns = [
   { icon: Dumbbell, text: "ジムに通ったけど続かなかった" },
   { icon: HelpCircle, text: "何をすればいいかわからない" },
   { icon: UtensilsCrossed, text: "食事制限がつらくて挫折した" },
-  { icon: Eye, text: "大手ジムは人目が気になる" },
+  { icon: Users, text: "大手ジムは人目が気になる" },
 ];
 
 const ConcernSection = () => {
