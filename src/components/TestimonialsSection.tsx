@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        <div className="mb-12">
+        <div style={{ marginBottom: "80px" }}>
           <h3
             className="font-body text-center"
             style={{ fontSize: "20px", fontWeight: 700, color: "#2C2621", marginBottom: "24px" }}
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                   {img.label}
                 </p>
                 <div className="relative flex justify-center items-center py-4">
-                  <div className="relative w-[240px] md:w-[280px] rounded-[2.5rem] border-[6px] border-foreground/80 bg-foreground/80 shadow-2xl overflow-hidden">
+                  <div className="relative w-[200px] md:w-[260px] rounded-[2.5rem] border-[6px] border-foreground/80 bg-foreground/80 shadow-2xl overflow-hidden">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-foreground/80 rounded-b-2xl z-10" />
                     <div
                       className="overflow-hidden"
@@ -74,7 +74,13 @@ const TestimonialsSection = () => {
                         backgroundColor: "#FFFFFF",
                       }}
                     >
-                      <img src={img.src} alt={img.alt} className="w-full h-auto" loading="lazy" />
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full"
+                        style={{ maxHeight: "500px", objectFit: "contain" }}
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </div>
@@ -89,6 +95,12 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
+        <h3
+          className="font-body text-center"
+          style={{ fontSize: "20px", fontWeight: 700, color: "#2C2621", marginBottom: "32px" }}
+        >
+          通っているお客様の声
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div
