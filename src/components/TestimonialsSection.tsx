@@ -65,7 +65,6 @@ const TestimonialsSection = () => {
                 </p>
                 <div className="relative flex justify-center items-center py-4">
                   <div className="relative w-[200px] md:w-[260px] rounded-[2.5rem] border-[6px] border-foreground/80 bg-foreground/80 shadow-2xl overflow-hidden">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-foreground/80 rounded-b-2xl z-10" />
                     <div
                       className="overflow-hidden"
                       style={{
