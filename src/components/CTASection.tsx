@@ -4,8 +4,8 @@ import { useT } from "@/i18n/LanguageContext";
 const CTASection = () => {
   const { lang, t } = useT();
   const c = t.cta;
-  const trialUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/drop-in";
-  const lineUrl = lang === "ja" ? "https://lin.ee/UMVDzWF" : "https://app.kyoto-salute.com/drop-in";
+  const trialUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/visitor";
+  const lineUrl = lang === "ja" ? "https://lin.ee/UMVDzWF" : "https://app.kyoto-salute.com/visitor";
   return (
     <section id="consultation" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">

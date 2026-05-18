@@ -36,7 +36,7 @@ const PricingSection = () => {
             const isDropIn = idx === allPlans.length - 1;
             const ctaLabel = isDropIn && lang === "ja" ? "Book Now" : p.cta;
             const ctaHref = isDropIn && lang === "ja"
-              ? "https://app.kyoto-salute.com/drop-in"
+              ? "https://app.kyoto-salute.com/visitor"
               : "https://kyoto-salute.lovable.app/trial";
             const unitLabel = isDropIn && lang === "ja" ? " / session" : p.perMonth;
             return (
