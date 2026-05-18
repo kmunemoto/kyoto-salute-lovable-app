@@ -4,7 +4,8 @@ import { useT } from "@/i18n/LanguageContext";
 const icons = [CalendarCheck, ClipboardCheck];
 
 const FlowSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
+  const bookUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/drop-in";
   return (
     <section id="flow" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">
@@ -25,7 +26,7 @@ const FlowSection = () => {
                   {i === 0 ? (
                     <>
                       {t.flow.bookText}
-                      <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="text-primary underline">{t.flow.bookLinkLabel}</a>
+                      <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">{t.flow.bookLinkLabel}</a>
                       {s.description}
                     </>
                   ) : s.description}
