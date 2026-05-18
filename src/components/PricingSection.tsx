@@ -61,6 +61,9 @@ const PricingSection = () => {
                 <a href={ctaHref} target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
                   {ctaLabel}
                 </a>
+                {isDropIn && lang === "ja" && (
+                  <p className="text-sm text-gray-400 text-center mt-2 font-body">※ 外国人観光客向けの単発プランです</p>
+                )}
               </div>
             );
           })}
