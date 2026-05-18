@@ -2,8 +2,9 @@ import heroImage from "@/assets/hero-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const h = t.hero;
+  const trialUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/drop-in";
   return (
     <section className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
@@ -25,7 +26,7 @@ const HeroSection = () => {
             <p className="animate-fade-up animate-delay-200 font-body mb-10 max-w-xl" style={{ fontSize: "12px", color: "#8B7F70" }}>{h.seoNote}</p>
           )}
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
-            <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1">{h.cta1}</a>
+            <a href={trialUrl} target="_blank" rel="noopener noreferrer" className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1">{h.cta1}</a>
             <a href="#features" className="border border-white/70 text-white hover:bg-white/10 transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent flex-1">{h.cta2}</a>
           </div>
         </div>

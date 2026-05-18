@@ -2,8 +2,10 @@ import trialImage from "@/assets/trial-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
 
 const CTASection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const c = t.cta;
+  const trialUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/drop-in";
+  const lineUrl = lang === "ja" ? "https://lin.ee/UMVDzWF" : "https://app.kyoto-salute.com/drop-in";
   return (
     <section id="consultation" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
@@ -24,8 +26,8 @@ const CTASection = () => {
               {c.paragraphs.slice(1).map((p, i) => <p key={i}>{p}</p>)}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 px-10 py-4 text-primary-foreground font-medium rounded-sm transition-colors font-body text-center">{c.webBtn}</a>
-              <a href="https://lin.ee/UMVDzWF" target="_blank" rel="noopener noreferrer" className="border border-primary bg-white px-10 py-4 text-primary font-medium rounded-sm hover:bg-primary/5 transition-colors font-body text-center">{c.lineBtn}</a>
+              <a href={trialUrl} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 px-10 py-4 text-primary-foreground font-medium rounded-sm transition-colors font-body text-center">{c.webBtn}</a>
+              <a href={lineUrl} target="_blank" rel="noopener noreferrer" className="border border-primary bg-white px-10 py-4 text-primary font-medium rounded-sm hover:bg-primary/5 transition-colors font-body text-center">{c.lineBtn}</a>
             </div>
           </div>
         </div>
