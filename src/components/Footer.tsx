@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div className="w-full flex flex-col items-center gap-5">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
-            <Link to={`${prefix}/blog`} className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.blog}</Link>
+            <Link to="/blog" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.blog}</Link>
             <a href="https://kyoto-salute.lovable.app/auth" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.app}</a>
             <a href="https://page.line.me/393blgip" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.line}</a>
           </div>
