@@ -3,7 +3,7 @@ import { useT } from "@/i18n/LanguageContext";
 
 const MobileCTABar = () => {
   const { lang, t } = useT();
-  const ctaUrl = lang === "ja" ? "https://page.line.me/393blgip" : "https://app.kyoto-salute.com/visitor";
+  const ctaUrl = lang === "ja" ? "https://page.line.me/393blgip" : "https://salute-kyoto.lovable.app/visitor";
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
