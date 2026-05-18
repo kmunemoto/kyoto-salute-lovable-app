@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ConcernSection from "@/components/ConcernSection";
@@ -13,15 +14,38 @@ import AccessSection from "@/components/AccessSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
+import { useT } from "@/i18n/LanguageContext";
+
+const BASE = "https://kyoto-salute.com";
 
 const Index = () => {
+  const { lang, t } = useT();
+
   useEffect(() => {
-    document.title =
-      "京都市中京区の格安パーソナルジムならSalute御所南｜無料体験実施中｜河原町丸太町";
-  }, []);
+    document.title = t.meta.title;
+    document.documentElement.lang = lang === "ja" ? "ja" : lang;
+  }, [lang, t]);
+
+  const path = lang === "ja" ? "/" : `/${lang}/`;
+  const ogLocale = lang === "ja" ? "ja_JP" : lang === "en" ? "en_US" : lang === "zh" ? "zh_CN" : "ko_KR";
 
   return (
     <div className="min-h-screen" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
+      <Helmet>
+        <html lang={lang} />
+        <title>{t.meta.title}</title>
+        <meta name="description" content={t.meta.description} />
+        <link rel="canonical" href={`${BASE}${path}`} />
+        <meta property="og:title" content={t.meta.title} />
+        <meta property="og:description" content={t.meta.description} />
+        <meta property="og:url" content={`${BASE}${path}`} />
+        <meta property="og:locale" content={ogLocale} />
+        <link rel="alternate" hrefLang="ja" href={`${BASE}/`} />
+        <link rel="alternate" hrefLang="en" href={`${BASE}/en/`} />
+        <link rel="alternate" hrefLang="zh" href={`${BASE}/zh/`} />
+        <link rel="alternate" hrefLang="ko" href={`${BASE}/ko/`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE}/`} />
+      </Helmet>
       <Header />
       <HeroSection />
       <ConcernSection />

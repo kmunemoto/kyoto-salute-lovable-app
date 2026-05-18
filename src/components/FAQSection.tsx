@@ -1,92 +1,20 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    question: "無料体験ではどんなことをしますか？",
-    answer:
-      "カウンセリングで目標やお悩みをお聞きした後、実際の60分間のパーソナルトレーニングを体験していただきます。トレーニングの進め方や食事のアドバイスも含まれます。ウェアとシューズは無料レンタルがありますので、手ぶらでお越しください。",
-  },
-  {
-    question: "運動経験がないのですが、大丈夫でしょうか？",
-    answer:
-      "もちろん大丈夫です！来店されるほとんどの方が初めての方ばかりです。一人一人の運動経験や体力・目的にあったトレーニングをトレーナーが丁寧に指導いたしますので、安心して挑戦してみてください。",
-  },
-  {
-    question: "持ち物はありますか？",
-    answer:
-      "ウェアや靴に加えてお水もご用意しておりますので、手ぶらでお気軽にお越しいただけます。もちろん、トレーニングウェアなどをご持参いただいても構いません。更衣室もご利用いただけます。",
-  },
-  {
-    question: "どのような方が通っていますか？",
-    answer:
-      "30代〜40代のお客様を中心に、幅広い年代の方にお越しいただいています。男女比も半々くらいで、運動が初めての方や、これから始めたいという方がほとんどです。",
-  },
-  {
-    question: "体験トレーニングはできますか？",
-    answer:
-      "はい、無料の体験トレーニングをご用意しております。ジムの雰囲気やトレーニングを確かめる良い機会ですので、お気軽にご利用ください。",
-  },
-  {
-    question: "プランの有効期限はどうなっていますか？",
-    answer:
-      "プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。例えば、10月15日が1回目のトレーニング日の場合、翌11月14日までが有効期間となります。有効期間内に消化できなかった未消化分のセッションは、翌期間に繰り越されず消滅しますのでご了承ください。",
-  },
-  {
-    question: "最低契約期間はありますか？",
-    answer:
-      "契約期間に縛りはございません。最低1ヶ月から始められますので、ご安心ください。",
-  },
-  {
-    question: "支払日はいつですか？",
-    answer:
-      "ご利用料金は、毎回最初のトレーニング日にお支払いいただいております。",
-  },
-  {
-    question: "利用できる支払い方法は何がありますか？",
-    answer:
-      "現金、各種カード、各種QRコードでのお支払いが可能です。",
-  },
-  {
-    question: "料金以外にかかる費用はありますか？",
-    answer:
-      "一切ありません。入会金・事務手数料は¥0、ウェア・シューズ・タオル・お水もすべて無料レンタルです。月額プランの料金のみで、追加費用なくパーソナルトレーニングを受けられます。",
-  },
-  {
-    question: "最寄り駅はどこですか？",
-    answer:
-      "地下鉄「丸太町」駅から徒歩8分です。烏丸丸太町エリアに位置しており、京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。京都市バス「裁判所前」停留所からは徒歩3分です。",
-  },
-];
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useT } from "@/i18n/LanguageContext";
 
 const FAQSection = () => {
+  const { t } = useT();
   return (
     <section id="faq" className="section-padding bg-background">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Q&A</p>
-          <h2 className="font-heading text-3xl md:text-5xl text-foreground">
-            よくある質問
-          </h2>
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">{t.faq.kicker}</p>
+          <h2 className="font-heading text-3xl md:text-5xl text-foreground">{t.faq.title}</h2>
         </div>
-
         <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border border-border rounded-sm px-6 bg-white data-[state=open]:border-gold/30"
-            >
-              <AccordionTrigger className="text-left font-body text-foreground hover:text-gold hover:no-underline py-5">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground font-body leading-relaxed pb-5">
-                {faq.answer}
-              </AccordionContent>
+          {t.faq.items.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-sm px-6 bg-white data-[state=open]:border-gold/30">
+              <AccordionTrigger className="text-left font-body text-foreground hover:text-gold hover:no-underline py-5">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground font-body leading-relaxed pb-5">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
