@@ -2,9 +2,22 @@ import { Check } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
 
 const PricingSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const p = t.pricing;
-  const allPlans = [...p.plans, p.dropIn];
+  const jaDropInOverride = {
+    name: "Drop-in Plan (Travelers)",
+    price: "¥8,000",
+    perSession: "tax incl. / session",
+    description: "No membership required",
+    features: [
+      "60-min personal training",
+      "No membership required",
+      "Sportswear & shoes provided",
+      "Just walk in",
+    ],
+  };
+  const dropInPlan = lang === "ja" ? jaDropInOverride : p.dropIn;
+  const allPlans = [...p.plans, dropInPlan];
   return (
     <section id="plan" className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
@@ -20,6 +33,12 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {allPlans.map((plan, idx) => {
             const popular = idx === 2;
+            const isDropIn = idx === allPlans.length - 1;
+            const ctaLabel = isDropIn && lang === "ja" ? "Book Now" : p.cta;
+            const ctaHref = isDropIn && lang === "ja"
+              ? "https://app.kyoto-salute.com/drop-in"
+              : "https://kyoto-salute.lovable.app/trial";
+            const unitLabel = isDropIn && lang === "ja" ? " / session" : p.perMonth;
             return (
               <div key={plan.name} className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold bg-white shadow-md" : "border-border bg-white"}`}>
                 {popular && (
@@ -29,7 +48,7 @@ const PricingSection = () => {
                 <p className="text-gym-dark-foreground/50 text-sm mb-4 font-body">{plan.description}</p>
                 <div className="mb-1">
                   <span className="text-3xl font-body font-bold text-gold">{plan.price}</span>
-                  <span className="text-gym-dark-foreground/50 text-sm font-body">{p.perMonth}</span>
+                  <span className="text-gym-dark-foreground/50 text-sm font-body">{unitLabel}</span>
                 </div>
                 <p className="text-gold/70 text-xs mb-6 font-body font-bold">{plan.perSession}</p>
                 <ul className="space-y-3 mb-8">
@@ -39,8 +58,8 @@ const PricingSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
-                  {p.cta}
+                <a href={ctaHref} target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
+                  {ctaLabel}
                 </a>
               </div>
             );
