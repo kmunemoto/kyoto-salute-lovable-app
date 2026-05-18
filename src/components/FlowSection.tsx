@@ -5,7 +5,7 @@ const icons = [CalendarCheck, ClipboardCheck];
 
 const FlowSection = () => {
   const { lang, t } = useT();
-  const bookUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://salute-kyoto.lovable.app/visitor";
+  const bookUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/visitor";
   return (
     <section id="flow" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">
