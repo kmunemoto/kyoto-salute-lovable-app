@@ -11,6 +11,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
 import Tokusho from "./pages/Tokusho.tsx";
 import DropIn from "./pages/DropIn.tsx";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import type { Lang } from "./i18n/translations";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +23,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<LanguageProvider lang={"ja" as Lang}><Index /></LanguageProvider>} />
+          <Route path="/en" element={<LanguageProvider lang={"en" as Lang}><Index /></LanguageProvider>} />
+          <Route path="/zh" element={<LanguageProvider lang={"zh" as Lang}><Index /></LanguageProvider>} />
+          <Route path="/ko" element={<LanguageProvider lang={"ko" as Lang}><Index /></LanguageProvider>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
