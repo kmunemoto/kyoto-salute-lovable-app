@@ -4,7 +4,6 @@ import { useT } from "@/i18n/LanguageContext";
 const Footer = () => {
   const { lang, t } = useT();
   const f = t.footer;
-  const prefix = lang === "ja" ? "" : `/${lang}`;
   return (
     <footer className="bg-footer text-footer-foreground border-t border-gold/10 px-6 py-12 pb-32 md:pb-12">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
