@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-footer text-footer-foreground border-t border-gold/10 px-6 py-12 pb-32 md:pb-12">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
         <div>
-          <span className="font-heading text-2xl text-footer-foreground"><span className="text-gold">Salute</span>{lang === "ja" ? "御所南" : " Goshonan"}</span>
+          <span className="font-heading text-2xl text-footer-foreground"><span className="text-gold">Salute</span>{lang === "ja" ? "御所南" : " Goshominami"}</span>
           <p className="text-footer-foreground/50 text-xs mt-2 font-body">{f.address}</p>
         </div>
         <div className="w-full flex flex-col items-center gap-5">

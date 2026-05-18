@@ -4,7 +4,7 @@ import { Check, MapPin, Train, Instagram, Mail, MessageCircle } from "lucide-rea
 
 const DropIn = () => {
   useEffect(() => {
-    document.title = "Drop-in Personal Training in Kyoto | Salute Goshonan";
+    document.title = "Drop-in Personal Training in Kyoto | Salute Goshominami";
   }, []);
 
   const included = [
@@ -21,7 +21,7 @@ const DropIn = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <a href="/drop-in" className="font-heading text-xl">
-            <span className="text-gold">Salute</span> Goshonan
+            <span className="text-gold">Salute</span> Goshominami
           </a>
           <Link to="/" className="text-sm text-foreground/80 hover:text-gold transition-colors font-body">
             日本語サイトへ →
@@ -121,7 +121,7 @@ const DropIn = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Salute Goshonan location map"
+                title="Salute Goshominami location map"
               />
             </div>
             <div className="space-y-6">
@@ -130,7 +130,7 @@ const DropIn = () => {
                 <div>
                   <h3 className="font-body font-semibold mb-1">Address</h3>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Plaza Goshonan 2F, 533-1 Bishamoncho,<br />
+                    Plaza Goshominami 2F, 533-1 Bishamoncho,<br />
                     Nakagyo-ku, Kyoto 604-0981
                   </p>
                 </div>
@@ -175,7 +175,7 @@ const DropIn = () => {
       <footer className="bg-footer text-footer-foreground px-6 py-12">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="font-heading text-2xl">
-            <span className="text-gold">Salute</span> Goshonan
+            <span className="text-gold">Salute</span> Goshominami
           </div>
           <div className="flex justify-center gap-6">
             <a
@@ -202,7 +202,7 @@ const DropIn = () => {
             </a>
           </div>
           <p className="text-footer-foreground/40 text-xs font-body">
-            © {new Date().getFullYear()} Salute Goshonan
+            © {new Date().getFullYear()} Salute Goshominami
           </p>
         </div>
       </footer>

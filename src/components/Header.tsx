@@ -23,7 +23,7 @@ const Header = () => {
     <header className="fixed left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" style={{ top: "var(--banner-offset, 0px)" }}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href={prefix || "/"} className="font-heading text-xl text-foreground">
-          <span className="text-gold">Salute</span>{lang === "ja" ? "御所南" : " Goshonan"}
+          <span className="text-gold">Salute</span>{lang === "ja" ? "御所南" : " Goshominami"}
         </a>
 
         <nav className="hidden md:flex items-center gap-6">
