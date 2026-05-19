@@ -5,13 +5,12 @@ const PricingSection = () => {
   const { lang, t } = useT();
   const p = t.pricing;
   const jaDropInOverride = {
-    name: "Drop-in Plan (Travelers)",
+    name: "Drop-in Plan",
     price: "¥8,000",
     perSession: "tax incl. / session",
     description: "No membership required",
     features: [
       "60-min personal training",
-      "No membership required",
       "Sportswear & shoes provided",
       "Just walk in",
     ],
