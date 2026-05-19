@@ -5,13 +5,12 @@ const PricingSection = () => {
   const { lang, t } = useT();
   const p = t.pricing;
   const jaDropInOverride = {
-    name: "Drop-in Plan (Travelers)",
+    name: "Drop-in Plan",
     price: "¥8,000",
     perSession: "tax incl. / session",
     description: "No membership required",
     features: [
       "60-min personal training",
-      "No membership required",
       "Sportswear & shoes provided",
       "Just walk in",
     ],
@@ -61,9 +60,6 @@ const PricingSection = () => {
                 <a href={ctaHref} target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
                   {ctaLabel}
                 </a>
-                {isDropIn && lang === "ja" && (
-                  <p className="text-sm text-gray-400 text-center mt-2 font-body">※ 外国人観光客向けのプランです</p>
-                )}
               </div>
             );
           })}
