@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
               <div key={i} className="w-full" style={{ maxWidth: "480px" }}>
                 <p className="font-body text-center" style={{ fontSize: "14px", fontWeight: 600, color: "#2C2621", marginBottom: "8px" }}>{img.label}</p>
                 <p className="font-body text-center" style={{ fontSize: "20px", fontWeight: 700, color: "#0ABAB5", marginBottom: "16px" }}>
-                  {i === 0 ? "体重 -4.8kg　体脂肪率 -3.2%" : "体重 +1.5kg（筋肉増加）　体脂肪率 -4.1%"}
+                  {i === 0 ? v.dietResult : v.bodymakeResult}
                 </p>
                 <div className="relative flex justify-center items-center py-4">
                   <div className="relative w-[200px] md:w-[260px] rounded-[2.5rem] border-[6px] border-foreground/80 bg-foreground/80 shadow-2xl overflow-hidden">
