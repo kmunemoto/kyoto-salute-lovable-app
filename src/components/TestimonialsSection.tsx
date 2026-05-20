@@ -26,12 +26,11 @@ const TestimonialsSection = () => {
         </div>
 
         <div style={{ marginBottom: "80px" }}>
-          <h3 className="font-body text-center" style={{ fontSize: "20px", fontWeight: 700, color: "#2C2621", marginBottom: "8px" }}>{v.changesTitle}</h3>
-          <p className="font-body text-center" style={{ fontSize: "14px", color: "#5A5148", marginBottom: "32px" }}>{v.changesSubtitle}</p>
+          <h3 className="font-body text-center" style={{ fontSize: "20px", fontWeight: 700, color: "#2C2621", marginBottom: "24px" }}>{v.changesTitle}</h3>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             {[
-              { src: dietChart, label: v.dietLabel, results: v.dietResults },
-              { src: bodymakeChart, label: v.bodymakeLabel, results: v.bodymakeResults },
+              { src: dietChart, label: v.dietLabel },
+              { src: bodymakeChart, label: v.bodymakeLabel },
             ].map((img, i) => (
               <div key={i} className="w-full" style={{ maxWidth: "480px" }}>
                 <p className="font-body text-center" style={{ fontSize: "14px", fontWeight: 600, color: "#2C2621", marginBottom: "8px" }}>{img.label}</p>
@@ -41,11 +40,6 @@ const TestimonialsSection = () => {
                       <img src={img.src} alt={img.label} className="w-full" style={{ maxHeight: "500px", objectFit: "contain" }} loading="lazy" />
                     </div>
                   </div>
-                </div>
-                <div className="mx-auto mt-4 rounded-md border border-border bg-white px-5 py-4 text-center" style={{ maxWidth: "360px" }}>
-                  <p className="font-heading" style={{ fontSize: "28px", lineHeight: 1.2, color: "#0ABAB5", fontWeight: 700 }}>{img.results.main}</p>
-                  <p className="font-body mt-1" style={{ fontSize: "16px", color: "#2C2621", fontWeight: 600 }}>{img.results.sub}</p>
-                  <p className="font-body mt-2" style={{ fontSize: "12px", color: "#5A5148", lineHeight: 1.6 }}>{img.results.note}</p>
                 </div>
                 <p className="font-body text-center mt-2" style={{ fontSize: "11px", color: "#c4b8ab" }}>{v.disclaimer}</p>
               </div>
