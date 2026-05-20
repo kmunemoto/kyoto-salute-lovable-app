@@ -2,9 +2,9 @@ import heroImage from "@/assets/hero-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
-  const { lang, t } = useT();
+  const { t } = useT();
   const h = t.hero;
-  const trialUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/visitor";
+  const trialUrl = "https://app.kyoto-salute.com/trial";
   return (
     <section className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
