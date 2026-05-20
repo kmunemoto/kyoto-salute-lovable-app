@@ -4,8 +4,8 @@ import { useT } from "@/i18n/LanguageContext";
 const icons = [CalendarCheck, ClipboardCheck];
 
 const FlowSection = () => {
-  const { lang, t } = useT();
-  const bookUrl = lang === "ja" ? "https://kyoto-salute.lovable.app/trial" : "https://app.kyoto-salute.com/visitor";
+  const { t } = useT();
+  const bookUrl = "https://app.kyoto-salute.com/trial";
   return (
     <section id="flow" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">

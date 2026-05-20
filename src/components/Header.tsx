@@ -34,7 +34,7 @@ const Header = () => {
             <Link to="/" className="text-sm text-foreground/80 hover:text-gold transition-colors font-body">日本語サイトへ</Link>
           )}
           <LanguageSwitcher />
-          <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity">{t.header.ctaBtn}</a>
+          <a href="https://app.kyoto-salute.com/trial" target="_blank" rel="noopener noreferrer" className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity">{t.header.ctaBtn}</a>
         </nav>
 
         <div className="flex md:hidden items-center gap-3">
@@ -53,7 +53,7 @@ const Header = () => {
           {lang !== "ja" && (
             <Link to="/" onClick={() => setIsOpen(false)} className="block text-foreground/80 hover:text-gold transition-colors font-body">日本語サイトへ</Link>
           )}
-          <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="block text-center gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm">{t.header.ctaBtn}</a>
+          <a href="https://app.kyoto-salute.com/trial" target="_blank" rel="noopener noreferrer" className="block text-center gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm">{t.header.ctaBtn}</a>
         </nav>
       )}
     </header>
