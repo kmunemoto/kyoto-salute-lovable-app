@@ -56,7 +56,7 @@ const FeaturesSection = () => {
           <p className="text-muted-foreground font-body text-base leading-relaxed max-w-2xl mx-auto">{t.features.note}</p>
         </div>
         <div className="text-center mt-12">
-          <a href="https://kyoto-salute.lovable.app/trial" target="_blank" rel="noopener noreferrer" className="inline-block gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity">{t.features.cta}</a>
+          <a href="https://app.kyoto-salute.com/trial" target="_blank" rel="noopener noreferrer" className="inline-block gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity">{t.features.cta}</a>
         </div>
       </div>
     </section>
