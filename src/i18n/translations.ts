@@ -142,7 +142,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "完全私密的训练空间", description: "不会与其他会员碰面。在完全私密的空间里，与教练进行一对一训练，初学者也能安心练习。" },
       { title: "用数字看见自己的进步", description: "专用APP自动记录每次训练与身体变化，图表与月度报告帮助您持续保持动力。" },
       { title: "饮食方面也获得专业建议", description: "教练同时具备营养师资格，不仅指导训练，也协助您调整饮食。不会要求极端节食，建议贴近日常生活。" },
-      { title: "通俗易懂的价格，便于长期坚持", description: "每次4,000日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。让您轻松开始、长期坚持。" },
+      { title: "容易坚持的价格", description: "每次4,000日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。负担较小、容易坚持的价格，让您轻松开始并长期坚持。" },
     ], note: "所有方案均为一对一指导，并根据每位客人量身定制训练内容。", cta: "预约免费体验" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,000~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
