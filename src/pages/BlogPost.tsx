@@ -48,20 +48,37 @@ const BlogPost = () => {
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
-              <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
-                <p className="font-heading text-2xl text-foreground">無料体験はこちら</p>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                  京都市中京区・御所南でパーソナルトレーニングを始めたい方は、まずは無料体験で雰囲気をご確認ください。
-                </p>
-                <a
-                  href="https://page.line.me/393blgip"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
-                >
-                  LINEで無料体験を予約
-                </a>
-              </div>
+              {post.category === "For Visitors" ? (
+                <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
+                  <p className="font-heading text-2xl text-foreground">Book a Drop-in Session</p>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                    Visiting Kyoto? Try a personal training session. ¥8,000 per session. All equipment provided.
+                  </p>
+                  <a
+                    href="https://app.kyoto-salute.com/visitor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              ) : (
+                <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
+                  <p className="font-heading text-2xl text-foreground">無料体験はこちら</p>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                    京都市中京区・御所南でパーソナルトレーニングを始めたい方は、まずは無料体験で雰囲気をご確認ください。
+                  </p>
+                  <a
+                    href="https://app.kyoto-salute.com/trial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
+                  >
+                    初回無料体験を予約する
+                  </a>
+                </div>
+              )}
             </>
           ) : (
             <div className="text-center">
