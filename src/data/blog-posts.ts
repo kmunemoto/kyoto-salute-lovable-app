@@ -9,6 +9,7 @@ import blogMarutamachi from "@/assets/blog/marutamachi.jpg";
 import blogDeskWork from "@/assets/blog/desk-work.jpg";
 import blogFortiesDiet from "@/assets/blog/forties-diet.jpg";
 import blogWomenGym from "@/assets/blog/women-gym.jpg";
+import blogDropIn from "@/assets/blog/drop-in.png";
 
 export type BlogPost = {
   slug: string;
