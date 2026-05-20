@@ -49,7 +49,7 @@ export const translations: Record<Lang, Dict> = {
       "Salute御所南では、そうした悩みを根本から解決するために、お客様一人ひとりのライフスタイルに寄り添った持続可能なダイエットプランと結果につながる運動習慣のサポートを提供しています。",
       "健康的に、そして美しく変わるための第一歩を、一緒に踏み出しましょう。",
     ] },
-    voice: { kicker: "Voice", title: "お客様の声", googleReviews: "Google口コミ 17件", changesTitle: "お客様の変化", voiceTitle: "通っているお客様の声", disclaimer: "※効果には個人差があります", dietLabel: "30代女性・ダイエット", bodymakeLabel: "40代男性・ボディメイク", testimonials: [
+    voice: { kicker: "Voice", title: "お客様の声", googleReviews: "Google口コミ 17件", changesTitle: "お客様の変化", changesSubtitle: "3ヶ月で見える身体の変化", voiceTitle: "通っているお客様の声", disclaimer: "※効果には個人差があります", dietLabel: "30代女性・ダイエット", bodymakeLabel: "40代男性・ボディメイク", dietResults: { main: "3ヶ月で体重 -4.8kg", sub: "体脂肪率 -3.2%", note: "無理な食事制限ではなく、運動習慣と食事改善で変化" }, bodymakeResults: { main: "3ヶ月で体脂肪率 -2.4%", sub: "体重 +0.9kg", note: "筋肉量を意識しながら、引き締まった身体づくりへ" }, testimonials: [
       { label: "30代女性・会社員", comment: "的確にトレーナーさんに指導していただけるところがパーソナルトレーニングならではの良いところで、続けやすい料金と回数設定なので初心者でも始めやすいです。" },
       { label: "40代男性・デスクワーク", comment: "通い始めて4か月ほどになります。毎回同じトレーニングではなく少しずつ変えて調整してもらえるので毎回効果を感じています。" },
       { label: "30代女性・会社員", comment: "筋トレ初心者ですが、楽しく通っています。ウェア・シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。" },
@@ -100,7 +100,7 @@ export const translations: Record<Lang, Dict> = {
       "At Salute Goshominami, we solve these problems at the root — building training and eating habits that fit your lifestyle and that you can actually maintain.",
       "Let's take the first step together toward a healthier, stronger body.",
     ] },
-    voice: { kicker: "Voice", title: "Client Results & Reviews", googleReviews: "17 Google Reviews", changesTitle: "Client Transformations", voiceTitle: "What Our Clients Say", disclaimer: "*Results vary by individual", dietLabel: "Female, 30s — Weight loss", bodymakeLabel: "Male, 40s — Body shaping", testimonials: [
+    voice: { kicker: "Voice", title: "Client Results & Reviews", googleReviews: "17 Google Reviews", changesTitle: "Client Transformations", changesSubtitle: "Visible changes in 3 months", voiceTitle: "What Our Clients Say", disclaimer: "*Results may vary by individual", dietLabel: "Female, 30s — Weight loss", bodymakeLabel: "Male, 40s — Body shaping", dietResults: { main: "-4.8kg body weight in 3 months", sub: "Body fat -3.2%", note: "Achieved through exercise habits and nutrition improvements, without extreme dieting" }, bodymakeResults: { main: "-2.4% body fat in 3 months", sub: "Body weight +0.9kg", note: "Building a leaner body while maintaining and improving muscle" }, testimonials: [
       { label: "Female, 30s — Office Worker", comment: "The trainer gives precise, personal guidance — exactly what makes 1-on-1 training worth it. The pricing and session counts make it easy to start, even as a beginner." },
       { label: "Male, 40s — Desk Job", comment: "I've been training here for about 4 months. The sessions are always adjusted, so I keep feeling real progress every time." },
       { label: "Female, 30s — Office Worker", comment: "I'm new to strength training but really enjoying it. Sportswear and shoes are provided, so I can come straight from work without bringing anything." },
@@ -152,7 +152,7 @@ export const translations: Record<Lang, Dict> = {
       "在Salute御所南，我们会结合每位客户的生活方式，提供能够长期坚持的训练计划，以及合理可行的饮食建议。",
       "让我们一起迈出健康改变身体的第一步。",
     ] },
-    voice: { kicker: "Voice", title: "客户的变化与评价", googleReviews: "Google评价 17条", changesTitle: "客户的变化", voiceTitle: "客户的评价", disclaimer: "※效果因人而异", dietLabel: "30多岁女性・减脂", bodymakeLabel: "40多岁男性・塑形", testimonials: [
+    voice: { kicker: "Voice", title: "客户的变化与评价", googleReviews: "Google评价 17条", changesTitle: "客户的变化", changesSubtitle: "3个月内可见的身体变化", voiceTitle: "客户的评价", disclaimer: "※效果因人而异", dietLabel: "30多岁女性・减脂", bodymakeLabel: "40多岁男性・塑形", dietResults: { main: "3个月体重 -4.8kg", sub: "体脂率 -3.2%", note: "并非极端节食，而是通过运动习惯与饮食改善带来的变化" }, bodymakeResults: { main: "3个月体脂率 -2.4%", sub: "体重 +0.9kg", note: "在保持肌肉量的同时，打造更紧致的身材" }, testimonials: [
       { label: "30多岁女性・上班族", comment: "教练能根据我的情况给出精准建议，这正是一对一训练的优势。价格和次数也都很合理，作为新手也很容易开始。" },
       { label: "40多岁男性・办公室工作", comment: "已经训练4个月左右。每次训练内容都会有调整，每次都能感受到进步。" },
       { label: "30多岁女性・上班族", comment: "我是健身新手，但每次都很开心。运动服和鞋子都免费提供，可以空手前来非常方便。" },
@@ -204,7 +204,7 @@ export const translations: Record<Lang, Dict> = {
       "Salute 고쇼미나미에서는 회원님 한 분 한 분의 라이프스타일에 맞춰, 무리 없이 지속할 수 있는 트레이닝과 결과로 이어지는 식습관 개선을 함께 제안합니다.",
       "건강하고 멋진 몸을 만들기 위한 첫걸음을 함께 시작해 봅시다.",
     ] },
-    voice: { kicker: "Voice", title: "고객의 변화와 후기", googleReviews: "Google 후기 17건", changesTitle: "고객의 변화", voiceTitle: "다니고 계신 고객의 후기", disclaimer: "※효과에는 개인차가 있습니다", dietLabel: "30대 여성・다이어트", bodymakeLabel: "40대 남성・바디 메이킹", testimonials: [
+    voice: { kicker: "Voice", title: "고객의 변화와 후기", googleReviews: "Google 후기 17건", changesTitle: "고객의 변화", changesSubtitle: "3개월 만에 보이는 몸의 변화", voiceTitle: "다니고 계신 고객의 후기", disclaimer: "※효과에는 개인차가 있습니다", dietLabel: "30대 여성・다이어트", bodymakeLabel: "40대 남성・바디 메이킹", dietResults: { main: "3개월 만에 체중 -4.8kg", sub: "체지방률 -3.2%", note: "무리한 식단 제한이 아닌, 운동 습관과 식단 개선으로 만든 변화" }, bodymakeResults: { main: "3개월 만에 체지방률 -2.4%", sub: "체중 +0.9kg", note: "근육량을 의식하면서 탄탄한 몸을 만들어가는 과정" }, testimonials: [
       { label: "30대 여성・회사원", comment: "저에게 맞춰 정확하게 지도해 주시는 점이 1:1 퍼스널 트레이닝의 장점이라고 느꼈습니다. 가격과 횟수도 부담이 적어 초보자도 시작하기 좋습니다." },
       { label: "40대 남성・사무직", comment: "다닌 지 4개월 정도 되었습니다. 매번 같은 운동만 하지 않고 조금씩 조정해 주셔서 매번 효과를 체감하고 있습니다." },
       { label: "30대 여성・회사원", comment: "근력 운동은 처음이지만 즐겁게 다니고 있어요. 운동복과 신발이 무료라 빈손으로 와도 되어 일정 사이에 들르기에도 편합니다." },
