@@ -24,6 +24,63 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "drop-in-personal-training-kyoto",
+    title: "Drop-in Personal Training in Kyoto: Stay Fit While Traveling | ¥8,000/Session",
+    date: "2026-06-20",
+    category: "For Visitors",
+    readTime: "4 min",
+    thumbnail: blogDropIn,
+    metaDescription:
+      "Looking for a personal training gym in Kyoto? Salute Goshominami offers drop-in sessions for travelers. ¥8,000 per session. All sportswear provided. No membership needed. 8 min from Marutamachi Station.",
+    content: `
+    <p>Traveling to Kyoto and don't want to skip your workout? You don't have to.</p>
+    <p>Salute Goshominami is a private personal training gym in Kyoto's Nakagyo-ku district, and we welcome travelers for drop-in sessions — no membership, no sign-up, no hassle.</p>
+    <h2>What Is a Drop-in Session?</h2>
+    <p>A drop-in session is a single personal training session designed for visitors and travelers. You book one session, show up, train with a private trainer, and that's it. No contracts, no commitments.</p>
+    <p>Each session is 60 minutes of 1-on-1 training with a certified nutritionist trainer who will customize the workout to your fitness level and goals.</p>
+    <h2>What's Included</h2>
+    <p>Everything you need is provided at no extra cost:</p>
+    <ul>
+      <li>60-minute private personal training session</li>
+      <li>Training wear (top and bottom)</li>
+      <li>Training shoes</li>
+      <li>Towel</li>
+      <li>Water</li>
+    </ul>
+    <p>Just walk in with nothing — we've got you covered. This is perfect if you're coming straight from sightseeing or your hotel.</p>
+    <h2>How Much Does It Cost?</h2>
+    <p>A drop-in session is <strong>¥8,000 per session</strong> (approximately $55 USD). There is no enrollment fee, no hidden charges. You pay at the gym on the day of your session. We accept both cash and credit card.</p>
+    <h2>Where Is the Gym?</h2>
+    <p>Salute Goshominami is located in the Goshominami area of Nakagyo-ku, one of Kyoto's most pleasant neighborhoods near the Imperial Palace.</p>
+    <p><strong>Address:</strong> Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto 604-0981</p>
+    <p><strong>Access:</strong> 8-minute walk from Marutamachi Station (Karasuma Subway Line, Exit 4). Walk east along Marutamachi-dori street. Also 8 minutes from Keihan Jingu-Marutamachi Station.</p>
+    <p>The gym is just a short walk from Kyoto Imperial Palace, making it easy to combine a workout with sightseeing in the area.</p>
+    <h2>What to Expect During Your Session</h2>
+    <p>Here's what a typical drop-in session looks like:</p>
+    <p><strong>Step 1: Brief consultation (5 min)</strong> — Your trainer will ask about your fitness goals, any injuries, and what you'd like to focus on.</p>
+    <p><strong>Step 2: Training (50 min)</strong> — A fully customized workout based on your goals. Whether you want strength training, fat burning, posture correction, or just a good sweat, your trainer will design the perfect session.</p>
+    <p><strong>Step 3: Cool down & advice (5 min)</strong> — Stretching and quick nutrition tips from our certified nutritionist trainer.</p>
+    <h2>Do You Speak English?</h2>
+    <p>Our trainer speaks basic English — enough to guide you through exercises, explain form, and communicate during the session. For more detailed conversations, we use translation tools to make sure nothing gets lost.</p>
+    <h2>Why Train at Salute Goshominami?</h2>
+    <p>Most gyms in Kyoto require a membership or don't accept walk-ins. Salute Goshominami is one of the few personal training gyms in Kyoto that offers single-session drop-ins specifically for travelers.</p>
+    <p>Here's what makes us different:</p>
+    <ul>
+      <li><strong>Completely private</strong> — No other clients. Just you and your trainer.</li>
+      <li><strong>Everything provided</strong> — Walk in empty-handed.</li>
+      <li><strong>No pressure</strong> — One session, no membership pitch.</li>
+      <li><strong>Great location</strong> — Near Kyoto Imperial Palace, easy access by subway.</li>
+      <li><strong>Certified trainer</strong> — Nutritionist-qualified with 140+ clients per month.</li>
+    </ul>
+    <h2>How to Book</h2>
+    <p>Booking is simple. Visit our <a href="https://app.kyoto-salute.com/visitor" style="color:#0ABAB5;text-decoration:underline;">online booking page</a>, pick your preferred date and time from the available slots, and submit. We'll confirm your booking within 24 hours.</p>
+    <p>You can also DM us on <a href="https://www.instagram.com/salute_goshominami/" style="color:#0ABAB5;text-decoration:underline;">Instagram</a>.</p>
+    <h2>Make Kyoto Part of Your Fitness Journey</h2>
+    <p>Traveling doesn't have to mean skipping your training. Whether you're in Kyoto for a weekend or a week, a drop-in session at Salute Goshominami is the easiest way to stay on track — and maybe even try something new.</p>
+    <p>Book your session today and experience personal training in one of Japan's most beautiful cities.</p>
+    `,
+  },
+  {
     slug: "personal-gym-for-women-kyoto",
     title: "女性がパーソナルジムに通うメリット5つ｜京都で女性に選ばれるジムの特徴",
     date: "2026-06-16",
