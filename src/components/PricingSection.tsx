@@ -34,9 +34,9 @@ const PricingSection = () => {
             const popular = idx === 2;
             const isDropIn = idx === allPlans.length - 1;
             const ctaLabel = isDropIn && lang === "ja" ? "Book Now" : p.cta;
-            const ctaHref = isDropIn && lang === "ja"
+            const ctaHref = isDropIn
               ? "https://app.kyoto-salute.com/visitor"
-              : "https://kyoto-salute.lovable.app/trial";
+              : "https://app.kyoto-salute.com/trial";
             const unitLabel = isDropIn && lang === "ja" ? " / session" : p.perMonth;
             return (
               <div key={plan.name} className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold bg-white shadow-md" : "border-border bg-white"}`}>
