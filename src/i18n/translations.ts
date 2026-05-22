@@ -1,9 +1,10 @@
-export type Lang = "ja" | "en" | "zh" | "ko";
+export type Lang = "ja" | "en" | "zh" | "zhTW" | "ko";
 
 export const LANGS: { code: Lang; label: string }[] = [
   { code: "ja", label: "日本語" },
   { code: "en", label: "English" },
-  { code: "zh", label: "中文" },
+  { code: "zh", label: "简体中文" },
+  { code: "zhTW", label: "繁體中文" },
   { code: "ko", label: "한국어" },
 ];
 
