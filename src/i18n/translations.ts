@@ -43,7 +43,7 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,000〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
-    trainer: { kicker: "Trainer", title: "トレーナー紹介", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 代表トレーナー", qualLabel: "保有資格", qual: "栄養士", careerLabel: "経歴", career: "四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。", messageLabel: "メッセージ", message: "「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」", greetingLabel: "トレーナーからのご挨拶", greetingParagraphs: [
+    trainer: { kicker: "Trainer", title: "トレーナー紹介", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 代表トレーナー", qualLabel: "保有資格", qual: "栄養士", careerLabel: "経歴", career: "四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。また、フィジーク大会への出場経験を持ち、減量から体づくりまでのプロセスを自身の体で経験。その実体験を、運動が初めての方一人ひとりに合わせた指導に活かしている。", messageLabel: "メッセージ", message: "「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」", greetingLabel: "トレーナーからのご挨拶", greetingParagraphs: [
       "これまで多くのお客様のダイエット指導を通じて、共通する2つの悩みに向き合ってきました。それは、「自分に合ったダイエット法がわからない」、そして「運動が続かない」という問題です。",
       "自己流のダイエット法に挑戦し、一時的に体重を落とせても、無理な食事制限や誤った運動方法で代謝が低下し、停滞期に突入。結果としてリバウンドを繰り返し、以前よりも体重が増えてしまう…。これは多くの方が経験する悪循環です。さらに、体重は減ったものの見た目に大きな変化が現れないと感じる方も少なくありません。",
       "Salute御所南では、そうした悩みを根本から解決するために、お客様一人ひとりのライフスタイルに寄り添った持続可能なダイエットプランと結果につながる運動習慣のサポートを提供しています。",
@@ -95,7 +95,7 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,000~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
-    trainer: { kicker: "Trainer", title: "Your Trainer", name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qualLabel: "Qualifications", qual: "Certified Nutritionist", careerLabel: "Career", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024.", messageLabel: "Message", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingLabel: "A Word from Your Trainer", greetingParagraphs: [
+    trainer: { kicker: "Trainer", title: "Your Trainer", name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qualLabel: "Qualifications", qual: "Certified Nutritionist", careerLabel: "Career", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024. He has also competed in a physique competition, experiencing the full body-making process firsthand — from cutting to conditioning — and brings that experience to personalized guidance for every client, including those new to exercise.", messageLabel: "Message", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingLabel: "A Word from Your Trainer", greetingParagraphs: [
       "Through years of supporting clients, I've heard two concerns repeatedly: \"I don't know what works for me\" and \"I can't keep it up.\"",
       "At Salute Goshominami, we solve these problems at the root — building training and eating habits that fit your lifestyle and that you can actually maintain.",
       "Let's take the first step together toward a healthier, stronger body.",
@@ -147,7 +147,7 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,000~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
-    trainer: { kicker: "Trainer", title: "教练介绍", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教练", qualLabel: "资格", qual: "营养师", careerLabel: "经历", career: "曾在四条乌丸的私人教练健身房担任店长，月指导140组以上客户。2024年11月起担任Salute御所南主教练。", messageLabel: "留言", message: "「不擅长运动的朋友、第一次来健身房的朋友，都可以放心。我会全力支持您达成目标！」", greetingLabel: "教练寄语", greetingParagraphs: [
+    trainer: { kicker: "Trainer", title: "教练介绍", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教练", qualLabel: "资格", qual: "营养师", careerLabel: "经历", career: "曾在四条乌丸的私人教练健身房担任店长，月指导140组以上客户。2024年11月起担任Salute御所南主教练。此外，他还拥有健体比赛的参赛经验，亲身经历了从减脂到塑形的完整过程，并将这份经验运用于针对每位客户（包括运动初学者）的个性化指导。", messageLabel: "留言", message: "「不擅长运动的朋友、第一次来健身房的朋友，都可以放心。我会全力支持您达成目标！」", greetingLabel: "教练寄语", greetingParagraphs: [
       "在长期指导客户的过程中，我经常听到两个共同的困扰：「不知道哪种方法适合自己」、「无法长期坚持」。",
       "在Salute御所南，我们会结合每位客户的生活方式，提供能够长期坚持的训练计划，以及合理可行的饮食建议。",
       "让我们一起迈出健康改变身体的第一步。",
@@ -199,7 +199,7 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,000~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
-    trainer: { kicker: "Trainer", title: "트레이너 소개", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute 고쇼미나미 대표 트레이너", qualLabel: "자격", qual: "영양사", careerLabel: "경력", career: "시조 카라스마의 퍼스널 트레이닝 짐에서 점장으로 근무. 월 140팀 이상 지도 경험. 2024년 11월부터 Salute 고쇼미나미 트레이너로 부임.", messageLabel: "메시지", message: "「운동이 익숙하지 않으신 분, 헬스장이 처음이신 분도 안심하세요. 여러분의 목표를 향해 전력으로 서포트해 드리겠습니다!」", greetingLabel: "트레이너 인사말", greetingParagraphs: [
+    trainer: { kicker: "Trainer", title: "트레이너 소개", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute 고쇼미나미 대표 트레이너", qualLabel: "자격", qual: "영양사", careerLabel: "경력", career: "시조 카라스마의 퍼스널 트레이닝 짐에서 점장으로 근무. 월 140팀 이상 지도 경험. 2024년 11월부터 Salute 고쇼미나미 트레이너로 부임. 또한 피지크 대회 출전 경험이 있어 감량부터 몸만들기까지의 과정을 직접 경험했으며, 그 경험을 운동이 처음이신 분 한 분 한 분에게 맞춘 지도에 활용하고 있다.", messageLabel: "메시지", message: "「운동이 익숙하지 않으신 분, 헬스장이 처음이신 분도 안심하세요. 여러분의 목표를 향해 전력으로 서포트해 드리겠습니다!」", greetingLabel: "트레이너 인사말", greetingParagraphs: [
       "오랫동안 많은 고객의 다이어트를 지도해 오면서, 공통된 두 가지 고민을 자주 들어 왔습니다. 「나에게 맞는 방법을 모르겠다」, 그리고 「운동을 꾸준히 이어가기 어렵다」는 것입니다.",
       "Salute 고쇼미나미에서는 회원님 한 분 한 분의 라이프스타일에 맞춰, 무리 없이 지속할 수 있는 트레이닝과 결과로 이어지는 식습관 개선을 함께 제안합니다.",
       "건강하고 멋진 몸을 만들기 위한 첫걸음을 함께 시작해 봅시다.",
