@@ -17,10 +17,10 @@ const LanguageSwitcher = () => {
   const switchTo = (target: Lang) => {
     // Strip current lang prefix from pathname
     let path = location.pathname;
-    const m = path.match(/^\/(en|zh|ko)(\/.*)?$/);
+    const m = path.match(/^\/(en|zh-tw|zh|ko)(\/.*)?$/);
     if (m) path = m[2] || "/";
-    const base = target === "ja" ? "" : `/${target}`;
-    const newPath = (base + (path === "/" ? "" : path)) || "/";
+    const prefix = target === "ja" ? "" : target === "zhTW" ? "/zh-tw" : `/${target}`;
+    const newPath = (prefix + (path === "/" ? "" : path)) || "/";
     navigate(newPath + location.hash);
   };
 

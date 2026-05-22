@@ -23,11 +23,17 @@ const Index = () => {
 
   useEffect(() => {
     document.title = t.meta.title;
-    document.documentElement.lang = lang === "ja" ? "ja" : lang;
+    document.documentElement.lang =
+      lang === "ja" ? "ja" : lang === "zh" ? "zh-Hans" : lang === "zhTW" ? "zh-Hant" : lang;
   }, [lang, t]);
 
-  const path = lang === "ja" ? "/" : `/${lang}/`;
-  const ogLocale = lang === "ja" ? "ja_JP" : lang === "en" ? "en_US" : lang === "zh" ? "zh_CN" : "ko_KR";
+  const path = lang === "ja" ? "/" : lang === "zhTW" ? "/zh-tw/" : `/${lang}/`;
+  const ogLocale =
+    lang === "ja" ? "ja_JP"
+    : lang === "en" ? "en_US"
+    : lang === "zh" ? "zh_CN"
+    : lang === "zhTW" ? "zh_TW"
+    : "ko_KR";
 
   return (
     <div className="min-h-screen" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
@@ -42,7 +48,8 @@ const Index = () => {
         <meta property="og:locale" content={ogLocale} />
         <link rel="alternate" hrefLang="ja" href={`${BASE}/`} />
         <link rel="alternate" hrefLang="en" href={`${BASE}/en/`} />
-        <link rel="alternate" hrefLang="zh" href={`${BASE}/zh/`} />
+        <link rel="alternate" hrefLang="zh-Hans" href={`${BASE}/zh/`} />
+        <link rel="alternate" hrefLang="zh-Hant" href={`${BASE}/zh-tw/`} />
         <link rel="alternate" hrefLang="ko" href={`${BASE}/ko/`} />
         <link rel="alternate" hrefLang="x-default" href={`${BASE}/`} />
       </Helmet>

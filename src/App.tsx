@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/" element={<LanguageProvider lang={"ja" as Lang}><Index /></LanguageProvider>} />
           <Route path="/en" element={<LanguageProvider lang={"en" as Lang}><Index /></LanguageProvider>} />
           <Route path="/zh" element={<LanguageProvider lang={"zh" as Lang}><Index /></LanguageProvider>} />
+          <Route path="/zh-tw" element={<LanguageProvider lang={"zhTW" as Lang}><Index /></LanguageProvider>} />
           <Route path="/ko" element={<LanguageProvider lang={"ko" as Lang}><Index /></LanguageProvider>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

@@ -1,9 +1,10 @@
-export type Lang = "ja" | "en" | "zh" | "ko";
+export type Lang = "ja" | "en" | "zh" | "zhTW" | "ko";
 
 export const LANGS: { code: Lang; label: string }[] = [
   { code: "ja", label: "日本語" },
   { code: "en", label: "English" },
-  { code: "zh", label: "中文" },
+  { code: "zh", label: "简体中文" },
+  { code: "zhTW", label: "繁體中文" },
   { code: "ko", label: "한국어" },
 ];
 
@@ -182,6 +183,58 @@ export const translations: Record<Lang, Dict> = {
     footer: { blog: "博客", app: "官方APP", line: "LINE", instagram: "Instagram", terms: "使用条款", privacy: "隐私政策", tokusho: "特定商交易法表示", copyright: "私人教练健身房 Salute御所南", address: "京都市中京区毘沙門町533-1 Plaza御所南 2楼", related: "相关业务：" },
     mobileCta: "预约免费体验 →",
     languageLabel: "语言",
+  },
+
+  zhTW: {
+    meta: { title: "京都御所南私人教練健身房 | Salute", description: "Salute 是位於京都御所南的私人教練健身房。提供免費體驗課程，也支援針對遊客的單次訓練，無需加入會員。距離丸太町站步行8分鐘。" },
+    nav: { features: "特色", trainer: "教練", voice: "顧客評價", plan: "價格方案", faq: "常見問題", access: "交通指南", consultation: "免費體驗", blog: "部落格" },
+    header: { ctaBtn: "預約免費體驗" },
+    hero: { kicker: "京都御所南的私人教練健身房 Salute｜免費體驗中", title1: "一個人運動總是難以堅持？", titleAccent: "御所南的一對一私人教練健身房。", sub: "超越過去的自己，遇見更好的體態與狀態", desc: "擁有營養師資格的教練，依照您的步調耐心指導。每次4,000日圓起，無入會費，運動服・鞋・毛巾・水皆免費提供，輕鬆開始、輕鬆堅持。", cta1: "預約免費體驗", cta2: "查看健身房特色" },
+    concern: { kicker: "Concern", title: "您是否有這些困擾？", items: ["辦了健身房卻很難堅持", "不知道該從哪裡開始", "極端節食讓人難以堅持", "在大型健身房在意他人的目光"], footer: "Salute御所南正是為了解決這些困擾而設立的私人教練健身房。" },
+    features: { kicker: "Features", title: "選擇Salute的理由", items: [
+      { title: "完全私密的訓練空間", description: "不會與其他會員碰面。在完全私密的空間裡，與教練進行一對一訓練，初學者也能安心練習。" },
+      { title: "用數字看見自己的進步", description: "專用APP自動記錄每次訓練與身體變化，圖表與每月報告幫助您持續保持動力。" },
+      { title: "飲食方面也能獲得專業建議", description: "教練同時具備營養師資格，不僅指導訓練，也協助您調整飲食。不會要求極端節食，建議貼近日常生活。" },
+      { title: "容易堅持的價格", description: "每次4,000日圓起，入會費0日圓，運動服・鞋・毛巾・水全部免費。負擔較小、容易堅持的價格，讓您輕鬆開始並長期堅持。" },
+    ], note: "所有方案皆為一對一指導，並依照每位顧客量身打造訓練內容。", cta: "預約免費體驗" },
+    numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
+      { value: "¥0", label: "入會費" }, { value: "¥4,000~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
+    ] },
+    trainer: { kicker: "Trainer", title: "教練介紹", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教練", qualLabel: "資格", qual: "營養師", careerLabel: "經歷", career: "曾在四條烏丸的私人教練健身房擔任店長，每月指導140組以上顧客。2024年11月起擔任Salute御所南主教練。此外，他也擁有健體比賽的參賽經驗，親身經歷了從減脂到體態雕塑的完整過程，並將這份經驗運用於針對每位顧客（包含運動初學者）的客製化指導。", messageLabel: "留言", message: "「不擅長運動的朋友、第一次來健身房的朋友，都可以放心。我會全力支持您達成目標！」", greetingLabel: "教練寄語", greetingParagraphs: [
+      "在長期指導顧客的過程中，我經常聽到兩個共同的困擾：「不知道哪種方法適合自己」、「無法長期堅持」。",
+      "在Salute御所南，我們會結合每位顧客的生活方式，提供能夠長期堅持的訓練計畫，以及合理可行的飲食建議。",
+      "讓我們一起邁出健康改變身體的第一步。",
+    ] },
+    voice: { kicker: "Voice", title: "顧客的變化與評價", googleReviews: "Google評價 17則", changesTitle: "顧客的變化", voiceTitle: "顧客的評價", disclaimer: "※效果因人而異", dietLabel: "30多歲女性・減脂", bodymakeLabel: "40多歲男性・體態雕塑", dietResult: "體重 -4.8kg　體脂肪率 -3.2%", bodymakeResult: "體重 +1.5kg（肌肉增加）　體脂肪率 -4.1%", testimonials: [
+      { label: "30多歲女性・上班族", comment: "教練能依照我的情況給出精準建議，這正是一對一訓練的優勢。價格與次數也都很合理，作為新手也很容易開始。" },
+      { label: "40多歲男性・辦公室工作", comment: "已經訓練4個月左右。每次訓練內容都會有調整，每次都能感受到進步。" },
+      { label: "30多歲女性・上班族", comment: "我是健身新手，但每次都很開心。運動服與鞋子都免費提供，可以空手前來非常方便。" },
+    ], fromGoogle: "來自Google評價" },
+    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", description: "可依照您的目標，從4個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", plans: [
+      { name: "月4次方案", price: "¥20,000", perSession: "每次 ¥5,000", description: "適合維持健康與日常運動", features: ["每次60分鐘", "每月最多4次", "空手前來即可", "可使用專用APP"] },
+      { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "適合每週訓練1次以上", features: ["每次60分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
+      { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "適合減脂與體態雕塑", features: ["每次60分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
+      { name: "月15次方案", price: "¥60,000", perSession: "每次 ¥4,000", description: "適合系統性減脂與體態雕塑", features: ["每次60分鐘", "每月最多15次", "空手前來即可", "可使用專用APP", "飲食建議"] },
+    ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["60分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, cta: "預約免費體驗" },
+    flow: { kicker: "Flow", title: "免費體驗流程", steps: [
+      { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。" },
+      { title: "諮詢 + 訓練", description: "進行簡短諮詢後，體驗60分鐘的私人教練訓練。空手前來即可。" },
+    ], footer: "運動服・運動鞋・毛巾・飲用水皆免費提供。", bookText: "透過", bookLinkLabel: "預約表單" },
+    cta: { kicker: "Consultation", title: "免費體驗課程", paragraphs: ["歡迎先來體驗一次。", "入會前的各種疑問都可以在免費體驗中得到解答。", "親身感受訓練內容與健身房的氛圍。"], bullets: ["擔心自己不擅長運動…", "想了解教練是什麼樣的人…"], webBtn: "線上預約免費體驗", lineBtn: "透過LINE預約" },
+    faq: { kicker: "Q&A", title: "常見問題", items: [
+      { question: "免費體驗會進行哪些內容？", answer: "進行簡短諮詢後，體驗60分鐘的真實私人訓練課程。運動服與鞋子免費提供，空手前來即可。" },
+      { question: "沒有運動經驗也可以嗎？", answer: "完全沒問題。我們大部分的顧客都是初學者，教練會依照您的體力與目標耐心指導。" },
+      { question: "需要帶什麼東西嗎？", answer: "無需準備任何物品。運動服・鞋・毛巾・飲用水全部免費提供。" },
+      { question: "遊客可以單次體驗嗎？", answer: "可以。單次訓練每次8,000日圓，無需加入會員，運動服與器材全部免費提供。可透過網站或Instagram私訊預約。" },
+      { question: "可以用英語或中文溝通嗎？", answer: "教練可以使用簡單的英語進行訓練溝通，較複雜的內容會藉助翻譯工具，方便外國遊客使用。" },
+      { question: "有最低合約期限嗎？", answer: "沒有合約期限限制，最少1個月即可開始。" },
+      { question: "除了方案費用之外還有其他費用嗎？", answer: "完全沒有。入會費・手續費0日圓，運動服・鞋・毛巾・飲用水全部免費。" },
+      { question: "最近的車站是哪裡？", answer: "地鐵「丸太町」站步行8分鐘。京阪「神宮丸太町」站步行也是8分鐘。" },
+    ] },
+    access: { kicker: "Access", title: "交通指南", intro: "從地鐵丸太町站步行8分鐘。從4號出口出來後沿丸太町通往東直走，位於Plaza御所南2樓。京阪神宮丸太町站步行同樣8分鐘。", addressLabel: "地址", addressLines: ["〒604-0981", "京都市中京區毘沙門町533-1 Plaza御所南 2樓"], stationLabel: "最近車站", stations: ["京都市公車「裁判所前」步行3分鐘", "京都市營地鐵「丸太町」站 步行8分鐘", "京阪「神宮丸太町」站 步行8分鐘", "京都市營地鐵「京都市役所前」站 步行10分鐘"], hoursLabel: "營業時間", hoursText: "10:00〜22:00（完全預約制）", hoursSub: "不定期公休 / 營業時間外也可能接受預約", contactLabel: "聯絡方式", contactText: "請透過官方LINE或Instagram私訊洽詢。", note: "※騎腳踏車的顧客請停在大樓1樓樓梯旁。 ※停車請使用周邊收費停車場。", sponsorsLabel: "贊助企業" },
+    footer: { blog: "部落格", app: "官方APP", line: "LINE", instagram: "Instagram", terms: "使用條款", privacy: "隱私權政策", tokusho: "特定商業交易法標示", copyright: "私人教練健身房 Salute御所南", address: "京都市中京區毘沙門町533-1 Plaza御所南 2樓", related: "相關業務：" },
+    mobileCta: "預約免費體驗 →",
+    languageLabel: "語言",
   },
 
   ko: {
