@@ -22,7 +22,7 @@ type Dict = {
   cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
   access: { kicker: string; title: string; intro: string; addressLabel: string; addressLines: string[]; stationLabel: string; stations: string[]; hoursLabel: string; hoursText: string; hoursSub: string; contactLabel: string; contactText: string; note: string; sponsorsLabel: string };
-  footer: { blog: string; app: string; line: string; terms: string; privacy: string; tokusho: string; copyright: string; address: string; related: string };
+  footer: { blog: string; app: string; line: string; instagram: string; terms: string; privacy: string; tokusho: string; copyright: string; address: string; related: string };
   mobileCta: string;
   languageLabel: string;
 };
@@ -75,7 +75,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "最寄り駅はどこですか？", answer: "地下鉄「丸太町」駅から徒歩8分です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。" },
     ] },
     access: { kicker: "Access", title: "アクセス", intro: "烏丸丸太町エリア、丸太町駅から徒歩8分。地下鉄「丸太町」駅の4番出口を出て北へ。丸太町通り沿いにあるプラザ御所南の2階です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。", addressLabel: "住所", addressLines: ["〒604-0981", "京都市中京区毘沙門町533-1 プラザ御所南 2階"], stationLabel: "最寄駅", stations: ["京都市バス「裁判所前」駅 徒歩3分", "京都市営地下鉄「丸太町」駅 徒歩8分", "京阪「神宮丸太町」駅 徒歩8分", "京都市営地下鉄「京都市役所前」駅 徒歩10分"], hoursLabel: "営業時間", hoursText: "10:00〜22:00（完全予約制）", hoursSub: "不定休 / 営業時間外もご予約を承れる場合がございます", contactLabel: "お問い合わせ", contactText: "ご質問やご相談は公式LINEまたはInstagramのDMよりお受けしております。", note: "※自転車でお越しの際は、ビル1階の階段横スペースにお停めください。 ※駐車場は周辺コインパーキングをご利用ください。", sponsorsLabel: "協賛企業" },
-    footer: { blog: "ブログ", app: "公式アプリ", line: "LINE", terms: "利用規約", privacy: "プライバシーポリシー", tokusho: "特定商取引法に基づく表記", copyright: "パーソナルジム Salute御所南", address: "京都市中京区毘沙門町533-1 プラザ御所南 2階", related: "関連事業：" },
+    footer: { blog: "ブログ", app: "公式アプリ", line: "LINE", instagram: "Instagram", terms: "利用規約", privacy: "プライバシーポリシー", tokusho: "特定商取引法に基づく表記", copyright: "パーソナルジム Salute御所南", address: "京都市中京区毘沙門町533-1 プラザ御所南 2階", related: "関連事業：" },
     mobileCta: "LINEで初回無料体験を予約 →",
     languageLabel: "言語",
   },
@@ -127,7 +127,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "Nearest station?", answer: "8 min on foot from Marutamachi Station (Karasuma Line). Also 8 min from Keihan Jingu-Marutamachi Station." },
     ] },
     access: { kicker: "Access", title: "Access", intro: "8 minutes on foot from Marutamachi Station. Take Exit 4 and walk east along Marutamachi-dori. We're on the 2nd floor of Plaza Goshominami. Also 8 minutes from Keihan Jingu-Marutamachi Station.", addressLabel: "Address", addressLines: ["604-0981", "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto"], stationLabel: "Nearest Stations", stations: ["Kyoto City Bus 'Saibansho-mae' — 3 min walk", "Karasuma Subway Line 'Marutamachi' — 8 min walk", "Keihan 'Jingu-Marutamachi' — 8 min walk", "Karasuma Subway Line 'Kyoto Shiyakusho-mae' — 10 min walk"], hoursLabel: "Hours", hoursText: "10:00 – 22:00 (by reservation only)", hoursSub: "Open daily / sessions outside regular hours may also be available on request", contactLabel: "Contact", contactText: "Questions and inquiries are handled via our official LINE or Instagram DM.", note: "* Bicycle parking is available beside the stairs on the 1st floor of the building. * For cars, please use nearby coin parking.", sponsorsLabel: "Sponsors" },
-    footer: { blog: "Blog", app: "Official App", line: "LINE", terms: "Terms", privacy: "Privacy Policy", tokusho: "Specified Commercial Transactions Act", copyright: "Personal Training Gym Salute Goshominami", address: "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto", related: "Related: " },
+    footer: { blog: "Blog", app: "Official App", line: "LINE", instagram: "Instagram", terms: "Terms", privacy: "Privacy Policy", tokusho: "Specified Commercial Transactions Act", copyright: "Personal Training Gym Salute Goshominami", address: "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto", related: "Related: " },
     mobileCta: "Book a Free Trial →",
     languageLabel: "Language",
   },
@@ -179,7 +179,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "最近的车站是哪里？", answer: "地铁「丸太町」站步行8分钟。京阪「神宫丸太町」站步行也是8分钟。" },
     ] },
     access: { kicker: "Access", title: "交通指南", intro: "从地铁丸太町站步行8分钟。4号出口出来后沿丸太町通向东直走，位于Plaza御所南2楼。京阪神宫丸太町站步行同样8分钟。", addressLabel: "地址", addressLines: ["〒604-0981", "京都市中京区毘沙門町533-1 Plaza御所南 2楼"], stationLabel: "最近车站", stations: ["京都市巴士「裁判所前」步行3分钟", "京都市营地铁「丸太町」站 步行8分钟", "京阪「神宫丸太町」站 步行8分钟", "京都市营地铁「京都市役所前」站 步行10分钟"], hoursLabel: "营业时间", hoursText: "10:00〜22:00（完全预约制）", hoursSub: "不定休 / 营业时间外也可能接受预约", contactLabel: "联系方式", contactText: "请通过官方LINE或Instagram DM咨询。", note: "※骑自行车的客人请停在大楼1楼楼梯旁。 ※停车请使用周边收费停车场。", sponsorsLabel: "赞助企业" },
-    footer: { blog: "博客", app: "官方APP", line: "LINE", terms: "使用条款", privacy: "隐私政策", tokusho: "特定商交易法表示", copyright: "私人教练健身房 Salute御所南", address: "京都市中京区毘沙門町533-1 Plaza御所南 2楼", related: "相关业务：" },
+    footer: { blog: "博客", app: "官方APP", line: "LINE", instagram: "Instagram", terms: "使用条款", privacy: "隐私政策", tokusho: "特定商交易法表示", copyright: "私人教练健身房 Salute御所南", address: "京都市中京区毘沙門町533-1 Plaza御所南 2楼", related: "相关业务：" },
     mobileCta: "预约免费体验 →",
     languageLabel: "语言",
   },
@@ -231,7 +231,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "가장 가까운 역은 어디인가요?", answer: "지하철 마루타마치역에서 도보 8분, 게이한 진구마루타마치역에서도 도보 8분입니다." },
     ] },
     access: { kicker: "Access", title: "오시는 길", intro: "지하철 마루타마치역에서 도보 8분. 4번 출구로 나와 마루타마치도리를 따라 동쪽으로 직진하시면, 플라자 고쇼미나미 2층에 위치해 있습니다. 게이한 진구마루타마치역에서도 도보 8분입니다.", addressLabel: "주소", addressLines: ["604-0981", "교토시 나카교구 비샤몬초 533-1 플라자 고쇼미나미 2층"], stationLabel: "가까운 역", stations: ["교토시버스 「사이반쇼마에」 도보 3분", "교토시영지하철 「마루타마치」 도보 8분", "게이한 「진구마루타마치」 도보 8분", "교토시영지하철 「교토시야쿠쇼마에」 도보 10분"], hoursLabel: "영업시간", hoursText: "10:00~22:00 (완전 예약제)", hoursSub: "부정기 휴무 / 영업시간 외에도 예약 가능한 경우가 있습니다", contactLabel: "문의", contactText: "공식 LINE 또는 Instagram DM으로 문의해 주세요.", note: "※자전거로 오시는 분은 건물 1층 계단 옆 공간에 세워주세요. ※주차장은 주변 코인 주차장을 이용해 주세요.", sponsorsLabel: "협찬 기업" },
-    footer: { blog: "블로그", app: "공식 앱", line: "LINE", terms: "이용약관", privacy: "개인정보 처리방침", tokusho: "특정상거래법 표기", copyright: "퍼스널 트레이닝 짐 Salute 고쇼미나미", address: "교토시 나카교구 비샤몬초 533-1 플라자 고쇼미나미 2층", related: "관련 사업: " },
+    footer: { blog: "블로그", app: "공식 앱", line: "LINE", instagram: "Instagram", terms: "이용약관", privacy: "개인정보 처리방침", tokusho: "특정상거래법 표기", copyright: "퍼스널 트레이닝 짐 Salute 고쇼미나미", address: "교토시 나카교구 비샤몬초 533-1 플라자 고쇼미나미 2층", related: "관련 사업: " },
     mobileCta: "무료 체험 예약 →",
     languageLabel: "언어",
   },

@@ -16,6 +16,7 @@ const Footer = () => {
             <Link to="/blog" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.blog}</Link>
             <a href="https://kyoto-salute.lovable.app/auth" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.app}</a>
             <a href="https://page.line.me/393blgip" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.line}</a>
+            <a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer" aria-label="パーソナルジムSalute御所南の公式Instagram（新しいタブで開く）" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.instagram}</a>
           </div>
           <div className="w-12 h-px bg-gold/10" />
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
