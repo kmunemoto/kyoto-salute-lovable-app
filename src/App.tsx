@@ -13,7 +13,6 @@ import Tokusho from "./pages/Tokusho.tsx";
 import DropIn from "./pages/DropIn.tsx";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import type { Lang } from "./i18n/translations";
-import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +22,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SplashScreen />
         <Routes>
           <Route path="/" element={<LanguageProvider lang={"ja" as Lang}><Index /></LanguageProvider>} />
           <Route path="/en" element={<LanguageProvider lang={"en" as Lang}><Index /></LanguageProvider>} />
