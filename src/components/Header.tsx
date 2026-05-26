@@ -96,6 +96,7 @@ const Header = () => {
   const drawerEasing = "cubic-bezier(.4,0,.2,1)";
 
   return (
+    <>
     <header
       className="fixed left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border"
       style={{ top: "var(--banner-offset, 0px)" }}
@@ -165,9 +166,10 @@ const Header = () => {
           </button>
         </div>
       </div>
+    </header>
 
-      {mounted && (
-        <div className="md:hidden fixed inset-0 z-50" aria-hidden={!isOpen}>
+    {mounted && (
+      <div className="md:hidden fixed inset-0 z-[60]" aria-hidden={!isOpen}>
           {/* Overlay */}
           <div
             onClick={closeDrawer}
@@ -252,10 +254,10 @@ const Header = () => {
                 {t.header.ctaBtn}
               </a>
             </div>
-          </div>
         </div>
-      )}
-    </header>
+      </div>
+    )}
+    </>
   );
 };
 
