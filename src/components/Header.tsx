@@ -33,13 +33,10 @@ const Header = () => {
     return () => mq.removeEventListener("change", update);
   }, []);
 
-  // Mount/unmount + animation control
+  // Mount when opening
   useEffect(() => {
     if (isOpen) {
       setMounted(true);
-      // Next frame to trigger transition
-      const r = requestAnimationFrame(() => setAnimateIn(true));
-      return () => cancelAnimationFrame(r);
     } else if (mounted) {
       setAnimateIn(false);
       const ms = reduceMotion ? 0 : 400;
@@ -47,6 +44,19 @@ const Header = () => {
       return () => window.clearTimeout(t);
     }
   }, [isOpen, mounted, reduceMotion]);
+
+  // After mount paints with initial (closed) state, trigger transition on next frames
+  useEffect(() => {
+    if (!mounted || !isOpen) return;
+    let r2 = 0;
+    const r1 = requestAnimationFrame(() => {
+      r2 = requestAnimationFrame(() => setAnimateIn(true));
+    });
+    return () => {
+      cancelAnimationFrame(r1);
+      if (r2) cancelAnimationFrame(r2);
+    };
+  }, [mounted, isOpen]);
 
   // Body scroll lock + Esc + focus management
   useEffect(() => {
