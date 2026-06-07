@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "why-personal-gym-continues-kyoto",
     title: "運動が続かないあなたへ｜パーソナルジムなら続く理由を京都・御所南のトレーナーが解説",
-    date: "2026-07-07",
+    date: "2026-06-08",
     category: "コラム",
     readTime: "6分",
     thumbnail: blogWhyPersonalGymContinues,
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "forties-personal-gym-kyoto",
     title: "40代から始めるパーソナルジム｜筋肉が落ち始める前に知っておきたいこと",
-    date: "2026-06-30",
+    date: "2026-06-07",
     category: "ボディメイク",
     readTime: "7分",
     thumbnail: blogFortiesPersonalGym,
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "summer-body-personal-gym-kyoto",
     title: "夏までに体を変えたい人がやるべきこと｜京都・御所南のパーソナルジムが教える現実的な進め方",
-    date: "2026-06-23",
+    date: "2026-06-06",
     category: "ダイエット",
     readTime: "6分",
     thumbnail: blogSummerBody,
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "drop-in-personal-training-kyoto",
     title: "Drop-in Personal Training in Kyoto: Stay Fit While Traveling | ¥8,000/Session",
-    date: "2026-06-20",
+    date: "2026-06-05",
     category: "For Visitors",
     readTime: "4 min",
     thumbnail: blogDropIn,
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "personal-gym-for-women-kyoto",
     title: "女性がパーソナルジムに通うメリット5つ｜京都で女性に選ばれるジムの特徴",
-    date: "2026-06-16",
+    date: "2026-06-04",
     category: "女性向け",
     readTime: "5分",
     thumbnail: blogWomenGym,
@@ -258,7 +258,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "forties-diet-personal-gym-kyoto",
     title: "40代からのダイエットがうまくいかない理由｜パーソナルジムで体が変わる3つの仕組み",
-    date: "2026-06-09",
+    date: "2026-06-03",
     category: "ダイエット",
     readTime: "6分",
     thumbnail: blogFortiesDiet,
