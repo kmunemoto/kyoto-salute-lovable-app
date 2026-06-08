@@ -11,7 +11,6 @@ import PricingSection from "@/components/PricingSection";
 import FlowSection from "@/components/FlowSection";
 import FAQSection from "@/components/FAQSection";
 import AccessSection from "@/components/AccessSection";
-import LocalAreaSection from "@/components/LocalAreaSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
@@ -65,7 +64,6 @@ const Index = () => {
       <FlowSection />
       <CTASection />
       <FAQSection />
-      <LocalAreaSection />
       <AccessSection />
       <Footer />
       <MobileCTABar />
