@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "after-work-personal-gym-marutamachi-kyoto",
     title: "仕事帰りに通えるパーソナルジム｜丸太町駅から徒歩8分・手ぶらOK・22時まで対応",
-    date: "2026-06-08",
+    date: "2026-06-13",
     category: "コラム",
     readTime: "5分",
     thumbnail: blogMarutamachiAfterWork,
