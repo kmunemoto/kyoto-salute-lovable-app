@@ -9,7 +9,18 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Salute Goshominami personal gym Kyoto" fetchPriority="high" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+        {/* Desktop: left-to-right gradient — darker where text sits, lighter on the right to preserve interior brightness */}
+        <div
+          className="absolute inset-0 hidden md:block"
+          aria-hidden="true"
+          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.40) 45%, rgba(0,0,0,0.15) 100%)" }}
+        />
+        {/* Mobile: top-to-bottom gradient for reliable readability at all widths */}
+        <div
+          className="absolute inset-0 block md:hidden"
+          aria-hidden="true"
+          style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.35))" }}
+        />
       </div>
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="max-w-3xl">
