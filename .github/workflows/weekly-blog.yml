@@ -1,11 +1,12 @@
 name: Weekly blog post
 
-# Generates one new SEO blog article every week and opens a pull request for review.
+# Generates one new SEO blog article every week and publishes it automatically
+# by committing directly to the default branch.
 # Requires repository secret: ANTHROPIC_API_KEY
 #
-# To publish automatically instead of opening a PR for review, replace the
-# "Create pull request" step with a direct commit + push to the default branch
-# (see the commented block at the bottom of this file).
+# To switch back to review-first (open a PR instead of publishing), replace the
+# "Commit and push" step with peter-evans/create-pull-request and add the
+# `pull-requests: write` permission.
 
 on:
   schedule:
@@ -15,7 +16,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   generate:
@@ -42,31 +42,11 @@ jobs:
         if: steps.generate.outputs.created == 'true'
         run: npm run build
 
-      - name: Create pull request
+      - name: Commit and push
         if: steps.generate.outputs.created == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: blog/weekly-${{ steps.generate.outputs.slug }}
-          commit-message: "blog: ${{ steps.generate.outputs.title }}"
-          title: "新しいブログ記事: ${{ steps.generate.outputs.title }}"
-          body: |
-            自動生成された週次ブログ記事です。内容を確認のうえマージしてください。
-
-            - slug: `${{ steps.generate.outputs.slug }}`
-            - 追加ファイル: `src/data/blog-posts.ts`、`public/sitemap.xml`
-
-            公開せずに破棄する場合は、このPRをそのままクローズしてください。
-          add-paths: |
-            src/data/blog-posts.ts
-            public/sitemap.xml
-
-# --- To publish automatically (no review), use this instead of "Create pull request":
-#
-#      - name: Commit and push
-#        if: steps.generate.outputs.created == 'true'
-#        run: |
-#          git config user.name "github-actions[bot]"
-#          git config user.email "github-actions[bot]@users.noreply.github.com"
-#          git add src/data/blog-posts.ts public/sitemap.xml
-#          git commit -m "blog: ${{ steps.generate.outputs.title }}"
-#          git push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/blog-posts.ts public/sitemap.xml
+          git commit -m "blog: ${{ steps.generate.outputs.title }}"
+          git push
