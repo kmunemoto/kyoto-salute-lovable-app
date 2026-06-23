@@ -39,7 +39,12 @@ const FeaturesSection = () => {
                   ) : (
                     <div className="relative overflow-hidden rounded-sm aspect-[4/3]">
                       <img src={m.image} alt={feature.title} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                      <div className="absolute top-4 left-4 gold-gradient text-white px-3 py-1 text-xs font-medium rounded-sm font-body">Feature.{m.number}</div>
+                      <div className="absolute top-4 left-4 gold-gradient text-white px-3 py-1 text-xs font-medium rounded-sm font-body z-10">Feature.{m.number}</div>
+                      {index === 0 && t.features.wearRentalTag && (
+                        <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 gold-gradient text-white px-2.5 py-1 text-[10px] md:text-xs font-medium rounded-sm font-body z-10 shadow-md">
+                          {t.features.wearRentalTag}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
