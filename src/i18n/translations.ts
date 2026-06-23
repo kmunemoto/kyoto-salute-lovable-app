@@ -40,7 +40,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "体の変化が「見える」から、続けられる", description: "専用アプリでトレーニング記録や体の変化を自動で記録。数字やグラフで成長を実感できるから、モチベーションが続きます。" },
       { title: "食事の悩みも、一緒に解決できる", description: "栄養士資格を持つトレーナーが、トレーニングだけでなく食事面もサポート。極端な食事制限は行いません。" },
       { title: "続けられる価格だから、体が変わる", description: "1回¥4,000〜、入会金¥0。ウェア・シューズ・タオル・お水もすべて無料です。続けやすい料金設定です。" },
-    ], note: "すべてのプランで、完全マンツーマンの指導と、お客様一人ひとりに合わせたオーダーメイドのトレーニングメニューをご提供しています。", cta: "まずは体験してみる" },
+    ], note: "すべてのプランで、完全マンツーマンの指導と、お客様一人ひとりに合わせたオーダーメイドのトレーニングメニューをご提供しています。", cta: "まずは体験してみる", wearRentalTag: "ウェア・シューズ無料レンタル" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,000〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
@@ -92,7 +92,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "See your progress clearly", description: "Our app automatically tracks your sessions and body changes. Clear graphs and monthly reports help you stay motivated." },
       { title: "Nutrition guidance included", description: "Your trainer is a certified nutritionist who supports both your workouts and your eating habits. No extreme diets — just practical advice that fits real life." },
       { title: "Easy to keep going", description: "From ¥4,000 per session. No enrollment fee. Sportswear, shoes, towels and water are all provided — so it's easy to start and easy to keep coming back." },
-    ], note: "Every plan includes fully 1-on-1 coaching with a training program tailored to your goals.", cta: "Book a Free Trial" },
+    ], note: "Every plan includes fully 1-on-1 coaching with a training program tailored to your goals.", cta: "Book a Free Trial", wearRentalTag: "Free wear & shoe rental" },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,000~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
@@ -144,7 +144,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "用数字看见自己的进步", description: "专用APP自动记录每次训练与身体变化，图表与月度报告帮助您持续保持动力。" },
       { title: "饮食方面也获得专业建议", description: "教练同时具备营养师资格，不仅指导训练，也协助您调整饮食。不会要求极端节食，建议贴近日常生活。" },
       { title: "容易坚持的价格", description: "每次4,000日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。负担较小、容易坚持的价格，让您轻松开始并长期坚持。" },
-    ], note: "所有方案均为一对一指导，并根据每位客人量身定制训练内容。", cta: "预约免费体验" },
+    ], note: "所有方案均为一对一指导，并根据每位客人量身定制训练内容。", cta: "预约免费体验", wearRentalTag: "免费租借运动服和鞋子" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,000~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
@@ -196,7 +196,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "用數字看見自己的進步", description: "專用APP自動記錄每次訓練與身體變化，圖表與每月報告幫助您持續保持動力。" },
       { title: "飲食方面也能獲得專業建議", description: "教練同時具備營養師資格，不僅指導訓練，也協助您調整飲食。不會要求極端節食，建議貼近日常生活。" },
       { title: "容易堅持的價格", description: "每次4,000日圓起，入會費0日圓，運動服・鞋・毛巾・水全部免費。負擔較小、容易堅持的價格，讓您輕鬆開始並長期堅持。" },
-    ], note: "所有方案皆為一對一指導，並依照每位顧客量身打造訓練內容。", cta: "預約免費體驗" },
+    ], note: "所有方案皆為一對一指導，並依照每位顧客量身打造訓練內容。", cta: "預約免費體驗", wearRentalTag: "免費租借運動服與鞋子" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,000~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
@@ -248,7 +248,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "숫자로 변화를 확인", description: "전용 앱이 트레이닝 기록과 신체 변화를 자동으로 기록합니다. 그래프와 월간 리포트로 성장을 실감하며 동기를 유지할 수 있습니다." },
       { title: "식사 관리도 함께 서포트", description: "영양사 자격을 가진 트레이너가 운동뿐 아니라 식사도 함께 코칭합니다. 극단적인 식단 대신 일상에서 실천 가능한 방법을 제안합니다." },
       { title: "꾸준히 다니기 좋은 가격", description: "1회 ¥4,000부터, 입회비 없음. 운동복・신발・수건・물 모두 무료. 시작하기도 쉽고, 꾸준히 다니기에도 부담이 적습니다." },
-    ], note: "모든 플랜은 완전 1:1 지도이며, 회원님 한 분 한 분의 목표에 맞춘 맞춤형 트레이닝 메뉴를 제공합니다.", cta: "무료 체험 예약" },
+    ], note: "모든 플랜은 완전 1:1 지도이며, 회원님 한 분 한 분의 목표에 맞춘 맞춤형 트레이닝 메뉴를 제공합니다.", cta: "무료 체험 예약", wearRentalTag: "운동복·신발 무료 대여" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,000~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
