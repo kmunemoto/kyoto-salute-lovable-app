@@ -4,6 +4,7 @@ import featureNutrition from "@/assets/feature-nutrition.jpg";
 import featureApp from "@/assets/feature-app.jpg";
 import gymInterior from "@/assets/gym-interior.jpg";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const meta = [
   { number: "01", icon: Shirt, image: featureTraining, isApp: false },
@@ -13,7 +14,7 @@ const meta = [
 ];
 
 const FeaturesSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   return (
     <section id="features" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
@@ -61,7 +62,7 @@ const FeaturesSection = () => {
           <p className="text-muted-foreground font-body text-base leading-relaxed max-w-2xl mx-auto">{t.features.note}</p>
         </div>
         <div className="text-center mt-12">
-          <a href="https://app.kyoto-salute.com/trial" target="_blank" rel="noopener noreferrer" className="inline-block gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity">{t.features.cta}</a>
+          <a href="https://app.kyoto-salute.com/trial" target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "features", label: t.features.cta, url: "https://app.kyoto-salute.com/trial", language: lang })} className="inline-block gold-gradient px-10 py-4 text-white font-medium rounded-sm transition-opacity">{t.features.cta}</a>
         </div>
       </div>
     </section>

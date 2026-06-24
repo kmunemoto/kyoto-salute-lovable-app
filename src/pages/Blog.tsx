@@ -1,25 +1,39 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
 import { blogPosts } from "@/data/blog-posts";
 
+const BASE = "https://kyoto-salute.com";
+const TITLE = "ブログ | 京都で安いパーソナルジムなSalute御所南";
+const DESCRIPTION =
+  "京都市中京区・御所南のパーソナルジムSalute御所南のブログ。料金、初心者向け情報、ダイエット、食事サポートについて発信しています。";
+
 const Blog = () => {
-  useEffect(() => {
-    document.title = "ブログ | 京都で安いパーソナルジムなSalute御所南";
-    const description = "京都市中京区・御所南のパーソナルジムSalute御所南のブログ。料金、初心者向け情報、ダイエット、食事サポートについて発信しています。";
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
-  }, []);
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: blogPosts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${BASE}/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={`${BASE}/blog`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={`${BASE}/blog`} />
+        <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
+      </Helmet>
       <Header />
       <main className="section-padding pt-32 md:pt-36">
         <div className="max-w-7xl mx-auto">

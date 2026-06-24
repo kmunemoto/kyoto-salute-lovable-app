@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const Header = () => {
   const { lang, t } = useT();
@@ -133,6 +134,7 @@ const Header = () => {
             href="https://app.kyoto-salute.com/trial"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCtaClick({ type: "trial", location: "header_desktop", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang })}
             className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity"
           >
             {t.header.ctaBtn}
@@ -258,7 +260,7 @@ const Header = () => {
                 href="https://app.kyoto-salute.com/trial"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={closeDrawer}
+                onClick={() => { trackCtaClick({ type: "trial", location: "header_mobile", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang }); closeDrawer(); }}
                 className="block text-center gold-gradient px-5 py-3 text-sm font-medium text-white rounded-sm"
               >
                 {t.header.ctaBtn}

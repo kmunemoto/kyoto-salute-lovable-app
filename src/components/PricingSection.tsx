@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const PricingSection = () => {
   const { lang, t } = useT();
@@ -57,7 +58,7 @@ const PricingSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a href={ctaHref} target="_blank" rel="noopener noreferrer" className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
+                <a href={ctaHref} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: isDropIn ? "dropin" : "trial", location: `pricing_${plan.name}`, label: ctaLabel, url: ctaHref, language: lang })} className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
                   {ctaLabel}
                 </a>
               </div>

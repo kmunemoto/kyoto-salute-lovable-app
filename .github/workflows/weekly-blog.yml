@@ -1,0 +1,52 @@
+name: Weekly blog post
+
+# Generates one new SEO blog article every week and publishes it automatically
+# by committing directly to the default branch.
+# Requires repository secret: ANTHROPIC_API_KEY
+#
+# To switch back to review-first (open a PR instead of publishing), replace the
+# "Commit and push" step with peter-evans/create-pull-request and add the
+# `pull-requests: write` permission.
+
+on:
+  schedule:
+    # 00:00 UTC every Monday (= 09:00 JST Monday).
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate blog post
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run blog:generate
+
+      - name: Verify build
+        if: steps.generate.outputs.created == 'true'
+        run: npm run build
+
+      - name: Commit and push
+        if: steps.generate.outputs.created == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/blog-posts.ts public/sitemap.xml
+          git commit -m "blog: ${{ steps.generate.outputs.title }}"
+          git push
