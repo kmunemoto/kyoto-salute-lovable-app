@@ -1,8 +1,9 @@
 import trialImage from "@/assets/trial-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const CTASection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const c = t.cta;
   const trialUrl = "https://app.kyoto-salute.com/trial";
   const lineUrl = "https://lin.ee/UMVDzWF";
@@ -26,8 +27,8 @@ const CTASection = () => {
               {c.paragraphs.slice(1).map((p, i) => <p key={i}>{p}</p>)}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href={trialUrl} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 px-10 py-4 text-primary-foreground font-medium rounded-sm transition-colors font-body text-center">{c.webBtn}</a>
-              <a href={lineUrl} target="_blank" rel="noopener noreferrer" className="border border-primary bg-white px-10 py-4 text-primary font-medium rounded-sm hover:bg-primary/5 transition-colors font-body text-center">{c.lineBtn}</a>
+              <a href={trialUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "cta_section", label: c.webBtn, url: trialUrl, language: lang })} className="bg-primary hover:bg-primary/90 px-10 py-4 text-primary-foreground font-medium rounded-sm transition-colors font-body text-center">{c.webBtn}</a>
+              <a href={lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: "cta_section", label: c.lineBtn, url: lineUrl, language: lang })} className="border border-primary bg-white px-10 py-4 text-primary font-medium rounded-sm hover:bg-primary/5 transition-colors font-body text-center">{c.lineBtn}</a>
             </div>
           </div>
         </div>

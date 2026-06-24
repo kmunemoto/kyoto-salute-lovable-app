@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
 import { getBlogPost } from "@/data/blog-posts";
+import { trackCtaClick } from "@/lib/analytics";
 
 const BASE = "https://kyoto-salute.com";
 const PUBLISHER_LOGO =
@@ -127,6 +128,7 @@ const BlogPost = () => {
                 href="https://app.kyoto-salute.com/visitor"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackCtaClick({ type: "dropin", location: "blog_post", label: "Book Now", url: "https://app.kyoto-salute.com/visitor" })}
                 className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
               >
                 Book Now
@@ -142,6 +144,7 @@ const BlogPost = () => {
                 href="https://app.kyoto-salute.com/trial"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackCtaClick({ type: "trial", location: "blog_post", label: "初回無料体験を予約する", url: "https://app.kyoto-salute.com/trial" })}
                 className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
               >
                 初回無料体験を予約する

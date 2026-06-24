@@ -1,10 +1,11 @@
 import { CalendarCheck, ClipboardCheck } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const icons = [CalendarCheck, ClipboardCheck];
 
 const FlowSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const bookUrl = "https://app.kyoto-salute.com/trial";
   return (
     <section id="flow" className="section-padding bg-white">
@@ -26,7 +27,7 @@ const FlowSection = () => {
                   {i === 0 ? (
                     <>
                       {t.flow.bookText}
-                      <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">{t.flow.bookLinkLabel}</a>
+                      <a href={bookUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "flow", label: t.flow.bookLinkLabel, url: bookUrl, language: lang })} className="text-primary underline">{t.flow.bookLinkLabel}</a>
                       {s.description}
                     </>
                   ) : s.description}

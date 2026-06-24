@@ -1,8 +1,9 @@
 import heroImage from "@/assets/hero-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const HeroSection = () => {
-  const { t } = useT();
+  const { lang, t } = useT();
   const h = t.hero;
   const trialUrl = "https://app.kyoto-salute.com/trial";
   return (
@@ -37,7 +38,7 @@ const HeroSection = () => {
             <p className="animate-fade-up animate-delay-200 font-body mb-10 max-w-xl" style={{ fontSize: "12px", color: "#8B7F70", textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>{h.seoNote}</p>
           )}
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
-            <a href={trialUrl} target="_blank" rel="noopener noreferrer" className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1">{h.cta1}</a>
+            <a href={trialUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "hero", label: h.cta1, url: trialUrl, language: lang })} className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1">{h.cta1}</a>
             <a href="#features" className="border border-white/70 text-white hover:bg-white/10 transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent flex-1">{h.cta2}</a>
           </div>
         </div>
