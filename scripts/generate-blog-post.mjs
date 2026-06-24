@@ -218,8 +218,9 @@ async function main() {
     process.exit(0);
   }
 
-  // Generate a unique, on-brand header image for this post.
-  await generateBlogImage(post.slug, post.category, ASSETS_DIR);
+  // Generate a unique, on-brand header image for this post (Cloudflare AI photo
+  // when credentials are set, otherwise a design card).
+  await generateBlogImage(post.slug, post.category, ASSETS_DIR, { title: post.title });
   const thumbnailVar = importVarName(post.slug);
   const importLine = `import ${thumbnailVar} from "@/assets/blog/${post.slug}.webp";\n`;
 

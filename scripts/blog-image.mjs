@@ -1,9 +1,14 @@
-// Generates an original, on-brand header image for a blog post.
+// Generates an original header image for a blog post.
 //
-// The design (palette, geometric composition, decorative parameters) is derived
-// deterministically from the post slug, so every post gets a visually distinct
-// image and the same slug always reproduces the same image. No external API,
-// no cost — pure SVG rendered to webp with sharp.
+// Primary: Cloudflare Workers AI (free tier) generates a photo from a
+// topic-based prompt when CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are
+// set (e.g. as GitHub Action secrets).
+//
+// Fallback: a brand "design card" rendered from pure SVG to webp with sharp.
+// The design (palette, composition, decorative shapes) is derived
+// deterministically from the slug, so each post gets a visually distinct image.
+// The fallback is used when no credentials are present or the AI call fails, so
+// the weekly job never breaks on image generation.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -141,10 +146,88 @@ export function buildSvg(slug, category = "") {
 </svg>`;
 }
 
-export async function generateBlogImage(slug, category, assetsDir) {
+// --- Design-card fallback (no external service, always available) ---
+
+export async function generateDesignCard(slug, category, assetsDir) {
   const svg = buildSvg(slug, category);
   const outPath = path.join(assetsDir, `${slug}.webp`);
   fs.mkdirSync(assetsDir, { recursive: true });
   await sharp(Buffer.from(svg)).webp({ quality: 86 }).toFile(outPath);
-  return outPath;
+  return { path: outPath, source: "design-card" };
+}
+
+// --- Cloudflare Workers AI (free tier) photo generation ---
+
+// Scene hint per category, kept brand-appropriate (no people/faces to avoid
+// uncanny or misleading "fake" photos of the actual gym/staff).
+const SCENE = {
+  "ダイエット": "a fresh, healthy balanced meal with colorful vegetables and lean protein on a clean light table",
+  "食事アドバイス": "a beautifully arranged healthy Japanese meal with vegetables, fish and rice on a minimalist table",
+  "ボディメイク": "a modern minimalist private gym interior with dumbbells and a bench, soft natural light",
+  "女性向け": "a bright, airy minimalist fitness studio with a yoga mat and indoor plants",
+  "健康・姿勢改善": "a calm minimalist wellness studio with a stretching mat and soft daylight through large windows",
+  "初心者向け": "a welcoming, clean and bright personal training studio interior",
+  "料金・プラン": "a modern, tidy private gym interior with neat equipment, soft light",
+  "比較・検討": "a modern, tidy private gym interior with neat equipment, soft light",
+  "ジム選び": "a modern, tidy private gym interior with neat equipment, soft light",
+  "エリアガイド": "a serene Kyoto townscape with traditional machiya houses and a quiet street",
+  "無料体験": "a bright, welcoming reception area of a boutique fitness studio",
+  "コラム": "a modern minimalist private personal training gym interior with soft natural light",
+  "For Visitors": "a stylish boutique gym interior with a subtle Kyoto aesthetic, soft natural light",
+};
+
+function aiPrompt(title, category) {
+  const scene = SCENE[category] || SCENE["コラム"];
+  return `Professional editorial photograph: ${scene}. Bright and airy, premium wellness brand aesthetic, soft natural lighting, shallow depth of field, calm muted teal and cream color tones, clean composition, high quality. No people, no faces, no text, no words, no letters, no logos, no watermark.`;
+}
+
+async function generateAiImage(slug, title, category, assetsDir) {
+  const account = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const token = process.env.CLOUDFLARE_API_TOKEN;
+  const model = process.env.CLOUDFLARE_IMAGE_MODEL || "@cf/black-forest-labs/flux-1-schnell";
+
+  const res = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/${model}`,
+    {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: aiPrompt(title, category), steps: 4 }),
+    },
+  );
+
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`Cloudflare AI ${res.status}: ${detail.slice(0, 200)}`);
+  }
+
+  const json = await res.json();
+  const b64 = json?.result?.image;
+  if (!b64) throw new Error("Cloudflare AI response had no image");
+
+  const outPath = path.join(assetsDir, `${slug}.webp`);
+  fs.mkdirSync(assetsDir, { recursive: true });
+  await sharp(Buffer.from(b64, "base64"))
+    .resize(W, H, { fit: "cover" })
+    .webp({ quality: 86 })
+    .toFile(outPath);
+  return { path: outPath, source: "cloudflare-ai" };
+}
+
+// Generates a header image for a post. Uses Cloudflare Workers AI when
+// credentials are present, and falls back to the design card otherwise (or if
+// the AI call fails), so the weekly job never breaks on image generation.
+export async function generateBlogImage(slug, category, assetsDir, opts = {}) {
+  const { title = "" } = opts;
+  if (process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN) {
+    try {
+      const r = await generateAiImage(slug, title, category, assetsDir);
+      console.log(`Image: Cloudflare AI photo for ${slug}`);
+      return r;
+    } catch (err) {
+      console.warn(`AI image failed, using design card instead: ${err.message}`);
+    }
+  }
+  const r = await generateDesignCard(slug, category, assetsDir);
+  console.log(`Image: design card for ${slug}`);
+  return r;
 }
