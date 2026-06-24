@@ -1,5 +1,6 @@
 // Weekly blog post generator for Salute御所南.
-// Generates one SEO-oriented Japanese article with the Claude API, inserts it
+// Generates one SEO-oriented Japanese article with the Claude API, creates a
+// unique on-brand header image for it (see blog-image.mjs), inserts the post
 // into src/data/blog-posts.ts, and registers it in public/sitemap.xml.
 //
 // Requires the ANTHROPIC_API_KEY environment variable.
@@ -9,10 +10,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
+import { generateBlogImage } from "./blog-image.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const POSTS_FILE = path.join(ROOT, "src/data/blog-posts.ts");
 const SITEMAP_FILE = path.join(ROOT, "public/sitemap.xml");
+const ASSETS_DIR = path.join(ROOT, "src/assets/blog");
 
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-4-8";
 
@@ -47,17 +50,20 @@ function existingTitles(src) {
   return [...src.matchAll(/title:\s*"([^"]+)"/g)].map((m) => m[1]);
 }
 
-// Thumbnail import variable names already declared at the top of blog-posts.ts.
-function thumbnailVars(src) {
-  return [...src.matchAll(/import\s+(\w+)\s+from\s+"@\/assets\/blog\//g)].map((m) => m[1]);
+// A valid JS identifier derived from the slug, used as the thumbnail import name.
+function importVarName(slug) {
+  return "blog_" + slug.replace(/-/g, "_");
 }
 
-function pickThumbnail(src) {
-  const vars = thumbnailVars(src);
-  if (vars.length === 0) throw new Error("No blog thumbnail imports found in blog-posts.ts");
-  // Rotate deterministically by week so reused thumbnails are spread out.
-  const week = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-  return vars[week % vars.length];
+// Insert a new asset import after the last existing "@/assets/blog/..." import.
+function addThumbnailImport(src, importLine) {
+  const re = /import\s+\w+\s+from\s+"@\/assets\/blog\/[^"]+";\n/g;
+  let last = null;
+  let m;
+  while ((m = re.exec(src))) last = m;
+  if (!last) throw new Error("No blog asset imports found in blog-posts.ts");
+  const idx = last.index + last[0].length;
+  return src.slice(0, idx) + importLine + src.slice(idx);
 }
 
 function buildPrompt(titles) {
@@ -184,7 +190,6 @@ async function main() {
   const src = readPosts();
   const slugs = new Set(existingSlugs(src));
   const titles = existingTitles(src);
-  const thumbnailVar = pickThumbnail(src);
   const date = today();
 
   const client = new Anthropic();
@@ -213,8 +218,14 @@ async function main() {
     process.exit(0);
   }
 
+  // Generate a unique, on-brand header image for this post.
+  await generateBlogImage(post.slug, post.category, ASSETS_DIR);
+  const thumbnailVar = importVarName(post.slug);
+  const importLine = `import ${thumbnailVar} from "@/assets/blog/${post.slug}.webp";\n`;
+
   const objectLiteral = buildPostObject(post, thumbnailVar, date);
-  const updated = insertPost(src, objectLiteral);
+  let updated = addThumbnailImport(src, importLine);
+  updated = insertPost(updated, objectLiteral);
   fs.writeFileSync(POSTS_FILE, updated);
   updateSitemap(post.slug, date);
 
@@ -229,7 +240,7 @@ async function main() {
   }
 }
 
-export { buildPostObject, insertPost, parseJson, escapeTemplate, pickThumbnail };
+export { buildPostObject, insertPost, parseJson, escapeTemplate, importVarName, addThumbnailImport };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch((err) => {

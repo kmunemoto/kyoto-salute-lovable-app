@@ -47,6 +47,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/blog-posts.ts public/sitemap.xml
+          git add src/data/blog-posts.ts public/sitemap.xml src/assets/blog
           git commit -m "blog: ${{ steps.generate.outputs.title }}"
           git push

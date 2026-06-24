@@ -14,6 +14,7 @@ import blogSummerBody from "@/assets/blog/summer-body.webp";
 import blogFortiesPersonalGym from "@/assets/blog/forties-personal-gym.webp";
 import blogWhyPersonalGymContinues from "@/assets/blog/why-personal-gym-continues.webp";
 import blogMarutamachiAfterWork from "@/assets/blog/marutamachi-after-work.webp";
+import blog_rainy_season_exercise_personal_gym_kyoto from "@/assets/blog/rainy-season-exercise-personal-gym-kyoto.webp";
 
 export type BlogPost = {
   slug: string;
@@ -33,7 +34,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-24",
     category: "健康・姿勢改善",
     readTime: "5分",
-    thumbnail: blogWhyPersonalGymContinues,
+    thumbnail: blog_rainy_season_exercise_personal_gym_kyoto,
     metaDescription:
       "梅雨で運動不足・むくみ・体のだるさが気になる方へ。雨の日でも天候に左右されずに続けられる運動の選び方を、京都市中京区・御所南のパーソナルジムSalute御所南のトレーナーが解説。完全個室・栄養士トレーナー・無料体験実施中。",
     content: `
