@@ -9,7 +9,7 @@ import blogMarutamachi from "@/assets/blog/marutamachi.jpg";
 import blogDeskWork from "@/assets/blog/desk-work.jpg";
 import blogFortiesDiet from "@/assets/blog/forties-diet.jpg";
 import blogWomenGym from "@/assets/blog/women-gym.jpg";
-import blogDropIn from "@/assets/blog/drop-in.png";
+import blogDropIn from "@/assets/blog/drop-in.webp";
 import blogSummerBody from "@/assets/blog/summer-body.webp";
 import blogFortiesPersonalGym from "@/assets/blog/forties-personal-gym.webp";
 import blogWhyPersonalGymContinues from "@/assets/blog/why-personal-gym-continues.webp";

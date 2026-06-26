@@ -6,6 +6,7 @@ const HeroSection = () => {
   const { lang, t } = useT();
   const h = t.hero;
   const trialUrl = "https://app.kyoto-salute.com/trial";
+  const lineUrl = "https://lin.ee/UMVDzWF";
   return (
     <section className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
@@ -39,6 +40,7 @@ const HeroSection = () => {
           )}
           <div className="animate-fade-up animate-delay-300 flex flex-col sm:flex-row gap-4 max-w-xl">
             <a href={trialUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "hero", label: h.cta1, url: trialUrl, language: lang })} className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1">{h.cta1}</a>
+            <a href={lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: "hero", label: t.cta.lineBtn, url: lineUrl, language: lang })} className="px-8 py-4 text-white font-medium rounded-sm text-center text-base flex-1" style={{ backgroundColor: "#06C755" }}>{t.cta.lineBtn}</a>
             <a href="#features" className="border border-white/70 text-white hover:bg-white/10 transition-colors px-8 py-4 rounded-sm text-center font-medium bg-transparent flex-1">{h.cta2}</a>
           </div>
         </div>
