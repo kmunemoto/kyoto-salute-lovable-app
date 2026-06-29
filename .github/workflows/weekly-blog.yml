@@ -9,9 +9,11 @@ name: Weekly blog post
 # `pull-requests: write` permission.
 
 on:
-  schedule:
-    # 00:00 UTC every Monday (= 09:00 JST Monday).
-    - cron: "0 0 * * 1"
+  # 自動の週次実行は一旦停止中（ANTHROPIC_API_KEY 登録後に再開）。
+  # 再開するには下の schedule のコメントを外してください。
+  # schedule:
+  #   # 00:00 UTC every Monday (= 09:00 JST Monday).
+  #   - cron: "0 0 * * 1"
   workflow_dispatch: {}
 
 permissions:
