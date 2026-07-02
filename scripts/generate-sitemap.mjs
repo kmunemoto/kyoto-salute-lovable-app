@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const POSTS_FILE = path.join(ROOT, "src/data/blog-posts.ts");
+const AREA_FILE = path.join(ROOT, "src/data/area-pages.ts");
 const SITEMAP_FILE = path.join(ROOT, "public/sitemap.xml");
 const BASE = "https://kyoto-salute.com";
 
@@ -19,9 +20,14 @@ function extractPosts(src) {
   return slugs.map((slug, i) => ({ slug, date: dates[i] || dates[dates.length - 1] }));
 }
 
+function extractSlugs(src) {
+  return [...src.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
+}
+
 export function writeSitemap() {
   const src = fs.readFileSync(POSTS_FILE, "utf8");
   const posts = extractPosts(src);
+  const areas = fs.existsSync(AREA_FILE) ? extractSlugs(fs.readFileSync(AREA_FILE, "utf8")) : [];
   const today = new Date().toISOString().slice(0, 10);
   const latest = posts.map((p) => p.date).sort().pop() || today;
 
@@ -36,6 +42,7 @@ export function writeSitemap() {
   push(`${BASE}/ko`, latest, "weekly", "0.9");
   push(`${BASE}/blog`, latest, "weekly", "0.8");
   push(`${BASE}/drop-in`, today, "monthly", "0.7");
+  for (const slug of areas) push(`${BASE}/area/${slug}`, today, "monthly", "0.8");
   for (const p of posts) push(`${BASE}/blog/${p.slug}`, p.date, "monthly", "0.7");
   push(`${BASE}/terms`, "2026-04-25", "monthly", "0.3");
   push(`${BASE}/privacy-policy`, "2026-04-25", "monthly", "0.3");
