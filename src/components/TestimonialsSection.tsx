@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import dietChart from "@/assets/testimonials/diet-30f.png";
 import bodymakeChart from "@/assets/testimonials/bodymake-40m.png";
 import { useT } from "@/i18n/LanguageContext";
+import { GOOGLE_MAPS_URL } from "@/config/google";
 
 const TestimonialsSection = () => {
   const { t } = useT();
@@ -12,7 +13,13 @@ const TestimonialsSection = () => {
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">{v.kicker}</p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground">{v.title}</h2>
-          <div className="flex flex-col items-center justify-center mt-6">
+          <a
+            href={GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Googleマップの口コミを見る（新しいタブで開く）"
+            className="flex flex-col items-center justify-center mt-6 group"
+          >
             <div className="flex items-center justify-center gap-3">
               <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, j) => (
@@ -21,8 +28,8 @@ const TestimonialsSection = () => {
               </div>
               <span className="font-body" style={{ fontSize: "36px", fontWeight: 800 }}>5.0</span>
             </div>
-            <p className="font-body mt-2" style={{ fontSize: "14px", color: "#9b8e82" }}>{v.googleReviews}</p>
-          </div>
+            <p className="font-body mt-2 group-hover:text-gold transition-colors underline-offset-4 group-hover:underline" style={{ fontSize: "14px", color: "#9b8e82" }}>{v.googleReviews} →</p>
+          </a>
         </div>
 
         <div style={{ marginBottom: "80px" }}>
