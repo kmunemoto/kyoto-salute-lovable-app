@@ -11,10 +11,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 import { generateBlogImage } from "./blog-image.mjs";
+import { writeSitemap } from "./generate-sitemap.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const POSTS_FILE = path.join(ROOT, "src/data/blog-posts.ts");
-const SITEMAP_FILE = path.join(ROOT, "public/sitemap.xml");
 const ASSETS_DIR = path.join(ROOT, "src/assets/blog");
 
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-4-8";
@@ -155,31 +155,6 @@ function insertPost(src, objectLiteral) {
   return src.slice(0, insertAt) + objectLiteral + src.slice(insertAt);
 }
 
-function updateSitemap(slug, date) {
-  let sitemap = fs.readFileSync(SITEMAP_FILE, "utf8");
-
-  // Bump the blog index lastmod to today.
-  sitemap = sitemap.replace(
-    /(<loc>https:\/\/kyoto-salute\.com\/blog<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
-    `$1${date}$2`,
-  );
-
-  // Insert a new <url> entry right after the blog index block.
-  const marker = "<loc>https://kyoto-salute.com/blog</loc>";
-  const mi = sitemap.indexOf(marker);
-  if (mi === -1) throw new Error("Could not find blog index entry in sitemap");
-  const closeIdx = sitemap.indexOf("</url>", mi) + "</url>".length;
-  const entry = `
-  <url>
-    <loc>https://kyoto-salute.com/blog/${slug}</loc>
-    <lastmod>${date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-  sitemap = sitemap.slice(0, closeIdx) + entry + sitemap.slice(closeIdx);
-
-  fs.writeFileSync(SITEMAP_FILE, sitemap);
-}
 
 async function main() {
   if (!process.env.ANTHROPIC_API_KEY) {
@@ -228,7 +203,7 @@ async function main() {
   let updated = addThumbnailImport(src, importLine);
   updated = insertPost(updated, objectLiteral);
   fs.writeFileSync(POSTS_FILE, updated);
-  updateSitemap(post.slug, date);
+  writeSitemap();
 
   console.log(`Created blog post: ${post.slug}`);
   console.log(`Title: ${post.title}`);

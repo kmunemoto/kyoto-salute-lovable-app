@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -42,6 +43,10 @@ const Tokusho = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>特定商取引法に基づく表記 | パーソナルジム Salute御所南</title>
+        <link rel="canonical" href="https://kyoto-salute.com/tokusho" />
+      </Helmet>
       <Header />
 
       <main className="flex-1 pt-24 md:pt-28">

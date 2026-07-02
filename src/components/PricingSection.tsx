@@ -5,19 +5,7 @@ import { trackCtaClick } from "@/lib/analytics";
 const PricingSection = () => {
   const { lang, t } = useT();
   const p = t.pricing;
-  const jaDropInOverride = {
-    name: "Drop-in Plan",
-    price: "¥8,000",
-    perSession: "tax incl. / session",
-    description: "No membership required",
-    features: [
-      "60-min personal training",
-      "Sportswear & shoes provided",
-      "Just walk in",
-    ],
-  };
-  const dropInPlan = lang === "ja" ? jaDropInOverride : p.dropIn;
-  const allPlans = [...p.plans, dropInPlan];
+  const allPlans = [...p.plans, p.dropIn];
   return (
     <section id="plan" className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
@@ -34,11 +22,11 @@ const PricingSection = () => {
           {allPlans.map((plan, idx) => {
             const popular = idx === 2;
             const isDropIn = idx === allPlans.length - 1;
-            const ctaLabel = isDropIn && lang === "ja" ? "Book Now" : p.cta;
+            const ctaLabel = isDropIn ? p.dropInCta : p.cta;
             const ctaHref = isDropIn
               ? "https://app.kyoto-salute.com/visitor"
               : "https://app.kyoto-salute.com/trial";
-            const unitLabel = isDropIn && lang === "ja" ? " / session" : p.perMonth;
+            const unitLabel = isDropIn ? p.dropInUnit : p.perMonth;
             return (
               <div key={plan.name} className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold bg-white shadow-md" : "border-border bg-white"}`}>
                 {popular && (
@@ -58,7 +46,7 @@ const PricingSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a href={ctaHref} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: isDropIn ? "dropin" : "trial", location: `pricing_${plan.name}`, label: ctaLabel, url: ctaHref, language: lang })} className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
+                <a href={ctaHref} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: isDropIn ? "dropin" : "trial", location: isDropIn ? "pricing_dropin" : `pricing_plan${idx + 1}`, label: ctaLabel, url: ctaHref, language: lang })} className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
                   {ctaLabel}
                 </a>
               </div>

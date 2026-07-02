@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -47,6 +48,10 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>利用規約 | パーソナルジム Salute御所南</title>
+        <link rel="canonical" href="https://kyoto-salute.com/terms" />
+      </Helmet>
       <Header />
 
       <main className="flex-1 pt-24 md:pt-28">

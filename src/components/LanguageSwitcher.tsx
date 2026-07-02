@@ -20,8 +20,11 @@ const LanguageSwitcher = () => {
     const m = path.match(/^\/(en|zh-tw|zh|ko)(\/.*)?$/);
     if (m) path = m[2] || "/";
     const prefix = target === "ja" ? "" : target === "zhTW" ? "/zh-tw" : `/${target}`;
-    const newPath = (prefix + (path === "/" ? "" : path)) || "/";
-    navigate(newPath + location.hash);
+    // Only the homepage is localized. On any other route (blog, legal, etc.),
+    // switch to that language's home instead of a nonexistent localized URL.
+    const isHome = path === "/";
+    const newPath = prefix || "/";
+    navigate(newPath + (isHome ? location.hash : ""));
   };
 
   return (
