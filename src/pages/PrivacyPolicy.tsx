@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -31,6 +32,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>プライバシーポリシー | パーソナルジム Salute御所南｜京都市中京区</title>
+        <link rel="canonical" href="https://kyoto-salute.com/privacy-policy" />
+      </Helmet>
       <Header />
 
       <main className="flex-1 pt-24 md:pt-28">

@@ -26,11 +26,11 @@ const HeroSection = () => {
       </div>
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="max-w-3xl">
-          <h1 className="animate-fade-up text-gold text-sm md:text-base font-body tracking-wider mb-4 font-normal" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>{h.kicker}</h1>
-          <p className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.25] mb-4 text-[28px] md:text-[44px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
+          <p className="animate-fade-up text-gold text-sm md:text-base font-body tracking-wider mb-4 font-normal" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>{h.kicker}</p>
+          <h1 className="animate-fade-up animate-delay-100 font-heading font-bold text-white leading-[1.25] mb-4 text-[28px] md:text-[44px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
             {h.title1}<br />
             <span className="text-gold" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>{h.titleAccent}</span>
-          </p>
+          </h1>
           <p className="animate-fade-up animate-delay-150 font-body mb-6 text-[14px] md:text-[18px] leading-relaxed" style={{ color: "rgba(255,255,255,0.7)", textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
             {h.sub}
           </p>

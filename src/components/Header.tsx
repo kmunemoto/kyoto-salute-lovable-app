@@ -14,7 +14,7 @@ const Header = () => {
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  const prefix = lang === "ja" ? "" : `/${lang}`;
+  const prefix = lang === "ja" ? "" : `/${lang === "zhTW" ? "zh-tw" : lang}`;
   const navItems = [
     { label: t.nav.features, href: `${prefix || ""}/#features` },
     { label: t.nav.trainer, href: `${prefix || ""}/#trainer` },

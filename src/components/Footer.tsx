@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
 
 const Footer = () => {
   const { lang, t } = useT();
@@ -14,8 +15,8 @@ const Footer = () => {
         <div className="w-full flex flex-col items-center gap-5">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             <Link to="/blog" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.blog}</Link>
-            <a href="https://kyoto-salute.lovable.app/auth" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.app}</a>
-            <a href="https://page.line.me/393blgip" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.line}</a>
+            <a href="https://app.kyoto-salute.com/auth" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.app}</a>
+            <a href="https://lin.ee/UMVDzWF" target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: "footer", label: f.line, url: "https://lin.ee/UMVDzWF", language: lang })} className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.line}</a>
             <a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer" aria-label="パーソナルジムSalute御所南の公式Instagram（新しいタブで開く）" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.instagram}</a>
           </div>
           <div className="w-12 h-px bg-gold/10" />

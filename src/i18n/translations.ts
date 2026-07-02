@@ -18,7 +18,7 @@ type Dict = {
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
-  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; cta: string };
+  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; cta: string };
   flow: { kicker: string; title: string; steps: { title: string; description: string }[]; footer: string; bookText: string; bookLinkLabel: string };
   cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
@@ -55,7 +55,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40代男性・デスクワーク", comment: "通い始めて4か月ほどになります。毎回同じトレーニングではなく少しずつ変えて調整してもらえるので毎回効果を感じています。" },
       { label: "30代女性・会社員", comment: "筋トレ初心者ですが、楽しく通っています。ウェア・シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。" },
     ], fromGoogle: "Google口コミより" },
-    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "4つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", description: "お客様の目標やライフスタイルに合わせて、4つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", plans: [
+    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "4つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、4つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", plans: [
       { name: "月4回プラン", price: "¥20,000", perSession: "1回あたり ¥5,000", description: "健康維持や運動不足解消にオススメ", features: ["1セッション60分", "月4回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
       { name: "月6回プラン", price: "¥28,500", perSession: "1回あたり ¥4,750", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション60分", "月6回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
       { name: "月8回プラン", price: "¥36,000", perSession: "1回あたり ¥4,500", description: "ダイエットやボディメイクにオススメ", features: ["1セッション60分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
@@ -75,7 +75,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "料金以外にかかる費用はありますか？", answer: "一切ありません。入会金・事務手数料は¥0、ウェア・シューズ・タオル・お水もすべて無料レンタルです。" },
       { question: "最寄り駅はどこですか？", answer: "地下鉄「丸太町」駅から徒歩8分です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。" },
     ] },
-    access: { kicker: "Access", title: "アクセス", intro: "烏丸丸太町エリア、丸太町駅から徒歩8分。地下鉄「丸太町」駅の4番出口を出て北へ。丸太町通り沿いにあるプラザ御所南の2階です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。", addressLabel: "住所", addressLines: ["〒604-0981", "京都市中京区毘沙門町533-1 プラザ御所南 2階"], stationLabel: "最寄駅", stations: ["京都市バス「裁判所前」駅 徒歩3分", "京都市営地下鉄「丸太町」駅 徒歩8分", "京阪「神宮丸太町」駅 徒歩8分", "京都市営地下鉄「京都市役所前」駅 徒歩10分"], hoursLabel: "営業時間", hoursText: "10:00〜22:00（完全予約制）", hoursSub: "不定休 / 営業時間外もご予約を承れる場合がございます", contactLabel: "お問い合わせ", contactText: "ご質問やご相談は公式LINEまたはInstagramのDMよりお受けしております。", note: "※自転車でお越しの際は、ビル1階の階段横スペースにお停めください。 ※駐車場は周辺コインパーキングをご利用ください。", sponsorsLabel: "協賛企業" },
+    access: { kicker: "Access", title: "アクセス", intro: "烏丸丸太町エリア、丸太町駅から徒歩8分。地下鉄「丸太町」駅の4番出口を出て東へ。丸太町通り沿いにあるプラザ御所南の2階です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。", addressLabel: "住所", addressLines: ["〒604-0981", "京都市中京区毘沙門町533-1 プラザ御所南 2階"], stationLabel: "最寄駅", stations: ["京都市バス「裁判所前」バス停 徒歩3分", "京都市営地下鉄「丸太町」駅 徒歩8分", "京阪「神宮丸太町」駅 徒歩8分", "京都市営地下鉄「京都市役所前」駅 徒歩10分"], hoursLabel: "営業時間", hoursText: "10:00〜22:00（完全予約制）", hoursSub: "不定休 / 営業時間外もご予約を承れる場合がございます", contactLabel: "お問い合わせ", contactText: "ご質問やご相談は公式LINEまたはInstagramのDMよりお受けしております。", note: "※自転車でお越しの際は、ビル1階の階段横スペースにお停めください。 ※駐車場は周辺コインパーキングをご利用ください。", sponsorsLabel: "協賛企業" },
     footer: { blog: "ブログ", app: "公式アプリ", line: "LINE", instagram: "Instagram", terms: "利用規約", privacy: "プライバシーポリシー", tokusho: "特定商取引法に基づく表記", copyright: "パーソナルジム Salute御所南", address: "京都市中京区毘沙門町533-1 プラザ御所南 2階", related: "関連事業：" },
     mobileCta: "LINEで初回無料体験を予約 →",
     languageLabel: "言語",
@@ -106,7 +106,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "Male, 40s — Desk Job", comment: "I've been training here for about 4 months. The sessions are always adjusted, so I keep feeling real progress every time." },
       { label: "Female, 30s — Office Worker", comment: "I'm new to strength training but really enjoying it. Sportswear and shoes are provided, so I can come straight from work without bringing anything." },
     ], fromGoogle: "From Google Reviews" },
-    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", description: "Choose from 4 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", plans: [
+    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 4 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", plans: [
       { name: "4 Sessions / Month", price: "¥20,000", perSession: "¥5,000 / session", description: "For staying healthy and active", features: ["60-minute session", "Up to 4 sessions / month", "Just come as you are", "Training app included"] },
       { name: "6 Sessions / Month", price: "¥28,500", perSession: "¥4,750 / session", description: "For training once a week or more", features: ["60-minute session", "Up to 6 sessions / month", "Just come as you are", "Training app included"] },
       { name: "8 Sessions / Month", price: "¥36,000", perSession: "¥4,500 / session", description: "For weight loss and body shaping", features: ["60-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
@@ -127,7 +127,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "Any extra costs?", answer: "None. The enrollment fee is ¥0, and sportswear, shoes, towels and water are all free." },
       { question: "Nearest station?", answer: "8 min on foot from Marutamachi Station (Karasuma Line). Also 8 min from Keihan Jingu-Marutamachi Station." },
     ] },
-    access: { kicker: "Access", title: "Access", intro: "8 minutes on foot from Marutamachi Station. Take Exit 4 and walk east along Marutamachi-dori. We're on the 2nd floor of Plaza Goshominami. Also 8 minutes from Keihan Jingu-Marutamachi Station.", addressLabel: "Address", addressLines: ["604-0981", "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto"], stationLabel: "Nearest Stations", stations: ["Kyoto City Bus 'Saibansho-mae' — 3 min walk", "Karasuma Subway Line 'Marutamachi' — 8 min walk", "Keihan 'Jingu-Marutamachi' — 8 min walk", "Karasuma Subway Line 'Kyoto Shiyakusho-mae' — 10 min walk"], hoursLabel: "Hours", hoursText: "10:00 – 22:00 (by reservation only)", hoursSub: "Open daily / sessions outside regular hours may also be available on request", contactLabel: "Contact", contactText: "Questions and inquiries are handled via our official LINE or Instagram DM.", note: "* Bicycle parking is available beside the stairs on the 1st floor of the building. * For cars, please use nearby coin parking.", sponsorsLabel: "Sponsors" },
+    access: { kicker: "Access", title: "Access", intro: "8 minutes on foot from Marutamachi Station. Take Exit 4 and walk east along Marutamachi-dori. We're on the 2nd floor of Plaza Goshominami. Also 8 minutes from Keihan Jingu-Marutamachi Station.", addressLabel: "Address", addressLines: ["604-0981", "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto"], stationLabel: "Nearest Stations", stations: ["Kyoto City Bus 'Saibansho-mae' — 3 min walk", "Karasuma Subway Line 'Marutamachi' — 8 min walk", "Keihan 'Jingu-Marutamachi' — 8 min walk", "Karasuma Subway Line 'Kyoto Shiyakusho-mae' — 10 min walk"], hoursLabel: "Hours", hoursText: "10:00 – 22:00 (by reservation only)", hoursSub: "Irregular holidays / sessions outside regular hours may also be available on request", contactLabel: "Contact", contactText: "Questions and inquiries are handled via our official LINE or Instagram DM.", note: "* Bicycle parking is available beside the stairs on the 1st floor of the building. * For cars, please use nearby coin parking.", sponsorsLabel: "Sponsors" },
     footer: { blog: "Blog", app: "Official App", line: "LINE", instagram: "Instagram", terms: "Terms", privacy: "Privacy Policy", tokusho: "Specified Commercial Transactions Act", copyright: "Personal Training Gym Salute Goshominami", address: "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku, Kyoto", related: "Related: " },
     mobileCta: "Book a Free Trial →",
     languageLabel: "Language",
@@ -158,7 +158,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多岁男性・办公室工作", comment: "已经训练4个月左右。每次训练内容都会有调整，每次都能感受到进步。" },
       { label: "30多岁女性・上班族", comment: "我是健身新手，但每次都很开心。运动服和鞋子都免费提供，可以空手前来非常方便。" },
     ], fromGoogle: "来自Google评价" },
-    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", description: "可根据您的目标，从4个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", plans: [
+    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从4个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", plans: [
       { name: "月4次方案", price: "¥20,000", perSession: "每次 ¥5,000", description: "适合维持健康与日常运动", features: ["每次60分钟", "每月最多4次", "空手前来即可", "专用APP可用"] },
       { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "适合每周训练1次以上", features: ["每次60分钟", "每月最多6次", "空手前来即可", "专用APP可用"] },
       { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "适合减脂与塑形", features: ["每次60分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
@@ -210,7 +210,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多歲男性・辦公室工作", comment: "已經訓練4個月左右。每次訓練內容都會有調整，每次都能感受到進步。" },
       { label: "30多歲女性・上班族", comment: "我是健身新手，但每次都很開心。運動服與鞋子都免費提供，可以空手前來非常方便。" },
     ], fromGoogle: "來自Google評價" },
-    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", description: "可依照您的目標，從4個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", plans: [
+    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從4個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", plans: [
       { name: "月4次方案", price: "¥20,000", perSession: "每次 ¥5,000", description: "適合維持健康與日常運動", features: ["每次60分鐘", "每月最多4次", "空手前來即可", "可使用專用APP"] },
       { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "適合每週訓練1次以上", features: ["每次60分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
       { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "適合減脂與體態雕塑", features: ["每次60分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
@@ -262,7 +262,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40대 남성・사무직", comment: "다닌 지 4개월 정도 되었습니다. 매번 같은 운동만 하지 않고 조금씩 조정해 주셔서 매번 효과를 체감하고 있습니다." },
       { label: "30대 여성・회사원", comment: "근력 운동은 처음이지만 즐겁게 다니고 있어요. 운동복과 신발이 무료라 빈손으로 와도 되어 일정 사이에 들르기에도 편합니다." },
     ], fromGoogle: "Google 후기에서" },
-    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", description: "목표에 맞춰 4가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", plans: [
+    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 4가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", plans: [
       { name: "월 4회 플랜", price: "¥20,000", perSession: "1회 ¥5,000", description: "건강 유지와 운동 부족 해소", features: ["1회 60분", "월 최대 4회", "빈손으로 OK", "전용 앱 제공"] },
       { name: "월 6회 플랜", price: "¥28,500", perSession: "1회 ¥4,750", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 60분", "월 최대 6회", "빈손으로 OK", "전용 앱 제공"] },
       { name: "월 8회 플랜", price: "¥36,000", perSession: "1회 ¥4,500", description: "다이어트와 바디 메이킹에", features: ["1회 60분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },

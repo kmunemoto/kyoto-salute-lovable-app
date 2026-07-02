@@ -7,8 +7,7 @@ import { getBlogPost } from "@/data/blog-posts";
 import { trackCtaClick } from "@/lib/analytics";
 
 const BASE = "https://kyoto-salute.com";
-const PUBLISHER_LOGO =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3af4e296-82b3-456c-9c85-4cf31a76f9ce/id-preview-9e645d1d--c7345876-e8c0-42b1-92fd-9cd90a17e126.lovable.app-1778898480200.png";
+const PUBLISHER_LOGO = "https://kyoto-salute.com/og-image.jpg";
 
 const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE}${path}`);
 

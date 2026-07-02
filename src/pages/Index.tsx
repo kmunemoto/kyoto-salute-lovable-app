@@ -27,7 +27,7 @@ const Index = () => {
       lang === "ja" ? "ja" : lang === "zh" ? "zh-Hans" : lang === "zhTW" ? "zh-Hant" : lang;
   }, [lang, t]);
 
-  const path = lang === "ja" ? "/" : lang === "zhTW" ? "/zh-tw/" : `/${lang}/`;
+  const path = lang === "ja" ? "/" : lang === "zhTW" ? "/zh-tw" : `/${lang}`;
   const ogLocale =
     lang === "ja" ? "ja_JP"
     : lang === "en" ? "en_US"
@@ -46,11 +46,13 @@ const Index = () => {
         <meta property="og:description" content={t.meta.description} />
         <meta property="og:url" content={`${BASE}${path}`} />
         <meta property="og:locale" content={ogLocale} />
+        <meta property="og:image" content={`${BASE}/og-image.jpg`} />
+        <meta name="twitter:image" content={`${BASE}/og-image.jpg`} />
         <link rel="alternate" hrefLang="ja" href={`${BASE}/`} />
-        <link rel="alternate" hrefLang="en" href={`${BASE}/en/`} />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${BASE}/zh/`} />
-        <link rel="alternate" hrefLang="zh-Hant" href={`${BASE}/zh-tw/`} />
-        <link rel="alternate" hrefLang="ko" href={`${BASE}/ko/`} />
+        <link rel="alternate" hrefLang="en" href={`${BASE}/en`} />
+        <link rel="alternate" hrefLang="zh-Hans" href={`${BASE}/zh`} />
+        <link rel="alternate" hrefLang="zh-Hant" href={`${BASE}/zh-tw`} />
+        <link rel="alternate" hrefLang="ko" href={`${BASE}/ko`} />
         <link rel="alternate" hrefLang="x-default" href={`${BASE}/`} />
       </Helmet>
       <Header />

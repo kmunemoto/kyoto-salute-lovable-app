@@ -1,12 +1,14 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Check, MapPin, Train, Instagram, Mail, MessageCircle } from "lucide-react";
+import { trackCtaClick } from "@/lib/analytics";
+
+const BASE = "https://kyoto-salute.com";
+const VISITOR_URL = "https://app.kyoto-salute.com/visitor";
+const DROPIN_DESC =
+  "Drop-in personal training in Kyoto for travelers. ¥8,000 per session, no membership, all gear provided. 8 min from Marutamachi Station.";
 
 const DropIn = () => {
-  useEffect(() => {
-    document.title = "Drop-in Personal Training in Kyoto | Salute Goshominami";
-  }, []);
-
   const included = [
     "60-minute 1-on-1 personal training session",
     "Certified nutritionist trainer",
@@ -17,6 +19,20 @@ const DropIn = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <html lang="en" />
+        <title>Drop-in Personal Training in Kyoto | Salute Goshominami</title>
+        <meta name="description" content={DROPIN_DESC} />
+        <link rel="canonical" href={`${BASE}/drop-in`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Drop-in Personal Training in Kyoto | Salute Goshominami" />
+        <meta property="og:description" content={DROPIN_DESC} />
+        <meta property="og:url" content={`${BASE}/drop-in`} />
+        <meta property="og:image" content={`${BASE}/og-image.jpg`} />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${BASE}/og-image.jpg`} />
+      </Helmet>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -40,9 +56,10 @@ const DropIn = () => {
             Keep your fitness routine while traveling. No membership needed.
           </p>
           <a
-            href="https://www.instagram.com/salute_goshonan/"
+            href={VISITOR_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCtaClick({ type: "dropin", location: "drop_in_hero", label: "Book Now", url: VISITOR_URL, language: "en" })}
             className="gold-gradient inline-block px-10 py-4 text-white font-medium rounded-sm text-base"
           >
             Book Now
@@ -90,7 +107,7 @@ const DropIn = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { n: "01", t: "Get in Touch", d: "Send us a DM on Instagram or message via the form below." },
+              { n: "01", t: "Get in Touch", d: "Send us a DM on Instagram or a message on LINE." },
               { n: "02", t: "Pick a Time", d: "Tell us your preferred date and time." },
               { n: "03", t: "Show Up & Train", d: "Just come — we provide everything you need!" },
             ].map((s) => (
@@ -179,7 +196,7 @@ const DropIn = () => {
           </div>
           <div className="flex justify-center gap-6">
             <a
-              href="https://www.instagram.com/salute_goshonan/"
+              href="https://www.instagram.com/salute_goshominami/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-footer-foreground/70 hover:text-gold transition-colors flex items-center gap-2 font-body text-sm"
@@ -187,9 +204,10 @@ const DropIn = () => {
               <Instagram className="w-4 h-4" /> Instagram
             </a>
             <a
-              href="https://page.line.me/393blgip"
+              href="https://lin.ee/UMVDzWF"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCtaClick({ type: "line", location: "drop_in_footer", label: "LINE", url: "https://lin.ee/UMVDzWF", language: "en" })}
               className="text-footer-foreground/70 hover:text-gold transition-colors flex items-center gap-2 font-body text-sm"
             >
               <MessageCircle className="w-4 h-4" /> LINE

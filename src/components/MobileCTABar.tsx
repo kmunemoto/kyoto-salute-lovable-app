@@ -14,6 +14,7 @@ const MobileCTABar = () => {
       setVisible(window.scrollY > heroHeight * 0.8);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
