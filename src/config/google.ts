@@ -5,12 +5,10 @@
 //   - GOOGLE_REVIEW_URL : 口コミ投稿用リンク（GBP管理画面「クチコミを増やす」の g.page/r/... など）
 // 未設定の場合はGoogleマップのSalute御所南検索結果にフォールバックします（店名が固有なので基本その店舗が開きます）。
 
-export const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("パーソナルジム Salute御所南 京都市中京区");
+export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/g9AWh3uY76ntSegA8";
 
 // 口コミ投稿リンク（未設定なら店舗ページにフォールバック）。
-export const GOOGLE_REVIEW_URL = "";
+export const GOOGLE_REVIEW_URL = "https://g.page/r/CakvOlkySlepEBE/review";
 
 // 口コミを書いてもらうときに使うリンク（投稿リンク優先、無ければ店舗ページ）。
 export const reviewUrl = (): string => GOOGLE_REVIEW_URL || GOOGLE_MAPS_URL;
