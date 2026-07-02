@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
+import { AREA_PAGES } from "@/data/area-pages";
 
 const Footer = () => {
   const { lang, t } = useT();
@@ -19,6 +20,15 @@ const Footer = () => {
             <a href="https://lin.ee/UMVDzWF" target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: "footer", label: f.line, url: "https://lin.ee/UMVDzWF", language: lang })} className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.line}</a>
             <a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer" aria-label="パーソナルジムSalute御所南の公式Instagram（新しいタブで開く）" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.instagram}</a>
           </div>
+          {lang === "ja" && (
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {AREA_PAGES.map((a) => (
+                <Link key={a.slug} to={`/area/${a.slug}`} className="text-footer-foreground/60 hover:text-gold text-xs transition-colors font-body">
+                  {a.station}のパーソナルジム
+                </Link>
+              ))}
+            </div>
+          )}
           <div className="w-12 h-px bg-gold/10" />
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link to="/terms" className="text-footer-foreground/45 hover:text-gold text-xs transition-colors font-body">{f.terms}</Link>

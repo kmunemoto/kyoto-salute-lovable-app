@@ -19,6 +19,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
 const Tokusho = lazy(() => import("./pages/Tokusho.tsx"));
 const DropIn = lazy(() => import("./pages/DropIn.tsx"));
+const AreaPage = lazy(() => import("./pages/AreaPage.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/tokusho" element={<Tokusho />} />
             <Route path="/drop-in" element={<DropIn />} />
+            <Route path="/area/:slug" element={<LanguageProvider lang={"ja" as Lang}><AreaPage /></LanguageProvider>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
