@@ -37,11 +37,6 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-footer-foreground/40 text-xs font-body">© {new Date().getFullYear()} {f.copyright}</p>
-        <p className="text-footer-foreground/35 text-[11px] font-body leading-relaxed px-4">
-          {f.related}
-          <a href="https://kantaapplab.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-footer-foreground/60 underline underline-offset-2 hover:text-gold transition-colors">KantaAppLab</a>
-          ｜{lang === "ja" ? "アプリ開発・システム開発" : "App & System Development"}
-        </p>
       </div>
     </footer>
   );
