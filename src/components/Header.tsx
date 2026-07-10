@@ -273,7 +273,7 @@ const Header = () => {
               key={item.href}
               href={item.href}
               onClick={closeDrawer}
-              className="block menu-label text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
+              className="block font-heading text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
@@ -288,7 +288,7 @@ const Header = () => {
             <Link
               to="/"
               onClick={closeDrawer}
-              className="block menu-label text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
+              className="block font-heading text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
