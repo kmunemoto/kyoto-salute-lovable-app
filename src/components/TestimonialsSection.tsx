@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
         <h3 className="font-body text-center" style={{ fontSize: "20px", fontWeight: 700, color: "#2C2621", marginBottom: "32px" }}>{v.voiceTitle}</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {v.testimonials.map((tx, i) => (
-            <div key={i} className="rounded-sm border border-border bg-white p-6 hover:-translate-y-1 transition-transform duration-300">
+            <div key={i} className="rounded-sm glass-card p-6 hover:-translate-y-1 transition-transform duration-300">
               <p className="font-body mb-2" style={{ fontSize: "13px", color: "#9b8e82", fontWeight: 500 }}>{tx.label}</p>
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, j) => (

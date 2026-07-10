@@ -19,7 +19,7 @@ const FlowSection = () => {
             const Icon = icons[i];
             const num = String(i + 1).padStart(2, "0");
             return (
-              <div key={num} className="rounded-sm border border-border bg-white p-8 text-center flex flex-col items-center">
+              <div key={num} className="rounded-sm glass-card p-8 text-center flex flex-col items-center">
                 <p className="font-heading text-primary text-2xl mb-3">{num}</p>
                 <Icon className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
                 <h3 className="font-heading text-xl text-foreground mb-3">{s.title}</h3>
