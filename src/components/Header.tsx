@@ -239,9 +239,9 @@ const Header = () => {
         aria-hidden={!isOpen}
         className="md:hidden fixed inset-0 z-[60] flex flex-col"
         style={{
-          backgroundColor: "rgba(10,20,26,0.95)",
-          backdropFilter: "blur(6px)",
-          WebkitBackdropFilter: "blur(6px)",
+          backgroundColor: "rgba(0,0,0,0.82)",
+          backdropFilter: "blur(2px)",
+          WebkitBackdropFilter: "blur(2px)",
           opacity: animateIn ? 1 : 0,
           transition: reduceMotion ? "none" : `opacity ${drawerDuration} ${drawerEasing}`,
         }}
@@ -273,7 +273,7 @@ const Header = () => {
               key={item.href}
               href={item.href}
               onClick={closeDrawer}
-              className="block font-heading text-2xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.08em]"
+              className="block menu-label text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
@@ -288,7 +288,7 @@ const Header = () => {
             <Link
               to="/"
               onClick={closeDrawer}
-              className="block font-heading text-2xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.08em]"
+              className="block menu-label text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
