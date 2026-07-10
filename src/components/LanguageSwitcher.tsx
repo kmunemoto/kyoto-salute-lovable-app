@@ -50,13 +50,13 @@ const LanguageSwitcher = () => {
           <Globe size={20} />
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[140px] bg-background z-[60]">
+      <DropdownMenuContent align="end" className="min-w-[150px] bg-white rounded-xl shadow-xl border border-black/5 p-1.5 z-[60]">
         {LANGS.map((l) => (
           <DropdownMenuItem
             key={l.code}
             onClick={() => switchTo(l.code)}
-            className={`cursor-pointer font-body text-sm ${
-              l.code === lang ? "text-[#0ABAB5] font-semibold" : "text-foreground/80"
+            className={`cursor-pointer font-body text-sm rounded-lg px-3 py-2 ${
+              l.code === lang ? "text-[#0ABAB5] font-semibold" : "text-[#0F2E3D]"
             }`}
           >
             {l.label}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
@@ -214,91 +215,101 @@ const Header = () => {
     </header>
 
     {mounted && (
-      <div className="md:hidden fixed inset-0 z-[60]" aria-hidden={!isOpen}>
-          {/* Overlay */}
-          <div
+      /* Summer Sonic-style full-screen dark menu overlay: near-black translucent
+         backdrop, big white Japanese labels with thin dividers, social icons at
+         the foot. Fades in over the whole viewport (no side drawer). */
+      <div
+        id="mobile-drawer"
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="メニュー"
+        aria-hidden={!isOpen}
+        className="md:hidden fixed inset-0 z-[60] flex flex-col"
+        style={{
+          backgroundColor: "rgba(10,20,26,0.95)",
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
+          opacity: animateIn ? 1 : 0,
+          transition: reduceMotion ? "none" : `opacity ${drawerDuration} ${drawerEasing}`,
+        }}
+      >
+        {/* Top bar: logo + close */}
+        <div
+          className="flex items-center justify-between px-6 pb-4"
+          style={{ paddingTop: "calc(var(--banner-offset, 0px) + 20px)" }}
+        >
+          <span className="font-heading text-xl text-white">
+            <span className="text-gold">Salute</span>
+            {lang === "ja" ? "御所南" : " Goshominami"}
+          </span>
+          <button
+            ref={closeBtnRef}
             onClick={closeDrawer}
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundColor: "rgba(20,20,18,0.38)",
-              opacity: animateIn ? 1 : 0,
-              transition: reduceMotion ? "none" : `opacity 400ms ${drawerEasing}`,
-            }}
-          />
-          {/* Drawer */}
-          <div
-            id="mobile-drawer"
-            ref={drawerRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label="メニュー"
-            className="absolute top-0 right-0 h-full flex flex-col border-l border-border shadow-lg"
-            style={{
-              width: "78%",
-              maxWidth: "280px",
-              backgroundColor: "#FDFCFA",
-              transform: animateIn ? "translateX(0)" : "translateX(100%)",
-              transition: reduceMotion ? "none" : `transform ${drawerDuration} ${drawerEasing}`,
-            }}
+            aria-label="メニューを閉じる"
+            className="relative w-9 h-9 flex items-center justify-center text-white hover:text-gold transition-colors"
           >
-            <div className="flex justify-end p-4">
-              <button
-                ref={closeBtnRef}
-                onClick={closeDrawer}
-                aria-label="メニューを閉じる"
-                className="relative w-8 h-8 flex items-center justify-center text-foreground hover:text-gold transition-colors"
-              >
-                <span className="absolute block h-[2px] w-6 bg-current" style={{ transform: "rotate(45deg)" }} />
-                <span className="absolute block h-[2px] w-6 bg-current" style={{ transform: "rotate(-45deg)" }} />
-              </button>
-            </div>
+            <span className="absolute block h-[2px] w-6 bg-current" style={{ transform: "rotate(45deg)" }} />
+            <span className="absolute block h-[2px] w-6 bg-current" style={{ transform: "rotate(-45deg)" }} />
+          </button>
+        </div>
 
-            <nav className="flex-1 overflow-y-auto px-6 pb-4">
-              {mobileNavItems.map((item, i) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeDrawer}
-                  className="block font-heading text-base text-foreground hover:text-gold py-3 border-b border-border/40"
-                  style={{
-                    opacity: animateIn ? 1 : 0,
-                    transform: animateIn ? "translateX(0)" : "translateX(12px)",
-                    transition: itemTransition,
-                    transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + i * 55}ms`,
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
-              {lang !== "ja" && (
-                <Link
-                  to="/"
-                  onClick={closeDrawer}
-                  className="block font-heading text-base text-foreground hover:text-gold py-3 border-b border-border/40"
-                  style={{
-                    opacity: animateIn ? 1 : 0,
-                    transform: animateIn ? "translateX(0)" : "translateX(12px)",
-                    transition: itemTransition,
-                    transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + mobileNavItems.length * 55}ms`,
-                  }}
-                >
-                  日本語サイトへ
-                </Link>
-              )}
-            </nav>
+        {/* Menu items */}
+        <nav className="flex-1 overflow-y-auto px-6">
+          {mobileNavItems.map((item, i) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={closeDrawer}
+              className="block font-heading text-2xl text-white hover:text-gold py-4 border-b border-white/15"
+              style={{
+                opacity: animateIn ? 1 : 0,
+                transform: animateIn ? "translateX(0)" : "translateX(12px)",
+                transition: itemTransition,
+                transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + i * 55}ms`,
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+          {lang !== "ja" && (
+            <Link
+              to="/"
+              onClick={closeDrawer}
+              className="block font-heading text-2xl text-white hover:text-gold py-4 border-b border-white/15"
+              style={{
+                opacity: animateIn ? 1 : 0,
+                transform: animateIn ? "translateX(0)" : "translateX(12px)",
+                transition: itemTransition,
+                transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + mobileNavItems.length * 55}ms`,
+              }}
+            >
+              日本語サイトへ
+            </Link>
+          )}
+        </nav>
 
-            <div className="p-6 border-t border-border">
-              <a
-                href="https://app.kyoto-salute.com/trial"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => { trackCtaClick({ type: "trial", location: "header_mobile", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang }); closeDrawer(); }}
-                className="block text-center gold-gradient px-5 py-3 text-sm font-medium text-white rounded-sm"
-              >
-                {t.header.ctaBtn}
-              </a>
-            </div>
+        {/* Social icons */}
+        <div className="flex items-center justify-center gap-10 px-6 py-8">
+          <a
+            href="https://www.instagram.com/salute_goshominami/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram（新しいタブで開く）"
+            className="text-white hover:text-gold transition-colors"
+          >
+            <Instagram size={26} />
+          </a>
+          <a
+            href="https://lin.ee/UMVDzWF"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LINE（新しいタブで開く）"
+            onClick={() => trackCtaClick({ type: "line", location: "header_mobile_menu", label: "LINE", url: "https://lin.ee/UMVDzWF", language: lang })}
+            className="text-white hover:text-gold transition-colors font-body font-bold tracking-wide text-lg"
+          >
+            LINE
+          </a>
         </div>
       </div>
     )}
