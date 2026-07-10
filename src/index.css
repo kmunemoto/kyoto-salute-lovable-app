@@ -123,6 +123,17 @@
     @apply bg-background text-foreground;
   }
 
+  .glass-card {
+    /* Summer Sonic-style translucent frosted glass for content boxes (plans,
+       reviews, FAQ, etc.) so the pinned photo shows through instead of a solid
+       white panel. Replaces bg-white on inner cards inside the immersive page. */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 30px rgba(15, 46, 61, 0.1);
+  }
+
   .gold-gradient {
     /* Solid terracotta CTA per new brand palette */
     background: hsl(var(--gold));
