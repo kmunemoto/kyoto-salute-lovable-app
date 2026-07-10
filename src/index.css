@@ -165,3 +165,13 @@
   .animate-delay-300 { animation-delay: 0.3s; }
   .animate-delay-400 { animation-delay: 0.4s; }
 }
+
+/* Immersive fixed-background mode (applied on Index via the `immersive` class):
+   the hero photo is pinned to the viewport and every section below it becomes a
+   translucent frosted-glass panel, so the photo shows through while scrolling.
+   Excludes the hero (first section) and the Numbers band (solid inline color). */
+.immersive > section:not(:first-of-type):not(#numbers) {
+  background-color: rgba(245, 237, 224, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
