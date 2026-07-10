@@ -169,9 +169,18 @@
 /* Immersive fixed-background mode (applied on Index via the `immersive` class):
    the hero photo is pinned to the viewport and every section below it becomes a
    translucent frosted-glass panel, so the photo shows through while scrolling.
-   Excludes the hero (first section) and the Numbers band (solid inline color). */
+   Excludes the hero (first section) and the Numbers band (solid inline color).
+
+   Base sections are mostly opaque (0.86) with only a light blur (3px) so the
+   pinned gym photo reads through crisply behind text without hurting legibility. */
 .immersive > section:not(:first-of-type):not(#numbers) {
-  background-color: rgba(245, 237, 224, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(245, 237, 224, 0.86);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Showcase section: lighter frost so the pinned gym photo becomes the star.
+   Features has photo cards and little body copy, so it can afford more see-through. */
+.immersive > section#features {
+  background-color: rgba(245, 237, 224, 0.55);
 }
