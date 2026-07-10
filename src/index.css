@@ -60,7 +60,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Oswald', 'Noto Sans JP', system-ui, -apple-system, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
     --font-body: 'Noto Sans JP', sans-serif;
   }
 
@@ -106,6 +106,10 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
+    /* Oswald (Latin) reads light at 400; default headings to 600 so Japanese
+       (Noto Sans JP) and English both land bold, Summer Sonic-style. Explicit
+       font-bold / font-medium utility classes still override this. */
+    font-weight: 600;
   }
 }
 
