@@ -255,13 +255,13 @@ const Header = () => {
         </div>
 
         {/* Menu items — localized labels (Japanese on the JA site) */}
-        <nav className="flex-1 overflow-y-auto px-6">
+        <nav className="flex-1 overflow-y-auto px-6 flex flex-col justify-center">
           {mobileNavItems.map((item, i) => (
             <a
               key={item.href}
               href={item.href}
               onClick={closeDrawer}
-              className="block font-heading text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
+              className="block font-heading text-xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em] text-center"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
@@ -276,7 +276,7 @@ const Header = () => {
             <Link
               to="/"
               onClick={closeDrawer}
-              className="block font-heading text-3xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em]"
+              className="block font-heading text-xl text-white hover:text-gold py-4 border-b border-white/15 tracking-[0.06em] text-center"
               style={{
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
