@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
+        heading: ['Oswald', 'Noto Sans JP', 'system-ui', '-apple-system', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'sans-serif'],
         body: ['Noto Sans JP', 'sans-serif'],
       },
       colors: {
