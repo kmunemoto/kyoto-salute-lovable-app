@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
               </div>
               <span className="font-body" style={{ fontSize: "36px", fontWeight: 800 }}>5.0</span>
             </div>
-            <p className="font-body mt-2 group-hover:text-gold transition-colors underline-offset-4 group-hover:underline" style={{ fontSize: "14px", color: "#9b8e82" }}>{v.googleReviews} →</p>
+            <p className="font-body mt-2 group-hover:text-gold transition-colors underline-offset-4 group-hover:underline" style={{ fontSize: "14px", color: "#6f6459" }}>{v.googleReviews} →</p>
           </a>
         </div>
 
