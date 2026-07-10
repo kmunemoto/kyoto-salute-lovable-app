@@ -33,18 +33,6 @@ const Header = () => {
     { label: t.nav.consultation, href: `${prefix || ""}/#consultation` },
   ];
   const mobileNavItems = [...navItems, { label: t.nav.blog, href: "/blog" }];
-  // The full-screen mobile menu overlay uses fixed English uppercase labels
-  // (Summer Sonic style), regardless of the site language.
-  const overlayNavItems = [
-    { label: "FEATURES", href: `${prefix || ""}/#features` },
-    { label: "TRAINER", href: `${prefix || ""}/#trainer` },
-    { label: "REVIEWS", href: `${prefix || ""}/#voice` },
-    { label: "PRICING", href: `${prefix || ""}/#plan` },
-    { label: "FAQ", href: `${prefix || ""}/#faq` },
-    { label: "ACCESS", href: `${prefix || ""}/#access` },
-    { label: "FREE TRIAL", href: `${prefix || ""}/#consultation` },
-    { label: "BLOG", href: "/blog" },
-  ];
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -266,9 +254,9 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menu items — fixed English uppercase labels (Summer Sonic style) */}
+        {/* Menu items — localized labels (Japanese on the JA site) */}
         <nav className="flex-1 overflow-y-auto px-6">
-          {overlayNavItems.map((item, i) => (
+          {mobileNavItems.map((item, i) => (
             <a
               key={item.href}
               href={item.href}
@@ -293,10 +281,10 @@ const Header = () => {
                 opacity: animateIn ? 1 : 0,
                 transform: animateIn ? "translateX(0)" : "translateX(12px)",
                 transition: itemTransition,
-                transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + overlayNavItems.length * 55}ms`,
+                transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + mobileNavItems.length * 55}ms`,
               }}
             >
-              JAPANESE SITE
+              日本語サイトへ
             </Link>
           )}
         </nav>
