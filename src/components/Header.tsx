@@ -150,7 +150,7 @@ const Header = () => {
           className={`font-heading text-xl ${isHome ? "text-white" : "text-foreground"}`}
           style={isHome ? glassTextShadow : undefined}
         >
-          <span className={isHome ? "text-white" : "text-gold"}>Salute</span>
+          <span className="text-gold">Salute</span>
           {lang === "ja" ? "御所南" : " Goshominami"}
         </a>
 
