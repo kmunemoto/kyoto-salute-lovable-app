@@ -135,6 +135,12 @@
     opacity: 1;
   }
 
+  .menu-label {
+    /* Bold condensed grotesque for the full-screen mobile menu (Summer Sonic vibe) */
+    font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+  }
+
   .gold-text {
     background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
     -webkit-background-clip: text;
