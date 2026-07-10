@@ -178,10 +178,16 @@
 }
 
 .immersive > section:not(:first-of-type):not(#numbers) > div {
-  background-color: rgba(245, 237, 224, 0.85);
-  border-radius: 1rem;
+  /* Summer Sonic-style frosted glass card: a cool, neutral translucent panel
+     (NOT warm cream) that frosts the photo behind it and picks up its colours,
+     with a faint light border. Background between cards stays razor sharp. */
+  background-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.25rem;
   padding: 1.5rem 1.25rem;
-  box-shadow: 0 10px 40px rgba(15, 46, 61, 0.15);
+  box-shadow: 0 10px 40px rgba(15, 46, 61, 0.12);
 }
 
 @media (min-width: 768px) {
