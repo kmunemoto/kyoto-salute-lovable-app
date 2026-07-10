@@ -36,7 +36,7 @@ const Index = () => {
     : "ko_KR";
 
   return (
-    <div className="min-h-screen" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
+    <div className="min-h-screen immersive" style={{ paddingTop: "var(--banner-offset, 0px)" }}>
       <Helmet>
         <html lang={lang} />
         <title>{t.meta.title}</title>
