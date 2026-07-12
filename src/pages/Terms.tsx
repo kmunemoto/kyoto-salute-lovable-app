@@ -146,9 +146,11 @@ const Terms = () => {
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>本サービスは完全予約制です。事前にご予約のうえお越しください。</li>
                   <li>
-                    予約の変更・キャンセルは、<strong className="text-foreground">当日でも可能で、キャンセル料は発生しません</strong>。
+                    予約の変更・キャンセルは、<strong className="text-foreground">前日まで</strong>にお願いいたします。前日までのご連絡であれば、キャンセル料やセッションの消費は発生しません。
                   </li>
-                  <li>ただし、無断キャンセルを繰り返した場合は、当ジムの判断により予約制限等の措置を取ることがあります。</li>
+                  <li>
+                    <strong className="text-foreground">当日のキャンセルは、1回分（1セッション）を消費した扱い</strong>となります。無断キャンセル（ご連絡のないキャンセル）の場合も同様です。
+                  </li>
                 </ol>
               </section>
 
