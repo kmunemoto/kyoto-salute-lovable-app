@@ -5,7 +5,6 @@ import { trackCtaClick } from "@/lib/analytics";
 const PricingSection = () => {
   const { lang, t } = useT();
   const p = t.pricing;
-  const allPlans = [...p.plans, p.dropIn];
   return (
     <section id="plan" className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
@@ -18,15 +17,10 @@ const PricingSection = () => {
           </div>
           <p className="text-gym-dark-foreground/50 mt-2 text-sm font-body">{p.sub}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {allPlans.map((plan, idx) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {p.plans.map((plan, idx) => {
             const popular = idx === 2;
-            const isDropIn = idx === allPlans.length - 1;
-            const ctaLabel = isDropIn ? p.dropInCta : p.cta;
-            const ctaHref = isDropIn
-              ? "https://app.kyoto-salute.com/visitor"
-              : "https://app.kyoto-salute.com/trial";
-            const unitLabel = isDropIn ? p.dropInUnit : p.perMonth;
+            const ctaHref = "https://app.kyoto-salute.com/trial";
             return (
               <div key={plan.name} className={`relative rounded-sm p-6 glass-card transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold shadow-md" : ""}`}>
                 {popular && (
@@ -36,7 +30,7 @@ const PricingSection = () => {
                 <p className="text-gym-dark-foreground/50 text-sm mb-4 font-body">{plan.description}</p>
                 <div className="mb-1">
                   <span className="text-3xl font-body font-bold text-gold">{plan.price}</span>
-                  <span className="text-gym-dark-foreground/50 text-sm font-body">{unitLabel}</span>
+                  <span className="text-gym-dark-foreground/50 text-sm font-body">{p.perMonth}</span>
                 </div>
                 <p className="text-gold/70 text-xs mb-6 font-body font-bold">{plan.perSession}</p>
                 <ul className="space-y-3 mb-8">
@@ -46,8 +40,8 @@ const PricingSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a href={ctaHref} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: isDropIn ? "dropin" : "trial", location: isDropIn ? "pricing_dropin" : `pricing_plan${idx + 1}`, label: ctaLabel, url: ctaHref, language: lang })} className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
-                  {ctaLabel}
+                <a href={ctaHref} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `pricing_plan${idx + 1}`, label: p.cta, url: ctaHref, language: lang })} className={`block text-center py-3 rounded-sm text-sm font-medium transition-all font-body ${popular ? "gold-gradient text-white" : "border border-gold/40 text-gold hover:bg-gold/10"}`}>
+                  {p.cta}
                 </a>
               </div>
             );
