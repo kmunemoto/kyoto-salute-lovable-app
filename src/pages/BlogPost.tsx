@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
-import { getBlogPost } from "@/data/blog-posts";
+import { getBlogPost, blogPosts } from "@/data/blog-posts";
 import { trackCtaClick } from "@/lib/analytics";
 
 const BASE = "https://kyoto-salute.com";
@@ -14,6 +15,25 @@ const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE}$
 const BlogPost = () => {
   const { slug } = useParams();
   const post = getBlogPost(slug);
+
+  // Restore scroll when navigating between posts (e.g. via related articles).
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  // Internal linking: same-category posts first, newest first, padded with
+  // other recent posts up to 3. English (For Visitors) pages never pad with
+  // Japanese posts — the section simply stays smaller or hidden there.
+  const relatedPosts = post
+    ? [
+        ...blogPosts.filter((p) => p.slug !== post.slug && p.category === post.category),
+        ...(post.category === "For Visitors"
+          ? []
+          : blogPosts.filter(
+              (p) => p.slug !== post.slug && p.category !== post.category && p.category !== "For Visitors",
+            )),
+      ].slice(0, 3)
+    : [];
 
   if (!post) {
     return (
@@ -56,9 +76,14 @@ const BlogPost = () => {
     inLanguage: post.category === "For Visitors" ? "en" : "ja",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     author: {
-      "@type": "Organization",
-      name: "パーソナルジム Salute御所南",
-      url: BASE,
+      "@type": "Person",
+      name: "宗本寛太",
+      alternateName: "Kanta Munemoto",
+      jobTitle: "パーソナルジム Salute御所南 代表トレーナー",
+      description: "栄養士資格を持つパーソナルトレーナー。月140組以上の指導経験。",
+      url: `${BASE}/#trainer`,
+      sameAs: ["https://www.instagram.com/salute_goshominami/"],
+      worksFor: { "@type": "Organization", name: "パーソナルジム Salute御所南", url: BASE },
     },
     publisher: {
       "@type": "Organization",
@@ -107,6 +132,13 @@ const BlogPost = () => {
             <span>読了目安 {post.readTime}</span>
           </div>
           <h1 className="font-heading text-3xl leading-tight text-foreground md:text-5xl">{post.title}</h1>
+          <p className="mt-4 font-body text-sm text-muted-foreground">
+            {post.category === "For Visitors" ? (
+              <>Written by <a href="/#trainer" className="text-gold hover:underline">Kanta Munemoto</a> — Head Trainer &amp; Certified Nutritionist, Salute Goshominami</>
+            ) : (
+              <>執筆：<a href="/#trainer" className="text-gold hover:underline">宗本 寛太</a>（Salute御所南 代表トレーナー・栄養士）</>
+            )}
+          </p>
           <img
             src={post.thumbnail}
             alt={`${post.title}のメイン画像`}
@@ -149,6 +181,30 @@ const BlogPost = () => {
                 初回無料体験を予約する
               </a>
             </div>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-14">
+              <h2 className="font-heading text-2xl text-foreground">
+                {post.category === "For Visitors" ? "Related Articles" : "関連記事"}
+              </h2>
+              <div className="mt-6 grid gap-6 sm:grid-cols-3">
+                {relatedPosts.map((rp) => (
+                  <Link key={rp.slug} to={`/blog/${rp.slug}`} className="group block">
+                    <img
+                      src={rp.thumbnail}
+                      alt={rp.title}
+                      loading="lazy"
+                      className="aspect-[16/10] w-full rounded-sm object-cover"
+                    />
+                    <p className="mt-2 font-body text-xs text-muted-foreground">{rp.category}</p>
+                    <p className="mt-1 font-body text-sm font-medium leading-snug text-foreground group-hover:text-gold">
+                      {rp.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
           )}
 
           <Link to="/blog" className="mt-10 inline-block font-body text-sm text-gold hover:underline">

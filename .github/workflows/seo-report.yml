@@ -1,0 +1,43 @@
+name: 週次SEOレポート（Search Console連携）
+
+on:
+  schedule:
+    # 毎週月曜 09:00 JST（00:00 UTC）
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  seo-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 依存パッケージ不要（Node標準のみで動作）
+      - name: レポート生成（Search Console API）
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_PROPERTY: ${{ vars.GSC_PROPERTY }}
+        run: node scripts/seo-report.mjs
+
+      # 鍵が未設定のときは seo-report.md が生成されず、Issueも作られない
+      - name: レポートをIssueとして投稿
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f seo-report.md ]; then
+            gh label create seo-report --color 0ABAB5 --description "週次SEOレポート" 2>/dev/null || true
+            gh issue create \
+              --title "週次SEOレポート $(TZ=Asia/Tokyo date +%Y-%m-%d)" \
+              --body-file seo-report.md \
+              --label seo-report
+          else
+            echo "レポート未生成（GSC_SERVICE_ACCOUNT_JSON 未設定）のためIssue投稿をスキップ"
+          fi
