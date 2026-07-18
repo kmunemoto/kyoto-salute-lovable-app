@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-gym.jpg";
+import heroImage from "@/assets/hero-gym.webp";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 
