@@ -22,11 +22,16 @@ const BlogPost = () => {
   }, [slug]);
 
   // Internal linking: same-category posts first, newest first, padded with
-  // other recent posts up to 3. Keeps English (For Visitors) posts together.
+  // other recent posts up to 3. English (For Visitors) pages never pad with
+  // Japanese posts — the section simply stays smaller or hidden there.
   const relatedPosts = post
     ? [
         ...blogPosts.filter((p) => p.slug !== post.slug && p.category === post.category),
-        ...blogPosts.filter((p) => p.slug !== post.slug && p.category !== post.category),
+        ...(post.category === "For Visitors"
+          ? []
+          : blogPosts.filter(
+              (p) => p.slug !== post.slug && p.category !== post.category && p.category !== "For Visitors",
+            )),
       ].slice(0, 3)
     : [];
 

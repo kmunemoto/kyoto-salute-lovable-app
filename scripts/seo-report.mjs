@@ -112,6 +112,20 @@ async function fetchByDimension(token, startDate, endDate, dimension, rowLimit) 
   return queryGSC(token, { startDate, endDate, dimensions: [dimension], rowLimit });
 }
 
+/** 追跡キーワードの平均掲載順位（完全一致フィルタで正確に取得。表示なしなら null） */
+async function fetchKeywordPosition(token, keyword, startDate, endDate) {
+  const rows = await queryGSC(token, {
+    startDate,
+    endDate,
+    dimensions: ["query"],
+    dimensionFilterGroups: [
+      { filters: [{ dimension: "query", operator: "equals", expression: keyword }] },
+    ],
+    rowLimit: 1,
+  });
+  return rows[0]?.position ?? null;
+}
+
 // ------------------------------------------------------------------- main
 
 async function main() {
@@ -126,33 +140,30 @@ async function main() {
   const sa = JSON.parse(raw);
   const token = await getAccessToken(sa);
 
-  // GSCのデータは2〜3日遅れで確定するため、3日前を最終日とする
-  const end28 = daysAgo(3);
-  const start28 = daysAgo(3 + 27);
-  const prevEnd28 = daysAgo(3 + 28);
-  const prevStart28 = daysAgo(3 + 55);
-  const end7 = daysAgo(3);
-  const start7 = daysAgo(3 + 6);
-  const prevEnd7 = daysAgo(3 + 7);
-  const prevStart7 = daysAgo(3 + 13);
+  // GSCのデータ集計はPT（米国太平洋時間）基準で2〜3日遅れて確定するため、
+  // UTC実行とのズレも見込んで4日前を最終日とする
+  const BUF = 4;
+  const end28 = daysAgo(BUF);
+  const start28 = daysAgo(BUF + 27);
+  const prevEnd28 = daysAgo(BUF + 28);
+  const prevStart28 = daysAgo(BUF + 55);
+  const end7 = daysAgo(BUF);
+  const start7 = daysAgo(BUF + 6);
+  const prevEnd7 = daysAgo(BUF + 7);
+  const prevStart7 = daysAgo(BUF + 13);
 
-  const [cur, prev, topQueries, topPages, kwCur, kwPrev] = await Promise.all([
+  const [cur, prev, topQueries, topPages, kwCurList, kwPrevList] = await Promise.all([
     fetchTotals(token, fmt(start28), fmt(end28)),
     fetchTotals(token, fmt(prevStart28), fmt(prevEnd28)),
     fetchByDimension(token, fmt(start28), fmt(end28), "query", 20),
     fetchByDimension(token, fmt(start28), fmt(end28), "page", 10),
-    fetchByDimension(token, fmt(start7), fmt(end7), "query", 1000),
-    fetchByDimension(token, fmt(prevStart7), fmt(prevEnd7), "query", 1000),
+    Promise.all(TRACKED_KEYWORDS.map((kw) => fetchKeywordPosition(token, kw, fmt(start7), fmt(end7)))),
+    Promise.all(TRACKED_KEYWORDS.map((kw) => fetchKeywordPosition(token, kw, fmt(prevStart7), fmt(prevEnd7)))),
   ]);
 
-  const posOf = (rows, kw) => {
-    const row = rows.find((r) => r.keys?.[0] === kw);
-    return row ? row.position : null;
-  };
-
-  const kwRows = TRACKED_KEYWORDS.map((kw) => {
-    const c = posOf(kwCur, kw);
-    const p = posOf(kwPrev, kw);
+  const kwRows = TRACKED_KEYWORDS.map((kw, i) => {
+    const c = kwCurList[i];
+    const p = kwPrevList[i];
     let delta = "—";
     let alert = false;
     if (c != null && p != null) {
