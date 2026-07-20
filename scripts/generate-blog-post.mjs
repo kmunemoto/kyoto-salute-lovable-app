@@ -20,7 +20,6 @@ const ASSETS_DIR = path.join(ROOT, "src/assets/blog");
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-4-8";
 
 const CATEGORIES = [
-  "コラム",
   "ダイエット",
   "ボディメイク",
   "女性向け",

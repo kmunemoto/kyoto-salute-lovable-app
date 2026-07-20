@@ -28,7 +28,6 @@ const PALETTES = [
 
 // Map known Japanese categories to a short Latin label (avoids font issues).
 const CATEGORY_LABEL = {
-  "コラム": "COLUMN",
   "ダイエット": "DIET",
   "ボディメイク": "BODY MAKE",
   "女性向け": "FOR WOMEN",
@@ -172,12 +171,13 @@ const SCENE = {
   "ジム選び": "a modern, tidy private gym interior with neat equipment, soft light",
   "エリアガイド": "a serene Kyoto townscape with traditional machiya houses and a quiet street",
   "無料体験": "a bright, welcoming reception area of a boutique fitness studio",
-  "コラム": "a modern minimalist private personal training gym interior with soft natural light",
   "For Visitors": "a stylish boutique gym interior with a subtle Kyoto aesthetic, soft natural light",
 };
 
+const DEFAULT_SCENE = "a modern minimalist private personal training gym interior with soft natural light";
+
 function aiPrompt(title, category) {
-  const scene = SCENE[category] || SCENE["コラム"];
+  const scene = SCENE[category] || DEFAULT_SCENE;
   return `Professional editorial photograph: ${scene}. Bright and airy, premium wellness brand aesthetic, soft natural lighting, shallow depth of field, calm muted teal and cream color tones, clean composition, high quality. No people, no faces, no text, no words, no letters, no logos, no watermark.`;
 }
 
