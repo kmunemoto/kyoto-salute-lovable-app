@@ -132,13 +132,6 @@ const BlogPost = () => {
             <span>読了目安 {post.readTime}</span>
           </div>
           <h1 className="font-heading text-3xl leading-tight text-foreground md:text-5xl">{post.title}</h1>
-          <p className="mt-4 font-body text-sm text-muted-foreground">
-            {post.category === "For Visitors" ? (
-              <>Written by <a href="/#trainer" className="text-gold hover:underline">Kanta Munemoto</a> — Head Trainer &amp; Certified Nutritionist, Salute Goshominami</>
-            ) : (
-              <>執筆：<a href="/#trainer" className="text-gold hover:underline">宗本 寛太</a>（Salute御所南 代表トレーナー・栄養士）</>
-            )}
-          </p>
           <img
             src={post.thumbnail}
             alt={`${post.title}のメイン画像`}

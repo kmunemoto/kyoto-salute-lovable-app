@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     slug: "after-work-personal-gym-habit-marutamachi-kyoto",
     title: "仕事帰りにパーソナルジムを習慣にするコツ｜丸太町駅徒歩8分・22時まで対応",
     date: "2026-07-12",
-    category: "コラム",
+    category: "ジム選び",
     readTime: "5分",
     thumbnail: blogMarutamachiAfterWork,
     metaDescription:
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     slug: "why-personal-gym-continues-kyoto",
     title: "運動が続かないあなたへ｜パーソナルジムなら続く理由を京都・御所南のトレーナーが解説",
     date: "2026-06-08",
-    category: "コラム",
+    category: "初心者向け",
     readTime: "6分",
     thumbnail: blogWhyPersonalGymContinues,
     metaDescription:
