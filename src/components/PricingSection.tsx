@@ -30,7 +30,7 @@ const PricingSection = () => {
             const popular = idx === 2;
             const ctaHref = "https://app.kyoto-salute.com/trial";
             return (
-              <div key={plan.name} className={`relative rounded-sm p-6 glass-card transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold shadow-md" : ""}`}>
+              <div key={plan.name} className={`relative rounded-sm p-6 border transition-all hover:-translate-y-1 duration-300 ${popular ? "border-gold bg-white shadow-md" : "border-border bg-white"}`}>
                 {popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 gold-gradient text-white text-xs font-medium px-4 py-1 rounded-full">{p.popular}</div>
                 )}

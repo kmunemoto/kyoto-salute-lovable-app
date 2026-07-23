@@ -21,7 +21,7 @@
     --secondary-foreground: 200 60% 15%;
 
     --muted: 35 39% 88%;
-    --muted-foreground: 200 32% 28%;     /* muted navy (darkened for readability on glass) */
+    --muted-foreground: 200 30% 35%;     /* muted navy */
     --seo-muted: 28 11% 32%;             /* #5A5148 */
     --article-foreground: 25 11% 15%;    /* #2C2621 */
 
@@ -123,17 +123,6 @@
     @apply bg-background text-foreground;
   }
 
-  .glass-card {
-    /* Summer Sonic-style translucent frosted glass for content boxes (plans,
-       reviews, FAQ, etc.) so the pinned photo shows through instead of a solid
-       white panel. Replaces bg-white on inner cards inside the immersive page. */
-    background-color: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 8px 30px rgba(15, 46, 61, 0.1);
-  }
-
   .gold-gradient {
     /* Solid terracotta CTA per new brand palette */
     background: hsl(var(--gold));
@@ -175,34 +164,4 @@
   .animate-delay-200 { animation-delay: 0.2s; }
   .animate-delay-300 { animation-delay: 0.3s; }
   .animate-delay-400 { animation-delay: 0.4s; }
-}
-
-/* Immersive fixed-background mode (applied on Index via the `immersive` class):
-   the hero photo is pinned to the viewport and stays SHARP behind everything —
-   the Summer Sonic pattern. Instead of washing whole sections with a translucent
-   tint (which looked like a haze over the photo), each section is fully transparent
-   and only its inner content wrapper becomes a contained, rounded translucent card.
-   So the crisp photo shows through the margins around every card, and text stays
-   readable on the card. Excludes the hero (first section) and the Numbers band. */
-.immersive > section:not(:first-of-type):not(#numbers) {
-  background-color: transparent;
-}
-
-.immersive > section:not(:first-of-type):not(#numbers) > div {
-  /* Summer Sonic-style frosted glass card: a cool, neutral translucent panel
-     (NOT warm cream) that frosts the photo behind it and picks up its colours,
-     with a faint light border. Background between cards stays razor sharp. */
-  background-color: rgba(255, 255, 255, 0.64);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 1.25rem;
-  padding: 1.5rem 1.25rem;
-  box-shadow: 0 10px 40px rgba(15, 46, 61, 0.12);
-}
-
-@media (min-width: 768px) {
-  .immersive > section:not(:first-of-type):not(#numbers) > div {
-    padding: 2.75rem 2.25rem;
-  }
 }
