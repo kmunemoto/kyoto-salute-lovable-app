@@ -310,6 +310,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       "Looking for a personal training gym in Kyoto? Salute Goshominami offers drop-in sessions for travelers. ¥8,000 per session. All sportswear provided. No membership needed. 8 min from Marutamachi Station.",
     content: `
+    <p><strong>For English speakers / travelers visiting Kyoto:</strong> we offer single drop-in sessions with no membership. <a href="/drop-in">See our English drop-in page →</a></p>
     <p>Traveling to Kyoto and don't want to skip your workout? You don't have to.</p>
     <p>Salute Goshominami is a private personal training gym in Kyoto's Nakagyo-ku district, and we welcome travelers for drop-in sessions — no membership, no sign-up, no hassle.</p>
     <h2>What Is a Drop-in Session?</h2>

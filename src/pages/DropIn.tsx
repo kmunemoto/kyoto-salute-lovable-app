@@ -6,32 +6,93 @@ import { trackCtaClick } from "@/lib/analytics";
 const BASE = "https://kyoto-salute.com";
 const VISITOR_URL = "https://app.kyoto-salute.com/visitor";
 const DROPIN_DESC =
-  "Drop-in personal training in Kyoto for travelers. ¥8,000 per session, no membership, all gear provided. 8 min from Marutamachi Station.";
+  "Drop-in personal training in Kyoto for travelers. One 60-min session ¥8,000, no membership, English-speaking trainer, all gear provided. 8 min from Marutamachi Station, near the Kyoto Imperial Palace.";
+const DROPIN_TITLE =
+  "Drop-in Personal Training in Kyoto (English-Speaking) | ¥8,000 Single Session | Salute";
 
 const DropIn = () => {
   const included = [
     "60-minute 1-on-1 personal training session",
-    "Certified nutritionist trainer",
+    "Certified nutritionist trainer (English-speaking)",
     "All sportswear, shoes, towels & water provided",
     "Personalized workout based on your goals",
     "No membership or sign-up required",
   ];
 
+  const faqs = [
+    { q: "Do I need to speak Japanese?", a: "No. Your trainer speaks English and guides you through the whole session." },
+    { q: "Do I need a membership?", a: "No. Drop-in is a single session with no sign-up or commitment." },
+    { q: "What should I bring?", a: "Nothing — sportswear, shoes, towel and water are all provided." },
+    { q: "How do I get there?", a: "An 8-minute walk from Marutamachi Station, near the Kyoto Imperial Palace. About 15 minutes from downtown or Kyoto Station by subway." },
+    { q: "Can I book for today or last minute?", a: "Message us on Instagram or LINE — same-day booking may be possible depending on availability." },
+    { q: "How do I pay?", a: "Cash or credit card. ¥8,000 (approx. $55) per session." },
+  ];
+
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Drop-in Personal Training in Kyoto",
+    serviceType: "Personal Training",
+    description: DROPIN_DESC,
+    areaServed: { "@type": "City", name: "Kyoto" },
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Salute Goshominami",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Plaza Goshominami 2F, 533-1 Bishamoncho, Nakagyo-ku",
+        addressLocality: "Kyoto",
+        postalCode: "604-0981",
+        addressCountry: "JP",
+      },
+      url: `${BASE}/drop-in`,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "8000",
+      priceCurrency: "JPY",
+      availability: "https://schema.org/InStock",
+      url: `${BASE}/drop-in`,
+    },
+  };
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE}/en` },
+      { "@type": "ListItem", position: 2, name: "Drop-in", item: `${BASE}/drop-in` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <html lang="en" />
-        <title>Drop-in Personal Training in Kyoto | Salute Goshominami</title>
+        <title>{DROPIN_TITLE}</title>
         <meta name="description" content={DROPIN_DESC} />
         <link rel="canonical" href={`${BASE}/drop-in`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Drop-in Personal Training in Kyoto | Salute Goshominami" />
+        <meta property="og:title" content={DROPIN_TITLE} />
         <meta property="og:description" content={DROPIN_DESC} />
         <meta property="og:url" content={`${BASE}/drop-in`} />
         <meta property="og:image" content={`${BASE}/og-image.jpg`} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={`${BASE}/og-image.jpg`} />
+        <script type="application/ld+json">{JSON.stringify(serviceLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
@@ -52,8 +113,14 @@ const DropIn = () => {
           <h1 className="font-heading text-4xl md:text-6xl mb-6 leading-tight">
             Drop-in Personal Training in Kyoto
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground font-body mb-10 leading-relaxed">
+          <p className="text-gold font-body text-base md:text-lg mb-4 tracking-wide">
+            English-speaking trainer — no Japanese needed.
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground font-body mb-4 leading-relaxed">
             Keep your fitness routine while traveling. No membership needed.
+          </p>
+          <p className="text-base text-muted-foreground font-body mb-10 leading-relaxed max-w-2xl mx-auto">
+            A drop-in gym for tourists and travelers in Kyoto. Book a single one-time session with an English-speaking personal trainer, right near the Kyoto Imperial Palace (Gosho).
           </p>
           <a
             href={VISITOR_URL}
@@ -115,6 +182,24 @@ const DropIn = () => {
                 <p className="font-heading text-3xl text-gold mb-3">{s.n}</p>
                 <h3 className="font-body font-semibold mb-2">{s.t}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-padding">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">FAQ</p>
+            <h2 className="font-heading text-3xl md:text-4xl">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div key={f.q} className="bg-secondary rounded-sm p-6">
+                <h3 className="font-body font-semibold mb-2 text-foreground">Q. {f.q}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">A. {f.a}</p>
               </div>
             ))}
           </div>
