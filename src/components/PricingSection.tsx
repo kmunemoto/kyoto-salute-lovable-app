@@ -1,10 +1,18 @@
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 
 const PricingSection = () => {
   const { lang, t } = useT();
   const p = t.pricing;
+  const showDropIn = lang !== "ja";
+  const dropInLinkLabel =
+    lang === "en" ? "Book a drop-in session →"
+    : lang === "zh" ? "预约单次训练 →"
+    : lang === "zhTW" ? "預約單次訓練 →"
+    : lang === "ko" ? "드롭인 예약하기 →"
+    : "→";
   return (
     <section id="plan" className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
@@ -47,6 +55,32 @@ const PricingSection = () => {
             );
           })}
         </div>
+        {showDropIn && (
+          <div className="mt-10 max-w-2xl mx-auto">
+            <div className="relative rounded-sm p-6 glass-card border border-gold/30">
+              <h3 className="text-gym-dark-foreground font-body font-semibold text-lg mb-1">{p.dropIn.name}</h3>
+              <p className="text-gym-dark-foreground/50 text-sm mb-4 font-body">{p.dropIn.description}</p>
+              <div className="mb-4">
+                <span className="text-3xl font-body font-bold text-gold">{p.dropIn.price}</span>
+                <span className="text-gym-dark-foreground/50 text-sm font-body ml-2">{p.dropInUnit}</span>
+              </div>
+              <ul className="space-y-2 mb-6">
+                {p.dropIn.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-gym-dark-foreground/70 font-body">
+                    <Check className="w-4 h-4 text-gold shrink-0" />{f}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/drop-in"
+                onClick={() => trackCtaClick({ type: "dropin", location: "pricing_dropin", label: dropInLinkLabel, url: "/drop-in", language: lang })}
+                className="block text-center py-3 rounded-sm text-sm font-medium transition-all font-body gold-gradient text-white"
+              >
+                {dropInLinkLabel}
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
