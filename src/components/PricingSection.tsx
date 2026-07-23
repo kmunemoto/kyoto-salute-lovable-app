@@ -57,7 +57,7 @@ const PricingSection = () => {
         </div>
         {showDropIn && (
           <div className="mt-10 max-w-2xl mx-auto">
-            <div className="relative rounded-sm p-6 glass-card border border-gold/30">
+            <div className="relative rounded-sm p-6 bg-white border border-gold/30">
               <h3 className="text-gym-dark-foreground font-body font-semibold text-lg mb-1">{p.dropIn.name}</h3>
               <p className="text-gym-dark-foreground/50 text-sm mb-4 font-body">{p.dropIn.description}</p>
               <div className="mb-4">
