@@ -16,7 +16,7 @@ const ConcernSection = () => {
           {t.concern.items.map((text, i) => {
             const Icon = icons[i];
             return (
-              <div key={i} className="rounded-sm glass-card p-8 text-center flex flex-col items-center gap-4">
+              <div key={i} className="rounded-sm border border-border bg-white p-8 text-center flex flex-col items-center gap-4">
                 <Icon className="w-12 h-12 text-primary" strokeWidth={1.5} />
                 <p className="font-body text-base leading-relaxed">{text}</p>
               </div>

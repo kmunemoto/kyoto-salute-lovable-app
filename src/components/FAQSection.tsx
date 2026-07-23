@@ -12,7 +12,7 @@ const FAQSection = () => {
         </div>
         <Accordion type="single" collapsible className="space-y-3">
           {t.faq.items.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="glass-card rounded-sm px-6 data-[state=open]:border-gold/30">
+            <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-sm px-6 bg-white data-[state=open]:border-gold/30">
               <AccordionTrigger className="text-left font-body text-foreground hover:text-gold hover:no-underline py-5">{faq.question}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-body leading-relaxed pb-5">{faq.answer}</AccordionContent>
             </AccordionItem>
