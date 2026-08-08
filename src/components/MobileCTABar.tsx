@@ -6,7 +6,7 @@ const MobileCTABar = () => {
   const { lang, t } = useT();
   const ctaUrl = "https://app.kyoto-salute.com/trial";
   const lineUrl = "https://lin.ee/UMVDzWF";
-  const ctaText = lang === "ja" ? "無料体験を予約" : t.mobileCta;
+  const ctaText = lang === "ja" ? "体験を予約" : t.mobileCta;
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {

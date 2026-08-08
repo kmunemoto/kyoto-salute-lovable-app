@@ -156,11 +156,17 @@ const Tokusho = () => {
                   <Row label="月4回プラン">¥20,000（税込）/ 月</Row>
                   <Row label="月6回プラン">¥28,500（税込）/ 月</Row>
                   <Row label="月8回プラン">¥36,000（税込）/ 月</Row>
+                  <Row label="月15回プラン">¥60,000（税込）/ 月</Row>
                   <div className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-4">
                     <dt className="text-sm font-medium text-muted-foreground font-body">
-                      月15回プラン
+                      体験トレーニング
                     </dt>
-                    <dd className="text-foreground/85 font-body">¥60,000（税込）/ 月</dd>
+                    <dd className="text-foreground/85 font-body">
+                      ¥3,000（税込）/ 回
+                      <span className="block text-sm text-muted-foreground mt-1">
+                        体験当日にご入会いただいた場合は¥0（申し受けません）。当日ご入会されない場合は¥3,000を頂戴します。
+                      </span>
+                    </dd>
                   </div>
                 </dl>
                 <p className="mt-4 text-sm">入会金・事務手数料：無料</p>
