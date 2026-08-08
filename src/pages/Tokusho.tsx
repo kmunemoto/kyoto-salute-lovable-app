@@ -226,12 +226,11 @@ const Tokusho = () => {
                 </p>
 
                 <h3 className="text-base md:text-lg font-heading text-foreground mt-6 mb-2">
-                  当日キャンセルについて
+                  予約の変更・キャンセルについて
                 </h3>
                 <p>
-                  予約の変更・キャンセルは前日までにお願いいたします。前日までのご連絡であれば、消費やキャンセル料は発生いたしません。
-                  <span className="text-foreground font-medium">当日のキャンセルおよび無断キャンセルの場合は、1回分（1セッション）を消費した扱い</span>
-                  となります。
+                  予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。
+                  <span className="text-foreground font-medium">当日のキャンセルであっても、キャンセル料やセッションの消費は発生いたしません。</span>
                 </p>
               </section>
 
