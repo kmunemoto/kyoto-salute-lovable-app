@@ -149,10 +149,10 @@ const Terms = () => {
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>本サービスは完全予約制です。事前にご予約のうえお越しください。</li>
                   <li>
-                    予約の変更・キャンセルは、<strong className="text-foreground">前日まで</strong>にお願いいたします。前日までのご連絡であれば、キャンセル料やセッションの消費は発生しません。
+                    予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。
                   </li>
                   <li>
-                    <strong className="text-foreground">当日のキャンセルは、1回分（1セッション）を消費した扱い</strong>となります。無断キャンセル（ご連絡のないキャンセル）の場合も同様です。
+                    <strong className="text-foreground">当日のキャンセルであっても、キャンセル料やセッションの消費は発生しません</strong>。
                   </li>
                 </ol>
               </section>
