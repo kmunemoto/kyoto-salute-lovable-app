@@ -28,7 +28,7 @@ const CATEGORIES = [
   "料金・プラン",
   "エリアガイド",
   "比較・検討",
-  "無料体験",
+  "体験トレーニング",
   "食事アドバイス",
   "ジム選び",
 ];
@@ -78,7 +78,7 @@ SEOに強く、お客様（見込み客）の役に立つ日本語のブログ�
 - 手ぶらOK（ウェア・シューズ・タオル・お水を無料レンタル）
 - 予約の変更・キャンセルは前日まで無料（当日キャンセルは1回分消費）
 - 営業時間：10:00〜22:00（完全予約制）
-- 無料体験を実施中
+- 体験トレーニングを実施中（体験料¥3,000。体験当日にご入会の場合は¥0、当日ご入会されない場合は¥3,000）
 - 公式Instagram：https://www.instagram.com/salute_goshominami/
 
 # 執筆ルール
@@ -87,10 +87,10 @@ SEOに強く、お客様（見込み客）の役に立つ日本語のブログ�
 - 見出し<h2>を3〜5個、必要に応じて<h3>や箇条書きを使う。
 - 読者の悩みに共感→解決策→Salute御所南の特徴、という流れにする。
 - 誇大広告・医療効果の断定・他店の誹謗はしない。
-- 最後の段落で無料体験への誘導と、Instagramへのリンク（<a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer">公式Instagram</a>）を入れる。
+- 最後の段落で体験トレーニングへの誘導と、Instagramへのリンク（<a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer">公式Instagram</a>）を入れる。
 - カテゴリーは次から1つ選ぶ：${CATEGORIES.join(" / ")}
 - slugは内容を表す英小文字とハイフンのみ（例：personal-gym-stretch-routine-kyoto）。末尾に -kyoto を付けてよい。
-- metaDescriptionは110〜130文字程度。末尾に「完全個室・栄養士トレーナー・無料体験実施中。」のような訴求を入れる。
+- metaDescriptionは110〜130文字程度。末尾に「完全個室・栄養士トレーナー・体験¥3,000（当日入会で¥0）。」のような訴求を入れる。
 - readTimeは「5分」「6分」のような表記。
 
 # 既存記事のタイトル（テーマが重複しないようにする）

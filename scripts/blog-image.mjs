@@ -36,7 +36,7 @@ const CATEGORY_LABEL = {
   "料金・プラン": "PRICING",
   "エリアガイド": "AREA GUIDE",
   "比較・検討": "COMPARE",
-  "無料体験": "FREE TRIAL",
+  "体験トレーニング": "TRIAL SESSION",
   "食事アドバイス": "NUTRITION",
   "ジム選び": "CHOOSING A GYM",
   "For Visitors": "FOR VISITORS",
@@ -170,7 +170,7 @@ const SCENE = {
   "比較・検討": "a modern, tidy private gym interior with neat equipment, soft light",
   "ジム選び": "a modern, tidy private gym interior with neat equipment, soft light",
   "エリアガイド": "a serene Kyoto townscape with traditional machiya houses and a quiet street",
-  "無料体験": "a bright, welcoming reception area of a boutique fitness studio",
+  "体験トレーニング": "a bright, welcoming reception area of a boutique fitness studio",
   "For Visitors": "a stylish boutique gym interior with a subtle Kyoto aesthetic, soft natural light",
 };
 

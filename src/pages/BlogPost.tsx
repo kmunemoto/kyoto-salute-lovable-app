@@ -160,18 +160,18 @@ const BlogPost = () => {
             </div>
           ) : (
             <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
-              <p className="font-heading text-2xl text-foreground">無料体験はこちら</p>
+              <p className="font-heading text-2xl text-foreground">体験トレーニングはこちら</p>
               <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                京都市中京区・御所南でパーソナルトレーニングを始めたい方は、まずは無料体験で雰囲気をご確認ください。
+                京都市中京区・御所南でパーソナルトレーニングを始めたい方は、まずは体験トレーニングで雰囲気をご確認ください。体験料は¥3,000、体験当日のご入会で¥0になります。
               </p>
               <a
                 href="https://app.kyoto-salute.com/trial"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackCtaClick({ type: "trial", location: "blog_post", label: "初回無料体験を予約する", url: "https://app.kyoto-salute.com/trial" })}
+                onClick={() => trackCtaClick({ type: "trial", location: "blog_post", label: "体験トレーニングを予約する", url: "https://app.kyoto-salute.com/trial" })}
                 className="mt-6 inline-block rounded-sm gold-gradient px-8 py-3 font-body text-sm font-medium text-primary-foreground"
               >
-                初回無料体験を予約する
+                体験トレーニングを予約する
               </a>
             </div>
           )}

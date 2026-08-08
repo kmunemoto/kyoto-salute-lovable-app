@@ -104,7 +104,7 @@ const AreaPage = () => {
               <h1 className="font-heading text-3xl md:text-5xl text-foreground leading-tight">{area.h1}</h1>
               <p className="mt-6 font-body text-muted-foreground leading-relaxed">{area.intro}</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `area_${area.slug}_hero`, label: "無料体験を予約", url: TRIAL_URL, language: "ja" })} className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center">初回無料体験を予約する</a>
+                <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `area_${area.slug}_hero`, label: "体験を予約", url: TRIAL_URL, language: "ja" })} className="gold-gradient px-8 py-4 text-white font-medium rounded-sm text-center">体験トレーニングを予約する</a>
                 <a href={LINE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: `area_${area.slug}_hero`, label: "LINEから予約", url: LINE_URL, language: "ja" })} className="px-8 py-4 text-white font-medium rounded-sm text-center" style={{ backgroundColor: "#06C755" }}>LINEから予約</a>
               </div>
             </div>
@@ -180,10 +180,10 @@ const AreaPage = () => {
           <div className="max-w-3xl mx-auto text-center border border-gold/30 bg-secondary p-8 md:p-12 rounded-sm">
             <h2 className="font-heading text-2xl md:text-3xl text-foreground">{area.station}周辺でパーソナルジムをお探しなら</h2>
             <p className="mt-4 font-body text-sm md:text-base text-muted-foreground leading-relaxed">
-              まずは無料体験で、ジムの雰囲気とトレーニングを体感してみてください。勧誘は一切ありません。1回¥4,000〜・入会金¥0・手ぶらOK。
+              まずは体験トレーニングで、ジムの雰囲気とトレーニングを体感してみてください。体験料は¥3,000、体験当日にご入会いただいた場合は¥0です。1回¥4,000〜・入会金¥0・手ぶらOK。
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `area_${area.slug}_cta`, label: "無料体験を予約", url: TRIAL_URL, language: "ja" })} className="gold-gradient px-10 py-4 text-white font-medium rounded-sm">初回無料体験を予約する</a>
+              <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `area_${area.slug}_cta`, label: "体験を予約", url: TRIAL_URL, language: "ja" })} className="gold-gradient px-10 py-4 text-white font-medium rounded-sm">体験トレーニングを予約する</a>
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: `area_${area.slug}_cta`, label: "LINEから予約", url: LINE_URL, language: "ja" })} className="px-10 py-4 text-white font-medium rounded-sm" style={{ backgroundColor: "#06C755" }}>LINEから予約</a>
             </div>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">

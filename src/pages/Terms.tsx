@@ -122,6 +122,9 @@ const Terms = () => {
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>料金プランは当ジムが別途定めるとおりとし、詳細はウェブサイトに掲載します。</li>
                   <li>入会金・事務手数料は無料です。</li>
+                  <li>
+                    体験トレーニングの料金は<strong className="text-foreground">¥3,000（税込）</strong>です。ただし、<strong className="text-foreground">体験当日にご入会いただいた場合、体験料は¥0となり申し受けません</strong>。体験当日にご入会されない場合は、体験料¥3,000を当日お支払いいただきます。
+                  </li>
                   <li>月額料金は、毎回1回目のトレーニング日に対面にてお支払いいただきます。</li>
                   <li>支払方法は、現金、クレジットカード、QRコード決済に対応しております。</li>
                 </ol>
