@@ -2,69 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kyoto-salute.com/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/en</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/zh</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/zh-tw</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/ko</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/blog</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/drop-in</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/marutamachi</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/karasuma-oike</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/kyoto-shiyakusho-mae</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/jingu-marutamachi</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kyoto-salute.com/blog/how-long-until-training-results-kyoto</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/blog/obon-weight-reset-personal-gym-kyoto</loc>
