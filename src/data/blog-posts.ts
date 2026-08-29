@@ -19,6 +19,7 @@ import blog_personal_gym_once_a_week_results_kyoto from "@/assets/blog/personal-
 import blog_kyoto_gym_for_women_how_to_choose from "@/assets/blog/kyoto-gym-for-women-how-to-choose.webp";
 import blog_obon_weight_reset_personal_gym_kyoto from "@/assets/blog/obon-weight-reset-personal-gym-kyoto.webp";
 import blog_how_long_until_training_results_kyoto from "@/assets/blog/how-long-until-training-results-kyoto.webp";
+import blog_strength_training_longevity_weekly_minutes_kyoto from "@/assets/blog/strength-training-longevity-weekly-minutes-kyoto.webp";
 
 export type BlogPost = {
   slug: string;
@@ -32,6 +33,40 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "strength-training-longevity-weekly-minutes-kyoto",
+    title: "筋トレは週何分がちょうどいい？14万人を30年追った研究が示した目安｜京都・御所南",
+    date: "2026-08-29",
+    category: "健康・姿勢改善",
+    readTime: "6分",
+    thumbnail: blog_strength_training_longevity_weekly_minutes_kyoto,
+    metaDescription:
+      "筋トレは週90〜120分がひとつの目安。約14万人を最長30年追跡した研究をもとに、長生きと関連した運動量と、週2回・60分で無理なく続けるコツを京都・御所南のトレーナーが解説。完全個室・栄養士トレーナー・体験¥3,000（当日入会で¥0）。",
+    content: `
+      <p>「健康のために筋トレを」とはよく言われますが、<strong>実際のところ週にどれくらいやれば十分なのか</strong>は、あまり語られません。毎日ジムに通わないと意味がないのでは——そう考えて、始める前から気が重くなっている方も多いのではないでしょうか。</p>
+      <p>この点について、英国のスポーツ医学専門誌「British Journal of Sports Medicine」で報告された大規模な研究が、ひとつの目安を示しています。京都市中京区・御所南のパーソナルジム「Salute御所南」のトレーナーが、研究の内容と、現実的な取り入れ方をお伝えします。</p>
+      <h2>約14万人を30年追跡してわかった「週90〜120分」</h2>
+      <p>この研究は、およそ14万7,000人を最長30年にわたって追跡し、筋トレや有酸素運動の習慣とその後の健康状態との関係を調べたものです。</p>
+      <p>報告されたのは、<strong>週90〜119分の筋トレを行っていたグループで、死亡リスクが13%低かった</strong>という関連です。心血管疾患による死亡では19%、脳や神経の病気による死亡では27%低いという結果も示されました。</p>
+      <p>ただし、これは生活習慣を長期間追いかけた観察研究です。「筋トレをすれば必ずこうなる」という因果関係を証明したものではない点は、研究者自身も述べています。あくまで傾向として受け取るのが適切です。</p>
+      <h2>意外なのは「増やすほど良い」ではなかったこと</h2>
+      <p>もうひとつ注目したいのが、<strong>週120分を超えても、それ以上リスクが下がる傾向は見られなかった</strong>という点です。</p>
+      <p>週90〜120分というのは、<strong>1回60分のトレーニングなら週2回</strong>でちょうど収まる量です。毎日通う必要も、何時間も追い込む必要もない——この研究から読み取れるのは、そういうことです。</p>
+      <p>さらに、有酸素運動をよく行っている人が筋トレを組み合わせていた場合には、死亡リスクが45%低いという関連も報告されています。筋トレか有酸素かの二択ではなく、組み合わせることに意味がありそうです。</p>
+      <h2>問題は「量」ではなく「続くかどうか」</h2>
+      <p>週2回・60分。数字だけ見れば、決して無茶な量ではありません。それでも続かない方が多いのは、量そのものではなく別のところに理由があります。</p>
+      <ul>
+        <li>何をやればいいか分からず、毎回同じ種目だけで終わってしまう</li>
+        <li>仕事帰りに寄るには、着替えや荷物の準備が面倒</li>
+        <li>予定が変わると、その週がまるごと空いてしまう</li>
+      </ul>
+      <p>逆に言えば、この3つが解消できれば「週90〜120分」は十分に現実的な目標になります。頻度については<a href="/blog/personal-gym-once-a-week-results-kyoto">パーソナルジムは週1回でも効果ある？</a>もあわせてご覧ください。</p>
+      <h2>週2回・60分を続けやすい環境を選ぶ</h2>
+      <p>Salute御所南は、京都市中京区・御所南にある完全個室・完全予約制のパーソナルジムです。トレーナーと二人だけの空間で、1回60分のマンツーマン指導を行っています。<strong>週2回通えば、ちょうど今回の「週90〜120分」に収まる計算です。</strong></p>
+      <p>地下鉄「丸太町」駅・京阪「神宮丸太町」駅から徒歩8分。ウェア・シューズ・タオル・お水はすべて無料レンタルなので、仕事帰りに手ぶらで立ち寄れます。営業時間は10:00〜22:00、入会金は¥0、1回¥4,000〜の縛りのない月額制です。予約の変更・キャンセルは専用アプリからいつでも可能で、<strong>当日でもキャンセル料はかかりません</strong>。予定が変わりやすい方でも、週2回のペースを崩さずに調整できます。</p>
+      <p>また、トレーナーは栄養士資格を保有しているため、トレーニングとあわせて食事面まで一緒に組み立てられます。体験トレーニングでは、カウンセリングと60分のトレーニングを体験いただけます。体験料は¥3,000、体験当日にご入会いただいた場合は¥0です。最新の情報は<a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer">公式Instagram</a>でも発信しています。</p>
+    `,
+  },
   {
     slug: "how-long-until-training-results-kyoto",
     title: "筋トレの効果はいつから出る？2週間・1ヶ月・3ヶ月の変化を京都のトレーナーが解説",
