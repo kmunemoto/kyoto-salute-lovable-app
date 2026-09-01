@@ -11,6 +11,7 @@ import PricingSection from "@/components/PricingSection";
 import FlowSection from "@/components/FlowSection";
 import FAQSection from "@/components/FAQSection";
 import AccessSection from "@/components/AccessSection";
+import RecruitSection from "@/components/RecruitSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
@@ -26,6 +27,16 @@ const Index = () => {
     document.documentElement.lang =
       lang === "ja" ? "ja" : lang === "zh" ? "zh-Hans" : lang === "zhTW" ? "zh-Hant" : lang;
   }, [lang, t]);
+
+  // /#recruit などのハッシュ付き直リンクで入ったとき、React のレンダリング後に
+  // 該当セクションへスクロールする。純CSRのため、これがないとブラウザのネイティブ
+  // スクロールがレンダリング前に走り、常にページ先頭に着地してしまう。
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ block: "start" });
+  }, []);
 
   const path = lang === "ja" ? "/" : lang === "zhTW" ? "/zh-tw" : `/${lang}`;
   const ogLocale =
@@ -67,6 +78,7 @@ const Index = () => {
       <CTASection />
       <FAQSection />
       <AccessSection />
+      <RecruitSection />
       <Footer />
       <MobileCTABar />
     </div>
