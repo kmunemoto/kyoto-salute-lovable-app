@@ -22,13 +22,14 @@ describe("RecruitSection", () => {
     expect(screen.getByText(/トレーナー募集の件」とご記入ください/)).toBeInTheDocument();
   });
 
-  it("賃金形態（歩合制）を掲載している", () => {
-    // 応募者が最初にふるいにかける情報であり、募集要項として掲載する価値が高い。
+  it("契約形態（業務委託）と賃金形態（歩合制）を掲載している", () => {
+    // 応募者が最初にふるいにかける情報であり、募集時の明示項目でもある。
     render(
       <LanguageProvider lang="ja">
         <RecruitSection />
       </LanguageProvider>,
     );
+    expect(screen.getByText(/業務委託契約/)).toBeInTheDocument();
     expect(screen.getByText(/1セッションごとの歩合制/)).toBeInTheDocument();
   });
 
