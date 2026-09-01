@@ -23,6 +23,18 @@ type Dict = {
   cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
   access: { kicker: string; title: string; intro: string; addressLabel: string; addressLines: string[]; stationLabel: string; stations: string[]; hoursLabel: string; hoursText: string; hoursSub: string; contactLabel: string; contactText: string; note: string; sponsorsLabel: string };
+  /** トレーナー募集。日本語ページのみ掲載するため任意キー（hero.seoNote と同じ方針）。 */
+  recruit?: {
+    kicker: string; title: string; lead: string;
+    pointsLabel: string; points: string[];
+    howToApplyLabel: string; howToApply: string[];
+    templateLabel: string; template: string; templateNote: string;
+    trainerLinkPrefix: string; trainerLinkLabel: string; trainerLinkSuffix: string;
+    lineBtn: string; lineAria: string;
+    notes: string[];
+    customerNotePrefix: string; customerNoteLink: string; customerNoteSuffix: string;
+    footerLink: string;
+  };
   footer: { blog: string; app: string; line: string; instagram: string; terms: string; privacy: string; tokusho: string; copyright: string; address: string };
   mobileCta: string;
   languageLabel: string;
@@ -78,6 +90,42 @@ export const translations: Record<Lang, Dict> = {
       { question: "予約のキャンセルや変更はできますか？", answer: "予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。当日のキャンセルであっても、キャンセル料やセッションの消費は発生しませんので、急なご予定にも安心してご利用いただけます。" },
     ] },
     access: { kicker: "Access", title: "アクセス", intro: "烏丸丸太町エリア、丸太町駅から徒歩8分。地下鉄「丸太町」駅の4番出口を出て東へ。丸太町通り沿いにあるプラザ御所南の2階です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。", addressLabel: "住所", addressLines: ["〒604-0981", "京都市中京区毘沙門町533-1 プラザ御所南 2階"], stationLabel: "最寄駅", stations: ["京都市バス「裁判所前」バス停 徒歩3分", "京都市営地下鉄「丸太町」駅 徒歩8分", "京阪「神宮丸太町」駅 徒歩8分", "京都市営地下鉄「京都市役所前」駅 徒歩10分"], hoursLabel: "営業時間", hoursText: "10:00〜22:00（完全予約制）", hoursSub: "不定休 / 営業時間外もご予約を承れる場合がございます", contactLabel: "お問い合わせ", contactText: "ご質問やご相談は公式LINEまたはInstagramのDMよりお受けしております。", note: "※自転車でお越しの際は、ビル1階の階段横スペースにお停めください。 ※駐車場は周辺コインパーキングをご利用ください。", sponsorsLabel: "協賛企業" },
+    recruit: {
+      kicker: "Recruit",
+      title: "トレーナー募集",
+      lead: "Salute御所南では、一緒に働いてくださるトレーナーを募集しています。完全個室・完全予約制で、お客様一人ひとりとマンツーマンで向き合う指導スタイルのジムです。運動が苦手な方やジムが初めての方に、その方のペースで説明しながら進めていくことを大切にしています。",
+      pointsLabel: "働く場所について",
+      points: [
+        "完全個室・完全予約制。1セッション60分、完全マンツーマンでの指導です。複数のお客様を同時に見ることはありません。",
+        "京都市中京区・御所南。京都市営地下鉄「丸太町」駅、京阪「神宮丸太町」駅からいずれも徒歩8分です。",
+        "ジムの営業時間は10:00〜22:00（完全予約制）です。実際の勤務時間帯については、LINEでご相談ください。",
+        "現在のトレーナーは栄養士資格を保有し、トレーニングに加えて食事面のアドバイスも行っています（応募にあたっての必須資格ではありません）。",
+        "トレーニング記録や体の変化は、専用アプリで管理しています。",
+      ],
+      howToApplyLabel: "ご連絡について",
+      howToApply: [
+        "給与・雇用形態・シフト・応募条件などの詳しい条件は、このページには記載していません。文面だけではお伝えしきれない部分があるため、公式LINEで直接ご説明しています。ご質問いただければ、その場でお答えします。",
+        "応募を決めてからでなくて大丈夫です。「どんな職場なのか聞いてみたい」という段階でのご連絡を歓迎します。見学だけ、質問だけで終えていただいても構いません。その場でお返事を求めることはありません。",
+        "現在お勤め中の方からのご連絡も歓迎します。いただいた内容を、現在の勤務先にお伝えすることはありません。",
+        "ご連絡は、下のボタンから公式LINEを追加して、次の一文をそのまま送っていただくだけで大丈夫です。",
+      ],
+      templateLabel: "最初のメッセージ（このままお使いください）",
+      template: "トレーナー募集の件で連絡しました。話を聞かせてください。",
+      templateNote: "お名前やこれまでのご経験は、やりとりの中で伺います。LINEは営業時間の合間に確認しているため、指導中は返信が遅くなることがありますが、必ずお返事します。",
+      trainerLinkPrefix: "一緒に働くトレーナーの経歴は、このページの",
+      trainerLinkLabel: "トレーナー紹介",
+      trainerLinkSuffix: "をご覧ください。",
+      lineBtn: "LINEで話を聞いてみる",
+      lineAria: "トレーナー募集について公式LINEで問い合わせる（新しいタブで開く）",
+      notes: [
+        "※ ボタンを押しても、応募が確定することはありません。",
+        "※ お客様のご予約と同じLINEアカウントです。最初のメッセージの冒頭に「トレーナー募集の件」とご記入ください。",
+      ],
+      customerNotePrefix: "トレーニングの体験・ご予約をお探しの方は",
+      customerNoteLink: "体験トレーニングのご案内",
+      customerNoteSuffix: "をご覧ください。",
+      footerLink: "トレーナー募集",
+    },
     footer: { blog: "ブログ", app: "公式アプリ", line: "LINE", instagram: "Instagram", terms: "利用規約", privacy: "プライバシーポリシー", tokusho: "特定商取引法に基づく表記", copyright: "パーソナルジム Salute御所南", address: "京都市中京区毘沙門町533-1 プラザ御所南 2階" },
     mobileCta: "LINEで体験を予約 →",
     languageLabel: "言語",
