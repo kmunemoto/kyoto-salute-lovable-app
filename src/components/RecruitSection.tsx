@@ -1,4 +1,5 @@
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Check, Copy, MessageCircle } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 
@@ -12,6 +13,8 @@ import { trackCtaClick } from "@/lib/analytics";
  */
 const RecruitSection = () => {
   const { lang, t } = useT();
+  const [copied, setCopied] = useState(false);
+  const [copyFailed, setCopyFailed] = useState(false);
   const r = t.recruit;
   // tsconfig.app.json は strict:false、tsconfig.json は strictNullChecks:false のため、
   // r.title と直接書いても型検査を通ってしまう。このガードが唯一の実行時防御線で、
@@ -19,6 +22,22 @@ const RecruitSection = () => {
   if (!r) return null;
 
   const lineUrl = "https://lin.ee/UMVDzWF";
+
+  // 応募も予約も同じLINEアカウントに届くため、受信箱の切り分けは応募者が冒頭に
+  // 「トレーナー募集の件」と書いてくれるかどうかに依存する。定型文をそのまま
+  // コピーできるようにして、その一手間を確実に踏んでもらう。
+  // clipboard API は非セキュアコンテキストや古い端末で使えないため、失敗時は
+  // 手動コピーを促す文言に切り替える（黙って何も起きない状態にしない）。
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(r.template);
+      setCopyFailed(false);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopyFailed(true);
+    }
+  };
 
   return (
     <section
@@ -41,9 +60,27 @@ const RecruitSection = () => {
           {r.howToApply.map((p, i) => <p key={i}>{p}</p>)}
         </div>
 
-        <div className="border border-border bg-secondary rounded-sm px-4 py-3 mb-3">
-          <p className="text-muted-foreground font-body text-xs mb-1">{r.templateLabel}</p>
-          <p className="text-foreground font-body text-sm">{r.template}</p>
+        <div className="border border-border bg-secondary rounded-sm px-4 py-3 mb-2">
+          <p className="text-muted-foreground font-body text-xs mb-1.5">{r.templateLabel}</p>
+          <p className="text-foreground font-body text-sm mb-3">{r.template}</p>
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="inline-flex items-center gap-1.5 border border-border bg-white px-3 py-2 text-foreground font-body text-xs rounded-sm hover:bg-background transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            {copied ? (
+              <Check className="w-3.5 h-3.5 text-[#06C755]" aria-hidden="true" />
+            ) : (
+              <Copy className="w-3.5 h-3.5" aria-hidden="true" />
+            )}
+            {copied ? r.copiedLabel : r.copyBtn}
+          </button>
+          <span role="status" aria-live="polite" className="sr-only">
+            {copied ? r.copiedLabel : ""}
+          </span>
+          {copyFailed && (
+            <p className="text-muted-foreground font-body text-xs mt-2">{r.copyFallback}</p>
+          )}
         </div>
         <p className="text-muted-foreground font-body text-xs leading-relaxed mb-8">{r.templateNote}</p>
 
