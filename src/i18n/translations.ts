@@ -121,7 +121,7 @@ export const translations: Record<Lang, Dict> = {
       copiedLabel: "コピーしました",
       copyFallback: "上の文面を長押し（PCでは選択）してコピーしてください。",
       lineBtn: "LINEで話を聞いてみる",
-      lineAria: "トレーナー募集について公式LINEで問い合わせる（新しいタブで開く）",
+      lineAria: "LINEで話を聞いてみる（トレーナー募集について公式LINEで問い合わせる・新しいタブで開く）",
       notes: [
         "※ ボタンを押しても、応募が確定することはありません。",
         "※ お客様のご予約と同じLINEアカウントです。最初のメッセージの冒頭に「トレーナー募集の件」とご記入ください。",

@@ -18,6 +18,9 @@ describe("RecruitSection", () => {
     expect(screen.getByRole("heading", { name: "トレーナー募集" })).toBeInTheDocument();
     const cta = screen.getByRole("link", { name: /公式LINEで問い合わせる/ });
     expect(cta).toHaveAttribute("href", "https://lin.ee/UMVDzWF");
+    // WCAG 2.5.3 Label in Name: aria-label は可視ラベルを含むこと。
+    // 含まないと音声コントロールで画面表示どおりに発話しても起動できない。
+    expect(cta.getAttribute("aria-label")).toContain("LINEで話を聞いてみる");
     // 予約と同一アカウントのため、識別を促す一文は必須。
     expect(screen.getByText(/トレーナー募集の件」とご記入ください/)).toBeInTheDocument();
   });
