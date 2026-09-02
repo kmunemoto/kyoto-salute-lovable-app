@@ -12,7 +12,7 @@ const DROPIN_TITLE =
 
 const DropIn = () => {
   const included = [
-    "60-minute 1-on-1 personal training session",
+    "50-minute 1-on-1 personal training session",
     "Certified nutritionist trainer (English-speaking)",
     "All sportswear, shoes, towels & water provided",
     "Personalized workout based on your goals",
