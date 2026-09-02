@@ -98,6 +98,8 @@ const PricingSection = () => {
               <span className="text-gym-dark-foreground/50 text-sm font-body ml-2">{p.option.unit}</span>
             </div>
             <p className="text-gym-dark-foreground/70 text-sm font-body leading-relaxed">{p.option.description}</p>
+            <p className="text-gym-dark-foreground/70 text-sm font-body leading-relaxed mt-2">{p.option.benefit}</p>
+            <p className="text-gym-dark-foreground/50 text-xs font-body mt-3">{p.option.booking}</p>
           </div>
         </div>
       </div>
