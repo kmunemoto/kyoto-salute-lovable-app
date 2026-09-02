@@ -6,7 +6,7 @@ import { trackCtaClick } from "@/lib/analytics";
 const BASE = "https://kyoto-salute.com";
 const VISITOR_URL = "https://app.kyoto-salute.com/drop-in/ceda19b0-d5e0-4928-ab2e-996a0b823af4";
 const DROPIN_DESC =
-  "Drop-in personal training in Kyoto for travelers. One 60-min session ¥8,000, no membership, English-speaking trainer, all gear provided. 8 min from Marutamachi Station, near the Kyoto Imperial Palace.";
+  "Drop-in personal training in Kyoto for travelers. One 50-min session ¥8,000, no membership, English-speaking trainer, all gear provided. 8 min from Marutamachi Station, near the Kyoto Imperial Palace.";
 const DROPIN_TITLE =
   "Drop-in Personal Training in Kyoto (English-Speaking) | ¥8,000 Single Session | Salute";
 

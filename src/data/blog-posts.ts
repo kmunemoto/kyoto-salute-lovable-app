@@ -543,7 +543,7 @@ export const blogPosts: BlogPost[] = [
     <p>Salute Goshominami is a private personal training gym in Kyoto's Nakagyo-ku district, and we welcome travelers for drop-in sessions — no membership, no sign-up, no hassle.</p>
     <h2>What Is a Drop-in Session?</h2>
     <p>A drop-in session is a single personal training session designed for visitors and travelers. You book one session, show up, train with a private trainer, and that's it. No contracts, no commitments.</p>
-    <p>Each session is 60 minutes of 1-on-1 training with a certified nutritionist trainer who will customize the workout to your fitness level and goals.</p>
+    <p>Each session includes 50 minutes of 1-on-1 training with a certified nutritionist trainer who will customize the workout to your fitness level and goals.</p>
     <h2>What's Included</h2>
     <p>Everything you need is provided at no extra cost:</p>
     <ul>
