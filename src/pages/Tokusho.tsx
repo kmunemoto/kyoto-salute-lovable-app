@@ -176,7 +176,8 @@ const Tokusho = () => {
                 <h2 className="text-xl md:text-2xl font-heading text-foreground mb-4 pb-3 border-b border-border">
                   <span className="text-accent mr-3">9.</span>販売価格以外の必要料金
                 </h2>
-                <p>なし（すべての料金は販売価格に含まれます）</p>
+                <p>月額プランの料金以外に、必ずかかる費用はありません。</p>
+                <p className="mt-2">オプションのパーソナルストレッチ（30分）をご希望の場合のみ、1回あたり¥3,000（税込）を別途申し受けます。</p>
               </section>
 
               <section id="payment-method">

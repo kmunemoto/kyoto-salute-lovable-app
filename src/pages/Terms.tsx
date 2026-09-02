@@ -161,7 +161,7 @@ const Terms = () => {
                 <ArticleHeading id="art6" num="第6条" title="遅刻時の対応" />
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>
-                    会員が予約時間に遅刻された場合、<strong className="text-foreground">後続の予約がない限り、お越しいただいた時間から60分のトレーニングを実施</strong>いたします。
+                    会員が予約時間に遅刻された場合、<strong className="text-foreground">後続の予約がない限り、お越しいただいた時間から50分のトレーニングを実施</strong>いたします。
                   </li>
                   <li>後続の予約がある場合は、予約終了時間までの短縮されたトレーニングとなります。</li>
                   <li>いかなる場合も、遅刻による料金の割引や返金はいたしません。</li>
