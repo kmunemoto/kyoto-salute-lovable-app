@@ -81,6 +81,25 @@ const PricingSection = () => {
             </div>
           </div>
         )}
+        {/*
+          オプション（トレーニング後に追加するメニュー）。プランに追加する形なので、
+          プランカードと同格に見せないよう、グリッドの外に一段控えめな帯として置く。
+          予約の導線は各プランのCTAに集約されているため、ここには専用のボタンを置かない。
+        */}
+        <div className="mt-10 max-w-2xl mx-auto">
+          <div className="rounded-sm p-6 bg-white border border-border">
+            <p className="text-gold text-xs tracking-[0.2em] uppercase mb-2 font-body">{p.option.label}</p>
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+              <h3 className="text-gym-dark-foreground font-body font-semibold text-lg">{p.option.name}</h3>
+              <span className="text-gym-dark-foreground/50 text-sm font-body">{p.option.duration}</span>
+            </div>
+            <div className="mb-3">
+              <span className="text-2xl font-body font-bold text-gold">{p.option.price}</span>
+              <span className="text-gym-dark-foreground/50 text-sm font-body ml-2">{p.option.unit}</span>
+            </div>
+            <p className="text-gym-dark-foreground/70 text-sm font-body leading-relaxed">{p.option.description}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
