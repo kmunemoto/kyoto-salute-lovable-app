@@ -7,9 +7,6 @@
 //   - book_trial_click  : free trial booking buttons
 //   - book_dropin_click : drop-in (visitor) booking buttons
 //   - line_click        : LINE contact/booking buttons
-//   - recruit_line_click: trainer-recruitment LINE buttons. Deliberately NOT
-//     line_click: both open the same LINE account, and folding recruitment
-//     into line_click would inflate the booking key event.
 //
 // Safe no-op when gtag is unavailable (e.g. local dev without GA, or blockers).
 
@@ -19,13 +16,12 @@ declare global {
   }
 }
 
-export type CtaType = "trial" | "dropin" | "line" | "recruit";
+export type CtaType = "trial" | "dropin" | "line";
 
 const EVENT_NAME: Record<CtaType, string> = {
   trial: "book_trial_click",
   dropin: "book_dropin_click",
   line: "line_click",
-  recruit: "recruit_line_click",
 };
 
 export function trackCtaClick(params: {
