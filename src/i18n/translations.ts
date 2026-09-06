@@ -18,7 +18,7 @@ type Dict = {
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
-  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; option: { label: string; name: string; duration: string; price: string; unit: string; description: string; benefit: string; booking: string }; cta: string };
+  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; cta: string };
   flow: { kicker: string; title: string; steps: { title: string; description: string }[]; footer: string; bookText: string; bookLinkLabel: string };
   cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
@@ -60,7 +60,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月6回プラン", price: "¥28,500", perSession: "1回あたり ¥4,750", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分", "月6回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
       { name: "月8回プラン", price: "¥36,000", perSession: "1回あたり ¥4,500", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
       { name: "月15回プラン", price: "¥60,000", perSession: "1回あたり ¥4,000", description: "本格的なダイエット・ボディメイクに", features: ["1セッション50分", "月15回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
-    ], dropIn: { name: "単発プラン（ビジター・観光客向け）", price: "¥8,000", perSession: "1回", description: "会員登録不要・手ぶらOK", features: ["1セッション50分", "会員登録不要", "ウェア・シューズ無料レンタル", "手ぶらOK"] }, option: { label: "オプション", name: "パーソナルストレッチ", duration: "30分", price: "¥3,000", unit: "（税込）/回", description: "トレーニングの後に追加していただけるオプションです。トレーナーがマンツーマンで30分間のストレッチを行います。", benefit: "デスクワークで硬くなりやすい胸まわり・股関節・もも裏を中心に、トレーナーが丁寧に伸ばしていきます。関節の動く範囲が広がると、しゃがむ・振り返るといった日常の動作が楽になり、次のトレーニングでもフォームが安定して、狙った筋肉に効かせやすくなります。肩や腰の張りが気になる方、姿勢を整えたい方にもおすすめです。", booking: "ご予約時にお選びいただけます。" }, cta: "まずは体験してみる" },
+    ], dropIn: { name: "単発プラン（ビジター・観光客向け）", price: "¥8,000", perSession: "1回", description: "会員登録不要・手ぶらOK", features: ["1セッション50分", "会員登録不要", "ウェア・シューズ無料レンタル", "手ぶらOK"] }, cta: "まずは体験してみる" },
     flow: { kicker: "Flow", title: "体験トレーニングの流れ", steps: [
       { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。" },
       { title: "カウンセリング＋トレーニング", description: "カウンセリングで目標やお悩みをヒアリングした後、50分のパーソナルトレーニングを体験。手ぶらでOK。" },
@@ -73,7 +73,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "持ち物はありますか？", answer: "ウェアや靴に加えてお水もご用意しておりますので、手ぶらでお気軽にお越しいただけます。" },
       { question: "プランの有効期限はどうなっていますか？", answer: "プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。" },
       { question: "最低契約期間はありますか？", answer: "契約期間に縛りはございません。最低1ヶ月から始められます。" },
-      { question: "料金以外にかかる費用はありますか？", answer: "月額プランの料金以外に、必ずかかる費用はありません。入会金・事務手数料は¥0、ウェア・シューズ・タオル・お水もすべて無料レンタルです。ご希望の方のみ、オプションのパーソナルストレッチ（30分・¥3,000税込）を追加いただけます。" },
+      { question: "料金以外にかかる費用はありますか？", answer: "一切ありません。入会金・事務手数料は¥0、ウェア・シューズ・タオル・お水もすべて無料レンタルです。" },
       { question: "最寄り駅はどこですか？", answer: "地下鉄「丸太町」駅から徒歩8分です。京阪「神宮丸太町」駅からも徒歩8分でお越しいただけます。" },
       { question: "予約のキャンセルや変更はできますか？", answer: "予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。当日のキャンセルであっても、キャンセル料やセッションの消費は発生しませんので、急なご予定にも安心してご利用いただけます。" },
     ] },
@@ -113,7 +113,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "6 Sessions / Month", price: "¥28,500", perSession: "¥4,750 / session", description: "For training once a week or more", features: ["50-minute session", "Up to 6 sessions / month", "Just come as you are", "Training app included"] },
       { name: "8 Sessions / Month", price: "¥36,000", perSession: "¥4,500 / session", description: "For weight loss and body shaping", features: ["50-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
       { name: "15 Sessions / Month", price: "¥60,000", perSession: "¥4,000 / session", description: "For serious transformation goals", features: ["50-minute session", "Up to 15 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
-    ], dropIn: { name: "Drop-in Personal Training (for travelers)", price: "¥8,000", perSession: "per session", description: "No membership required. All equipment provided. For travelers visiting Kyoto.", features: ["50-minute 1-on-1 session", "No membership required", "Training wear and shoes provided", "English-friendly support"] }, option: { label: "Option", name: "Personal Stretching", duration: "30 min", price: "¥3,000", unit: "(tax incl.) / session", description: "An add-on you can take after your workout. Your trainer guides you through 30 minutes of one-on-one stretching.", benefit: "Your trainer works through the areas that tend to tighten up from desk work — the chest, hips and hamstrings. As your range of motion opens up, everyday movements like squatting down or turning around tend to feel easier, and your form in the next session tends to stay more stable, so it becomes easier to target the muscles you are training. A good fit if tight shoulders or a stiff lower back bother you, or if you want to work on your posture.", booking: "Select it when you book." }, cta: "Book a Trial Session" },
+    ], dropIn: { name: "Drop-in Personal Training (for travelers)", price: "¥8,000", perSession: "per session", description: "No membership required. All equipment provided. For travelers visiting Kyoto.", features: ["50-minute 1-on-1 session", "No membership required", "Training wear and shoes provided", "English-friendly support"] }, cta: "Book a Trial Session" },
     flow: { kicker: "Flow", title: "How It Works", steps: [
       { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds." },
       { title: "Consultation + Training", description: "After a short consultation, enjoy a 50-minute personal training session. Just come as you are." },
@@ -127,7 +127,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "Do you offer drop-in personal training for travelers?", answer: "Yes — our drop-in plan is ¥8,000 per session. No membership required, all training wear and equipment provided. You can book directly via our website or Instagram DM." },
       { question: "Is English-friendly support available?", answer: "Yes. Your trainer can guide you through the workout in basic English, and we use translation tools for more detailed conversations." },
       { question: "Is there a minimum contract?", answer: "No. There's no minimum term — you can start with a single month." },
-      { question: "Any extra costs?", answer: "There are no compulsory costs beyond your plan. The enrollment fee is ¥0, and sportswear, shoes, towels and water are all free. If you wish, you can add the optional Personal Stretching session (30 min, ¥3,000 tax incl.)." },
+      { question: "Any extra costs?", answer: "None. The enrollment fee is ¥0, and sportswear, shoes, towels and water are all free." },
       { question: "Nearest station?", answer: "8 min on foot from Marutamachi Station (Karasuma Line). Also 8 min from Keihan Jingu-Marutamachi Station." },
       { question: "Can I change or cancel a reservation?", answer: "You can change or cancel your reservation anytime through our app. Even for same-day cancellations, there is no cancellation fee and no session is used — so you can book with confidence, even with an unpredictable schedule." },
     ] },
@@ -167,7 +167,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "适合每周训练1次以上", features: ["每次50分钟", "每月最多6次", "空手前来即可", "专用APP可用"] },
       { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "适合减脂与塑形", features: ["每次50分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
       { name: "月15次方案", price: "¥60,000", perSession: "每次 ¥4,000", description: "适合系统性减脂与塑形", features: ["每次50分钟", "每月最多15次", "空手前来即可", "专用APP可用", "饮食建议"] },
-    ], dropIn: { name: "单次训练（适合来京都旅行的游客）", price: "¥8,000", perSession: "1次", description: "无需会员注册，全套装备免费提供，适合来京都旅行的游客。", features: ["50分钟一对一训练", "无需会员注册", "运动服・鞋免费提供", "可支持简单英语沟通"] }, option: { label: "加购", name: "私人拉伸", duration: "30分钟", price: "¥3,000", unit: "(含税)/次", description: "可在训练结束后加购的选配服务。由教练一对一带您进行30分钟的拉伸放松。", benefit: "教练会重点伸展久坐办公容易僵硬的胸部、髋关节与大腿后侧。关节活动范围变大后，蹲下、转身等日常动作会更轻松，下次训练时姿势也更稳定，更容易练到想练的肌肉。肩部、腰部容易紧绷，或在意姿势的您，都很适合。", booking: "预约时可选择加购。" }, cta: "预约体验课程" },
+    ], dropIn: { name: "单次训练（适合来京都旅行的游客）", price: "¥8,000", perSession: "1次", description: "无需会员注册，全套装备免费提供，适合来京都旅行的游客。", features: ["50分钟一对一训练", "无需会员注册", "运动服・鞋免费提供", "可支持简单英语沟通"] }, cta: "预约体验课程" },
     flow: { kicker: "Flow", title: "体验课程流程", steps: [
       { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。" },
       { title: "咨询 + 训练", description: "进行简短咨询后，体验50分钟的私人教练训练。空手前来即可。" },
@@ -181,7 +181,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "游客可以单次体验吗？", answer: "可以。单次训练每次8,000日元，无需会员注册，运动服与器材全部免费提供。可通过网站或Instagram DM预约。" },
       { question: "可以用英语或中文沟通吗？", answer: "教练可以使用简单的英语进行训练沟通，复杂内容会借助翻译工具，方便外国游客使用。" },
       { question: "有最低合约期限吗？", answer: "没有合约期限限制，最少1个月即可开始。" },
-      { question: "除了套餐费用还有其他费用吗？", answer: "套餐费用之外没有必须支付的费用。入会费・手续费0日元，运动服・鞋・毛巾・饮用水全部免费。如有需要，可另行加购私人拉伸（30分钟・3,000日元含税）。" },
+      { question: "除了套餐费用还有其他费用吗？", answer: "完全没有。入会费・手续费0日元，运动服・鞋・毛巾・饮用水全部免费。" },
       { question: "最近的车站是哪里？", answer: "地铁「丸太町」站步行8分钟。京阪「神宫丸太町」站步行也是8分钟。" },
       { question: "可以更改或取消预约吗？", answer: "预约的更改与取消可随时通过专用APP办理。即使当天取消，也不会产生取消费用或消耗课程次数，行程有变也可安心预约。" },
     ] },
@@ -221,7 +221,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "適合每週訓練1次以上", features: ["每次50分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
       { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "適合減脂與體態雕塑", features: ["每次50分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
       { name: "月15次方案", price: "¥60,000", perSession: "每次 ¥4,000", description: "適合系統性減脂與體態雕塑", features: ["每次50分鐘", "每月最多15次", "空手前來即可", "可使用專用APP", "飲食建議"] },
-    ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["50分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, option: { label: "加購", name: "私人伸展", duration: "30分鐘", price: "¥3,000", unit: "(含稅)/次", description: "可於訓練結束後加購的服務。由教練一對一帶您進行30分鐘的伸展放鬆。", benefit: "教練會重點伸展久坐辦公容易僵硬的胸部、髖關節與大腿後側。關節活動範圍變大後，蹲下、轉身等日常動作會更輕鬆，下次訓練時姿勢也更穩定，更容易練到想練的肌肉。肩部、腰部容易緊繃，或在意姿勢的您，都很適合。", booking: "預約時可選擇加購。" }, cta: "預約體驗課程" },
+    ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["50分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, cta: "預約體驗課程" },
     flow: { kicker: "Flow", title: "體驗課程流程", steps: [
       { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。" },
       { title: "諮詢 + 訓練", description: "進行簡短諮詢後，體驗50分鐘的私人教練訓練。空手前來即可。" },
@@ -235,7 +235,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "遊客可以單次體驗嗎？", answer: "可以。單次訓練每次8,000日圓，無需加入會員，運動服與器材全部免費提供。可透過網站或Instagram私訊預約。" },
       { question: "可以用英語或中文溝通嗎？", answer: "教練可以使用簡單的英語進行訓練溝通，較複雜的內容會藉助翻譯工具，方便外國遊客使用。" },
       { question: "有最低合約期限嗎？", answer: "沒有合約期限限制，最少1個月即可開始。" },
-      { question: "除了方案費用之外還有其他費用嗎？", answer: "方案費用之外沒有必須支付的費用。入會費・手續費0日圓，運動服・鞋・毛巾・飲用水全部免費。如有需要，可另行加購私人伸展（30分鐘・3,000日圓含稅）。" },
+      { question: "除了方案費用之外還有其他費用嗎？", answer: "完全沒有。入會費・手續費0日圓，運動服・鞋・毛巾・飲用水全部免費。" },
       { question: "最近的車站是哪裡？", answer: "地鐵「丸太町」站步行8分鐘。京阪「神宮丸太町」站步行也是8分鐘。" },
       { question: "可以更改或取消預約嗎？", answer: "預約的更改與取消可隨時透過專用APP辦理。即使當天取消，也不會產生取消費用或消耗課程次數，行程有變也可安心預約。" },
     ] },
@@ -275,7 +275,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "월 6회 플랜", price: "¥28,500", perSession: "1회 ¥4,750", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분", "월 최대 6회", "빈손으로 OK", "전용 앱 제공"] },
       { name: "월 8회 플랜", price: "¥36,000", perSession: "1회 ¥4,500", description: "다이어트와 바디 메이킹에", features: ["1회 50분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
       { name: "월 15회 플랜", price: "¥60,000", perSession: "1회 ¥4,000", description: "본격적인 다이어트・바디 메이킹에", features: ["1회 50분", "월 최대 15회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
-    ], dropIn: { name: "1회 이용 (교토 여행객용)", price: "¥8,000", perSession: "1회", description: "회원가입 없이 1회 이용 가능. 교토 여행 중에도 이용하기 좋습니다.", features: ["50분 1:1 트레이닝", "회원가입 불필요", "운동복・신발 무료 제공", "간단한 영어 응대 가능"] }, option: { label: "옵션", name: "퍼스널 스트레칭", duration: "30분", price: "¥3,000", unit: "(부가세 포함)/회", description: "트레이닝 후에 추가하실 수 있는 옵션입니다. 트레이너가 1:1로 30분간 스트레칭을 진행합니다.", benefit: "책상 업무로 굳기 쉬운 가슴・고관절・허벅지 뒤쪽을 트레이너가 꼼꼼히 늘려 드립니다. 관절 가동범위가 넓어지면 쪼그려 앉거나 뒤를 돌아보는 등 일상 동작이 한결 편해지고, 다음 트레이닝에서도 자세가 안정되어 원하는 근육에 집중하기 쉬워집니다. 어깨나 허리가 자주 뭉치는 분, 자세를 가다듬고 싶은 분께도 추천합니다.", booking: "예약 시 선택하실 수 있습니다." }, cta: "체험 예약" },
+    ], dropIn: { name: "1회 이용 (교토 여행객용)", price: "¥8,000", perSession: "1회", description: "회원가입 없이 1회 이용 가능. 교토 여행 중에도 이용하기 좋습니다.", features: ["50분 1:1 트레이닝", "회원가입 불필요", "운동복・신발 무료 제공", "간단한 영어 응대 가능"] }, cta: "체험 예약" },
     flow: { kicker: "Flow", title: "체험 세션 안내", steps: [
       { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다." },
       { title: "카운셀링 + 트레이닝", description: "간단한 상담 후, 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 빈손으로 오시면 됩니다." },
@@ -289,7 +289,7 @@ export const translations: Record<Lang, Dict> = {
       { question: "여행 중에 1회만 이용할 수도 있나요?", answer: "네, 가능합니다. 1회 이용 요금은 ¥8,000이며 회원가입은 필요하지 않습니다. 운동복과 장비 모두 무료로 제공되며, 웹사이트 또는 Instagram DM으로 예약하실 수 있습니다." },
       { question: "영어로도 소통이 가능한가요?", answer: "트레이너는 기본적인 영어로 트레이닝을 진행할 수 있으며, 자세한 내용은 번역 도구를 활용해 안내해 드립니다. 외국인 관광객도 부담 없이 이용하실 수 있습니다." },
       { question: "최소 계약 기간이 있나요?", answer: "계약 기간 제약은 없으며, 1개월부터 시작하실 수 있습니다." },
-      { question: "요금 외에 추가 비용이 있나요?", answer: "플랜 요금 외에 반드시 드는 비용은 없습니다. 입회비・사무수수료 ¥0, 운동복・신발・수건・물 모두 무료입니다. 원하시는 분에 한해 퍼스널 스트레칭(30분・¥3,000 부가세 포함)을 추가하실 수 있습니다." },
+      { question: "요금 외에 추가 비용이 있나요?", answer: "전혀 없습니다. 입회비・사무수수료 ¥0, 운동복・신발・수건・물 모두 무료입니다." },
       { question: "가장 가까운 역은 어디인가요?", answer: "지하철 마루타마치역에서 도보 8분, 게이한 진구마루타마치역에서도 도보 8분입니다." },
       { question: "예약 변경이나 취소가 가능한가요?", answer: "예약 변경·취소는 전용 앱에서 언제든지 하실 수 있습니다. 당일 취소의 경우에도 취소 수수료나 세션 차감이 발생하지 않으므로, 갑작스러운 일정 변경에도 안심하고 이용하실 수 있습니다." },
     ] },
