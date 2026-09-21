@@ -156,7 +156,6 @@ const Tokusho = () => {
                   <Row label="月4回プラン">¥20,000（税込）/ 月</Row>
                   <Row label="月6回プラン">¥28,500（税込）/ 月</Row>
                   <Row label="月8回プラン">¥36,000（税込）/ 月</Row>
-                  <Row label="月15回プラン">¥60,000（税込）/ 月</Row>
                   <div className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-4">
                     <dt className="text-sm font-medium text-muted-foreground font-body">
                       体験トレーニング

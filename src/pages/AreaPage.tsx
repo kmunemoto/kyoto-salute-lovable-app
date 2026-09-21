@@ -15,7 +15,7 @@ const LINE_URL = "https://lin.ee/UMVDzWF";
 const reasons = [
   { title: "完全個室のマンツーマン指導", desc: "他のお客様と顔を合わせない完全個室。人目を気にせず、自分のペースで取り組めます。" },
   { title: "栄養士トレーナーが在籍", desc: "トレーニングだけでなく、我慢ではなく工夫でつくる食事アドバイスも受けられます。" },
-  { title: "入会金¥0・1回¥4,000〜", desc: "初期費用は0円。縛りのない月額制で、続けやすい料金設定です。" },
+  { title: "入会金¥0・1回¥4,500〜", desc: "初期費用は0円。縛りのない月額制で、続けやすい料金設定です。" },
   { title: "手ぶらでOK", desc: "ウェア・シューズ・タオル・お水を無料でご用意。仕事帰りにそのまま通えます。" },
   { title: "当日キャンセルも無料", desc: "予約の変更・キャンセルは当日でも無料。急な予定にも柔軟に対応できます。" },
   { title: "10:00〜22:00の完全予約制", desc: "夜21時からの予約も可能なので、残業後でも間に合います。" },
@@ -180,7 +180,7 @@ const AreaPage = () => {
           <div className="max-w-3xl mx-auto text-center border border-gold/30 bg-secondary p-8 md:p-12 rounded-sm">
             <h2 className="font-heading text-2xl md:text-3xl text-foreground">{area.station}周辺でパーソナルジムをお探しなら</h2>
             <p className="mt-4 font-body text-sm md:text-base text-muted-foreground leading-relaxed">
-              まずは体験トレーニングで、ジムの雰囲気とトレーニングを体感してみてください。体験料は¥3,000、体験当日にご入会いただいた場合は¥0です。1回¥4,000〜・入会金¥0・手ぶらOK。
+              まずは体験トレーニングで、ジムの雰囲気とトレーニングを体感してみてください。体験料は¥3,000、体験当日にご入会いただいた場合は¥0です。1回¥4,500〜・入会金¥0・手ぶらOK。
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: `area_${area.slug}_cta`, label: "体験を予約", url: TRIAL_URL, language: "ja" })} className="gold-gradient px-10 py-4 text-white font-medium rounded-sm">体験トレーニングを予約する</a>

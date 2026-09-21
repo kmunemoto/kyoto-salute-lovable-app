@@ -25,7 +25,7 @@ const PricingSection = () => {
           </div>
           <p className="text-gym-dark-foreground/50 mt-2 text-sm font-body">{p.sub}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {p.plans.map((plan, idx) => {
             const popular = idx === 2;
             const ctaHref = "https://app.kyoto-salute.com/trial";
