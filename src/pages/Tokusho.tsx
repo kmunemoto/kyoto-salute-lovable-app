@@ -197,6 +197,7 @@ const Tokusho = () => {
                   <span className="text-accent mr-3">11.</span>支払時期
                 </h2>
                 <p>毎回1回目のトレーニング日に対面にてお支払いいただきます。</p>
+                <p className="mt-2">追加セッションは、ご利用の都度、当日に店頭でお支払いいただきます。</p>
               </section>
 
               <section id="service-time">
