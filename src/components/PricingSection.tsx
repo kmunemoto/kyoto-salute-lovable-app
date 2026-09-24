@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { BadgeCheck, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
@@ -55,8 +55,17 @@ const PricingSection = () => {
             );
           })}
         </div>
-        {/* 料金改定後の価格は新規入会者向け。既存会員は改定前の料金が続くことを、価格のすぐ下で伝える。 */}
-        <p className="mt-6 max-w-3xl mx-auto text-center text-xs leading-relaxed text-gym-dark-foreground/60 font-body">{p.priceNote}</p>
+        {/*
+          料金改定後の価格は新規入会者向け。既存会員は改定前の料金が続くことを、価格のすぐ下で
+          見落とされないように伝える（既存会員に向けた安心材料なので、結論を見出しにする）。
+        */}
+        <div className="mt-8 max-w-3xl mx-auto flex items-start gap-3 rounded-sm bg-white border border-gold/40 border-l-4 border-l-gold px-5 py-4 text-left">
+          <BadgeCheck className="w-5 h-5 text-gold shrink-0 mt-0.5" aria-hidden="true" />
+          <div>
+            <p className="font-body font-bold text-sm md:text-base text-gym-dark-foreground leading-relaxed">{p.priceNote.title}</p>
+            <p className="mt-1 font-body text-sm text-gym-dark-foreground/70 leading-relaxed">{p.priceNote.body}</p>
+          </div>
+        </div>
         {showDropIn && (
           <div className="mt-10 max-w-2xl mx-auto">
             <div className="relative rounded-sm p-6 bg-white border border-gold/30">
