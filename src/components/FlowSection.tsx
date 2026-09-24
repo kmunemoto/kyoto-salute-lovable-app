@@ -29,10 +29,10 @@ const FlowSection = () => {
                     src={image}
                     alt={s.imageAlt ?? ""}
                     width={1200}
-                    height={900}
+                    height={1200}
                     loading="lazy"
                     decoding="async"
-                    className="w-full aspect-[4/3] object-cover rounded-sm mb-6"
+                    className="w-full aspect-square object-cover rounded-sm mb-6"
                   />
                 )}
                 <p className="font-heading text-primary text-2xl mb-3">{num}</p>
