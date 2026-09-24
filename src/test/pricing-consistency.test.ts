@@ -115,6 +115,27 @@ describe("index.html structured data mirrors the plan table", () => {
   });
 });
 
+describe("「1回¥N〜」の訴求（index.html 以外）", () => {
+  const cheapest = Math.min(
+    ...translations.ja.pricing.plans.map((p) => yen(p.perSession)),
+  );
+
+  // ブログ記事の本文・エリアページ・ブログ自動生成スクリプトの前提情報にも同じ訴求がある。
+  it.each([
+    "src/data/blog-posts.ts",
+    "src/data/area-pages.ts",
+    "src/pages/AreaPage.tsx",
+    "scripts/generate-blog-post.mjs",
+  ])("%s quotes the cheapest plan", (file) => {
+    const text = fs.readFileSync(path.resolve(__dirname, "../..", file), "utf-8");
+    const claims = [...text.matchAll(/1回¥([\d,]+)[〜～]/g)];
+    expect(claims.length).toBeGreaterThan(0);
+    for (const [, amount] of claims) {
+      expect(Number(amount.replace(/,/g, ""))).toBe(cheapest);
+    }
+  });
+});
+
 describe("特商法ページの販売価格", () => {
   const tokusho = fs.readFileSync(
     path.resolve(__dirname, "../pages/Tokusho.tsx"),
