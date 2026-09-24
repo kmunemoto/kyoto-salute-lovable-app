@@ -114,3 +114,18 @@ describe("index.html structured data mirrors the plan table", () => {
     }
   });
 });
+
+describe("特商法ページの販売価格", () => {
+  const tokusho = fs.readFileSync(
+    path.resolve(__dirname, "../pages/Tokusho.tsx"),
+    "utf-8",
+  );
+
+  it("lists exactly the Japanese monthly plans, at the same prices", () => {
+    const rows = [...tokusho.matchAll(/<Row label="(月\d+回プラン)">(¥[\d,]+)（税込）\/ 月<\/Row>/g)]
+      .map(([, name, price]) => ({ name, price }));
+    expect(rows).toEqual(
+      translations.ja.pricing.plans.map((p) => ({ name: p.name, price: p.price })),
+    );
+  });
+});
