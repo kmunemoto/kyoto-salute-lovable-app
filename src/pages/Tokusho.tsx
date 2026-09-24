@@ -155,7 +155,7 @@ const Tokusho = () => {
                 <dl className="bg-secondary/50 border border-border rounded-sm px-5 md:px-6 py-2">
                   <Row label="月4回プラン">¥24,000（税込）/ 月</Row>
                   <Row label="月6回プラン">¥33,000（税込）/ 月</Row>
-                  <Row label="月8回プラン">¥40,000（税込）/ 月</Row>
+                  <Row label="月8回プラン">¥39,800（税込）/ 月</Row>
                   <div className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-4">
                     <dt className="text-sm font-medium text-muted-foreground font-body">
                       体験トレーニング
@@ -178,7 +178,7 @@ const Tokusho = () => {
                 </h2>
                 <p>月額プランの料金以外に、必ずかかる費用はありません。</p>
                 <p className="mt-2">オプションのパーソナルストレッチ（30分）をご希望の場合のみ、1回あたり¥3,000（税込）を別途申し受けます。</p>
-                <p className="mt-2">月8回プランの会員様が追加セッション（50分）をご希望の場合は、1回あたり¥5,000（税込）を別途申し受けます。</p>
+                <p className="mt-2">追加セッション（50分）をご希望の場合は、1回あたり¥5,000（税込）を別途申し受けます。</p>
               </section>
 
               <section id="payment-method">
