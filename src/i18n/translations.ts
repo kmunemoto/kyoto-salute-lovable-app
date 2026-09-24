@@ -55,7 +55,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40代男性・デスクワーク", comment: "通い始めて4か月ほどになります。毎回同じトレーニングではなく少しずつ変えて調整してもらえるので毎回効果を感じています。" },
       { label: "30代女性・会社員", comment: "筋トレ初心者ですが、楽しく通っています。ウェア・シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。" },
     ], fromGoogle: "Google口コミより" },
-    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "3つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、3つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", priceNote: "※ 月額プランの料金は、新規ご入会のお客様向けです。すでにご入会いただいている会員様は、これまでの料金のまま引き続きご利用いただけます。", plans: [
+    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "3つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、3つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", priceNote: "※ 月額プランの料金は、新規ご入会のお客様向けです。すでにご入会いただいている会員様は、これまでの料金のまま引き続きご利用いただけます（プランを変更される場合も、改定前の料金が適用されます）。", plans: [
       { name: "月4回プラン", price: "¥24,000", perSession: "1回あたり ¥6,000", description: "健康維持や運動不足解消にオススメ", features: ["1セッション50分", "月4回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
       { name: "月6回プラン", price: "¥33,000", perSession: "1回あたり ¥5,500", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分", "月6回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
       { name: "月8回プラン", price: "¥40,000", perSession: "1回あたり ¥5,000", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
@@ -107,7 +107,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "Male, 40s — Desk Job", comment: "I've been training here for about 4 months. The sessions are always adjusted, so I keep feeling real progress every time." },
       { label: "Female, 30s — Office Worker", comment: "I'm new to strength training but really enjoying it. Sportswear and shoes are provided, so I can come straight from work without bringing anything." },
     ], fromGoogle: "From Google Reviews" },
-    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 3 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", priceNote: "Monthly plan prices shown are for new members. If you are already a member, you can continue at your current rate.", plans: [
+    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 3 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", priceNote: "Monthly plan prices shown are for new members. If you are already a member, you can continue at the previous rates, including when you switch plans.", plans: [
       { name: "4 Sessions / Month", price: "¥24,000", perSession: "¥6,000 / session", description: "For staying healthy and active", features: ["50-minute session", "Up to 4 sessions / month", "Just come as you are", "Training app included"] },
       { name: "6 Sessions / Month", price: "¥33,000", perSession: "¥5,500 / session", description: "For training once a week or more", features: ["50-minute session", "Up to 6 sessions / month", "Just come as you are", "Training app included"] },
       { name: "8 Sessions / Month", price: "¥40,000", perSession: "¥5,000 / session", description: "For weight loss and body shaping", features: ["50-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
@@ -160,7 +160,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多岁男性・办公室工作", comment: "已经训练4个月左右。每次训练内容都会有调整，每次都能感受到进步。" },
       { label: "30多岁女性・上班族", comment: "我是健身新手，但每次都很开心。运动服和鞋子都免费提供，可以空手前来非常方便。" },
     ], fromGoogle: "来自Google评价" },
-    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从3个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", priceNote: "※ 以上月度方案价格适用于新入会的顾客。已入会的会员可继续按原有价格使用。", plans: [
+    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从3个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", priceNote: "※ 以上月度方案价格适用于新入会的顾客。已入会的会员可继续按原有价格使用，变更方案时也适用调整前的价格。", plans: [
       { name: "月4次方案", price: "¥24,000", perSession: "每次 ¥6,000", description: "适合维持健康与日常运动", features: ["每次50分钟", "每月最多4次", "空手前来即可", "专用APP可用"] },
       { name: "月6次方案", price: "¥33,000", perSession: "每次 ¥5,500", description: "适合每周训练1次以上", features: ["每次50分钟", "每月最多6次", "空手前来即可", "专用APP可用"] },
       { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "适合减脂与塑形", features: ["每次50分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
@@ -213,7 +213,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多歲男性・辦公室工作", comment: "已經訓練4個月左右。每次訓練內容都會有調整，每次都能感受到進步。" },
       { label: "30多歲女性・上班族", comment: "我是健身新手，但每次都很開心。運動服與鞋子都免費提供，可以空手前來非常方便。" },
     ], fromGoogle: "來自Google評價" },
-    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從3個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", priceNote: "※ 以上月度方案價格適用於新入會的顧客。已入會的會員可繼續以原有價格使用。", plans: [
+    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從3個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", priceNote: "※ 以上月度方案價格適用於新入會的顧客。已入會的會員可繼續以原有價格使用，變更方案時也適用調整前的價格。", plans: [
       { name: "月4次方案", price: "¥24,000", perSession: "每次 ¥6,000", description: "適合維持健康與日常運動", features: ["每次50分鐘", "每月最多4次", "空手前來即可", "可使用專用APP"] },
       { name: "月6次方案", price: "¥33,000", perSession: "每次 ¥5,500", description: "適合每週訓練1次以上", features: ["每次50分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
       { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "適合減脂與體態雕塑", features: ["每次50分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
@@ -266,7 +266,7 @@ export const translations: Record<Lang, Dict> = {
       { label: "40대 남성・사무직", comment: "다닌 지 4개월 정도 되었습니다. 매번 같은 운동만 하지 않고 조금씩 조정해 주셔서 매번 효과를 체감하고 있습니다." },
       { label: "30대 여성・회사원", comment: "근력 운동은 처음이지만 즐겁게 다니고 있어요. 운동복과 신발이 무료라 빈손으로 와도 되어 일정 사이에 들르기에도 편합니다." },
     ], fromGoogle: "Google 후기에서" },
-    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 3가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", priceNote: "※ 월간 플랜 요금은 신규 가입 고객 기준입니다. 이미 가입하신 회원님은 기존 요금 그대로 계속 이용하실 수 있습니다.", plans: [
+    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 3가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", priceNote: "※ 월간 플랜 요금은 신규 가입 고객 기준입니다. 이미 가입하신 회원님은 기존 요금 그대로 계속 이용하실 수 있으며, 플랜을 변경하시는 경우에도 개정 전 요금이 적용됩니다.", plans: [
       { name: "월 4회 플랜", price: "¥24,000", perSession: "1회 ¥6,000", description: "건강 유지와 운동 부족 해소", features: ["1회 50분", "월 최대 4회", "빈손으로 OK", "전용 앱 제공"] },
       { name: "월 6회 플랜", price: "¥33,000", perSession: "1회 ¥5,500", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분", "월 최대 6회", "빈손으로 OK", "전용 앱 제공"] },
       { name: "월 8회 플랜", price: "¥40,000", perSession: "1회 ¥5,000", description: "다이어트와 바디 메이킹에", features: ["1회 50분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
