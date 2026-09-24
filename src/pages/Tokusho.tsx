@@ -169,7 +169,7 @@ const Tokusho = () => {
                   </div>
                 </dl>
                 <p className="mt-4 text-sm">入会金・事務手数料：無料</p>
-                <p className="mt-2 text-sm">月額プランの上記料金は、新規ご入会のお客様に適用します。すでにご入会いただいている会員様には、これまでの料金を引き続き適用します。</p>
+                <p className="mt-2 text-sm">月額プランの上記料金は、新規ご入会のお客様に適用します。すでにご入会いただいている会員様には、プランを変更される場合も含め、改定前の料金を引き続き適用します。</p>
               </section>
 
               <section id="extra-fees">
