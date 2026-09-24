@@ -7,9 +7,9 @@ import flowCounseling from "@/assets/flow/counseling.webp";
 const icons = [CalendarCheck, ClipboardCheck];
 
 // 手順ごとのイメージ画像（01 WEBで予約 / 02 カウンセリング＋トレーニング）。
-// 今はアイコン表示に戻している。true にすると、アイコンの代わりにカード上部へ写真を表示する
+// true でカード上部に写真を表示し、false にするとアイコン表示に戻る
 // （代替テキストは translations の flow.steps[].imageAlt）。
-const SHOW_STEP_IMAGES = false;
+const SHOW_STEP_IMAGES = true;
 const images = [flowBooking, flowCounseling];
 
 const FlowSection = () => {
