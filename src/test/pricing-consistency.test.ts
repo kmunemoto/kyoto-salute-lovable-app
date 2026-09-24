@@ -150,3 +150,31 @@ describe("特商法ページの販売価格", () => {
     );
   });
 });
+
+describe("オプション料金（追加セッション・パーソナルストレッチ）", () => {
+  // 料金カードの価格を正として、FAQ・index.html の FAQPage・特商法 §9 が同じ価格を書いているか
+  const QUESTION = "料金以外にかかる費用はありますか？";
+  const faqAnswer = translations.ja.faq.items.find((i) => i.question === QUESTION)!.answer;
+  const jsonLdAnswer = readIndexHtml()
+    .match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)!
+    .map((b) => JSON.parse(b.replace(/<\/?script[^>]*>/g, "")))
+    .find((d) => d["@type"] === "FAQPage")
+    .mainEntity.find((q: { name: string }) => q.name === QUESTION).acceptedAnswer.text;
+  const tokushoExtraFees = fs
+    .readFileSync(path.resolve(__dirname, "../pages/Tokusho.tsx"), "utf-8")
+    .match(/<section id="extra-fees">([\s\S]*?)<\/section>/)![1];
+
+  it.each(translations.ja.pricing.options.map((o) => [o.name, o.price]))(
+    "%s（%s）が FAQ・構造化データ・特商法に同じ価格で載っている",
+    (name, price) => {
+      for (const text of [faqAnswer, jsonLdAnswer, tokushoExtraFees]) {
+        expect(text).toContain(name);
+        expect(text).toContain(price);
+      }
+    },
+  );
+
+  it("FAQ の回答と FAQPage の回答が同じ文面", () => {
+    expect(jsonLdAnswer).toBe(faqAnswer);
+  });
+});
