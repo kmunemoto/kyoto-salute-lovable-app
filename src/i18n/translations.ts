@@ -61,7 +61,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月8回プラン", price: "¥40,000", perSession: "1回あたり ¥5,000", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
     ], dropIn: { name: "単発プラン（ビジター・観光客向け）", price: "¥8,000", perSession: "1回", description: "会員登録不要・手ぶらOK", features: ["1セッション50分", "会員登録不要", "ウェア・シューズ無料レンタル", "手ぶらOK"] }, option: { label: "オプション", name: "パーソナルストレッチ", duration: "30分", price: "¥3,000", unit: "（税込）/回", description: "トレーニングの後に追加していただけるオプションです。トレーナーがマンツーマンで30分間のストレッチを行います。", benefit: "デスクワークで硬くなりやすい胸まわり・股関節・もも裏を中心に、トレーナーが丁寧に伸ばしていきます。関節の動く範囲が広がると、しゃがむ・振り返るといった日常の動作が楽になり、次のトレーニングでもフォームが安定して、狙った筋肉に効かせやすくなります。肩や腰の張りが気になる方、姿勢を整えたい方にもおすすめです。", booking: "ご予約時にお選びいただけます。" }, cta: "まずは体験してみる" },
     flow: { kicker: "Flow", title: "体験トレーニングの流れ", steps: [
-      { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。", imageAlt: "体験トレーニングの予約ページをスマートフォンで表示した画面" },
+      { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。", imageAlt: "スマートフォンで体験トレーニングを予約している様子" },
       { title: "カウンセリング＋トレーニング", description: "カウンセリングで目標やお悩みをヒアリングした後、50分のパーソナルトレーニングを体験。手ぶらでOK。" },
     ], footer: "ウェア・シューズ・タオル・お水は無料でご用意しています。", bookText: "", bookLinkLabel: "予約フォーム" },
     cta: { kicker: "Consultation", title: "体験トレーニングのご案内", paragraphs: ["まずは体験トレーニングでお試しください。体験料は¥3,000、体験当日のご入会で¥0です。", "ご入会前の様々な不安は、体験トレーニングで解消できます。", "ジムの雰囲気やトレーニングの内容を、ぜひ一度ご体感ください。"], bullets: ["運動が苦手で不安…", "トレーナーはどんな人だろう…"], webBtn: "WEBから体験を予約", lineBtn: "LINEから予約" },
@@ -113,7 +113,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "8 Sessions / Month", price: "¥40,000", perSession: "¥5,000 / session", description: "For weight loss and body shaping", features: ["50-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
     ], dropIn: { name: "Drop-in Personal Training (for travelers)", price: "¥8,000", perSession: "per session", description: "No membership required. All equipment provided. For travelers visiting Kyoto.", features: ["50-minute 1-on-1 session", "No membership required", "Training wear and shoes provided", "English-friendly support"] }, option: { label: "Option", name: "Personal Stretching", duration: "30 min", price: "¥3,000", unit: "(tax incl.) / session", description: "An add-on you can take after your workout. Your trainer guides you through 30 minutes of one-on-one stretching.", benefit: "Your trainer works through the areas that tend to tighten up from desk work — the chest, hips and hamstrings. As your range of motion opens up, everyday movements like squatting down or turning around tend to feel easier, and your form in the next session tends to stay more stable, so it becomes easier to target the muscles you are training. A good fit if tight shoulders or a stiff lower back bother you, or if you want to work on your posture.", booking: "Select it when you book." }, cta: "Book a Trial Session" },
     flow: { kicker: "Flow", title: "How It Works", steps: [
-      { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds.", imageAlt: "The trial session booking page shown on a smartphone" },
+      { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds.", imageAlt: "Someone booking a trial session on a smartphone" },
       { title: "Consultation + Training", description: "After a short consultation, enjoy a 50-minute personal training session. Just come as you are." },
     ], footer: "Sportswear, shoes, towels and water are all provided free of charge.", bookText: "Use the ", bookLinkLabel: "booking form" },
     cta: { kicker: "Consultation", title: "Trial Session", paragraphs: ["Try a trial session before you commit — ¥3,000, waived if you join on the day.", "Any questions or concerns before signing up can be answered during the trial.", "Get a real feel for the training and the studio atmosphere."], bullets: ["Worried you're not fit enough?", "Curious what the trainer is like?"], webBtn: "Book a Trial Session", lineBtn: "Book via LINE" },
@@ -166,7 +166,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "适合减脂与塑形", features: ["每次50分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
     ], dropIn: { name: "单次训练（适合来京都旅行的游客）", price: "¥8,000", perSession: "1次", description: "无需会员注册，全套装备免费提供，适合来京都旅行的游客。", features: ["50分钟一对一训练", "无需会员注册", "运动服・鞋免费提供", "可支持简单英语沟通"] }, option: { label: "加购", name: "私人拉伸", duration: "30分钟", price: "¥3,000", unit: "(含税)/次", description: "可在训练结束后加购的选配服务。由教练一对一带您进行30分钟的拉伸放松。", benefit: "教练会重点伸展久坐办公容易僵硬的胸部、髋关节与大腿后侧。关节活动范围变大后，蹲下、转身等日常动作会更轻松，下次训练时姿势也更稳定，更容易练到想练的肌肉。肩部、腰部容易紧绷，或在意姿势的您，都很适合。", booking: "预约时可选择加购。" }, cta: "预约体验课程" },
     flow: { kicker: "Flow", title: "体验课程流程", steps: [
-      { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。", imageAlt: "在手机上显示的体验课程预约页面" },
+      { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。", imageAlt: "正在用手机预约体验课程" },
       { title: "咨询 + 训练", description: "进行简短咨询后，体验50分钟的私人教练训练。空手前来即可。" },
     ], footer: "运动服・运动鞋・毛巾・饮用水均免费提供。", bookText: "通过", bookLinkLabel: "预约表单" },
     cta: { kicker: "Consultation", title: "体验课程", paragraphs: ["欢迎先来体验一次。体验费用3,000日元，当天入会则免费。", "入会前的各种疑问都可以在体验课程中得到解答。", "亲身感受训练内容与健身房的氛围。"], bullets: ["担心自己不擅长运动…", "想了解教练是什么样的…"], webBtn: "在线预约体验课程", lineBtn: "通过LINE预约" },
@@ -219,7 +219,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "適合減脂與體態雕塑", features: ["每次50分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
     ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["50分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, option: { label: "加購", name: "私人伸展", duration: "30分鐘", price: "¥3,000", unit: "(含稅)/次", description: "可於訓練結束後加購的服務。由教練一對一帶您進行30分鐘的伸展放鬆。", benefit: "教練會重點伸展久坐辦公容易僵硬的胸部、髖關節與大腿後側。關節活動範圍變大後，蹲下、轉身等日常動作會更輕鬆，下次訓練時姿勢也更穩定，更容易練到想練的肌肉。肩部、腰部容易緊繃，或在意姿勢的您，都很適合。", booking: "預約時可選擇加購。" }, cta: "預約體驗課程" },
     flow: { kicker: "Flow", title: "體驗課程流程", steps: [
-      { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。", imageAlt: "在手機上顯示的體驗課程預約頁面" },
+      { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。", imageAlt: "正在用手機預約體驗課程" },
       { title: "諮詢 + 訓練", description: "進行簡短諮詢後，體驗50分鐘的私人教練訓練。空手前來即可。" },
     ], footer: "運動服・運動鞋・毛巾・飲用水皆免費提供。", bookText: "透過", bookLinkLabel: "預約表單" },
     cta: { kicker: "Consultation", title: "體驗課程", paragraphs: ["歡迎先來體驗一次。體驗費用3,000日圓，當天入會則免費。", "入會前的各種疑問都可以在體驗課程中得到解答。", "親身感受訓練內容與健身房的氛圍。"], bullets: ["擔心自己不擅長運動…", "想了解教練是什麼樣的人…"], webBtn: "線上預約體驗課程", lineBtn: "透過LINE預約" },
@@ -272,7 +272,7 @@ export const translations: Record<Lang, Dict> = {
       { name: "월 8회 플랜", price: "¥40,000", perSession: "1회 ¥5,000", description: "다이어트와 바디 메이킹에", features: ["1회 50분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
     ], dropIn: { name: "1회 이용 (교토 여행객용)", price: "¥8,000", perSession: "1회", description: "회원가입 없이 1회 이용 가능. 교토 여행 중에도 이용하기 좋습니다.", features: ["50분 1:1 트레이닝", "회원가입 불필요", "운동복・신발 무료 제공", "간단한 영어 응대 가능"] }, option: { label: "옵션", name: "퍼스널 스트레칭", duration: "30분", price: "¥3,000", unit: "(부가세 포함)/회", description: "트레이닝 후에 추가하실 수 있는 옵션입니다. 트레이너가 1:1로 30분간 스트레칭을 진행합니다.", benefit: "책상 업무로 굳기 쉬운 가슴・고관절・허벅지 뒤쪽을 트레이너가 꼼꼼히 늘려 드립니다. 관절 가동범위가 넓어지면 쪼그려 앉거나 뒤를 돌아보는 등 일상 동작이 한결 편해지고, 다음 트레이닝에서도 자세가 안정되어 원하는 근육에 집중하기 쉬워집니다. 어깨나 허리가 자주 뭉치는 분, 자세를 가다듬고 싶은 분께도 추천합니다.", booking: "예약 시 선택하실 수 있습니다." }, cta: "체험 예약" },
     flow: { kicker: "Flow", title: "체험 세션 안내", steps: [
-      { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다.", imageAlt: "스마트폰에 표시된 체험 세션 예약 페이지" },
+      { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다.", imageAlt: "스마트폰으로 체험 세션을 예약하는 모습" },
       { title: "카운셀링 + 트레이닝", description: "간단한 상담 후, 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 빈손으로 오시면 됩니다." },
     ], footer: "운동복・신발・수건・물은 무료로 준비되어 있습니다.", bookText: "", bookLinkLabel: "예약 폼" },
     cta: { kicker: "Consultation", title: "체험 세션 안내", paragraphs: ["먼저 가볍게 체험해 보세요. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다.", "입회 전의 다양한 궁금증은 체험 세션에서 해소하실 수 있습니다.", "트레이닝 내용과 짐 분위기를 직접 느껴 보세요."], bullets: ["운동이 익숙하지 않아 걱정되시나요?", "트레이너가 어떤 사람인지 궁금하신가요?"], webBtn: "온라인으로 체험 예약", lineBtn: "LINE으로 예약" },
