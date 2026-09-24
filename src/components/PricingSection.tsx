@@ -55,6 +55,8 @@ const PricingSection = () => {
             );
           })}
         </div>
+        {/* 料金改定後の価格は新規入会者向け。既存会員は改定前の料金が続くことを、価格のすぐ下で伝える。 */}
+        <p className="mt-6 max-w-3xl mx-auto text-center text-xs leading-relaxed text-gym-dark-foreground/60 font-body">{p.priceNote}</p>
         {showDropIn && (
           <div className="mt-10 max-w-2xl mx-auto">
             <div className="relative rounded-sm p-6 bg-white border border-gold/30">

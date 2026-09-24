@@ -18,7 +18,7 @@ type Dict = {
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
-  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; option: { label: string; name: string; duration: string; price: string; unit: string; description: string; benefit: string; booking: string }; cta: string };
+  pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; priceNote: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; option: { label: string; name: string; duration: string; price: string; unit: string; description: string; benefit: string; booking: string }; cta: string };
   flow: { kicker: string; title: string; steps: { title: string; description: string }[]; footer: string; bookText: string; bookLinkLabel: string };
   cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
@@ -30,19 +30,19 @@ type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   ja: {
-    meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーがマンツーマンで指導。1回¥4,500〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
+    meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーがマンツーマンで指導。1回¥5,000〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
     nav: { features: "特徴", trainer: "トレーナー", voice: "お客様の声", plan: "料金プラン", faq: "よくあるご質問", access: "アクセス", consultation: "体験トレーニング", blog: "ブログ" },
     header: { ctaBtn: "体験トレーニング受付中" },
-    hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,500～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,500～・入会金¥0で通えるパーソナルジムです。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
+    hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥5,000～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥5,000～・入会金¥0で通えるパーソナルジムです。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
     concern: { kicker: "Concern", title: "こんなお悩みありませんか？", items: ["ジムに通ったけど続かなかった", "何をすればいいかわからない", "食事制限がつらくて挫折した", "大手ジムは人目が気になる"], footer: "Salute御所南は、こうしたお悩みを解決するために生まれたパーソナルジムです。" },
     features: { kicker: "Features", title: "Salute御所南が選ばれる理由", items: [
       { title: "あなただけの空間で、集中できる", description: "他のお客様と顔を合わせることはありません。周りの目を気にせず、トレーナーと二人だけの空間でトレーニングに集中できます。" },
       { title: "体の変化が「見える」から、続けられる", description: "専用アプリでトレーニング記録や体の変化を自動で記録。数字やグラフで成長を実感できるから、モチベーションが続きます。" },
       { title: "食事の悩みも、一緒に解決できる", description: "栄養士資格を持つトレーナーが、トレーニングだけでなく食事面もサポート。極端な食事制限は行いません。" },
-      { title: "続けられる価格だから、体が変わる", description: "1回¥4,500〜、入会金¥0。ウェア・シューズ・タオル・お水もすべて無料です。続けやすい料金設定です。" },
+      { title: "続けられる価格だから、体が変わる", description: "1回¥5,000〜、入会金¥0。ウェア・シューズ・タオル・お水もすべて無料です。続けやすい料金設定です。" },
     ], note: "すべてのプランで、完全マンツーマンの指導と、お客様一人ひとりに合わせたオーダーメイドのトレーニングメニューをご提供しています。", cta: "まずは体験してみる", wearRentalTag: "ウェア・シューズ無料レンタル" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
-      { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,500〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
+      { value: "¥0", label: "入会金・事務手数料" }, { value: "¥5,000〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
     trainer: { kicker: "Trainer", title: "トレーナー紹介", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 代表トレーナー", qualLabel: "保有資格", qual: "栄養士", careerLabel: "経歴", career: "四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。また、フィジーク大会への出場経験を持ち、減量から体づくりまでのプロセスを自身の体で経験。その実体験を、運動が初めての方一人ひとりに合わせた指導に活かしている。", messageLabel: "メッセージ", message: "「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」", greetingLabel: "トレーナーからのご挨拶", greetingParagraphs: [
       "これまで多くのお客様のダイエット指導を通じて、共通する2つの悩みに向き合ってきました。それは、「自分に合ったダイエット法がわからない」、そして「運動が続かない」という問題です。",
@@ -55,10 +55,10 @@ export const translations: Record<Lang, Dict> = {
       { label: "40代男性・デスクワーク", comment: "通い始めて4か月ほどになります。毎回同じトレーニングではなく少しずつ変えて調整してもらえるので毎回効果を感じています。" },
       { label: "30代女性・会社員", comment: "筋トレ初心者ですが、楽しく通っています。ウェア・シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。" },
     ], fromGoogle: "Google口コミより" },
-    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "3つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、3つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", plans: [
-      { name: "月4回プラン", price: "¥20,000", perSession: "1回あたり ¥5,000", description: "健康維持や運動不足解消にオススメ", features: ["1セッション50分", "月4回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
-      { name: "月6回プラン", price: "¥28,500", perSession: "1回あたり ¥4,750", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分", "月6回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
-      { name: "月8回プラン", price: "¥36,000", perSession: "1回あたり ¥4,500", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
+    pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "3つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、3つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", priceNote: "※ 月額プランの料金は、新規ご入会のお客様向けです。すでにご入会いただいている会員様は、これまでの料金のまま引き続きご利用いただけます。", plans: [
+      { name: "月4回プラン", price: "¥24,000", perSession: "1回あたり ¥6,000", description: "健康維持や運動不足解消にオススメ", features: ["1セッション50分", "月4回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
+      { name: "月6回プラン", price: "¥33,000", perSession: "1回あたり ¥5,500", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分", "月6回まで利用可能", "完全手ぶらOK", "専用アプリ利用"] },
+      { name: "月8回プラン", price: "¥40,000", perSession: "1回あたり ¥5,000", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分", "月8回まで利用可能", "完全手ぶらOK", "専用アプリ利用", "食事アドバイス"] },
     ], dropIn: { name: "単発プラン（ビジター・観光客向け）", price: "¥8,000", perSession: "1回", description: "会員登録不要・手ぶらOK", features: ["1セッション50分", "会員登録不要", "ウェア・シューズ無料レンタル", "手ぶらOK"] }, option: { label: "オプション", name: "パーソナルストレッチ", duration: "30分", price: "¥3,000", unit: "（税込）/回", description: "トレーニングの後に追加していただけるオプションです。トレーナーがマンツーマンで30分間のストレッチを行います。", benefit: "デスクワークで硬くなりやすい胸まわり・股関節・もも裏を中心に、トレーナーが丁寧に伸ばしていきます。関節の動く範囲が広がると、しゃがむ・振り返るといった日常の動作が楽になり、次のトレーニングでもフォームが安定して、狙った筋肉に効かせやすくなります。肩や腰の張りが気になる方、姿勢を整えたい方にもおすすめです。", booking: "ご予約時にお選びいただけます。" }, cta: "まずは体験してみる" },
     flow: { kicker: "Flow", title: "体験トレーニングの流れ", steps: [
       { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。" },
@@ -86,16 +86,16 @@ export const translations: Record<Lang, Dict> = {
     meta: { title: "Personal Training Gym in Kyoto Goshominami | Salute", description: "Salute is a personal training gym in Goshominami, Kyoto. Trial sessions (¥3,000, waived if you join on the day) and drop-in personal training for travelers are available. No membership required for drop-in sessions. 8 min from Marutamachi Station." },
     nav: { features: "Features", trainer: "Trainer", voice: "Reviews", plan: "Pricing", faq: "FAQ", access: "Access", consultation: "Trial Session", blog: "Blog" },
     header: { ctaBtn: "Book a Trial Session" },
-    hero: { kicker: "Personal Training Gym in Goshominami, Kyoto | Trial Session ¥3,000 — Waived If You Join That Day", title1: "Struggling to stay on track on your own?", titleAccent: "Your private 1-on-1 studio in Goshominami.", sub: "Build the strongest version of yourself, one session at a time", desc: "A certified nutritionist trainer guides you at your own pace. Approachable pricing from ¥4,500 per session, with no enrollment fee — sportswear, shoes, towels and water are all provided.", cta1: "Book a Trial Session", cta2: "See Our Features" },
+    hero: { kicker: "Personal Training Gym in Goshominami, Kyoto | Trial Session ¥3,000 — Waived If You Join That Day", title1: "Struggling to stay on track on your own?", titleAccent: "Your private 1-on-1 studio in Goshominami.", sub: "Build the strongest version of yourself, one session at a time", desc: "A certified nutritionist trainer guides you at your own pace. Approachable pricing from ¥5,000 per session, with no enrollment fee — sportswear, shoes, towels and water are all provided.", cta1: "Book a Trial Session", cta2: "See Our Features" },
     concern: { kicker: "Concern", title: "Sound familiar?", items: ["Couldn't stick with a gym routine", "Not sure where to start", "Gave up on strict diets", "Felt self-conscious at big gyms"], footer: "Salute Goshominami was created to help you solve these challenges." },
     features: { kicker: "Features", title: "Why Choose Salute", items: [
       { title: "A private space, just for you", description: "No other clients around. Train one-on-one with your trainer in a fully private studio — ideal for beginners who'd rather not work out in front of others." },
       { title: "See your progress clearly", description: "Our app automatically tracks your sessions and body changes. Clear graphs and monthly reports help you stay motivated." },
       { title: "Nutrition guidance included", description: "Your trainer is a certified nutritionist who supports both your workouts and your eating habits. No extreme diets — just practical advice that fits real life." },
-      { title: "Easy to keep going", description: "From ¥4,500 per session. No enrollment fee. Sportswear, shoes, towels and water are all provided — so it's easy to start and easy to keep coming back." },
+      { title: "Easy to keep going", description: "From ¥5,000 per session. No enrollment fee. Sportswear, shoes, towels and water are all provided — so it's easy to start and easy to keep coming back." },
     ], note: "Every plan includes fully 1-on-1 coaching with a training program tailored to your goals.", cta: "Book a Trial Session", wearRentalTag: "Free wear & shoe rental" },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
-      { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,500~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
+      { value: "¥0", label: "Enrollment Fee" }, { value: "¥5,000~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
     trainer: { kicker: "Trainer", title: "Your Trainer", name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qualLabel: "Qualifications", qual: "Certified Nutritionist", careerLabel: "Career", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024. He has also competed in a physique competition, experiencing the full body-making process firsthand — from cutting to conditioning — and brings that experience to personalized guidance for every client, including those new to exercise.", messageLabel: "Message", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingLabel: "A Word from Your Trainer", greetingParagraphs: [
       "Through years of supporting clients, I've heard two concerns repeatedly: \"I don't know what works for me\" and \"I can't keep it up.\"",
@@ -107,10 +107,10 @@ export const translations: Record<Lang, Dict> = {
       { label: "Male, 40s — Desk Job", comment: "I've been training here for about 4 months. The sessions are always adjusted, so I keep feeling real progress every time." },
       { label: "Female, 30s — Office Worker", comment: "I'm new to strength training but really enjoying it. Sportswear and shoes are provided, so I can come straight from work without bringing anything." },
     ], fromGoogle: "From Google Reviews" },
-    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 3 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", plans: [
-      { name: "4 Sessions / Month", price: "¥20,000", perSession: "¥5,000 / session", description: "For staying healthy and active", features: ["50-minute session", "Up to 4 sessions / month", "Just come as you are", "Training app included"] },
-      { name: "6 Sessions / Month", price: "¥28,500", perSession: "¥4,750 / session", description: "For training once a week or more", features: ["50-minute session", "Up to 6 sessions / month", "Just come as you are", "Training app included"] },
-      { name: "8 Sessions / Month", price: "¥36,000", perSession: "¥4,500 / session", description: "For weight loss and body shaping", features: ["50-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
+    pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 3 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", priceNote: "Monthly plan prices shown are for new members. If you are already a member, you can continue at your current rate.", plans: [
+      { name: "4 Sessions / Month", price: "¥24,000", perSession: "¥6,000 / session", description: "For staying healthy and active", features: ["50-minute session", "Up to 4 sessions / month", "Just come as you are", "Training app included"] },
+      { name: "6 Sessions / Month", price: "¥33,000", perSession: "¥5,500 / session", description: "For training once a week or more", features: ["50-minute session", "Up to 6 sessions / month", "Just come as you are", "Training app included"] },
+      { name: "8 Sessions / Month", price: "¥40,000", perSession: "¥5,000 / session", description: "For weight loss and body shaping", features: ["50-minute session", "Up to 8 sessions / month", "Just come as you are", "Training app included", "Nutrition advice"] },
     ], dropIn: { name: "Drop-in Personal Training (for travelers)", price: "¥8,000", perSession: "per session", description: "No membership required. All equipment provided. For travelers visiting Kyoto.", features: ["50-minute 1-on-1 session", "No membership required", "Training wear and shoes provided", "English-friendly support"] }, option: { label: "Option", name: "Personal Stretching", duration: "30 min", price: "¥3,000", unit: "(tax incl.) / session", description: "An add-on you can take after your workout. Your trainer guides you through 30 minutes of one-on-one stretching.", benefit: "Your trainer works through the areas that tend to tighten up from desk work — the chest, hips and hamstrings. As your range of motion opens up, everyday movements like squatting down or turning around tend to feel easier, and your form in the next session tends to stay more stable, so it becomes easier to target the muscles you are training. A good fit if tight shoulders or a stiff lower back bother you, or if you want to work on your posture.", booking: "Select it when you book." }, cta: "Book a Trial Session" },
     flow: { kicker: "Flow", title: "How It Works", steps: [
       { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds." },
@@ -139,16 +139,16 @@ export const translations: Record<Lang, Dict> = {
     meta: { title: "京都御所南私人教练健身房 | Salute", description: "Salute 是位于京都御所南的私人教练健身房。提供体验课程（3,000日元，当天入会则免费），也支持面向游客的单次训练，无需会员注册。距离丸太町站步行8分钟。" },
     nav: { features: "特点", trainer: "教练", voice: "客户评价", plan: "价格方案", faq: "常见问题", access: "交通指南", consultation: "体验课程", blog: "博客" },
     header: { ctaBtn: "预约体验课程" },
-    hero: { kicker: "京都御所南的私人教练健身房 Salute｜体验课程3,000日元（当天入会免费）", title1: "一个人运动总是难以坚持？", titleAccent: "御所南的一对一私人教练健身房。", sub: "超越过去的自己，遇见更好的体态与状态", desc: "拥有营养师资格的教练，按照您的节奏耐心指导。每次4,500日元起，无入会费，运动服・鞋・毛巾・水均免费提供，轻松开始、轻松坚持。", cta1: "预约体验课程", cta2: "查看健身房特色" },
+    hero: { kicker: "京都御所南的私人教练健身房 Salute｜体验课程3,000日元（当天入会免费）", title1: "一个人运动总是难以坚持？", titleAccent: "御所南的一对一私人教练健身房。", sub: "超越过去的自己，遇见更好的体态与状态", desc: "拥有营养师资格的教练，按照您的节奏耐心指导。每次5,000日元起，无入会费，运动服・鞋・毛巾・水均免费提供，轻松开始、轻松坚持。", cta1: "预约体验课程", cta2: "查看健身房特色" },
     concern: { kicker: "Concern", title: "您是否有这些困扰？", items: ["办了健身房却很难坚持", "不知道从哪里开始", "极端节食让人难以坚持", "在大型健身房在意别人的目光"], footer: "Salute御所南正是为了解决这些困扰而设的私人教练健身房。" },
     features: { kicker: "Features", title: "选择Salute的理由", items: [
       { title: "完全私密的训练空间", description: "不会与其他会员碰面。在完全私密的空间里，与教练进行一对一训练，初学者也能安心练习。" },
       { title: "用数字看见自己的进步", description: "专用APP自动记录每次训练与身体变化，图表与月度报告帮助您持续保持动力。" },
       { title: "饮食方面也获得专业建议", description: "教练同时具备营养师资格，不仅指导训练，也协助您调整饮食。不会要求极端节食，建议贴近日常生活。" },
-      { title: "容易坚持的价格", description: "每次4,500日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。负担较小、容易坚持的价格，让您轻松开始并长期坚持。" },
+      { title: "容易坚持的价格", description: "每次5,000日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。负担较小、容易坚持的价格，让您轻松开始并长期坚持。" },
     ], note: "所有方案均为一对一指导，并根据每位客人量身定制训练内容。", cta: "预约体验课程", wearRentalTag: "免费租借运动服和鞋子" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
-      { value: "¥0", label: "入会费" }, { value: "¥4,500~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
+      { value: "¥0", label: "入会费" }, { value: "¥5,000~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
     trainer: { kicker: "Trainer", title: "教练介绍", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教练", qualLabel: "资格", qual: "营养师", careerLabel: "经历", career: "曾在四条乌丸的私人教练健身房担任店长，月指导140组以上客户。2024年11月起担任Salute御所南主教练。此外，他还拥有健体比赛的参赛经验，亲身经历了从减脂到塑形的完整过程，并将这份经验运用于针对每位客户（包括运动初学者）的个性化指导。", messageLabel: "留言", message: "「不擅长运动的朋友、第一次来健身房的朋友，都可以放心。我会全力支持您达成目标！」", greetingLabel: "教练寄语", greetingParagraphs: [
       "在长期指导客户的过程中，我经常听到两个共同的困扰：「不知道哪种方法适合自己」、「无法长期坚持」。",
@@ -160,10 +160,10 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多岁男性・办公室工作", comment: "已经训练4个月左右。每次训练内容都会有调整，每次都能感受到进步。" },
       { label: "30多岁女性・上班族", comment: "我是健身新手，但每次都很开心。运动服和鞋子都免费提供，可以空手前来非常方便。" },
     ], fromGoogle: "来自Google评价" },
-    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从3个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", plans: [
-      { name: "月4次方案", price: "¥20,000", perSession: "每次 ¥5,000", description: "适合维持健康与日常运动", features: ["每次50分钟", "每月最多4次", "空手前来即可", "专用APP可用"] },
-      { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "适合每周训练1次以上", features: ["每次50分钟", "每月最多6次", "空手前来即可", "专用APP可用"] },
-      { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "适合减脂与塑形", features: ["每次50分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
+    pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从3个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", priceNote: "※ 以上月度方案价格适用于新入会的顾客。已入会的会员可继续按原有价格使用。", plans: [
+      { name: "月4次方案", price: "¥24,000", perSession: "每次 ¥6,000", description: "适合维持健康与日常运动", features: ["每次50分钟", "每月最多4次", "空手前来即可", "专用APP可用"] },
+      { name: "月6次方案", price: "¥33,000", perSession: "每次 ¥5,500", description: "适合每周训练1次以上", features: ["每次50分钟", "每月最多6次", "空手前来即可", "专用APP可用"] },
+      { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "适合减脂与塑形", features: ["每次50分钟", "每月最多8次", "空手前来即可", "专用APP可用", "饮食建议"] },
     ], dropIn: { name: "单次训练（适合来京都旅行的游客）", price: "¥8,000", perSession: "1次", description: "无需会员注册，全套装备免费提供，适合来京都旅行的游客。", features: ["50分钟一对一训练", "无需会员注册", "运动服・鞋免费提供", "可支持简单英语沟通"] }, option: { label: "加购", name: "私人拉伸", duration: "30分钟", price: "¥3,000", unit: "(含税)/次", description: "可在训练结束后加购的选配服务。由教练一对一带您进行30分钟的拉伸放松。", benefit: "教练会重点伸展久坐办公容易僵硬的胸部、髋关节与大腿后侧。关节活动范围变大后，蹲下、转身等日常动作会更轻松，下次训练时姿势也更稳定，更容易练到想练的肌肉。肩部、腰部容易紧绷，或在意姿势的您，都很适合。", booking: "预约时可选择加购。" }, cta: "预约体验课程" },
     flow: { kicker: "Flow", title: "体验课程流程", steps: [
       { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。" },
@@ -192,16 +192,16 @@ export const translations: Record<Lang, Dict> = {
     meta: { title: "京都御所南私人教練健身房 | Salute", description: "Salute 是位於京都御所南的私人教練健身房。提供體驗課程（3,000日圓，當天入會則免費），也支援針對遊客的單次訓練，無需加入會員。距離丸太町站步行8分鐘。" },
     nav: { features: "特色", trainer: "教練", voice: "顧客評價", plan: "價格方案", faq: "常見問題", access: "交通指南", consultation: "體驗課程", blog: "部落格" },
     header: { ctaBtn: "預約體驗課程" },
-    hero: { kicker: "京都御所南的私人教練健身房 Salute｜體驗課程3,000日圓（當天入會免費）", title1: "一個人運動總是難以堅持？", titleAccent: "御所南的一對一私人教練健身房。", sub: "超越過去的自己，遇見更好的體態與狀態", desc: "擁有營養師資格的教練，依照您的步調耐心指導。每次4,500日圓起，無入會費，運動服・鞋・毛巾・水皆免費提供，輕鬆開始、輕鬆堅持。", cta1: "預約體驗課程", cta2: "查看健身房特色" },
+    hero: { kicker: "京都御所南的私人教練健身房 Salute｜體驗課程3,000日圓（當天入會免費）", title1: "一個人運動總是難以堅持？", titleAccent: "御所南的一對一私人教練健身房。", sub: "超越過去的自己，遇見更好的體態與狀態", desc: "擁有營養師資格的教練，依照您的步調耐心指導。每次5,000日圓起，無入會費，運動服・鞋・毛巾・水皆免費提供，輕鬆開始、輕鬆堅持。", cta1: "預約體驗課程", cta2: "查看健身房特色" },
     concern: { kicker: "Concern", title: "您是否有這些困擾？", items: ["辦了健身房卻很難堅持", "不知道該從哪裡開始", "極端節食讓人難以堅持", "在大型健身房在意他人的目光"], footer: "Salute御所南正是為了解決這些困擾而設立的私人教練健身房。" },
     features: { kicker: "Features", title: "選擇Salute的理由", items: [
       { title: "完全私密的訓練空間", description: "不會與其他會員碰面。在完全私密的空間裡，與教練進行一對一訓練，初學者也能安心練習。" },
       { title: "用數字看見自己的進步", description: "專用APP自動記錄每次訓練與身體變化，圖表與每月報告幫助您持續保持動力。" },
       { title: "飲食方面也能獲得專業建議", description: "教練同時具備營養師資格，不僅指導訓練，也協助您調整飲食。不會要求極端節食，建議貼近日常生活。" },
-      { title: "容易堅持的價格", description: "每次4,500日圓起，入會費0日圓，運動服・鞋・毛巾・水全部免費。負擔較小、容易堅持的價格，讓您輕鬆開始並長期堅持。" },
+      { title: "容易堅持的價格", description: "每次5,000日圓起，入會費0日圓，運動服・鞋・毛巾・水全部免費。負擔較小、容易堅持的價格，讓您輕鬆開始並長期堅持。" },
     ], note: "所有方案皆為一對一指導，並依照每位顧客量身打造訓練內容。", cta: "預約體驗課程", wearRentalTag: "免費租借運動服與鞋子" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
-      { value: "¥0", label: "入會費" }, { value: "¥4,500~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
+      { value: "¥0", label: "入會費" }, { value: "¥5,000~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
     trainer: { kicker: "Trainer", title: "教練介紹", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教練", qualLabel: "資格", qual: "營養師", careerLabel: "經歷", career: "曾在四條烏丸的私人教練健身房擔任店長，每月指導140組以上顧客。2024年11月起擔任Salute御所南主教練。此外，他也擁有健體比賽的參賽經驗，親身經歷了從減脂到體態雕塑的完整過程，並將這份經驗運用於針對每位顧客（包含運動初學者）的客製化指導。", messageLabel: "留言", message: "「不擅長運動的朋友、第一次來健身房的朋友，都可以放心。我會全力支持您達成目標！」", greetingLabel: "教練寄語", greetingParagraphs: [
       "在長期指導顧客的過程中，我經常聽到兩個共同的困擾：「不知道哪種方法適合自己」、「無法長期堅持」。",
@@ -213,10 +213,10 @@ export const translations: Record<Lang, Dict> = {
       { label: "40多歲男性・辦公室工作", comment: "已經訓練4個月左右。每次訓練內容都會有調整，每次都能感受到進步。" },
       { label: "30多歲女性・上班族", comment: "我是健身新手，但每次都很開心。運動服與鞋子都免費提供，可以空手前來非常方便。" },
     ], fromGoogle: "來自Google評價" },
-    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從3個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", plans: [
-      { name: "月4次方案", price: "¥20,000", perSession: "每次 ¥5,000", description: "適合維持健康與日常運動", features: ["每次50分鐘", "每月最多4次", "空手前來即可", "可使用專用APP"] },
-      { name: "月6次方案", price: "¥28,500", perSession: "每次 ¥4,750", description: "適合每週訓練1次以上", features: ["每次50分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
-      { name: "月8次方案", price: "¥36,000", perSession: "每次 ¥4,500", description: "適合減脂與體態雕塑", features: ["每次50分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
+    pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從3個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", priceNote: "※ 以上月度方案價格適用於新入會的顧客。已入會的會員可繼續以原有價格使用。", plans: [
+      { name: "月4次方案", price: "¥24,000", perSession: "每次 ¥6,000", description: "適合維持健康與日常運動", features: ["每次50分鐘", "每月最多4次", "空手前來即可", "可使用專用APP"] },
+      { name: "月6次方案", price: "¥33,000", perSession: "每次 ¥5,500", description: "適合每週訓練1次以上", features: ["每次50分鐘", "每月最多6次", "空手前來即可", "可使用專用APP"] },
+      { name: "月8次方案", price: "¥40,000", perSession: "每次 ¥5,000", description: "適合減脂與體態雕塑", features: ["每次50分鐘", "每月最多8次", "空手前來即可", "可使用專用APP", "飲食建議"] },
     ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["50分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, option: { label: "加購", name: "私人伸展", duration: "30分鐘", price: "¥3,000", unit: "(含稅)/次", description: "可於訓練結束後加購的服務。由教練一對一帶您進行30分鐘的伸展放鬆。", benefit: "教練會重點伸展久坐辦公容易僵硬的胸部、髖關節與大腿後側。關節活動範圍變大後，蹲下、轉身等日常動作會更輕鬆，下次訓練時姿勢也更穩定，更容易練到想練的肌肉。肩部、腰部容易緊繃，或在意姿勢的您，都很適合。", booking: "預約時可選擇加購。" }, cta: "預約體驗課程" },
     flow: { kicker: "Flow", title: "體驗課程流程", steps: [
       { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。" },
@@ -245,16 +245,16 @@ export const translations: Record<Lang, Dict> = {
     meta: { title: "교토 고쇼미나미 퍼스널 트레이닝 짐 | Salute", description: "Salute는 교토 고쇼미나미에 위치한 퍼스널 트레이닝 짐입니다. 체험 세션(¥3,000, 당일 등록 시 무료)과 여행객을 위한 1회 이용 트레이닝을 제공합니다. 1회 이용 시 회원가입은 필요하지 않습니다. 마루타마치역에서 도보 8분." },
     nav: { features: "특징", trainer: "트레이너", voice: "고객 후기", plan: "요금제", faq: "자주 묻는 질문", access: "오시는 길", consultation: "체험 세션", blog: "블로그" },
     header: { ctaBtn: "체험 예약" },
-    hero: { kicker: "교토 고쇼미나미의 퍼스널 트레이닝 짐 Salute｜체험 세션 ¥3,000 (당일 등록 시 무료)", title1: "혼자서는 운동을 꾸준히 이어가기 어려우셨나요?", titleAccent: "고쇼미나미의 1:1 퍼스널 트레이닝 짐.", sub: "과거의 나를 넘어, 인생 최고의 컨디션으로", desc: "영양사 자격을 가진 트레이너가 회원님의 페이스에 맞춰 꼼꼼하게 서포트합니다. 1회 ¥4,500부터, 입회비 없이 시작할 수 있고 운동복・신발・수건・물도 모두 무료로 제공합니다.", cta1: "체험 예약", cta2: "특징 자세히 보기" },
+    hero: { kicker: "교토 고쇼미나미의 퍼스널 트레이닝 짐 Salute｜체험 세션 ¥3,000 (당일 등록 시 무료)", title1: "혼자서는 운동을 꾸준히 이어가기 어려우셨나요?", titleAccent: "고쇼미나미의 1:1 퍼스널 트레이닝 짐.", sub: "과거의 나를 넘어, 인생 최고의 컨디션으로", desc: "영양사 자격을 가진 트레이너가 회원님의 페이스에 맞춰 꼼꼼하게 서포트합니다. 1회 ¥5,000부터, 입회비 없이 시작할 수 있고 운동복・신발・수건・물도 모두 무료로 제공합니다.", cta1: "체험 예약", cta2: "특징 자세히 보기" },
     concern: { kicker: "Concern", title: "이런 고민, 있으신가요?", items: ["헬스장은 다녔지만 꾸준히 다니지 못했다", "무엇부터 시작해야 할지 모르겠다", "심한 식단 조절은 너무 힘들어서 포기했다", "대형 헬스장은 남의 시선이 신경 쓰인다"], footer: "Salute 고쇼미나미는 이러한 고민을 해결하기 위해 만들어진 퍼스널 트레이닝 짐입니다." },
     features: { kicker: "Features", title: "Salute가 선택받는 이유", items: [
       { title: "오롯이 나만을 위한 공간에서 집중", description: "다른 회원과 마주치지 않는 완전 프라이빗 공간에서 트레이너와 1:1로 트레이닝합니다. 초보자도 부담 없이 시작할 수 있습니다." },
       { title: "숫자로 변화를 확인", description: "전용 앱이 트레이닝 기록과 신체 변화를 자동으로 기록합니다. 그래프와 월간 리포트로 성장을 실감하며 동기를 유지할 수 있습니다." },
       { title: "식사 관리도 함께 서포트", description: "영양사 자격을 가진 트레이너가 운동뿐 아니라 식사도 함께 코칭합니다. 극단적인 식단 대신 일상에서 실천 가능한 방법을 제안합니다." },
-      { title: "꾸준히 다니기 좋은 가격", description: "1회 ¥4,500부터, 입회비 없음. 운동복・신발・수건・물 모두 무료. 시작하기도 쉽고, 꾸준히 다니기에도 부담이 적습니다." },
+      { title: "꾸준히 다니기 좋은 가격", description: "1회 ¥5,000부터, 입회비 없음. 운동복・신발・수건・물 모두 무료. 시작하기도 쉽고, 꾸준히 다니기에도 부담이 적습니다." },
     ], note: "모든 플랜은 완전 1:1 지도이며, 회원님 한 분 한 분의 목표에 맞춘 맞춤형 트레이닝 메뉴를 제공합니다.", cta: "체험 예약", wearRentalTag: "운동복·신발 무료 대여" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
-      { value: "¥0", label: "입회비" }, { value: "¥4,500~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
+      { value: "¥0", label: "입회비" }, { value: "¥5,000~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
     trainer: { kicker: "Trainer", title: "트레이너 소개", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute 고쇼미나미 대표 트레이너", qualLabel: "자격", qual: "영양사", careerLabel: "경력", career: "시조 카라스마의 퍼스널 트레이닝 짐에서 점장으로 근무. 월 140팀 이상 지도 경험. 2024년 11월부터 Salute 고쇼미나미 트레이너로 부임. 또한 피지크 대회 출전 경험이 있어 감량부터 몸만들기까지의 과정을 직접 경험했으며, 그 경험을 운동이 처음이신 분 한 분 한 분에게 맞춘 지도에 활용하고 있다.", messageLabel: "메시지", message: "「운동이 익숙하지 않으신 분, 헬스장이 처음이신 분도 안심하세요. 여러분의 목표를 향해 전력으로 서포트해 드리겠습니다!」", greetingLabel: "트레이너 인사말", greetingParagraphs: [
       "오랫동안 많은 고객의 다이어트를 지도해 오면서, 공통된 두 가지 고민을 자주 들어 왔습니다. 「나에게 맞는 방법을 모르겠다」, 그리고 「운동을 꾸준히 이어가기 어렵다」는 것입니다.",
@@ -266,10 +266,10 @@ export const translations: Record<Lang, Dict> = {
       { label: "40대 남성・사무직", comment: "다닌 지 4개월 정도 되었습니다. 매번 같은 운동만 하지 않고 조금씩 조정해 주셔서 매번 효과를 체감하고 있습니다." },
       { label: "30대 여성・회사원", comment: "근력 운동은 처음이지만 즐겁게 다니고 있어요. 운동복과 신발이 무료라 빈손으로 와도 되어 일정 사이에 들르기에도 편합니다." },
     ], fromGoogle: "Google 후기에서" },
-    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 3가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", plans: [
-      { name: "월 4회 플랜", price: "¥20,000", perSession: "1회 ¥5,000", description: "건강 유지와 운동 부족 해소", features: ["1회 50분", "월 최대 4회", "빈손으로 OK", "전용 앱 제공"] },
-      { name: "월 6회 플랜", price: "¥28,500", perSession: "1회 ¥4,750", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분", "월 최대 6회", "빈손으로 OK", "전용 앱 제공"] },
-      { name: "월 8회 플랜", price: "¥36,000", perSession: "1회 ¥4,500", description: "다이어트와 바디 메이킹에", features: ["1회 50분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
+    pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 3가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", priceNote: "※ 월간 플랜 요금은 신규 가입 고객 기준입니다. 이미 가입하신 회원님은 기존 요금 그대로 계속 이용하실 수 있습니다.", plans: [
+      { name: "월 4회 플랜", price: "¥24,000", perSession: "1회 ¥6,000", description: "건강 유지와 운동 부족 해소", features: ["1회 50분", "월 최대 4회", "빈손으로 OK", "전용 앱 제공"] },
+      { name: "월 6회 플랜", price: "¥33,000", perSession: "1회 ¥5,500", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분", "월 최대 6회", "빈손으로 OK", "전용 앱 제공"] },
+      { name: "월 8회 플랜", price: "¥40,000", perSession: "1회 ¥5,000", description: "다이어트와 바디 메이킹에", features: ["1회 50분", "월 최대 8회", "빈손으로 OK", "전용 앱 제공", "식사 어드바이스"] },
     ], dropIn: { name: "1회 이용 (교토 여행객용)", price: "¥8,000", perSession: "1회", description: "회원가입 없이 1회 이용 가능. 교토 여행 중에도 이용하기 좋습니다.", features: ["50분 1:1 트레이닝", "회원가입 불필요", "운동복・신발 무료 제공", "간단한 영어 응대 가능"] }, option: { label: "옵션", name: "퍼스널 스트레칭", duration: "30분", price: "¥3,000", unit: "(부가세 포함)/회", description: "트레이닝 후에 추가하실 수 있는 옵션입니다. 트레이너가 1:1로 30분간 스트레칭을 진행합니다.", benefit: "책상 업무로 굳기 쉬운 가슴・고관절・허벅지 뒤쪽을 트레이너가 꼼꼼히 늘려 드립니다. 관절 가동범위가 넓어지면 쪼그려 앉거나 뒤를 돌아보는 등 일상 동작이 한결 편해지고, 다음 트레이닝에서도 자세가 안정되어 원하는 근육에 집중하기 쉬워집니다. 어깨나 허리가 자주 뭉치는 분, 자세를 가다듬고 싶은 분께도 추천합니다.", booking: "예약 시 선택하실 수 있습니다." }, cta: "체험 예약" },
     flow: { kicker: "Flow", title: "체험 세션 안내", steps: [
       { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다." },
