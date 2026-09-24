@@ -28,8 +28,8 @@ const FlowSection = () => {
                   <img
                     src={image}
                     alt={s.imageAlt ?? ""}
-                    width={1040}
-                    height={780}
+                    width={1200}
+                    height={900}
                     loading="lazy"
                     decoding="async"
                     className="w-full aspect-[4/3] object-cover rounded-2xl mb-6"
