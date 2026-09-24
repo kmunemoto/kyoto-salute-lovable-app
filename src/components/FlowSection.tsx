@@ -1,7 +1,7 @@
 import { CalendarCheck, ClipboardCheck } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
-import flowBooking from "@/assets/flow/booking-phone.webp";
+import flowBooking from "@/assets/flow/booking-smartphone.webp";
 
 const icons = [CalendarCheck, ClipboardCheck];
 // 手順ごとのイメージ画像。画像がない手順は従来どおりアイコンを表示する。
@@ -28,11 +28,11 @@ const FlowSection = () => {
                   <img
                     src={image}
                     alt={s.imageAlt ?? ""}
-                    width={1200}
-                    height={1200}
+                    width={1040}
+                    height={780}
                     loading="lazy"
                     decoding="async"
-                    className="w-full aspect-square object-contain mb-6"
+                    className="w-full aspect-[4/3] object-cover rounded-2xl mb-6"
                   />
                 )}
                 <p className="font-heading text-primary text-2xl mb-3">{num}</p>
