@@ -1,9 +1,15 @@
+import { CalendarCheck, ClipboardCheck } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 import flowBooking from "@/assets/flow/booking-smartphone.webp";
 import flowCounseling from "@/assets/flow/counseling.webp";
 
-// 手順ごとのイメージ画像（01 WEBで予約 / 02 カウンセリング＋トレーニング）
+const icons = [CalendarCheck, ClipboardCheck];
+
+// 手順ごとのイメージ画像（01 WEBで予約 / 02 カウンセリング＋トレーニング）。
+// 今はアイコン表示に戻している。true にすると、アイコンの代わりにカード上部へ写真を表示する
+// （代替テキストは translations の flow.steps[].imageAlt）。
+const SHOW_STEP_IMAGES = false;
 const images = [flowBooking, flowCounseling];
 
 const FlowSection = () => {
@@ -18,20 +24,23 @@ const FlowSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.flow.steps.map((s, i) => {
-            const image = images[i];
+            const Icon = icons[i];
             const num = String(i + 1).padStart(2, "0");
             return (
               <div key={num} className="rounded-sm border border-border bg-white p-8 text-center flex flex-col items-center">
-                <img
-                  src={image}
-                  alt={s.imageAlt}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full aspect-[4/3] object-cover rounded-2xl mb-6"
-                />
+                {SHOW_STEP_IMAGES && (
+                  <img
+                    src={images[i]}
+                    alt={s.imageAlt}
+                    width={1200}
+                    height={900}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-[4/3] object-cover rounded-2xl mb-6"
+                  />
+                )}
                 <p className="font-heading text-primary text-2xl mb-3">{num}</p>
+                {!SHOW_STEP_IMAGES && <Icon className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />}
                 <h3 className="font-heading text-xl text-foreground mb-3">{s.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   {i === 0 ? (
