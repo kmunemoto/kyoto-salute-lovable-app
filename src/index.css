@@ -107,6 +107,14 @@
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
   }
+
+  /*
+    Playfair Display の標準の数字はオールドスタイル（0 が英字の o、1 や 4 が上下にずれる形）で、
+    「¥0」が「¥o」、「140」が「14o」のように読めてしまう。見出し書体の数字は高さのそろった形にする。
+  */
+  h1, h2, h3, h4, .font-heading {
+    font-variant-numeric: lining-nums;
+  }
 }
 
 @layer components {
