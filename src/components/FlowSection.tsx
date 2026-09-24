@@ -32,7 +32,7 @@ const FlowSection = () => {
                     height={1200}
                     loading="lazy"
                     decoding="async"
-                    className="w-full aspect-square object-cover rounded-sm mb-6"
+                    className="w-full aspect-square object-contain mb-6"
                   />
                 )}
                 <p className="font-heading text-primary text-2xl mb-3">{num}</p>
