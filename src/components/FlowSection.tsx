@@ -9,7 +9,7 @@ const icons = [CalendarCheck, ClipboardCheck];
 // 手順ごとのイメージ画像（01 WEBで予約 / 02 カウンセリング＋トレーニング）。
 // true でカード上部に写真を表示し、false にするとアイコン表示に戻る
 // （代替テキストは translations の flow.steps[].imageAlt）。
-const SHOW_STEP_IMAGES = true;
+const SHOW_STEP_IMAGES = false;
 const images = [flowBooking, flowCounseling];
 
 const FlowSection = () => {
