@@ -20,6 +20,7 @@ import blog_kyoto_gym_for_women_how_to_choose from "@/assets/blog/kyoto-gym-for-
 import blog_obon_weight_reset_personal_gym_kyoto from "@/assets/blog/obon-weight-reset-personal-gym-kyoto.webp";
 import blog_how_long_until_training_results_kyoto from "@/assets/blog/how-long-until-training-results-kyoto.webp";
 import blog_strength_training_longevity_weekly_minutes_kyoto from "@/assets/blog/strength-training-longevity-weekly-minutes-kyoto.webp";
+import blog_how_much_protein_per_day_kyoto from "@/assets/blog/how-much-protein-per-day-kyoto.webp";
 
 export type BlogPost = {
   slug: string;
@@ -33,6 +34,47 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-much-protein-per-day-kyoto",
+    title: "筋トレ中のタンパク質は1日どれくらい？体重別の目安を栄養士トレーナーが解説｜京都・御所南",
+    date: "2026-08-29",
+    category: "食事アドバイス",
+    readTime: "6分",
+    thumbnail: blog_how_much_protein_per_day_kyoto,
+    metaDescription:
+      "筋トレ中のタンパク質は体重1kgあたり約1.6gが目安。49件の研究をまとめた解析をもとに、体重別の必要量と3食への分け方、続けるコツを京都・御所南の栄養士トレーナーが解説。完全個室・体験¥3,000（当日入会で¥0）。",
+    content: `
+      <p>「タンパク質は多く摂ったほうがいい」——トレーニングを始めると必ず耳にする話です。ただ、<strong>では自分は1日何グラム必要なのか</strong>まで把握している方は、意外と多くありません。プロテインを飲んでいれば足りている、と考えている方もよくいらっしゃいます。</p>
+      <p>この点については、これまでの研究をまとめた解析からひとつの目安が示されています。京都市中京区・御所南のパーソナルジム「Salute御所南」の栄養士トレーナーが、数字の意味と、毎日の食事への落とし込み方をお伝えします。</p>
+      <h2>研究が示す目安は「体重1kgあたり約1.6g」</h2>
+      <p>筋トレとタンパク質に関する49件の研究（参加者は合計およそ1,860人）をまとめた解析が、英国のスポーツ医学専門誌「British Journal of Sports Medicine」で報告されています。</p>
+      <p>そこで示されたのが、<strong>1日あたり体重1kgにつき約1.6gを超えると、それ以上増やしても筋肉量の増え方は頭打ちになった</strong>という結果です。体重別に換算すると、次のあたりが目安になります。</p>
+      <ul>
+        <li>体重50kgの方：1日あたり約80g</li>
+        <li>体重60kgの方：1日あたり約95g</li>
+        <li>体重70kgの方：1日あたり約110g</li>
+      </ul>
+      <p>「たくさん摂るほど筋肉がつく」わけではない、というのがこの解析の要点です。前回の<a href="/blog/strength-training-longevity-weekly-minutes-kyoto">筋トレは週何分がちょうどいい？</a>と同じで、量より<strong>ちょうどいいところに届いているか</strong>が問われます。</p>
+      <h2>難しいのは合計量より「3食に分けること」</h2>
+      <p>1日95gと言われても、実感が湧きにくいかもしれません。食品に置き換えると、おおよそ次のような量です（すべて目安）。</p>
+      <ul>
+        <li>卵1個：約6g</li>
+        <li>納豆1パック：約7g</li>
+        <li>絹ごし豆腐 半丁（150g）：約7g</li>
+        <li>鮭の切り身1切れ：約18g</li>
+        <li>鶏むね肉（皮なし）100g：約23g</li>
+      </ul>
+      <p>並べてみると分かるとおり、<strong>夕食だけで1日分を賄うのは現実的ではありません</strong>。1食あたり20〜30gを目安に、3食へ振り分けるほうが無理がありません。つまずきやすいのは朝で、パンとコーヒーだけ、おにぎり1個だけという方は、ここで20g以上を落としています。ゆで卵や納豆、ヨーグルトを1品足すだけでも変わります。</p>
+      <h2>年齢が上がるほど、意識して摂りたい</h2>
+      <p>先ほどの解析では、<strong>年齢が高くなるほど、同じようにタンパク質を摂っても筋肉の反応は出にくくなる傾向</strong>も報告されています。40代・50代の方が「若い頃と同じ食事なのに体型が変わってきた」と感じるのは、自然なことでもあります。</p>
+      <p>だからこそ、量を増やすより先に「毎食きちんと入っているか」を整えるほうが効果的です。食事の考え方は<a href="/blog/diet-tips-eating-out">外食が多くてもダイエットできる？</a>でもお伝えしています。</p>
+      <h2>トレーニングと食事を、まとめて相談できる場所を</h2>
+      <p>ここまでお読みいただくと分かるとおり、必要量そのものは難しい話ではありません。難しいのは、<strong>自分の生活の中でどう組み立て、続けるか</strong>です。外食が多い、朝は時間がない、自炊が苦手——条件は人によってまったく違います。</p>
+      <p>Salute御所南は、京都市中京区・御所南にある完全個室・完全予約制のパーソナルジムです。トレーナーが栄養士資格を保有しているため、トレーニングと食事を切り離さず、同じ場で一緒に組み立てられます。「今日の昼はこれでしたが足りていますか」といった具体的な相談も、その場でお答えできます。</p>
+      <p>地下鉄「丸太町」駅・京阪「神宮丸太町」駅から徒歩8分。ウェア・シューズ・タオル・お水はすべて無料レンタルなので、仕事帰りに手ぶらで立ち寄れます。営業時間は10:00〜22:00、入会金は¥0、1回¥4,000〜の縛りのない月額制です。予約の変更・キャンセルは専用アプリからいつでも可能で、当日でもキャンセル料はかかりません。</p>
+      <p>体験トレーニングでは、カウンセリングと60分のトレーニングを体験いただけます。体験料は¥3,000、体験当日にご入会いただいた場合は¥0です。最新の情報は<a href="https://www.instagram.com/salute_goshominami/" target="_blank" rel="noopener noreferrer">公式Instagram</a>でも発信しています。</p>
+    `,
+  },
   {
     slug: "strength-training-longevity-weekly-minutes-kyoto",
     title: "筋トレは週何分がちょうどいい？14万人を30年追った研究が示した目安｜京都・御所南",
