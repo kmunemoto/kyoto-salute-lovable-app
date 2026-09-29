@@ -5,7 +5,7 @@ const TrainerSection = () => {
   const { t } = useT();
   const tr = t.trainer;
   return (
-    <section id="trainer" className="section-padding section-dark">
+    <section id="trainer" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">{tr.kicker}</p>
