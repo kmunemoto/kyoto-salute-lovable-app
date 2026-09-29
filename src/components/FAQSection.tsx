@@ -4,7 +4,7 @@ import { useT } from "@/i18n/LanguageContext";
 const FAQSection = () => {
   const { t } = useT();
   return (
-    <section id="faq" className="section-padding bg-background">
+    <section id="faq" className="section-padding bg-white">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">{t.faq.kicker}</p>

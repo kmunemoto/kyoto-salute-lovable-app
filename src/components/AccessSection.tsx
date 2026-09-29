@@ -5,7 +5,7 @@ const AccessSection = () => {
   const { t } = useT();
   const a = t.access;
   return (
-    <section id="access" className="section-padding section-dark">
+    <section id="access" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">{a.kicker}</p>

@@ -16,7 +16,7 @@ const FlowSection = () => {
   const { lang, t } = useT();
   const bookUrl = "https://app.kyoto-salute.com/trial";
   return (
-    <section id="flow" className="section-padding bg-white">
+    <section id="flow" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 font-body">{t.flow.kicker}</p>
