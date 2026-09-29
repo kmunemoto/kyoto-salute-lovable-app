@@ -3,8 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { translations } from "@/i18n/translations";
 
-// The料金 copy is duplicated in a lot of places: the plan cards, the "numbers"
-// strip, the hero, the meta descriptions and the JSON-LD in index.html. Whenever a
+// The料金 copy is duplicated in a lot of places: the plan cards, the hero, the
+// feature copy, the meta descriptions and the JSON-LD in index.html. Whenever a
 // plan is added or removed, the cheapest per-session price and the plan count move
 // with it, and stale copy is a 景表法（有利誤認）problem, not just a typo. These
 // tests pin the derived claims to the plan table so drift fails the build.
@@ -40,17 +40,26 @@ const monthlyOffers = () =>
     (o: { name: string }) => /^月\d+回プラン/.test(o.name),
   );
 
-describe("per-session price advertised in the numbers strip", () => {
-  it.each(LANGS)("%s quotes the cheapest plan's real per-session price", (lang) => {
-    const { plans } = translations[lang].pricing;
-    const cheapest = Math.min(...plans.map((p) => yen(p.perSession)));
+describe("per-session \"from\" price in the hero, feature and meta copy", () => {
+  // "1回¥4,500〜" / "¥4,500～の通いやすい価格" / "from ¥4,500 per session" /
+  // "每次4,500日元起" / "每次4,500日圓起" / "1회 ¥4,500부터"
+  const FROM =
+    /1回¥([\d,]+)[〜～]|¥([\d,]+)～の通いやすい|[Ff]rom ¥([\d,]+) per session|每次([\d,]+)日[元圓]起|1회 ¥([\d,]+)부터/g;
 
-    // The per-session tile is the one written as a "from" price, e.g. "¥4,500〜".
-    const tiles = translations[lang].numbers.items.filter((i) =>
-      /^¥[\d,]+[〜~]$/.test(i.value),
+  it.each(LANGS)("%s quotes the cheapest plan's real per-session price", (lang) => {
+    const { meta, hero, features, pricing } = translations[lang];
+    const cheapest = Math.min(...pricing.plans.map((p) => yen(p.perSession)));
+    const copy = [
+      meta.description,
+      hero.desc,
+      hero.seoNote ?? "",
+      ...features.items.map((i) => i.description),
+    ].join("\n");
+    const claims = [...copy.matchAll(FROM)].map((m) =>
+      Number(m.slice(1).find(Boolean)!.replace(/,/g, "")),
     );
-    expect(tiles).toHaveLength(1);
-    expect(yen(tiles[0].value)).toBe(cheapest);
+    expect(claims.length).toBeGreaterThan(0);
+    for (const amount of claims) expect(amount).toBe(cheapest);
   });
 });
 
