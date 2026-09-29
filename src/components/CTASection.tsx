@@ -7,9 +7,10 @@ const CTASection = () => {
   const c = t.cta;
   const trialUrl = "https://app.kyoto-salute.com/trial";
   const lineUrl = "https://lin.ee/UMVDzWF";
-  // ページの中で唯一の色の帯。ティファニーブルーの上は白い文字だと読みにくいため、文字とボタンは紺にする。
+  // ページの中で唯一の色の帯。背景は本来のティファニーブルー（#81D8D0）で、ブランドカラー（#0ABAB5）より明るい。
+  // 明るい背景なので、文字とボタンは紺にする（紺の文字 8.6:1）。
   return (
-    <section id="consultation" className="section-padding bg-primary text-foreground">
+    <section id="consultation" className="section-padding bg-[#81D8D0] text-foreground">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-foreground text-sm tracking-[0.3em] uppercase mb-3 font-body">{c.kicker}</p>
