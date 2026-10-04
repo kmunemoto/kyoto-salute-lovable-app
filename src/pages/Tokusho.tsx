@@ -153,9 +153,9 @@ const Tokusho = () => {
                 </h2>
                 <p className="mb-4">各料金プランのページに記載しております。</p>
                 <dl className="bg-secondary/50 border border-border rounded-sm px-5 md:px-6 py-2">
-                  <Row label="月4回プラン">¥20,000（税込）/ 月</Row>
-                  <Row label="月6回プラン">¥28,500（税込）/ 月</Row>
-                  <Row label="月8回プラン">¥36,000（税込）/ 月</Row>
+                  <Row label="月4回プラン">¥22,000（税込）/ 月</Row>
+                  <Row label="月6回プラン">¥30,000（税込）/ 月</Row>
+                  <Row label="月8回プラン">¥38,000（税込）/ 月</Row>
                   <div className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-4">
                     <dt className="text-sm font-medium text-muted-foreground font-body">
                       体験トレーニング
