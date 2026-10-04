@@ -3,11 +3,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { translations } from "@/i18n/translations";
 
-// The料金 copy is duplicated in a lot of places: the plan cards, the hero, the
-// feature copy, the meta descriptions and the JSON-LD in index.html. Whenever a
-// plan is added or removed, the cheapest per-session price and the plan count move
-// with it, and stale copy is a 景表法（有利誤認）problem, not just a typo. These
-// tests pin the derived claims to the plan table so drift fails the build.
+// The料金 copy is duplicated in a lot of places: the plan cards, the "numbers"
+// strip, the hero, the feature copy, the meta descriptions and the JSON-LD in
+// index.html. Whenever a plan is added or removed, the cheapest per-session price
+// and the plan count move with it, and stale copy is a 景表法（有利誤認）problem,
+// not just a typo. These tests pin the derived claims to the plan table so drift
+// fails the build.
 
 const LANGS = Object.keys(translations) as (keyof typeof translations)[];
 
@@ -39,6 +40,20 @@ const monthlyOffers = () =>
   healthClubJsonLd().hasOfferCatalog.itemListElement.filter(
     (o: { name: string }) => /^月\d+回プラン/.test(o.name),
   );
+
+describe("per-session price advertised in the numbers strip", () => {
+  it.each(LANGS)("%s quotes the cheapest plan's real per-session price", (lang) => {
+    const { plans } = translations[lang].pricing;
+    const cheapest = Math.min(...plans.map((p) => yen(p.perSession)));
+
+    // The per-session tile is the one written as a "from" price, e.g. "¥4,500〜".
+    const tiles = translations[lang].numbers.items.filter((i) =>
+      /^¥[\d,]+[〜~]$/.test(i.value),
+    );
+    expect(tiles).toHaveLength(1);
+    expect(yen(tiles[0].value)).toBe(cheapest);
+  });
+});
 
 describe("per-session \"from\" price in the hero, feature and meta copy", () => {
   // "1回¥4,500〜" / "¥4,500～の通いやすい価格" / "from ¥4,500 per session" /
