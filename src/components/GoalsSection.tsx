@@ -1,8 +1,21 @@
-import { BicepsFlexed, PersonStanding, Scale } from "lucide-react";
+import type { SVGProps } from "react";
+import { BicepsFlexed, Scale } from "lucide-react";
 import { useT } from "@/i18n/LanguageContext";
 
+// 姿勢改善のアイコン（後ろ姿の上半身＋背骨）。lucide に合うものがないので、同じ 24×24・線のアイコンとして描いた。
+const PostureIcon = ({ strokeWidth = 2, ...props }: SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="12" cy="5" r="3.2" />
+    <path d="M10.2 9.2v2c0 .5-.3 1-.8 1.2l-2.6.9A4.8 4.8 0 0 0 3.4 18v4" />
+    <path d="M13.8 9.2v2c0 .5.3 1 .8 1.2l2.6.9a4.8 4.8 0 0 1 3.4 4.7v4" />
+    {[13.2, 15.9, 18.6, 21.3].map((cy) => (
+      <circle key={cy} cx="12" cy={cy} r="1" fill="currentColor" stroke="none" />
+    ))}
+  </svg>
+);
+
 // トレーニングの目的。並びは translations の goals.items（ダイエット・ボディメイク・姿勢改善）と同じ。
-const icons = [Scale, BicepsFlexed, PersonStanding];
+const icons = [Scale, BicepsFlexed, PostureIcon];
 
 const GoalsSection = () => {
   const { lang, t } = useT();
