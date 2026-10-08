@@ -15,6 +15,7 @@ type Dict = {
   hero: { kicker: string; title1: string; titleAccent: string; sub: string; desc: string; seoNote?: string; cta1: string; cta2: string };
   concern: { kicker: string; title: string; items: string[]; footer: string };
   features: { kicker: string; title: string; items: { title: string; description: string }[]; note: string; cta: string; wearRentalTag?: string };
+  goals: { kicker: string; title: string; sub: string; items: { title: string; description: string }[]; note: string };
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
@@ -30,7 +31,7 @@ type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   ja: {
-    meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーがマンツーマンで指導。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
+    meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーが、ダイエット・ボディメイク・姿勢改善をマンツーマンで指導。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
     nav: { features: "特徴", trainer: "トレーナー", voice: "お客様の声", plan: "料金プラン", faq: "よくあるご質問", access: "アクセス", consultation: "体験トレーニング", blog: "ブログ" },
     header: { ctaBtn: "体験トレーニング受付中" },
     hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,750～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,750～・入会金¥0で通えるパーソナルジムです。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
@@ -41,6 +42,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "食事の悩みも、一緒に解決できる", description: "栄養士資格を持つトレーナーが、トレーニングだけでなく食事面もサポート。極端な食事制限は行いません。" },
       { title: "続けられる価格だから、体が変わる", description: "1回¥4,750〜、入会金¥0。ウェア・シューズ・タオル・お水もすべて無料です。続けやすい料金設定です。" },
     ], note: "すべてのプランで、完全マンツーマンの指導と、お客様一人ひとりに合わせたオーダーメイドのトレーニングメニューをご提供しています。", cta: "まずは体験してみる", wearRentalTag: "ウェア・シューズ無料レンタル" },
+    goals: { kicker: "Goal", title: "目的別トレーニング", sub: "ダイエットはもちろん、ボディメイクや姿勢改善にも。お一人おひとりの目的に合わせて、トレーニングの内容を変えていきます。", items: [
+      { title: "ダイエット", description: "無理な食事制限はしません。栄養士トレーナーがトレーニングと食事の両面からサポートし、体重だけでなく見た目の変化も目指します。" },
+      { title: "ボディメイク", description: "筋肉をつけながら体脂肪を落とし、メリハリのある体へ。フィジーク大会への出場経験を持つトレーナーが、なりたい体に合わせてメニューを組み立てます。" },
+      { title: "姿勢改善", description: "猫背・巻き肩・反り腰など、姿勢のクセを確認。姿勢を支える筋肉のトレーニングとストレッチを組み合わせて、きれいな姿勢を目指します。" },
+    ], note: "目的が決まっていなくても大丈夫です。体験トレーニングのカウンセリングで、一緒に目標を決めましょう。" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
@@ -94,6 +100,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "Nutrition guidance included", description: "Your trainer is a certified nutritionist who supports both your workouts and your eating habits. No extreme diets — just practical advice that fits real life." },
       { title: "Easy to keep going", description: "From ¥4,750 per session. No enrollment fee. Sportswear, shoes, towels and water are all provided — so it's easy to start and easy to keep coming back." },
     ], note: "Every plan includes fully 1-on-1 coaching with a training program tailored to your goals.", cta: "Book a Trial Session", wearRentalTag: "Free wear & shoe rental" },
+    goals: { kicker: "Goal", title: "Training for Your Goal", sub: "Weight loss, body shaping, or better posture — we adjust your training to fit your goal.", items: [
+      { title: "Weight Loss", description: "No extreme dieting. A trainer qualified as a nutritionist supports you through both training and nutrition, aiming for visible changes — not just a lower number on the scale." },
+      { title: "Body Shaping", description: "Build muscle while losing body fat for a toned, defined body. A trainer with physique competition experience designs your program around the body you want." },
+      { title: "Posture Improvement", description: "We check posture habits such as a rounded back, rounded shoulders, or an arched lower back, then combine training for the muscles that support good posture with stretching." },
+    ], note: "Not sure about your goal yet? No problem — we'll set one together during the counseling in your trial session." },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
@@ -147,6 +158,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "饮食方面也获得专业建议", description: "教练同时具备营养师资格，不仅指导训练，也协助您调整饮食。不会要求极端节食，建议贴近日常生活。" },
       { title: "容易坚持的价格", description: "每次4,750日元起，入会费0日元，运动服・鞋・毛巾・水全部免费。负担较小、容易坚持的价格，让您轻松开始并长期坚持。" },
     ], note: "所有方案均为一对一指导，并根据每位客人量身定制训练内容。", cta: "预约体验课程", wearRentalTag: "免费租借运动服和鞋子" },
+    goals: { kicker: "Goal", title: "根据目的定制训练", sub: "减脂、塑形、改善体态——我们会根据您的目的调整训练内容。", items: [
+      { title: "减脂", description: "不进行极端节食。拥有营养师资格的教练从训练和饮食两方面为您提供支持，不只看体重，也追求外形上的变化。" },
+      { title: "塑形", description: "在增加肌肉的同时减少体脂，打造线条分明的身材。拥有健体比赛参赛经验的教练，会根据您理想的身材安排训练内容。" },
+      { title: "体态改善", description: "先确认驼背、圆肩、骨盆前倾等体态习惯，再结合支撑良好体态的肌肉训练与拉伸，以挺拔的体态为目标。" },
+    ], note: "还没有明确的目标也没关系。在体验课程的咨询中，我们会和您一起制定目标。" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
@@ -200,6 +216,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "飲食方面也能獲得專業建議", description: "教練同時具備營養師資格，不僅指導訓練，也協助您調整飲食。不會要求極端節食，建議貼近日常生活。" },
       { title: "容易堅持的價格", description: "每次4,750日圓起，入會費0日圓，運動服・鞋・毛巾・水全部免費。負擔較小、容易堅持的價格，讓您輕鬆開始並長期堅持。" },
     ], note: "所有方案皆為一對一指導，並依照每位顧客量身打造訓練內容。", cta: "預約體驗課程", wearRentalTag: "免費租借運動服與鞋子" },
+    goals: { kicker: "Goal", title: "依照目的量身打造的訓練", sub: "減脂、體態雕塑、姿勢改善——我們會依照您的目的調整訓練內容。", items: [
+      { title: "減脂", description: "不進行極端節食。具備營養師資格的教練從訓練與飲食兩方面提供支援，不只看體重，也追求外型上的變化。" },
+      { title: "體態雕塑", description: "在增加肌肉的同時減少體脂肪，打造線條分明的身材。擁有健體比賽參賽經驗的教練，會依照您理想中的身材規劃訓練內容。" },
+      { title: "姿勢改善", description: "先確認駝背、圓肩、骨盆前傾等姿勢習慣，再結合支撐良好姿勢的肌肉訓練與伸展，以端正的姿勢為目標。" },
+    ], note: "還沒有明確的目標也沒關係。在體驗課程的諮詢中，我們會與您一起訂定目標。" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
@@ -253,6 +274,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "식사 관리도 함께 서포트", description: "영양사 자격을 가진 트레이너가 운동뿐 아니라 식사도 함께 코칭합니다. 극단적인 식단 대신 일상에서 실천 가능한 방법을 제안합니다." },
       { title: "꾸준히 다니기 좋은 가격", description: "1회 ¥4,750부터, 입회비 없음. 운동복・신발・수건・물 모두 무료. 시작하기도 쉽고, 꾸준히 다니기에도 부담이 적습니다." },
     ], note: "모든 플랜은 완전 1:1 지도이며, 회원님 한 분 한 분의 목표에 맞춘 맞춤형 트레이닝 메뉴를 제공합니다.", cta: "체험 예약", wearRentalTag: "운동복·신발 무료 대여" },
+    goals: { kicker: "Goal", title: "목적에 맞춘 트레이닝", sub: "다이어트는 물론 바디 메이킹, 자세 교정까지. 목적에 맞춰 트레이닝 내용을 조정합니다.", items: [
+      { title: "다이어트", description: "무리한 식단 제한은 하지 않습니다. 영양사 자격을 가진 트레이너가 운동과 식사 양면에서 도와드리며, 체중뿐 아니라 눈에 보이는 변화를 목표로 합니다." },
+      { title: "바디 메이킹", description: "근육을 키우면서 체지방을 줄여 탄탄한 몸으로. 피지크 대회 출전 경험이 있는 트레이너가 원하는 몸에 맞춰 프로그램을 구성합니다." },
+      { title: "자세 교정", description: "굽은 등, 라운드 숄더, 골반 전방 경사 등 자세 습관을 확인한 뒤, 자세를 받쳐 주는 근육 트레이닝과 스트레칭을 조합해 곧은 자세를 목표로 합니다." },
+    ], note: "아직 목표가 정해지지 않으셨어도 괜찮습니다. 체험 세션 상담에서 함께 목표를 정해 보세요." },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
