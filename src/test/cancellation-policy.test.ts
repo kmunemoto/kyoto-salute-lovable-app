@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { translations } from "@/i18n/translations";
 
-// 当日のキャンセルは「1回分のセッションを消費」扱い（2026年10月〜）。
+// 当日のキャンセルは「1回分のセッションを消費」扱い（2026年10月〜）。日時の変更は、空き枠があれば当日でも可（消費なし）。
 // 「当日キャンセル無料」「セッションを消費しない」といった古い説明が、どこかに残ったり、
 // 自動生成のブログ記事で戻ってきたりしないようにする。
 
@@ -50,16 +50,26 @@ const CONSUMES: Record<keyof typeof translations, string> = {
   ko: "당일 취소는 세션 1회를 사용한 것으로",
 };
 
+// 当日の日時変更は、空き枠があればできる（消費なし）
+const CHANGE_OK: Record<keyof typeof translations, string> = {
+  ja: "日時の変更は、空き枠があれば当日でも可能です（セッションは消費されません）",
+  en: "Same-day changes to another time are possible if a slot is available",
+  zh: "只要有空档，当天也可以更改日期和时间",
+  zhTW: "只要有空檔，當天也可以更改日期與時間",
+  ko: "빈 시간이 있으면 당일에도 일정 변경이 가능합니다",
+};
+
 describe("当日キャンセルの扱い（1回消費）", () => {
   it.each(SITE_FILES)("%s に「当日キャンセル無料」などの古い説明が残っていない", (file) => {
     const s = read(file);
     for (const re of STALE) expect(s, `${file}: ${re}`).not.toMatch(re);
   });
 
-  it.each(Object.keys(CANCEL_QUESTION) as (keyof typeof translations)[])("%s: よくあるご質問に「当日は1回消費」と書いてある", (lang) => {
+  it.each(Object.keys(CANCEL_QUESTION) as (keyof typeof translations)[])("%s: よくあるご質問に「当日は1回消費」「空き枠があれば当日の変更は可」と書いてある", (lang) => {
     const item = translations[lang].faq.items.find((i) => i.question === CANCEL_QUESTION[lang]);
     expect(item, `${lang} のキャンセルの質問が見つからない`).toBeDefined();
     expect(item!.answer).toContain(CONSUMES[lang]);
+    expect(item!.answer).toContain(CHANGE_OK[lang]);
   });
 
   it("検索エンジン向けの FAQPage（index.html）と、画面の FAQ が同じ文面", () => {
@@ -70,9 +80,13 @@ describe("当日キャンセルの扱い（1回消費）", () => {
     expect(m![1]).toBe(ja.answer);
   });
 
-  it("利用規約・特商法にも「当日は1回消費」と書いてある", () => {
-    expect(read("src/pages/Terms.tsx")).toContain("当日のキャンセルは、1回分のセッションを消費したものとして取り扱います");
-    expect(read("src/pages/Tokusho.tsx")).toContain("当日のキャンセルは、1回分のセッションを消費した扱いとなります");
+  it("利用規約・特商法にも「当日は1回消費」「空き枠があれば当日の変更は可」と書いてある", () => {
+    const terms = read("src/pages/Terms.tsx");
+    const tokusho = read("src/pages/Tokusho.tsx");
+    expect(terms).toContain("当日のキャンセルは、1回分のセッションを消費したものとして取り扱います");
+    expect(terms).toContain("予約日時の変更は、空き枠がある場合に限り、当日でもお手続きいただけます");
+    expect(tokusho).toContain("当日のキャンセルは、1回分のセッションを消費した扱いとなります");
+    expect(tokusho).toContain("予約日時の変更は、空き枠があれば当日でも可能です");
   });
 
   it("ブログ自動生成の前提にも、新しい扱いが書いてある", () => {
