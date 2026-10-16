@@ -152,7 +152,7 @@ const Terms = () => {
                     予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。
                   </li>
                   <li>
-                    <strong className="text-foreground">当日のキャンセルであっても、キャンセル料やセッションの消費は発生しません</strong>。
+                    <strong className="text-foreground">当日のキャンセルは、1回分のセッションを消費したものとして取り扱います</strong>。なお、キャンセル料（金銭のお支払い）は発生しません。
                   </li>
                 </ol>
               </section>
@@ -264,7 +264,7 @@ const Terms = () => {
 
               <div className="pt-8 border-t border-border text-sm text-muted-foreground space-y-1">
                 <p>制定日：2024年11月</p>
-                <p>最終更新日：2026年4月20日</p>
+                <p>最終更新日：2026年10月16日</p>
               </div>
 
               <div className="bg-secondary/50 border border-border rounded-sm p-5 md:p-6 space-y-1">
