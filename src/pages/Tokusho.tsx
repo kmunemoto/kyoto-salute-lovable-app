@@ -232,7 +232,7 @@ const Tokusho = () => {
                 </h3>
                 <p>
                   予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。
-                  <span className="text-foreground font-medium">当日のキャンセルであっても、キャンセル料やセッションの消費は発生いたしません。</span>
+                  <span className="text-foreground font-medium">当日のキャンセルは、1回分のセッションを消費した扱いとなります（キャンセル料のお支払いは発生いたしません）。</span>
                 </p>
               </section>
 
@@ -247,7 +247,7 @@ const Tokusho = () => {
 
               <div className="pt-8 border-t border-border text-sm text-muted-foreground space-y-1">
                 <p>制定日：2024年11月</p>
-                <p>最終更新日：2026年4月20日</p>
+                <p>最終更新日：2026年10月16日</p>
               </div>
             </article>
           </div>
