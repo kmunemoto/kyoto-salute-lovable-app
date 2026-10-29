@@ -29,19 +29,22 @@ const PilatesSection = () => {
             <img src={pilatesImage} alt={p.imageAlt} width={1520} height={1140} loading="lazy" className="w-full h-auto rounded-sm" />
             <figcaption className="mt-2 text-xs text-muted-foreground font-body">{p.imageNote}</figcaption>
           </figure>
-          <ol className="space-y-8">
-            {p.points.map((point, i) => (
-              <li key={point.title} className="flex gap-5">
-                <span className="font-heading text-4xl text-gold/40 leading-none shrink-0" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className={`font-heading text-xl md:text-2xl text-foreground mb-2${keep}`}>{point.title}</h3>
-                  <p className={`text-muted-foreground font-body text-base leading-relaxed text-pretty${keep}`}>{point.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <div>
+            <ol className="space-y-8">
+              {p.points.map((point, i) => (
+                <li key={point.title} className="flex gap-5">
+                  <span className="font-heading text-4xl text-gold/40 leading-none shrink-0" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className={`font-heading text-xl md:text-2xl text-foreground mb-2${keep}`}>{point.title}</h3>
+                    <p className={`text-muted-foreground font-body text-base leading-relaxed text-pretty${keep}`}>{point.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p className={`mt-8 text-sm text-muted-foreground font-body leading-relaxed text-pretty${keep}`}>{p.trialNote}</p>
+          </div>
         </div>
       </div>
     </section>

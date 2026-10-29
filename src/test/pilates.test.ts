@@ -3,15 +3,48 @@ import fs from "node:fs";
 import path from "node:path";
 import { translations } from "@/i18n/translations";
 
-// マシンピラティス（PilatesSection）。どの言語でも同じ構成（3項目・画像の説明・「イメージです」の注記）で表示する。
+// マシンピラティス（PilatesSection・料金プラン・よくあるご質問）。
+// ご入会後、月額プランの1回ごとにトレーニングかマシンピラティスを選べる（追加料金なし）。
+// 体験トレーニングはパーソナルトレーニングのみ。単発プラン（旅行者向け）は対象外。
 
 const LANGS = Object.keys(translations) as (keyof typeof translations)[];
+const root = path.resolve(__dirname, "../..");
+const read = (p: string) => fs.readFileSync(path.join(root, p), "utf-8");
+
+const PILATES = /ピラティス|Pilates|普拉提|皮拉提斯|필라테스/;
+
+// 料金カードの項目
+const CARD: Record<keyof typeof translations, string> = {
+  ja: "マシンピラティスも選べる",
+  en: "Machine Pilates also available",
+  zh: "也可选择器械普拉提",
+  zhTW: "也可選擇器械皮拉提斯",
+  ko: "머신 필라테스도 선택 가능",
+};
+
+// 「体験はトレーニングのみ」の言い方（セクションの注記と FAQ の両方に入れる）
+const TRIAL_ONLY: Record<keyof typeof translations, string> = {
+  ja: "体験トレーニングはパーソナルトレーニングのみ",
+  en: "Trial sessions are personal training only",
+  zh: "体验课程仅提供私人训练",
+  zhTW: "體驗課程僅提供私人訓練",
+  ko: "체험 세션은 퍼스널 트레이닝만 가능합니다",
+};
+
+// 「ご入会後」の言い方（ピラティスに触れる文には、この条件を付ける）
+const AFTER_JOIN: Record<keyof typeof translations, string> = {
+  ja: "ご入会後",
+  en: "After joining",
+  zh: "入会后",
+  zhTW: "入會後",
+  ko: "입회 후에는",
+};
 
 describe("マシンピラティス（pilates）", () => {
   it.each(LANGS)("%s: 3 項目で、空の文言がない", (lang) => {
     const p = translations[lang].pilates;
     expect(p.points).toHaveLength(3);
-    for (const s of [p.kicker, p.title, p.lead, p.imageAlt, p.imageNote, translations[lang].nav.pilates, ...p.points.flatMap((i) => [i.title, i.description])]) {
+    for (const s of [p.kicker, p.title, p.lead, p.imageAlt, p.imageNote, p.trialNote, translations[lang].nav.pilates, ...p.points.flatMap((i) => [i.title, i.description])]) {
       expect(s.trim()).not.toBe("");
     }
   });
@@ -19,6 +52,42 @@ describe("マシンピラティス（pilates）", () => {
   it("日本語の見出しと注記", () => {
     expect(translations.ja.pilates.title.replace("\n", "")).toBe("マシンピラティスも選べます");
     expect(translations.ja.pilates.imageNote).toBe("※画像はイメージです");
+    expect(translations.ja.pilates.lead).toContain("追加料金はかかりません");
+  });
+
+  it.each(LANGS)("%s: セクションの注記に「体験はトレーニングのみ」と書いてある", (lang) => {
+    expect(translations[lang].pilates.trialNote.toLowerCase()).toContain(TRIAL_ONLY[lang].toLowerCase());
+  });
+
+  it.each(LANGS)("%s: 月額プランのカードすべてに「マシンピラティスも選べる」、単発プランには書かない", (lang) => {
+    const { plans, dropIn } = translations[lang].pricing;
+    for (const plan of plans) expect(plan.features, plan.name).toContain(CARD[lang]);
+    expect([dropIn.name, dropIn.description, ...dropIn.features].join(" ")).not.toMatch(PILATES);
+  });
+
+  it.each(LANGS)("%s: よくあるご質問に、ピラティスの質問があり「体験はトレーニングのみ」と書いてある", (lang) => {
+    const items = translations[lang].faq.items.filter((i) => PILATES.test(i.question));
+    expect(items).toHaveLength(1);
+    expect(items[0].answer.toLowerCase()).toContain(TRIAL_ONLY[lang].toLowerCase());
+  });
+
+  it.each(LANGS)("%s: 目的別トレーニングでピラティスに触れる文にも「ご入会後」が付いている", (lang) => {
+    const items = translations[lang].goals.items.filter((i) => PILATES.test(i.description));
+    expect(items.length).toBeGreaterThan(0);
+    for (const i of items) expect(i.description).toContain(AFTER_JOIN[lang]);
+  });
+
+  it("検索エンジン向け（index.html）：FAQPage が画面の FAQ と同じ文面、プラン説明にもピラティス", () => {
+    const html = read("index.html");
+    const ja = translations.ja.faq.items.find((i) => i.question === "マシンピラティスは選べますか？")!;
+    const m = html.match(/"name": "マシンピラティスは選べますか？",\s*"acceptedAnswer": \{\s*"@type": "Answer",\s*"text": "([^"]*)"/);
+    expect(m, "FAQPage にピラティスの質問がない").not.toBeNull();
+    expect(m![1]).toBe(ja.answer);
+    expect(html.match(/マシンピラティスも選べる、完全手ぶらOK/g)).toHaveLength(3);
+  });
+
+  it("ブログ自動生成の前提に「体験はトレーニングのみ」がある", () => {
+    expect(read("scripts/generate-blog-post.mjs")).toContain("体験トレーニングはパーソナルトレーニングのみ");
   });
 
   it("画像ファイルがある", () => {
