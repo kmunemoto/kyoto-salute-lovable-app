@@ -10,12 +10,13 @@ export const LANGS: { code: Lang; label: string }[] = [
 
 type Dict = {
   meta: { title: string; description: string };
-  nav: { features: string; trainer: string; voice: string; plan: string; faq: string; access: string; consultation: string; blog: string };
+  nav: { features: string; pilates: string; trainer: string; voice: string; plan: string; faq: string; access: string; consultation: string; blog: string };
   header: { ctaBtn: string };
   hero: { kicker: string; title1: string; titleAccent: string; sub: string; desc: string; seoNote?: string; cta1: string; cta2: string };
   concern: { kicker: string; title: string; items: string[]; footer: string };
   features: { kicker: string; title: string; items: { title: string; description: string }[]; note: string; cta: string; wearRentalTag?: string };
   goals: { kicker: string; title: string; sub: string; items: { title: string; description: string }[]; note: string };
+  pilates: { kicker: string; title: string; lead: string; points: { title: string; description: string }[]; imageAlt: string; imageNote: string };
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
@@ -32,7 +33,7 @@ type Dict = {
 export const translations: Record<Lang, Dict> = {
   ja: {
     meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーが、ダイエット・ボディメイク・姿勢改善をマンツーマンで指導。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
-    nav: { features: "特徴", trainer: "トレーナー", voice: "お客様の声", plan: "料金プラン", faq: "よくあるご質問", access: "アクセス", consultation: "体験トレーニング", blog: "ブログ" },
+    nav: { features: "特徴", pilates: "ピラティス", trainer: "トレーナー", voice: "お客様の声", plan: "料金プラン", faq: "よくあるご質問", access: "アクセス", consultation: "体験トレーニング", blog: "ブログ" },
     header: { ctaBtn: "体験トレーニング受付中" },
     hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,750～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,750～・入会金¥0で通えるパーソナルジムです。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
     concern: { kicker: "Concern", title: "こんなお悩みありませんか？", items: ["ジムに通ったけど続かなかった", "何をすればいいかわからない", "食事制限がつらくて挫折した", "大手ジムは人目が気になる"], footer: "Salute御所南は、こうしたお悩みを解決するために生まれたパーソナルジムです。" },
@@ -45,8 +46,13 @@ export const translations: Record<Lang, Dict> = {
     goals: { kicker: "Goal", title: "目的別トレーニング", sub: "ダイエットはもちろん、ボディメイクや姿勢改善にも。お一人おひとりの目的に合わせて、トレーニングの内容を変えていきます。", items: [
       { title: "ダイエット", description: "無理な食事制限はしません。栄養士トレーナーがトレーニングと食事の両面からサポートし、体重だけでなく見た目の変化も目指します。" },
       { title: "ボディメイク", description: "筋肉をつけながら体脂肪を落とし、メリハリのある体へ。フィジーク大会への出場経験を持つトレーナーが、なりたい体に合わせてメニューを組み立てます。" },
-      { title: "姿勢改善", description: "猫背・巻き肩・反り腰など、姿勢のクセを確認。姿勢を支える筋肉のトレーニングとストレッチを組み合わせて、きれいな姿勢を目指します。" },
+      { title: "姿勢改善", description: "猫背・巻き肩・反り腰など、姿勢のクセを確認。姿勢を支える筋肉のトレーニングとストレッチを組み合わせて、きれいな姿勢を目指します。マシンピラティスもお選びいただけます。" },
     ], note: "目的が決まっていなくても大丈夫です。体験トレーニングのカウンセリングで、一緒に目標を決めましょう。" },
+    pilates: { kicker: "Pilates", title: "マシンピラティスも\n選べます", lead: "パーソナルトレーニングに加えて、リフォーマー（専用マシン）を使ったマシンピラティスもお選びいただけます。完全個室なので、周りの目を気にせず取り組めます。", points: [
+      { title: "姿勢・体幹づくりに", description: "体の奥の筋肉（インナーマッスル）を意識しながら動くので、姿勢改善に取り組みたい方にぴったりです。" },
+      { title: "運動が苦手な方も始めやすい", description: "マシンのバネが動きを支えてくれるので、体が硬い方や運動が久しぶりの方でも無理なく始められます。" },
+      { title: "トレーニングと組み合わせて", description: "目的やその日の体調に合わせて、筋力トレーニングとマシンピラティスを選べます。" },
+    ], imageAlt: "Salute御所南のスタジオで、リフォーマーを使ってマシンピラティスをする女性", imageNote: "※画像はイメージです" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
@@ -90,7 +96,7 @@ export const translations: Record<Lang, Dict> = {
 
   en: {
     meta: { title: "Personal Training Gym in Kyoto Goshominami | Salute", description: "Salute is a personal training gym in Goshominami, Kyoto. Trial sessions (¥3,000, waived if you join on the day) and drop-in personal training for travelers are available. No membership required for drop-in sessions. 8 min from Marutamachi Station." },
-    nav: { features: "Features", trainer: "Trainer", voice: "Reviews", plan: "Pricing", faq: "FAQ", access: "Access", consultation: "Trial Session", blog: "Blog" },
+    nav: { features: "Features", pilates: "Pilates", trainer: "Trainer", voice: "Reviews", plan: "Pricing", faq: "FAQ", access: "Access", consultation: "Trial Session", blog: "Blog" },
     header: { ctaBtn: "Book a Trial Session" },
     hero: { kicker: "Personal Training Gym in Goshominami, Kyoto | Trial Session ¥3,000 — Waived If You Join That Day", title1: "Struggling to stay on track on your own?", titleAccent: "Your private 1-on-1 studio in Goshominami.", sub: "Build the strongest version of yourself, one session at a time", desc: "A certified nutritionist trainer guides you at your own pace. Approachable pricing from ¥4,750 per session, with no enrollment fee — sportswear, shoes, towels and water are all provided.", cta1: "Book a Trial Session", cta2: "See Our Features" },
     concern: { kicker: "Concern", title: "Sound familiar?", items: ["Couldn't stick with a gym routine", "Not sure where to start", "Gave up on strict diets", "Felt self-conscious at big gyms"], footer: "Salute Goshominami was created to help you solve these challenges." },
@@ -103,8 +109,13 @@ export const translations: Record<Lang, Dict> = {
     goals: { kicker: "Goal", title: "Training for Your Goal", sub: "Weight loss, body shaping, or better posture — we adjust your training to fit your goal.", items: [
       { title: "Weight Loss", description: "No extreme dieting. A trainer qualified as a nutritionist supports you through both training and nutrition, aiming for visible changes — not just a lower number on the scale." },
       { title: "Body Shaping", description: "Build muscle while losing body fat for a toned, defined body. A trainer with physique competition experience designs your program around the body you want." },
-      { title: "Posture Improvement", description: "We check posture habits such as a rounded back, rounded shoulders, or an arched lower back, then combine training for the muscles that support good posture with stretching." },
+      { title: "Posture Improvement", description: "We check posture habits such as a rounded back, rounded shoulders, or an arched lower back, then combine training for the muscles that support good posture with stretching. Machine Pilates is also available." },
     ], note: "Not sure about your goal yet? No problem — we'll set one together during the counseling in your trial session." },
+    pilates: { kicker: "Pilates", title: "Machine Pilates Is Also Available", lead: "In addition to personal training, you can also choose machine Pilates on a reformer. Sessions take place in a fully private room, so you can focus without worrying about others.", points: [
+      { title: "Posture and core", description: "You move while engaging your deep core muscles, which makes it a great fit if you want to work on your posture." },
+      { title: "Easy to start, even for beginners", description: "The machine's springs support your movements, so it's easy to start even if you're stiff or haven't exercised in a while." },
+      { title: "Combine it with training", description: "Choose between strength training and machine Pilates depending on your goals and how you feel that day." },
+    ], imageAlt: "A woman doing machine Pilates on a reformer at the Salute Goshominami studio", imageNote: "*Image for illustration purposes only." },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
@@ -148,7 +159,7 @@ export const translations: Record<Lang, Dict> = {
 
   zh: {
     meta: { title: "京都御所南私人教练健身房 | Salute", description: "Salute 是位于京都御所南的私人教练健身房。提供体验课程（3,000日元，当天入会则免费），也支持面向游客的单次训练，无需会员注册。距离丸太町站步行8分钟。" },
-    nav: { features: "特点", trainer: "教练", voice: "客户评价", plan: "价格方案", faq: "常见问题", access: "交通指南", consultation: "体验课程", blog: "博客" },
+    nav: { features: "特点", pilates: "普拉提", trainer: "教练", voice: "客户评价", plan: "价格方案", faq: "常见问题", access: "交通指南", consultation: "体验课程", blog: "博客" },
     header: { ctaBtn: "预约体验课程" },
     hero: { kicker: "京都御所南的私人教练健身房 Salute｜体验课程3,000日元（当天入会免费）", title1: "一个人运动总是难以坚持？", titleAccent: "御所南的一对一私人教练健身房。", sub: "超越过去的自己，遇见更好的体态与状态", desc: "拥有营养师资格的教练，按照您的节奏耐心指导。每次4,750日元起，无入会费，运动服・鞋・毛巾・水均免费提供，轻松开始、轻松坚持。", cta1: "预约体验课程", cta2: "查看健身房特色" },
     concern: { kicker: "Concern", title: "您是否有这些困扰？", items: ["办了健身房却很难坚持", "不知道从哪里开始", "极端节食让人难以坚持", "在大型健身房在意别人的目光"], footer: "Salute御所南正是为了解决这些困扰而设的私人教练健身房。" },
@@ -161,8 +172,13 @@ export const translations: Record<Lang, Dict> = {
     goals: { kicker: "Goal", title: "根据目的定制训练", sub: "减脂、塑形、改善体态——我们会根据您的目的调整训练内容。", items: [
       { title: "减脂", description: "不进行极端节食。拥有营养师资格的教练从训练和饮食两方面为您提供支持，不只看体重，也追求外形上的变化。" },
       { title: "塑形", description: "在增加肌肉的同时减少体脂，打造线条分明的身材。拥有健体比赛参赛经验的教练，会根据您理想的身材安排训练内容。" },
-      { title: "体态改善", description: "先确认驼背、圆肩、骨盆前倾等体态习惯，再结合支撑良好体态的肌肉训练与拉伸，以挺拔的体态为目标。" },
+      { title: "体态改善", description: "先确认驼背、圆肩、骨盆前倾等体态习惯，再结合支撑良好体态的肌肉训练与拉伸，以挺拔的体态为目标。也可以选择器械普拉提。" },
     ], note: "还没有明确的目标也没关系。在体验课程的咨询中，我们会和您一起制定目标。" },
+    pilates: { kicker: "Pilates", title: "也可以选择器械普拉提", lead: "除了私人训练外，也可以选择使用核心床（Reformer）的器械普拉提。全程在完全私密的独立空间进行，无需在意他人目光。", points: [
+      { title: "改善体态・强化核心", description: "在运动中有意识地使用深层核心肌群，非常适合想改善体态的人。" },
+      { title: "初学者也容易上手", description: "器械的弹簧会辅助动作，身体僵硬或许久没运动的人也能轻松开始。" },
+      { title: "与训练搭配", description: "可根据目的和当天的身体状况，选择力量训练或器械普拉提。" },
+    ], imageAlt: "在Salute御所南工作室使用核心床进行器械普拉提的女性", imageNote: "※图片仅供参考" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
@@ -206,7 +222,7 @@ export const translations: Record<Lang, Dict> = {
 
   zhTW: {
     meta: { title: "京都御所南私人教練健身房 | Salute", description: "Salute 是位於京都御所南的私人教練健身房。提供體驗課程（3,000日圓，當天入會則免費），也支援針對遊客的單次訓練，無需加入會員。距離丸太町站步行8分鐘。" },
-    nav: { features: "特色", trainer: "教練", voice: "顧客評價", plan: "價格方案", faq: "常見問題", access: "交通指南", consultation: "體驗課程", blog: "部落格" },
+    nav: { features: "特色", pilates: "皮拉提斯", trainer: "教練", voice: "顧客評價", plan: "價格方案", faq: "常見問題", access: "交通指南", consultation: "體驗課程", blog: "部落格" },
     header: { ctaBtn: "預約體驗課程" },
     hero: { kicker: "京都御所南的私人教練健身房 Salute｜體驗課程3,000日圓（當天入會免費）", title1: "一個人運動總是難以堅持？", titleAccent: "御所南的一對一私人教練健身房。", sub: "超越過去的自己，遇見更好的體態與狀態", desc: "擁有營養師資格的教練，依照您的步調耐心指導。每次4,750日圓起，無入會費，運動服・鞋・毛巾・水皆免費提供，輕鬆開始、輕鬆堅持。", cta1: "預約體驗課程", cta2: "查看健身房特色" },
     concern: { kicker: "Concern", title: "您是否有這些困擾？", items: ["辦了健身房卻很難堅持", "不知道該從哪裡開始", "極端節食讓人難以堅持", "在大型健身房在意他人的目光"], footer: "Salute御所南正是為了解決這些困擾而設立的私人教練健身房。" },
@@ -219,8 +235,13 @@ export const translations: Record<Lang, Dict> = {
     goals: { kicker: "Goal", title: "依照目的量身打造的訓練", sub: "減脂、體態雕塑、姿勢改善——我們會依照您的目的調整訓練內容。", items: [
       { title: "減脂", description: "不進行極端節食。具備營養師資格的教練從訓練與飲食兩方面提供支援，不只看體重，也追求外型上的變化。" },
       { title: "體態雕塑", description: "在增加肌肉的同時減少體脂肪，打造線條分明的身材。擁有健體比賽參賽經驗的教練，會依照您理想中的身材規劃訓練內容。" },
-      { title: "姿勢改善", description: "先確認駝背、圓肩、骨盆前傾等姿勢習慣，再結合支撐良好姿勢的肌肉訓練與伸展，以端正的姿勢為目標。" },
+      { title: "姿勢改善", description: "先確認駝背、圓肩、骨盆前傾等姿勢習慣，再結合支撐良好姿勢的肌肉訓練與伸展，以端正的姿勢為目標。也可以選擇器械皮拉提斯。" },
     ], note: "還沒有明確的目標也沒關係。在體驗課程的諮詢中，我們會與您一起訂定目標。" },
+    pilates: { kicker: "Pilates", title: "也可以選擇\n器械皮拉提斯", lead: "除了私人訓練之外，也可以選擇使用核心床（Reformer）的器械皮拉提斯。全程在完全私密的獨立空間進行，不必在意他人的目光。", points: [
+      { title: "改善姿勢・強化核心", description: "在動作中有意識地運用深層核心肌群，非常適合想改善姿勢的人。" },
+      { title: "初學者也容易上手", description: "器械的彈簧會輔助動作，身體僵硬或許久沒運動的人也能輕鬆開始。" },
+      { title: "與訓練搭配", description: "可依照目的與當天的身體狀況，選擇重量訓練或器械皮拉提斯。" },
+    ], imageAlt: "在Salute御所南工作室使用核心床進行器械皮拉提斯的女性", imageNote: "※圖片僅供參考" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
@@ -264,7 +285,7 @@ export const translations: Record<Lang, Dict> = {
 
   ko: {
     meta: { title: "교토 고쇼미나미 퍼스널 트레이닝 짐 | Salute", description: "Salute는 교토 고쇼미나미에 위치한 퍼스널 트레이닝 짐입니다. 체험 세션(¥3,000, 당일 등록 시 무료)과 여행객을 위한 1회 이용 트레이닝을 제공합니다. 1회 이용 시 회원가입은 필요하지 않습니다. 마루타마치역에서 도보 8분." },
-    nav: { features: "특징", trainer: "트레이너", voice: "고객 후기", plan: "요금제", faq: "자주 묻는 질문", access: "오시는 길", consultation: "체험 세션", blog: "블로그" },
+    nav: { features: "특징", pilates: "필라테스", trainer: "트레이너", voice: "고객 후기", plan: "요금제", faq: "자주 묻는 질문", access: "오시는 길", consultation: "체험 세션", blog: "블로그" },
     header: { ctaBtn: "체험 예약" },
     hero: { kicker: "교토 고쇼미나미의 퍼스널 트레이닝 짐 Salute｜체험 세션 ¥3,000 (당일 등록 시 무료)", title1: "혼자서는 운동을 꾸준히 이어가기 어려우셨나요?", titleAccent: "고쇼미나미의 1:1 퍼스널 트레이닝 짐.", sub: "과거의 나를 넘어, 인생 최고의 컨디션으로", desc: "영양사 자격을 가진 트레이너가 회원님의 페이스에 맞춰 꼼꼼하게 서포트합니다. 1회 ¥4,750부터, 입회비 없이 시작할 수 있고 운동복・신발・수건・물도 모두 무료로 제공합니다.", cta1: "체험 예약", cta2: "특징 자세히 보기" },
     concern: { kicker: "Concern", title: "이런 고민, 있으신가요?", items: ["헬스장은 다녔지만 꾸준히 다니지 못했다", "무엇부터 시작해야 할지 모르겠다", "심한 식단 조절은 너무 힘들어서 포기했다", "대형 헬스장은 남의 시선이 신경 쓰인다"], footer: "Salute 고쇼미나미는 이러한 고민을 해결하기 위해 만들어진 퍼스널 트레이닝 짐입니다." },
@@ -277,8 +298,13 @@ export const translations: Record<Lang, Dict> = {
     goals: { kicker: "Goal", title: "목적에 맞춘 트레이닝", sub: "다이어트는 물론 바디 메이킹, 자세 교정까지. 목적에 맞춰 트레이닝 내용을 조정합니다.", items: [
       { title: "다이어트", description: "무리한 식단 제한은 하지 않습니다. 영양사 자격을 가진 트레이너가 운동과 식사 양면에서 도와드리며, 체중뿐 아니라 눈에 보이는 변화를 목표로 합니다." },
       { title: "바디 메이킹", description: "근육을 키우면서 체지방을 줄여 탄탄한 몸으로. 피지크 대회 출전 경험이 있는 트레이너가 원하는 몸에 맞춰 프로그램을 구성합니다." },
-      { title: "자세 교정", description: "굽은 등, 라운드 숄더, 골반 전방 경사 등 자세 습관을 확인한 뒤, 자세를 받쳐 주는 근육 트레이닝과 스트레칭을 조합해 곧은 자세를 목표로 합니다." },
+      { title: "자세 교정", description: "굽은 등, 라운드 숄더, 골반 전방 경사 등 자세 습관을 확인한 뒤, 자세를 받쳐 주는 근육 트레이닝과 스트레칭을 조합해 곧은 자세를 목표로 합니다. 머신 필라테스도 선택하실 수 있습니다." },
     ], note: "아직 목표가 정해지지 않으셨어도 괜찮습니다. 체험 세션 상담에서 함께 목표를 정해 보세요." },
+    pilates: { kicker: "Pilates", title: "머신 필라테스도 선택할 수 있습니다", lead: "퍼스널 트레이닝 외에도 리포머(전용 머신)를 사용하는 머신 필라테스를 선택하실 수 있습니다. 완전 개인실이라 다른 사람의 시선을 신경 쓰지 않고 집중할 수 있습니다.", points: [
+      { title: "자세 교정・코어 강화", description: "속근육(코어)을 의식하며 움직이기 때문에, 자세 교정을 원하시는 분께 잘 맞습니다." },
+      { title: "운동이 서툴러도 시작하기 쉬움", description: "머신의 스프링이 움직임을 도와주기 때문에, 몸이 뻣뻣하거나 오랜만에 운동하는 분도 무리 없이 시작할 수 있습니다." },
+      { title: "트레이닝과 함께", description: "목적이나 그날의 컨디션에 맞춰 근력 트레이닝과 머신 필라테스 중에서 선택할 수 있습니다." },
+    ], imageAlt: "Salute 고쇼미나미 스튜디오에서 리포머로 머신 필라테스를 하는 여성", imageNote: "※이미지는 예시입니다" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },

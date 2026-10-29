@@ -17,6 +17,7 @@ const Header = () => {
   const prefix = lang === "ja" ? "" : `/${lang === "zhTW" ? "zh-tw" : lang}`;
   const navItems = [
     { label: t.nav.features, href: `${prefix || ""}/#features` },
+    { label: t.nav.pilates, href: `${prefix || ""}/#pilates` },
     { label: t.nav.trainer, href: `${prefix || ""}/#trainer` },
     { label: t.nav.voice, href: `${prefix || ""}/#voice` },
     { label: t.nav.plan, href: `${prefix || ""}/#plan` },
@@ -118,14 +119,15 @@ const Header = () => {
           {lang === "ja" ? "御所南" : " Goshominami"}
         </a>
 
-        <nav className="hidden md:flex items-center gap-6">
+        {/* PC のメニュー。項目が多いので、1行に収まる 1280px 以上でだけ出し、それより狭い画面はハンバーガーメニューにする */}
+        <nav className="hidden xl:flex items-center gap-6">
           {mobileNavItems.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm text-foreground/80 hover:text-gold transition-colors font-body">
+            <a key={item.href} href={item.href} className="text-sm text-foreground/80 hover:text-gold transition-colors font-body whitespace-nowrap">
               {item.label}
             </a>
           ))}
           {lang !== "ja" && (
-            <Link to="/" className="text-sm text-foreground/80 hover:text-gold transition-colors font-body">
+            <Link to="/" className="text-sm text-foreground/80 hover:text-gold transition-colors font-body whitespace-nowrap">
               日本語サイトへ
             </Link>
           )}
@@ -135,13 +137,23 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackCtaClick({ type: "trial", location: "header_desktop", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang })}
-            className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity"
+            className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity whitespace-nowrap"
           >
             {t.header.ctaBtn}
           </a>
         </nav>
 
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex xl:hidden items-center gap-3">
+          {/* タブレット〜小さめの PC（768〜1279px）は、PC のメニューも下の予約バーも出ないので、予約ボタンをここに出す */}
+          <a
+            href="https://app.kyoto-salute.com/trial"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCtaClick({ type: "trial", location: "header_tablet", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang })}
+            className="hidden md:inline-block gold-gradient px-4 py-2 text-sm font-medium text-white rounded-sm transition-opacity whitespace-nowrap"
+          >
+            {t.header.ctaBtn}
+          </a>
           <LanguageSwitcher />
           <button
             ref={burgerRef}
@@ -181,7 +193,7 @@ const Header = () => {
     </header>
 
     {mounted && (
-      <div className="md:hidden fixed inset-0 z-[60]" aria-hidden={!isOpen}>
+      <div className="xl:hidden fixed inset-0 z-[60]" aria-hidden={!isOpen}>
           {/* Overlay */}
           <div
             onClick={closeDrawer}
