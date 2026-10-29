@@ -22,7 +22,7 @@ const CARD: Record<keyof typeof translations, string> = {
   ko: "머신 필라테스(50분)도 선택 가능",
 };
 
-// 「体験はトレーニングのみ」の言い方（セクションの注記と FAQ の両方に入れる）
+// 「体験はトレーニングのみ」の言い方（FAQ に入れる）
 const TRIAL_ONLY: Record<keyof typeof translations, string> = {
   ja: "体験トレーニングはパーソナルトレーニングのみ",
   en: "Trial sessions are personal training only",
@@ -44,19 +44,14 @@ describe("マシンピラティス（pilates）", () => {
   it.each(LANGS)("%s: 3 項目で、空の文言がない", (lang) => {
     const p = translations[lang].pilates;
     expect(p.points).toHaveLength(3);
-    for (const s of [p.kicker, p.title, p.lead, p.imageAlt, p.imageNote, p.trialNote, translations[lang].nav.pilates, ...p.points.flatMap((i) => [i.title, i.description])]) {
+    for (const s of [p.kicker, p.title, p.lead, p.imageAlt, translations[lang].nav.pilates, ...p.points.flatMap((i) => [i.title, i.description])]) {
       expect(s.trim()).not.toBe("");
     }
   });
 
-  it("日本語の見出しと注記", () => {
+  it("日本語の見出しとリード", () => {
     expect(translations.ja.pilates.title.replace("\n", "")).toBe("マシンピラティスも選べます");
-    expect(translations.ja.pilates.imageNote).toBe("※画像はイメージです");
-    expect(translations.ja.pilates.lead).toContain("追加料金はかかりません");
-  });
-
-  it.each(LANGS)("%s: セクションの注記に「体験はトレーニングのみ」と書いてある", (lang) => {
-    expect(translations[lang].pilates.trialNote.toLowerCase()).toContain(TRIAL_ONLY[lang].toLowerCase());
+    expect(translations.ja.pilates.lead.replace(/\n/g, "")).toBe("パーソナルトレーニングとパーソナルマシンピラティス、どちらも選べます。追加料金はかかりません。");
   });
 
   it.each(LANGS)("%s: 月額プランのカードすべてに「マシンピラティスも選べる」、単発プランには書かない", (lang) => {
@@ -86,14 +81,13 @@ describe("マシンピラティス（pilates）", () => {
     expect(html.match(/マシンピラティス（50分）も選べる、完全手ぶらOK/g)).toHaveLength(3);
   });
 
-  it.each(LANGS)("%s: ピラティスの説明（セクション・カード・FAQ）は 50 分で、ストレッチには触れない", (lang) => {
+  it.each(LANGS)("%s: ピラティスの説明はストレッチに触れず、カードと FAQ に 50 分と書いてある", (lang) => {
     const tr = translations[lang];
     const p = tr.pilates;
     const faq = tr.faq.items.find((i) => PILATES.test(i.question))!;
-    const texts = [p.title, p.lead, p.trialNote, ...p.points.flatMap((i) => [i.title, i.description]), CARD[lang], faq.answer];
+    const texts = [p.title, p.lead, ...p.points.flatMap((i) => [i.title, i.description]), CARD[lang], faq.answer];
     for (const s of texts) expect(s, s).not.toMatch(/ストレッチ|stretch|拉伸|伸展|스트레칭/i);
     expect(CARD[lang]).toContain("50");
-    expect(p.lead).toContain("50");
     expect(faq.answer).toContain("50");
   });
 
