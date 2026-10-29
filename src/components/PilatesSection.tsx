@@ -20,8 +20,9 @@ const withBreaks = (text: string) =>
 const PilatesSection = () => {
   const { lang, t } = useT();
   const p = t.pilates;
-  // 韓国語は単語の途中で改行しないようにする（日本語・中国語は空白がないので対象外）
-  const keep = lang === "ko" ? " break-keep" : "";
+  // 言葉の途中で改行しないようにする。韓国語は空白のところで、日本語は文節のところで改行する
+  // （日本語の auto-phrase は Chrome などの対応ブラウザだけで効き、ほかではいつもどおり。中国語は対象外）
+  const keep = lang === "ko" ? " break-keep" : lang === "ja" ? " [word-break:auto-phrase]" : "";
   return (
     <section id="pilates" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
@@ -39,7 +40,7 @@ const PilatesSection = () => {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className={`font-heading text-xl md:text-2xl text-foreground mb-2${keep}`}>{point.title}</h3>
+                  <h3 className={`font-heading text-xl md:text-2xl text-foreground mb-2 text-balance${keep}`}>{point.title}</h3>
                   <p className={`text-muted-foreground font-body text-base leading-relaxed text-pretty${keep}`}>{point.description}</p>
                 </div>
               </li>

@@ -49,9 +49,9 @@ export const translations: Record<Lang, Dict> = {
       { title: "姿勢改善", description: "猫背・巻き肩・反り腰など、姿勢のクセを確認。姿勢を支える筋肉のトレーニングとストレッチを組み合わせて、きれいな姿勢を目指します。ご入会後は、マシンピラティスもお選びいただけます。" },
     ], note: "目的が決まっていなくても大丈夫です。体験トレーニングのカウンセリングで、一緒に目標を決めましょう。" },
     pilates: { kicker: "Pilates", title: "マシンピラティスも\n選べます", lead: "パーソナルトレーニングと\nパーソナルマシンピラティス、\nどちらも選べます。\n\n追加料金はかかりません。", points: [
-      { title: "姿勢・体幹づくりに", description: "体の奥の筋肉（インナーマッスル）を意識しながら動くので、姿勢改善に取り組みたい方にぴったりです。" },
-      { title: "運動が苦手な方も始めやすい", description: "マシンのバネが動きを支えてくれるので、体が硬い方や運動が久しぶりの方でも無理なく始められます。" },
-      { title: "トレーニングと組み合わせて", description: "目的やその日の体調に合わせて、筋力トレーニングとマシンピラティスを選べます。" },
+      { title: "呼吸と体幹を意識して", description: "リフォーマーというマシンで、呼吸に合わせてゆっくり動きます。体の奥の筋肉（インナーマッスル）を意識しながら、体幹や姿勢づくりを目指します。" },
+      { title: "1対1だから始めやすい", description: "トレーナーがバネの強さで負荷を調整し、動きを確認しながら進めます。体が硬い方や運動が久しぶりの方も、ご自分のペースで取り組めます。" },
+      { title: "トレーニングと使い分けて", description: "しっかり鍛えたい日はトレーニング、体の使い方を見直したい日はマシンピラティス。別のスタジオに通わず、1回ごとに選べます。" },
     ], imageAlt: "Salute御所南のスタジオで、リフォーマーを使ってマシンピラティスをする女性" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
@@ -113,9 +113,9 @@ export const translations: Record<Lang, Dict> = {
       { title: "Posture Improvement", description: "We check posture habits such as a rounded back, rounded shoulders, or an arched lower back, then combine training for the muscles that support good posture with stretching. After joining, you can also choose machine Pilates." },
     ], note: "Not sure about your goal yet? No problem — we'll set one together during the counseling in your trial session." },
     pilates: { kicker: "Pilates", title: "Machine Pilates Is Also Available", lead: "You can choose either personal training or 1-on-1 machine Pilates, with no extra fee.", points: [
-      { title: "Posture and core", description: "You move while engaging your deep core muscles, which makes it a great fit if you want to work on your posture." },
-      { title: "Easy to start, even for beginners", description: "The machine's springs support your movements, so it's easy to start even if you're stiff or haven't exercised in a while." },
-      { title: "Combine it with training", description: "Choose between strength training and machine Pilates depending on your goals and how you feel that day." },
+      { title: "Focus on your breath and core", description: "On a machine called a reformer, you move slowly in time with your breathing. Staying aware of your deep muscles, you work toward a strong core and good posture." },
+      { title: "Easy to start with 1-on-1 guidance", description: "Your trainer adjusts the load by changing the reformer's spring tension and checks your form as you go. Even if you're not very flexible or haven't exercised in a while, you can work at your own pace." },
+      { title: "Switch between training and Pilates", description: "Choose personal training on days you want a solid workout, and machine Pilates on days you want to rethink how you move. No need to go to a separate studio — you decide session by session." },
     ], imageAlt: "A woman doing machine Pilates on a reformer at the Salute Goshominami studio" },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
@@ -177,9 +177,9 @@ export const translations: Record<Lang, Dict> = {
       { title: "体态改善", description: "先确认驼背、圆肩、骨盆前倾等体态习惯，再结合支撑良好体态的肌肉训练与拉伸，以挺拔的体态为目标。入会后也可以选择器械普拉提。" },
     ], note: "还没有明确的目标也没关系。在体验课程的咨询中，我们会和您一起制定目标。" },
     pilates: { kicker: "Pilates", title: "也可以选择器械普拉提", lead: "私人训练和私人器械普拉提，\n两种都可以选择，\n无需额外费用。", points: [
-      { title: "改善体态・强化核心", description: "在运动中有意识地使用深层核心肌群，非常适合想改善体态的人。" },
-      { title: "初学者也容易上手", description: "器械的弹簧会辅助动作，身体僵硬或很久没运动的人也能轻松开始。" },
-      { title: "与训练搭配", description: "可根据目的和当天的身体状况，选择力量训练或器械普拉提。" },
+      { title: "专注呼吸・感受核心", description: "在名为核心床的器械上，配合呼吸缓慢地活动身体。有意识地调动深层肌群，以强化核心、塑造体态为目标。" },
+      { title: "一对一指导，容易上手", description: "教练会通过弹簧的强弱来调整负荷，并在课程中留意您的动作。身体僵硬或很久没运动的人，也能按照自己的节奏练习。" },
+      { title: "训练与普拉提按需切换", description: "想好好锻炼的日子选私人训练，想重新审视自己如何使用身体的日子选器械普拉提。无需另去其他工作室，每次课程都可以选择。" },
     ], imageAlt: "在Salute御所南工作室使用核心床进行器械普拉提的女性" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
@@ -241,9 +241,9 @@ export const translations: Record<Lang, Dict> = {
       { title: "姿勢改善", description: "先確認駝背、圓肩、骨盆前傾等姿勢習慣，再結合支撐良好姿勢的肌肉訓練與伸展，以端正的姿勢為目標。入會後也可以選擇器械皮拉提斯。" },
     ], note: "還沒有明確的目標也沒關係。在體驗課程的諮詢中，我們會與您一起訂定目標。" },
     pilates: { kicker: "Pilates", title: "也可以選擇\n器械皮拉提斯", lead: "私人訓練和私人器械皮拉提斯，\n兩種都可以選擇，\n不需額外費用。", points: [
-      { title: "改善姿勢・強化核心", description: "在動作中有意識地運用深層核心肌群，非常適合想改善姿勢的人。" },
-      { title: "初學者也容易上手", description: "器械的彈簧會輔助動作，身體僵硬或很久沒運動的人也能輕鬆開始。" },
-      { title: "與訓練搭配", description: "可依照目的與當天的身體狀況，選擇重量訓練或器械皮拉提斯。" },
+      { title: "專注呼吸與核心", description: "在核心床（Reformer）上，配合呼吸緩慢地活動身體。有意識地運用身體深層的肌群，以鍛鍊核心、建立良好姿勢為目標。" },
+      { title: "一對一，容易開始", description: "教練會調整彈簧的強度來改變負荷，並在過程中確認您的動作。身體較僵硬或很久沒運動的人，也能依照自己的步調練習。" },
+      { title: "依目的選擇訓練或皮拉提斯", description: "想好好鍛鍊的日子就選私人訓練，想重新檢視身體使用方式的日子就選器械皮拉提斯。不需另外到其他工作室上課，每次課程都能選擇。" },
     ], imageAlt: "在Salute御所南工作室使用核心床進行器械皮拉提斯的女性" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
@@ -305,9 +305,9 @@ export const translations: Record<Lang, Dict> = {
       { title: "자세 교정", description: "굽은 등, 라운드 숄더, 골반 전방 경사 등 자세 습관을 확인한 뒤, 자세를 받쳐 주는 근육 트레이닝과 스트레칭을 조합해 곧은 자세를 목표로 합니다. 입회 후에는 머신 필라테스도 선택하실 수 있습니다." },
     ], note: "아직 목표가 정해지지 않으셨어도 괜찮습니다. 체험 세션 상담에서 함께 목표를 정해 보세요." },
     pilates: { kicker: "Pilates", title: "머신 필라테스도 선택할 수 있습니다", lead: "퍼스널 트레이닝과 퍼스널 머신 필라테스, 둘 다 선택하실 수 있습니다. 추가 요금은 없습니다.", points: [
-      { title: "자세 교정・코어 강화", description: "속근육(코어)을 의식하며 움직이기 때문에, 자세 교정을 원하시는 분께 잘 맞습니다." },
-      { title: "운동이 서툴러도 시작하기 쉬움", description: "머신의 스프링이 움직임을 도와주기 때문에, 몸이 뻣뻣하거나 오랜만에 운동하는 분도 무리 없이 시작할 수 있습니다." },
-      { title: "트레이닝과 함께", description: "목적이나 그날의 컨디션에 맞춰 근력 트레이닝과 머신 필라테스 중에서 선택할 수 있습니다." },
+      { title: "호흡과 코어에 집중", description: "리포머라는 머신 위에서 호흡에 맞춰 천천히 움직입니다. 몸 깊은 곳의 근육(속근육)을 의식하면서, 코어를 다지고 자세를 만들어 가는 것을 목표로 합니다." },
+      { title: "1:1이라 시작하기 좋은 필라테스", description: "트레이너가 스프링 강도를 바꿔 부하를 조절하고, 동작을 확인하면서 진행합니다. 몸이 뻣뻣하거나 오랜만에 운동하시는 분도 자신의 페이스대로 하실 수 있습니다." },
+      { title: "트레이닝과 필라테스, 목적에 맞게", description: "제대로 단련하고 싶은 날은 트레이닝, 몸 쓰는 법을 다시 살펴보고 싶은 날은 머신 필라테스. 다른 스튜디오에 다닐 필요 없이, 세션마다 선택하실 수 있습니다." },
     ], imageAlt: "Salute 고쇼미나미 스튜디오에서 리포머로 머신 필라테스를 하는 여성" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
