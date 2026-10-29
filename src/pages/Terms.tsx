@@ -91,14 +91,18 @@ const Terms = () => {
             {/* Content */}
             <article className="max-w-3xl space-y-10 font-body text-foreground/85 leading-relaxed">
               <p className="text-base md:text-[15px]">
-                この利用規約（以下「本規約」）は、パーソナルジムSalute御所南（以下「当ジム」）が提供するパーソナルトレーニングサービス（以下「本サービス」）の利用条件を定めるものです。会員様（以下「会員」）には、本規約に同意のうえ、本サービスをご利用いただきます。
+                この利用規約（以下「本規約」）は、パーソナルジムSalute御所南（以下「当ジム」）が提供するパーソナルトレーニングおよびマシンピラティスのサービス（以下「本サービス」）の利用条件を定めるものです。会員様（以下「会員」）には、本規約に同意のうえ、本サービスをご利用いただきます。
               </p>
 
               <section>
                 <ArticleHeading id="art1" num="第1条" title="適用" />
-                <p>
-                  本規約は、会員と当ジムとの間の本サービスの利用に関わる一切の関係に適用されるものとします。
-                </p>
+                <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
+                  <li>本規約は、会員と当ジムとの間の本サービスの利用に関わる一切の関係に適用されるものとします。</li>
+                  <li>
+                    会員は、月額プランの各回で、パーソナルトレーニングまたはマシンピラティスのいずれかを選択できます。本規約で「トレーニング」というときは、マシンピラティスを含むものとします。
+                  </li>
+                  <li>体験トレーニングは、パーソナルトレーニングのみとします。</li>
+                </ol>
               </section>
 
               <section>
@@ -267,7 +271,7 @@ const Terms = () => {
 
               <div className="pt-8 border-t border-border text-sm text-muted-foreground space-y-1">
                 <p>制定日：2024年11月</p>
-                <p>最終更新日：2026年10月16日</p>
+                <p>最終更新日：2026年10月29日</p>
               </div>
 
               <div className="bg-secondary/50 border border-border rounded-sm p-5 md:p-6 space-y-1">

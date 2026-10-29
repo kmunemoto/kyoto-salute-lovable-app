@@ -48,7 +48,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "ボディメイク", description: "筋肉をつけながら体脂肪を落とし、メリハリのある体へ。フィジーク大会への出場経験を持つトレーナーが、なりたい体に合わせてメニューを組み立てます。" },
       { title: "姿勢改善", description: "猫背・巻き肩・反り腰など、姿勢のクセを確認。姿勢を支える筋肉のトレーニングとストレッチを組み合わせて、きれいな姿勢を目指します。ご入会後は、マシンピラティスもお選びいただけます。" },
     ], note: "目的が決まっていなくても大丈夫です。体験トレーニングのカウンセリングで、一緒に目標を決めましょう。" },
-    pilates: { kicker: "Pilates", title: "マシンピラティスも\n選べます", lead: "ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとリフォーマー（専用マシン）を使ったマシンピラティスを選べます。追加料金はかかりません。完全個室なので、周りの目を気にせず取り組めます。", points: [
+    pilates: { kicker: "Pilates", title: "マシンピラティスも\n選べます", lead: "ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとリフォーマー（専用マシン）を使ったマシンピラティス（1回50分）を選べます。追加料金はかかりません。完全個室なので、周りの目を気にせず取り組めます。", points: [
       { title: "姿勢・体幹づくりに", description: "体の奥の筋肉（インナーマッスル）を意識しながら動くので、姿勢改善に取り組みたい方にぴったりです。" },
       { title: "運動が苦手な方も始めやすい", description: "マシンのバネが動きを支えてくれるので、体が硬い方や運動が久しぶりの方でも無理なく始められます。" },
       { title: "トレーニングと組み合わせて", description: "目的やその日の体調に合わせて、筋力トレーニングとマシンピラティスを選べます。" },
@@ -68,9 +68,9 @@ export const translations: Record<Lang, Dict> = {
       { label: "30代女性・会社員", comment: "筋トレ初心者ですが、楽しく通っています。ウェア・シューズ等無料レンタルなので手ぶらで通え、前後の予定があっても通いやすいです。" },
     ], fromGoogle: "Google口コミより" },
     pricing: { kicker: "Plan", title: "料金プラン", freeNote: "入会金・事務手数料 ¥0", sub: "3つのプランからお客様の目標に合わせてお選びいただけます。", popular: "おすすめ", perMonth: "（税込）/月", dropInUnit: "（税込）/回", dropInCta: "都度払いで予約する", description: "お客様の目標やライフスタイルに合わせて、3つのプランからお選びいただけます。入会金・事務手数料は¥0。すべてのプランで完全マンツーマン指導・ウェア無料レンタル付きです。", plans: [
-      { name: "月4回プラン", price: "¥22,000", perSession: "1回あたり ¥5,500", description: "健康維持や運動不足解消にオススメ", features: ["1セッション50分＋ストレッチ10分", "月4回まで利用可能", "マシンピラティスも選べる", "完全手ぶらOK"] },
-      { name: "月6回プラン", price: "¥30,000", perSession: "1回あたり ¥5,000", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分＋ストレッチ10分", "月6回まで利用可能", "マシンピラティスも選べる", "完全手ぶらOK"] },
-      { name: "月8回プラン", price: "¥38,000", perSession: "1回あたり ¥4,750", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分＋ストレッチ10分", "月8回まで利用可能", "マシンピラティスも選べる", "完全手ぶらOK"] },
+      { name: "月4回プラン", price: "¥22,000", perSession: "1回あたり ¥5,500", description: "健康維持や運動不足解消にオススメ", features: ["1セッション50分＋ストレッチ10分", "月4回まで利用可能", "マシンピラティス（50分）も選べる", "完全手ぶらOK"] },
+      { name: "月6回プラン", price: "¥30,000", perSession: "1回あたり ¥5,000", description: "週1回以上トレーニングしたい方にオススメ", features: ["1セッション50分＋ストレッチ10分", "月6回まで利用可能", "マシンピラティス（50分）も選べる", "完全手ぶらOK"] },
+      { name: "月8回プラン", price: "¥38,000", perSession: "1回あたり ¥4,750", description: "ダイエットやボディメイクにオススメ", features: ["1セッション50分＋ストレッチ10分", "月8回まで利用可能", "マシンピラティス（50分）も選べる", "完全手ぶらOK"] },
     ], dropIn: { name: "単発プラン（ビジター・観光客向け）", price: "¥8,000", perSession: "1回", description: "会員登録不要・手ぶらOK", features: ["1セッション50分", "会員登録不要", "ウェア・シューズ無料レンタル", "手ぶらOK"] }, cta: "まずは体験してみる" },
     flow: { kicker: "Flow", title: "体験トレーニングの流れ", steps: [
       { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。", imageAlt: "スマートフォンで体験トレーニングを予約している様子" },
@@ -80,7 +80,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "よくある質問", items: [
       { question: "体験トレーニングではどんなことをしますか？", answer: "カウンセリングで目標やお悩みをお聞きした後、実際の50分間のパーソナルトレーニングを体験していただきます。ウェアとシューズは無料レンタルがありますので、手ぶらでお越しください。" },
       { question: "体験トレーニングの料金はいくらですか？", answer: "体験トレーニングの料金は¥3,000です。体験当日にご入会いただいた場合は、体験料は¥0（無料）となります。体験当日にご入会されない場合は、¥3,000を頂戴します。" },
-      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます（追加料金はかかりません）。なお、体験トレーニングはパーソナルトレーニングのみとなります。" },
+      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。なお、体験トレーニングはパーソナルトレーニングのみとなります。" },
       { question: "運動経験がないのですが、大丈夫でしょうか？", answer: "もちろん大丈夫です！来店されるほとんどの方が初めての方ばかりです。一人一人の運動経験や体力・目的にあったトレーニングをトレーナーが丁寧に指導いたします。" },
       { question: "持ち物はありますか？", answer: "ウェアや靴に加えてお水もご用意しておりますので、手ぶらでお気軽にお越しいただけます。" },
       { question: "プランの有効期限はどうなっていますか？", answer: "プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。" },
@@ -112,7 +112,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "Body Shaping", description: "Build muscle while losing body fat for a toned, defined body. A trainer with physique competition experience designs your program around the body you want." },
       { title: "Posture Improvement", description: "We check posture habits such as a rounded back, rounded shoulders, or an arched lower back, then combine training for the muscles that support good posture with stretching. After joining, you can also choose machine Pilates." },
     ], note: "Not sure about your goal yet? No problem — we'll set one together during the counseling in your trial session." },
-    pilates: { kicker: "Pilates", title: "Machine Pilates Is Also Available", lead: "After joining, you can choose personal training or machine Pilates on a reformer for each session of your monthly plan, at no extra cost. Sessions take place in a fully private room, so you can focus without worrying about others.", points: [
+    pilates: { kicker: "Pilates", title: "Machine Pilates Is Also Available", lead: "After joining, you can choose personal training or 50-minute machine Pilates on a reformer for each session of your monthly plan, at no extra cost. Sessions take place in a fully private room, so you can focus without worrying about others.", points: [
       { title: "Posture and core", description: "You move while engaging your deep core muscles, which makes it a great fit if you want to work on your posture." },
       { title: "Easy to start, even for beginners", description: "The machine's springs support your movements, so it's easy to start even if you're stiff or haven't exercised in a while." },
       { title: "Combine it with training", description: "Choose between strength training and machine Pilates depending on your goals and how you feel that day." },
@@ -131,9 +131,9 @@ export const translations: Record<Lang, Dict> = {
       { label: "Female, 30s — Office Worker", comment: "I'm new to strength training but really enjoying it. Sportswear and shoes are provided, so I can come straight from work without bringing anything." },
     ], fromGoogle: "From Google Reviews" },
     pricing: { kicker: "Plan", title: "Pricing Plans", freeNote: "Enrollment fee ¥0", sub: "Pick the plan that matches your goal.", popular: "Popular", perMonth: "(tax incl.) / month", dropInUnit: "(tax incl.) / session", dropInCta: "Book a Drop-in", description: "Choose from 3 monthly plans to match your goals. No enrollment fee. Every plan includes 1-on-1 training with free sportswear, shoes, towels and water.", plans: [
-      { name: "4 Sessions / Month", price: "¥22,000", perSession: "¥5,500 / session", description: "For staying healthy and active", features: ["50-minute session + 10-minute stretch", "Up to 4 sessions / month", "Machine Pilates also available", "Just come as you are"] },
-      { name: "6 Sessions / Month", price: "¥30,000", perSession: "¥5,000 / session", description: "For training once a week or more", features: ["50-minute session + 10-minute stretch", "Up to 6 sessions / month", "Machine Pilates also available", "Just come as you are"] },
-      { name: "8 Sessions / Month", price: "¥38,000", perSession: "¥4,750 / session", description: "For weight loss and body shaping", features: ["50-minute session + 10-minute stretch", "Up to 8 sessions / month", "Machine Pilates also available", "Just come as you are"] },
+      { name: "4 Sessions / Month", price: "¥22,000", perSession: "¥5,500 / session", description: "For staying healthy and active", features: ["50-minute session + 10-minute stretch", "Up to 4 sessions / month", "Machine Pilates (50 min) also available", "Just come as you are"] },
+      { name: "6 Sessions / Month", price: "¥30,000", perSession: "¥5,000 / session", description: "For training once a week or more", features: ["50-minute session + 10-minute stretch", "Up to 6 sessions / month", "Machine Pilates (50 min) also available", "Just come as you are"] },
+      { name: "8 Sessions / Month", price: "¥38,000", perSession: "¥4,750 / session", description: "For weight loss and body shaping", features: ["50-minute session + 10-minute stretch", "Up to 8 sessions / month", "Machine Pilates (50 min) also available", "Just come as you are"] },
     ], dropIn: { name: "Drop-in Personal Training (for travelers)", price: "¥8,000", perSession: "per session", description: "No membership required. All equipment provided. For travelers visiting Kyoto.", features: ["50-minute 1-on-1 session", "No membership required", "Training wear and shoes provided", "English-friendly support"] }, cta: "Book a Trial Session" },
     flow: { kicker: "Flow", title: "How It Works", steps: [
       { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds.", imageAlt: "Someone booking a trial session on a smartphone" },
@@ -143,7 +143,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "FAQ", items: [
       { question: "What happens during the trial session?", answer: "After a short consultation, you'll experience a real 50-minute personal training session. Sportswear, shoes, towels and water are all provided — just come as you are." },
       { question: "How much is the trial session?", answer: "The trial session is ¥3,000. If you sign up for a membership on the day of your trial, the fee is waived (¥0). If you decide not to join on the day, the ¥3,000 fee applies." },
-      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan, at no extra cost. Please note that trial sessions are personal training only." },
+      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan. Machine Pilates sessions are also 50 minutes, at no extra cost. Please note that trial sessions are personal training only." },
       { question: "I have no exercise experience. Is that OK?", answer: "Absolutely. Most of our clients had never trained before. Your trainer will guide you carefully based on your fitness level and goals." },
       { question: "What should I bring?", answer: "Nothing. Sportswear, shoes, towels and water are all provided free of charge." },
       { question: "Do you offer drop-in personal training for travelers?", answer: "Yes — our drop-in plan is ¥8,000 per session. No membership required, all training wear and equipment provided. You can book directly via our website or Instagram DM." },
@@ -176,7 +176,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "塑形", description: "在增加肌肉的同时减少体脂，打造线条分明的身材。拥有健体比赛参赛经验的教练，会根据您理想的身材安排训练内容。" },
       { title: "体态改善", description: "先确认驼背、圆肩、骨盆前倾等体态习惯，再结合支撑良好体态的肌肉训练与拉伸，以挺拔的体态为目标。入会后也可以选择器械普拉提。" },
     ], note: "还没有明确的目标也没关系。在体验课程的咨询中，我们会和您一起制定目标。" },
-    pilates: { kicker: "Pilates", title: "也可以选择器械普拉提", lead: "入会后，月度方案的每次课程都可以在私人训练与使用核心床（Reformer）的器械普拉提之间选择，无需额外费用。全程在完全私密的独立空间进行，无需在意他人目光。", points: [
+    pilates: { kicker: "Pilates", title: "也可以选择器械普拉提", lead: "入会后，月度方案的每次课程都可以在私人训练与使用核心床（Reformer）的器械普拉提（每次50分钟）之间选择，无需额外费用。全程在完全私密的独立空间进行，无需在意他人目光。", points: [
       { title: "改善体态・强化核心", description: "在运动中有意识地使用深层核心肌群，非常适合想改善体态的人。" },
       { title: "初学者也容易上手", description: "器械的弹簧会辅助动作，身体僵硬或很久没运动的人也能轻松开始。" },
       { title: "与训练搭配", description: "可根据目的和当天的身体状况，选择力量训练或器械普拉提。" },
@@ -195,9 +195,9 @@ export const translations: Record<Lang, Dict> = {
       { label: "30多岁女性・上班族", comment: "我是健身新手，但每次都很开心。运动服和鞋子都免费提供，可以空手前来非常方便。" },
     ], fromGoogle: "来自Google评价" },
     pricing: { kicker: "Plan", title: "价格方案", freeNote: "入会费・手续费 ¥0", sub: "请根据您的目标选择方案。", popular: "推荐", perMonth: "(含税)/月", dropInUnit: "(含税)/次", dropInCta: "预约单次训练", description: "可根据您的目标，从3个月度方案中选择。入会费・手续费0日元。所有方案均为一对一指导，运动服・鞋・毛巾・水免费提供。", plans: [
-      { name: "月4次方案", price: "¥22,000", perSession: "每次 ¥5,500", description: "适合维持健康与日常运动", features: ["每次50分钟＋拉伸10分钟", "每月最多4次", "也可选择器械普拉提", "空手前来即可"] },
-      { name: "月6次方案", price: "¥30,000", perSession: "每次 ¥5,000", description: "适合每周训练1次以上", features: ["每次50分钟＋拉伸10分钟", "每月最多6次", "也可选择器械普拉提", "空手前来即可"] },
-      { name: "月8次方案", price: "¥38,000", perSession: "每次 ¥4,750", description: "适合减脂与塑形", features: ["每次50分钟＋拉伸10分钟", "每月最多8次", "也可选择器械普拉提", "空手前来即可"] },
+      { name: "月4次方案", price: "¥22,000", perSession: "每次 ¥5,500", description: "适合维持健康与日常运动", features: ["每次50分钟＋拉伸10分钟", "每月最多4次", "也可选择器械普拉提（50分钟）", "空手前来即可"] },
+      { name: "月6次方案", price: "¥30,000", perSession: "每次 ¥5,000", description: "适合每周训练1次以上", features: ["每次50分钟＋拉伸10分钟", "每月最多6次", "也可选择器械普拉提（50分钟）", "空手前来即可"] },
+      { name: "月8次方案", price: "¥38,000", perSession: "每次 ¥4,750", description: "适合减脂与塑形", features: ["每次50分钟＋拉伸10分钟", "每月最多8次", "也可选择器械普拉提（50分钟）", "空手前来即可"] },
     ], dropIn: { name: "单次训练（适合来京都旅行的游客）", price: "¥8,000", perSession: "1次", description: "无需会员注册，全套装备免费提供，适合来京都旅行的游客。", features: ["50分钟一对一训练", "无需会员注册", "运动服・鞋免费提供", "可支持简单英语沟通"] }, cta: "预约体验课程" },
     flow: { kicker: "Flow", title: "体验课程流程", steps: [
       { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。", imageAlt: "正在用手机预约体验课程" },
@@ -207,7 +207,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "常见问题", items: [
       { question: "体验课程都做些什么？", answer: "进行简短咨询后，体验50分钟的真实私人训练课程。运动服与鞋子免费提供，空手前来即可。" },
       { question: "体验课程的费用是多少？", answer: "体验课程费用为3,000日元。若您在体验当天办理入会，体验费用即为0日元（免费）。若当天未入会，则需支付3,000日元。" },
-      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提（无需额外费用）。另外，体验课程仅提供私人训练。" },
+      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提。器械普拉提同样为每次50分钟，无需额外费用。另外，体验课程仅提供私人训练。" },
       { question: "没有运动经验也可以吗？", answer: "完全没问题。我们的大部分客户都是初学者，教练会根据您的体力与目标耐心指导。" },
       { question: "需要带什么吗？", answer: "无需准备任何物品。运动服・鞋・毛巾・饮用水全部免费提供。" },
       { question: "游客可以单次体验吗？", answer: "可以。单次训练每次8,000日元，无需会员注册，运动服与器材全部免费提供。可通过网站或Instagram DM预约。" },
@@ -240,7 +240,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "體態雕塑", description: "在增加肌肉的同時減少體脂肪，打造線條分明的身材。擁有健體比賽參賽經驗的教練，會依照您理想中的身材規劃訓練內容。" },
       { title: "姿勢改善", description: "先確認駝背、圓肩、骨盆前傾等姿勢習慣，再結合支撐良好姿勢的肌肉訓練與伸展，以端正的姿勢為目標。入會後也可以選擇器械皮拉提斯。" },
     ], note: "還沒有明確的目標也沒關係。在體驗課程的諮詢中，我們會與您一起訂定目標。" },
-    pilates: { kicker: "Pilates", title: "也可以選擇\n器械皮拉提斯", lead: "入會後，月度方案的每次課程都可以在私人訓練與使用核心床（Reformer）的器械皮拉提斯之間選擇，不需額外費用。全程在完全私密的獨立空間進行，不必在意他人的目光。", points: [
+    pilates: { kicker: "Pilates", title: "也可以選擇\n器械皮拉提斯", lead: "入會後，月度方案的每次課程都可以在私人訓練與使用核心床（Reformer）的器械皮拉提斯（每次50分鐘）之間選擇，不需額外費用。全程在完全私密的獨立空間進行，不必在意他人的目光。", points: [
       { title: "改善姿勢・強化核心", description: "在動作中有意識地運用深層核心肌群，非常適合想改善姿勢的人。" },
       { title: "初學者也容易上手", description: "器械的彈簧會輔助動作，身體僵硬或很久沒運動的人也能輕鬆開始。" },
       { title: "與訓練搭配", description: "可依照目的與當天的身體狀況，選擇重量訓練或器械皮拉提斯。" },
@@ -259,9 +259,9 @@ export const translations: Record<Lang, Dict> = {
       { label: "30多歲女性・上班族", comment: "我是健身新手，但每次都很開心。運動服與鞋子都免費提供，可以空手前來非常方便。" },
     ], fromGoogle: "來自Google評價" },
     pricing: { kicker: "Plan", title: "價格方案", freeNote: "入會費・手續費 ¥0", sub: "請依照您的目標選擇方案。", popular: "推薦", perMonth: "(含稅)/月", dropInUnit: "(含稅)/次", dropInCta: "預約單次訓練", description: "可依照您的目標，從3個月度方案中選擇。入會費・手續費0日圓。所有方案皆為一對一指導，運動服・鞋・毛巾・水免費提供。", plans: [
-      { name: "月4次方案", price: "¥22,000", perSession: "每次 ¥5,500", description: "適合維持健康與日常運動", features: ["每次50分鐘＋伸展10分鐘", "每月最多4次", "也可選擇器械皮拉提斯", "空手前來即可"] },
-      { name: "月6次方案", price: "¥30,000", perSession: "每次 ¥5,000", description: "適合每週訓練1次以上", features: ["每次50分鐘＋伸展10分鐘", "每月最多6次", "也可選擇器械皮拉提斯", "空手前來即可"] },
-      { name: "月8次方案", price: "¥38,000", perSession: "每次 ¥4,750", description: "適合減脂與體態雕塑", features: ["每次50分鐘＋伸展10分鐘", "每月最多8次", "也可選擇器械皮拉提斯", "空手前來即可"] },
+      { name: "月4次方案", price: "¥22,000", perSession: "每次 ¥5,500", description: "適合維持健康與日常運動", features: ["每次50分鐘＋伸展10分鐘", "每月最多4次", "也可選擇器械皮拉提斯（50分鐘）", "空手前來即可"] },
+      { name: "月6次方案", price: "¥30,000", perSession: "每次 ¥5,000", description: "適合每週訓練1次以上", features: ["每次50分鐘＋伸展10分鐘", "每月最多6次", "也可選擇器械皮拉提斯（50分鐘）", "空手前來即可"] },
+      { name: "月8次方案", price: "¥38,000", perSession: "每次 ¥4,750", description: "適合減脂與體態雕塑", features: ["每次50分鐘＋伸展10分鐘", "每月最多8次", "也可選擇器械皮拉提斯（50分鐘）", "空手前來即可"] },
     ], dropIn: { name: "單次訓練（適合來京都旅行的遊客）", price: "¥8,000", perSession: "1次", description: "無需加入會員，全套裝備免費提供，適合來京都旅行的遊客。", features: ["50分鐘一對一訓練", "無需加入會員", "運動服・鞋免費提供", "可提供簡單英語溝通"] }, cta: "預約體驗課程" },
     flow: { kicker: "Flow", title: "體驗課程流程", steps: [
       { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。", imageAlt: "正在用手機預約體驗課程" },
@@ -271,7 +271,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "常見問題", items: [
       { question: "體驗課程會進行哪些內容？", answer: "進行簡短諮詢後，體驗50分鐘的真實私人訓練課程。運動服與鞋子免費提供，空手前來即可。" },
       { question: "體驗課程的費用是多少？", answer: "體驗課程費用為3,000日圓。若您於體驗當天辦理入會，體驗費用即為0日圓（免費）。若當天未入會，則需支付3,000日圓。" },
-      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯（不需額外費用）。另外，體驗課程僅提供私人訓練。" },
+      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯。器械皮拉提斯同樣為每次50分鐘，不需額外費用。另外，體驗課程僅提供私人訓練。" },
       { question: "沒有運動經驗也可以嗎？", answer: "完全沒問題。我們大部分的顧客都是初學者，教練會依照您的體力與目標耐心指導。" },
       { question: "需要帶什麼東西嗎？", answer: "無需準備任何物品。運動服・鞋・毛巾・飲用水全部免費提供。" },
       { question: "遊客可以單次體驗嗎？", answer: "可以。單次訓練每次8,000日圓，無需加入會員，運動服與器材全部免費提供。可透過網站或Instagram私訊預約。" },
@@ -304,7 +304,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "바디 메이킹", description: "근육을 키우면서 체지방을 줄여 탄탄한 몸으로. 피지크 대회 출전 경험이 있는 트레이너가 원하는 몸에 맞춰 프로그램을 구성합니다." },
       { title: "자세 교정", description: "굽은 등, 라운드 숄더, 골반 전방 경사 등 자세 습관을 확인한 뒤, 자세를 받쳐 주는 근육 트레이닝과 스트레칭을 조합해 곧은 자세를 목표로 합니다. 입회 후에는 머신 필라테스도 선택하실 수 있습니다." },
     ], note: "아직 목표가 정해지지 않으셨어도 괜찮습니다. 체험 세션 상담에서 함께 목표를 정해 보세요." },
-    pilates: { kicker: "Pilates", title: "머신 필라테스도 선택할 수 있습니다", lead: "입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 리포머(전용 머신)를 사용하는 머신 필라테스 중에서 선택하실 수 있으며, 추가 요금은 없습니다. 완전 개인실이라 다른 사람의 시선을 신경 쓰지 않고 집중할 수 있습니다.", points: [
+    pilates: { kicker: "Pilates", title: "머신 필라테스도 선택할 수 있습니다", lead: "입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 리포머(전용 머신)를 사용하는 머신 필라테스(1회 50분) 중에서 선택하실 수 있으며, 추가 요금은 없습니다. 완전 개인실이라 다른 사람의 시선을 신경 쓰지 않고 집중할 수 있습니다.", points: [
       { title: "자세 교정・코어 강화", description: "속근육(코어)을 의식하며 움직이기 때문에, 자세 교정을 원하시는 분께 잘 맞습니다." },
       { title: "운동이 서툴러도 시작하기 쉬움", description: "머신의 스프링이 움직임을 도와주기 때문에, 몸이 뻣뻣하거나 오랜만에 운동하는 분도 무리 없이 시작할 수 있습니다." },
       { title: "트레이닝과 함께", description: "목적이나 그날의 컨디션에 맞춰 근력 트레이닝과 머신 필라테스 중에서 선택할 수 있습니다." },
@@ -323,9 +323,9 @@ export const translations: Record<Lang, Dict> = {
       { label: "30대 여성・회사원", comment: "근력 운동은 처음이지만 즐겁게 다니고 있어요. 운동복과 신발이 무료라 빈손으로 와도 되어 일정 사이에 들르기에도 편합니다." },
     ], fromGoogle: "Google 후기에서" },
     pricing: { kicker: "Plan", title: "요금 플랜", freeNote: "입회비・사무수수료 ¥0", sub: "목표에 맞춰 플랜을 선택해 주세요.", popular: "추천", perMonth: "(부가세 포함)/월", dropInUnit: "(부가세 포함)/회", dropInCta: "드롭인 예약하기", description: "목표에 맞춰 3가지 월간 플랜 중에서 선택하실 수 있습니다. 입회비・사무수수료 ¥0. 모든 플랜은 1:1 지도이며, 운동복・신발・수건・물이 무료로 제공됩니다.", plans: [
-      { name: "월 4회 플랜", price: "¥22,000", perSession: "1회 ¥5,500", description: "건강 유지와 운동 부족 해소", features: ["1회 50분 + 스트레칭 10분", "월 최대 4회", "머신 필라테스도 선택 가능", "빈손으로 OK"] },
-      { name: "월 6회 플랜", price: "¥30,000", perSession: "1회 ¥5,000", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분 + 스트레칭 10분", "월 최대 6회", "머신 필라테스도 선택 가능", "빈손으로 OK"] },
-      { name: "월 8회 플랜", price: "¥38,000", perSession: "1회 ¥4,750", description: "다이어트와 바디 메이킹에", features: ["1회 50분 + 스트레칭 10분", "월 최대 8회", "머신 필라테스도 선택 가능", "빈손으로 OK"] },
+      { name: "월 4회 플랜", price: "¥22,000", perSession: "1회 ¥5,500", description: "건강 유지와 운동 부족 해소", features: ["1회 50분 + 스트레칭 10분", "월 최대 4회", "머신 필라테스(50분)도 선택 가능", "빈손으로 OK"] },
+      { name: "월 6회 플랜", price: "¥30,000", perSession: "1회 ¥5,000", description: "주 1회 이상 트레이닝하고 싶은 분께", features: ["1회 50분 + 스트레칭 10분", "월 최대 6회", "머신 필라테스(50분)도 선택 가능", "빈손으로 OK"] },
+      { name: "월 8회 플랜", price: "¥38,000", perSession: "1회 ¥4,750", description: "다이어트와 바디 메이킹에", features: ["1회 50분 + 스트레칭 10분", "월 최대 8회", "머신 필라테스(50분)도 선택 가능", "빈손으로 OK"] },
     ], dropIn: { name: "1회 이용 (교토 여행객용)", price: "¥8,000", perSession: "1회", description: "회원가입 없이 1회 이용 가능. 교토 여행 중에도 이용하기 좋습니다.", features: ["50분 1:1 트레이닝", "회원가입 불필요", "운동복・신발 무료 제공", "간단한 영어 응대 가능"] }, cta: "체험 예약" },
     flow: { kicker: "Flow", title: "체험 세션 안내", steps: [
       { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다.", imageAlt: "스마트폰으로 체험 세션을 예약하는 모습" },
@@ -335,7 +335,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "자주 묻는 질문", items: [
       { question: "체험 세션에서는 무엇을 하나요?", answer: "간단한 상담 후 실제와 동일한 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 운동복・신발・수건・물 모두 무료로 제공되므로 빈손으로 오시면 됩니다." },
       { question: "체험 세션 요금은 얼마인가요?", answer: "체험 세션 요금은 ¥3,000입니다. 체험 당일에 회원 등록을 하시면 체험료는 ¥0(무료)이 됩니다. 당일에 등록하지 않으실 경우에는 ¥3,000을 받고 있습니다." },
-      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다(추가 요금 없음). 단, 체험 세션은 퍼스널 트레이닝만 가능합니다." },
+      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다. 머신 필라테스도 1회 50분이며, 추가 요금은 없습니다. 단, 체험 세션은 퍼스널 트레이닝만 가능합니다." },
       { question: "운동 경험이 없는데 괜찮나요?", answer: "물론입니다. 대부분의 고객이 처음 시작하시는 분들입니다. 체력과 목표에 맞춰 트레이너가 꼼꼼하게 지도합니다." },
       { question: "준비물이 필요한가요?", answer: "필요 없습니다. 운동복・신발・수건・물 모두 무료로 준비되어 있습니다." },
       { question: "여행 중에 1회만 이용할 수도 있나요?", answer: "네, 가능합니다. 1회 이용 요금은 ¥8,000이며 회원가입은 필요하지 않습니다. 운동복과 장비 모두 무료로 제공되며, 웹사이트 또는 Instagram DM으로 예약하실 수 있습니다." },

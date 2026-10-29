@@ -15,11 +15,11 @@ const PILATES = /ピラティス|Pilates|普拉提|皮拉提斯|필라테스/;
 
 // 料金カードの項目
 const CARD: Record<keyof typeof translations, string> = {
-  ja: "マシンピラティスも選べる",
-  en: "Machine Pilates also available",
-  zh: "也可选择器械普拉提",
-  zhTW: "也可選擇器械皮拉提斯",
-  ko: "머신 필라테스도 선택 가능",
+  ja: "マシンピラティス（50分）も選べる",
+  en: "Machine Pilates (50 min) also available",
+  zh: "也可选择器械普拉提（50分钟）",
+  zhTW: "也可選擇器械皮拉提斯（50分鐘）",
+  ko: "머신 필라테스(50분)도 선택 가능",
 };
 
 // 「体験はトレーニングのみ」の言い方（セクションの注記と FAQ の両方に入れる）
@@ -83,7 +83,25 @@ describe("マシンピラティス（pilates）", () => {
     const m = html.match(/"name": "マシンピラティスは選べますか？",\s*"acceptedAnswer": \{\s*"@type": "Answer",\s*"text": "([^"]*)"/);
     expect(m, "FAQPage にピラティスの質問がない").not.toBeNull();
     expect(m![1]).toBe(ja.answer);
-    expect(html.match(/マシンピラティスも選べる、完全手ぶらOK/g)).toHaveLength(3);
+    expect(html.match(/マシンピラティス（50分）も選べる、完全手ぶらOK/g)).toHaveLength(3);
+  });
+
+  it.each(LANGS)("%s: ピラティスの説明（セクション・カード・FAQ）は 50 分で、ストレッチには触れない", (lang) => {
+    const tr = translations[lang];
+    const p = tr.pilates;
+    const faq = tr.faq.items.find((i) => PILATES.test(i.question))!;
+    const texts = [p.title, p.lead, p.trialNote, ...p.points.flatMap((i) => [i.title, i.description]), CARD[lang], faq.answer];
+    for (const s of texts) expect(s, s).not.toMatch(/ストレッチ|stretch|拉伸|伸展|스트레칭/i);
+    expect(CARD[lang]).toContain("50");
+    expect(p.lead).toContain("50");
+    expect(faq.answer).toContain("50");
+  });
+
+  it("利用規約：本サービスにマシンピラティスを含み、体験はトレーニングのみ", () => {
+    const terms = read("src/pages/Terms.tsx");
+    expect(terms).toContain("パーソナルトレーニングおよびマシンピラティスのサービス（以下「本サービス」）");
+    expect(terms).toContain("本規約で「トレーニング」というときは、マシンピラティスを含むものとします");
+    expect(terms).toContain("体験トレーニングは、パーソナルトレーニングのみとします");
   });
 
   it("ブログ自動生成の前提に「体験はトレーニングのみ」がある", () => {
