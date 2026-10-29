@@ -6,6 +6,7 @@ import { translations } from "@/i18n/translations";
 // マシンピラティス（PilatesSection・料金プラン・よくあるご質問）。
 // ご入会後、月額プランの1回ごとにトレーニングかマシンピラティスを選べる（追加料金なし）。
 // 体験トレーニングはパーソナルトレーニングのみ。単発プラン（旅行者向け）は対象外。
+// マシンピラティスもトレーナーとの1対1で、トレーナーがバネの強さで負荷を調整する。呼吸に合わせてゆっくり動く。
 
 const LANGS = Object.keys(translations) as (keyof typeof translations)[];
 const root = path.resolve(__dirname, "../..");
@@ -40,6 +41,30 @@ const AFTER_JOIN: Record<keyof typeof translations, string> = {
   ko: "입회 후에는",
 };
 
+// 「1対1」の言い方（02 に入れる）
+const ONE_ON_ONE: Record<keyof typeof translations, string> = {
+  ja: "1対1",
+  en: "1-on-1",
+  zh: "一对一",
+  zhTW: "一對一",
+  ko: "1:1",
+};
+
+// 前の 01〜03 にあった言い方。根拠が弱い・半分しか正しくない（多くの種目でバネは支えではなく負荷）・
+// 安全を約束するように読める、という理由でやめたので、戻さない。
+const STALE_POINTS = [
+  /姿勢改善に取り組みたい方にぴったり/,
+  /バネが動きを支え/,
+  /無理なく/,
+  /springs support/i,
+  /弹簧会辅助/,
+  /彈簧會輔助/,
+  /스프링이 움직임을 도와/,
+];
+
+// 効果を約束する言い方（改善・矯正など）は、ピラティスの紹介に使わない（「〜を目指します」と書く）
+const CLAIMS = /改善|矯正|矫正|improv|개선|교정/i;
+
 describe("マシンピラティス（pilates）", () => {
   it.each(LANGS)("%s: 3 項目で、空の文言がない", (lang) => {
     const p = translations[lang].pilates;
@@ -52,6 +77,19 @@ describe("マシンピラティス（pilates）", () => {
   it("日本語の見出しとリード", () => {
     expect(translations.ja.pilates.title.replace("\n", "")).toBe("マシンピラティスも選べます");
     expect(translations.ja.pilates.lead.replace(/\n/g, "")).toBe("パーソナルトレーニングとパーソナルマシンピラティス、どちらも選べます。追加料金はかかりません。");
+  });
+
+  it("日本語の 01〜03 の見出し", () => {
+    expect(translations.ja.pilates.points.map((i) => i.title)).toEqual(["呼吸と体幹を意識して", "1対1だから始めやすい", "トレーニングと使い分けて"]);
+  });
+
+  it.each(LANGS)("%s: 02 に「1対1」があり、前の言い方や効果を約束する言い方がない", (lang) => {
+    const p = translations[lang].pilates;
+    expect(`${p.points[1].title} ${p.points[1].description}`).toContain(ONE_ON_ONE[lang]);
+    for (const s of [p.title, p.lead, ...p.points.flatMap((i) => [i.title, i.description])]) {
+      for (const re of STALE_POINTS) expect(s, `${lang}: ${re}`).not.toMatch(re);
+      expect(s, s).not.toMatch(CLAIMS);
+    }
   });
 
   it.each(LANGS)("%s: 月額プランのカードすべてに「マシンピラティスも選べる」、単発プランには書かない", (lang) => {
@@ -98,8 +136,11 @@ describe("マシンピラティス（pilates）", () => {
     expect(terms).toContain("体験トレーニングは、パーソナルトレーニングのみとします");
   });
 
-  it("ブログ自動生成の前提に「体験はトレーニングのみ」がある", () => {
-    expect(read("scripts/generate-blog-post.mjs")).toContain("体験トレーニングはパーソナルトレーニングのみ");
+  it("ブログ自動生成の前提に「体験はトレーニングのみ」「1対1でバネの強さを調整」がある", () => {
+    const gen = read("scripts/generate-blog-post.mjs");
+    expect(gen).toContain("体験トレーニングはパーソナルトレーニングのみ");
+    expect(gen).toContain("トレーナーとの1対1で、トレーナーがバネの強さで負荷を調整");
+    expect(gen).toContain("「バネが動きを支えてくれる」「無理なく」とは書かない");
   });
 
   it("画像ファイルがある", () => {
