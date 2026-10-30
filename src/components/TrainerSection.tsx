@@ -6,6 +6,10 @@ import type { TrainerProfile } from "@/i18n/translations";
 // 写真は translations の trainer.members の並び順で当てる。写真がまだない人は、文章だけで表示する。
 const photos: (string | undefined)[] = [trainerPhoto];
 
+// いったん非表示にしているトレーナー（nameRoman で指定）。ここから外すと、また表示される。
+// 表示が2人以上に戻るときは、英語の見出し（translations の en.trainer.title）も「Our Trainers」に戻す。
+const hidden = new Set(["Yonetomi Yoshiko"]);
+
 const Field = ({ label, children }: { label: string; children: ReactNode }) => (
   <div>
     <h4 className="text-gold/80 text-xs tracking-[0.2em] uppercase font-body mb-2">{label}</h4>
@@ -57,9 +61,10 @@ const TrainerSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-gym-dark-foreground">{tr.title}</h2>
         </div>
         <div className={`max-w-4xl mx-auto${keep}`}>
-          {tr.members.map((m, i) => {
-            const photo = photos[i];
-            return (
+          {tr.members
+            .map((m, i) => ({ m, photo: photos[i] }))
+            .filter(({ m }) => !hidden.has(m.nameRoman))
+            .map(({ m, photo }, i) => (
               <div key={m.name} className={i > 0 ? "mt-8 pt-12 lg:pt-16 border-t border-gym-dark-foreground/10" : ""}>
                 {photo ? (
                   <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -87,8 +92,7 @@ const TrainerSection = () => {
                   </div>
                 )}
               </div>
-            );
-          })}
+            ))}
         </div>
       </div>
     </section>
