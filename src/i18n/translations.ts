@@ -8,6 +8,9 @@ export const LANGS: { code: Lang; label: string }[] = [
   { code: "ko", label: "한국어" },
 ];
 
+// トレーナー1人分のプロフィール（トレーナー紹介に、members の順に並ぶ）
+export type TrainerProfile = { name: string; nameRoman: string; role: string; qual: string; career: string; message: string; greetingParagraphs: string[] };
+
 type Dict = {
   meta: { title: string; description: string };
   nav: { features: string; pilates: string; trainer: string; voice: string; plan: string; faq: string; access: string; consultation: string; blog: string };
@@ -18,7 +21,7 @@ type Dict = {
   goals: { kicker: string; title: string; sub: string; items: { title: string; description: string }[]; note: string };
   pilates: { kicker: string; title: string; lead: string; points: { title: string; description: string }[]; imageAlt: string };
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
-  trainer: { kicker: string; title: string; name: string; nameRoman: string; role: string; qualLabel: string; qual: string; careerLabel: string; career: string; messageLabel: string; message: string; greetingLabel: string; greetingParagraphs: string[] };
+  trainer: { kicker: string; title: string; qualLabel: string; careerLabel: string; messageLabel: string; greetingLabel: string; members: TrainerProfile[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
   pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; cta: string };
   flow: { kicker: string; title: string; steps: { title: string; description: string; imageAlt: string }[]; footer: string; bookText: string; bookLinkLabel: string };
@@ -56,11 +59,18 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
-    trainer: { kicker: "Trainer", title: "トレーナー紹介", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 代表トレーナー", qualLabel: "保有資格", qual: "栄養士", careerLabel: "経歴", career: "四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。また、フィジーク大会への出場経験を持ち、減量から体づくりまでのプロセスを自身の体で経験。その実体験を、運動が初めての方一人ひとりに合わせた指導に活かしている。", messageLabel: "メッセージ", message: "「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」", greetingLabel: "トレーナーからのご挨拶", greetingParagraphs: [
-      "これまで多くのお客様のダイエット指導を通じて、共通する2つの悩みに向き合ってきました。それは、「自分に合ったダイエット法がわからない」、そして「運動が続かない」という問題です。",
-      "自己流のダイエット法に挑戦し、一時的に体重を落とせても、無理な食事制限や誤った運動方法で代謝が低下し、停滞期に突入。結果としてリバウンドを繰り返し、以前よりも体重が増えてしまう…。これは多くの方が経験する悪循環です。さらに、体重は減ったものの見た目に大きな変化が現れないと感じる方も少なくありません。",
-      "Salute御所南では、そうした悩みを根本から解決するために、お客様一人ひとりのライフスタイルに寄り添った持続可能なダイエットプランと結果につながる運動習慣のサポートを提供しています。",
-      "健康的に、そして美しく変わるための第一歩を、一緒に踏み出しましょう。",
+    trainer: { kicker: "Trainer", title: "トレーナー紹介", qualLabel: "保有資格", careerLabel: "経歴", messageLabel: "メッセージ", greetingLabel: "トレーナーからのご挨拶", members: [
+      { name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 代表トレーナー", qual: "栄養士", career: "四条烏丸のパーソナルジムにて店長として勤務。月140組以上の指導経験を積み、2024年11月より「パーソナルジムSalute御所南」のトレーナーに就任。また、フィジーク大会への出場経験を持ち、減量から体づくりまでのプロセスを自身の体で経験。その実体験を、運動が初めての方一人ひとりに合わせた指導に活かしている。", message: "「運動が苦手な方、ジムが初めての方もご安心ください。皆様の目標に向けて全力でサポートさせていただきます！」", greetingParagraphs: [
+        "これまで多くのお客様のダイエット指導を通じて、共通する2つの悩みに向き合ってきました。それは、「自分に合ったダイエット法がわからない」、そして「運動が続かない」という問題です。",
+        "自己流のダイエット法に挑戦し、一時的に体重を落とせても、無理な食事制限や誤った運動方法で代謝が低下し、停滞期に突入。結果としてリバウンドを繰り返し、以前よりも体重が増えてしまう…。これは多くの方が経験する悪循環です。さらに、体重は減ったものの見た目に大きな変化が現れないと感じる方も少なくありません。",
+        "Salute御所南では、そうした悩みを根本から解決するために、お客様一人ひとりのライフスタイルに寄り添った持続可能なダイエットプランと結果につながる運動習慣のサポートを提供しています。",
+        "健康的に、そして美しく変わるための第一歩を、一緒に踏み出しましょう。",
+      ] },
+      { name: "米富 佳子", nameRoman: "Yonetomi Yoshiko", role: "マシンピラティス担当トレーナー", qual: "PYLA認定インストラクター（マシンピラティス）\n全米ヨガアライアンス認定 RYT200", career: "2023年よりヨガインストラクターとして、スタジオや体育館、オンラインなどで初心者からシニアまで幅広い方々を指導。2025年からはマシンピラティスインストラクターとしても活動。プライベートレッスンでの指導経験も持つ。", message: "「完璧を目指さなくても大丈夫です。皆様と同じ目線で、楽しみながら一緒に体を動かしていきましょう！」", greetingParagraphs: [
+        "マシンピラティスの指導では、解剖学をもとに「体の土台を整えること」を大切にしています。同じ動きでも、どこを意識するかで体の反応は大きく変わります。「どこを使っているのか」「どう動くと負担が少ないのか」を丁寧にお伝えし、運動が苦手な方にも、狙ったところに効いている感覚をつかんでいただけるよう心がけています。",
+        "私自身、もともと運動は得意ではありませんでした。年齢とともに体の衰えを感じてヨガを始め、マシンピラティスを取り入れるうちに、歩くことや走ることも楽しめるようになりました。",
+        "だからこそ、「もう無理」「今さら」と感じている方にも、「まだまだできる」ということをお伝えしたいと思っています。お一人おひとりのペースを大切にしながら、ご自分の体を知るお手伝いができればうれしいです。",
+      ] },
     ] },
     voice: { kicker: "Voice", title: "お客様の声", googleReviews: "Google口コミ 17件", changesTitle: "お客様の変化", voiceTitle: "通っているお客様の声", disclaimer: "※効果には個人差があります", dietLabel: "30代女性・ダイエット", bodymakeLabel: "40代男性・ボディメイク", dietResult: "体重 -4.8kg　体脂肪率 -3.2%", bodymakeResult: "体重 +1.5kg（筋肉増加）　体脂肪率 -4.1%", testimonials: [
       { label: "30代女性・会社員", comment: "的確にトレーナーさんに指導していただけるところがパーソナルトレーニングならではの良いところで、続けやすい料金と回数設定なので初心者でも始めやすいです。" },
@@ -120,10 +130,17 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
-    trainer: { kicker: "Trainer", title: "Your Trainer", name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qualLabel: "Qualifications", qual: "Certified Nutritionist", careerLabel: "Career", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024. He has also competed in a physique competition, experiencing the full body-making process firsthand — from cutting to conditioning — and brings that experience to personalized guidance for every client, including those new to exercise.", messageLabel: "Message", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingLabel: "A Word from Your Trainer", greetingParagraphs: [
-      "Through years of supporting clients, I've heard two concerns repeatedly: \"I don't know what works for me\" and \"I can't keep it up.\"",
-      "At Salute Goshominami, we solve these problems at the root — building training and eating habits that fit your lifestyle and that you can actually maintain.",
-      "Let's take the first step together toward a healthier, stronger body.",
+    trainer: { kicker: "Trainer", title: "Our Trainers", qualLabel: "Qualifications", careerLabel: "Career", messageLabel: "Message", greetingLabel: "A Word from Your Trainer", members: [
+      { name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qual: "Certified Nutritionist", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024. He has also competed in a physique competition, experiencing the full body-making process firsthand — from cutting to conditioning — and brings that experience to personalized guidance for every client, including those new to exercise.", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingParagraphs: [
+        "Through years of supporting clients, I've heard two concerns repeatedly: \"I don't know what works for me\" and \"I can't keep it up.\"",
+        "At Salute Goshominami, we solve these problems at the root — building training and eating habits that fit your lifestyle and that you can actually maintain.",
+        "Let's take the first step together toward a healthier, stronger body.",
+      ] },
+      { name: "Yoshiko Yonetomi", nameRoman: "Yonetomi Yoshiko", role: "Machine Pilates Trainer", qual: "PYLA Certified Instructor (Machine Pilates)\nYoga Alliance RYT200", career: "Yoga instructor since 2023, teaching a wide range of people, from beginners to seniors, in settings such as studios, sports centers and online classes. Has also worked as a machine Pilates instructor since 2025. Experienced in teaching private lessons as well.", message: "\"You don't have to aim for perfection. I'll be right alongside you — let's have fun moving our bodies together!\"", greetingParagraphs: [
+        "When I teach machine Pilates, I emphasize building a good foundation for the body, using anatomy as my guide. Even with the same movement, your body can respond very differently depending on where you focus your attention. I take care to explain which parts of the body you're using and how to move with less strain. I also try to help you get a feel for working the areas you're targeting, even if exercise doesn't come naturally to you.",
+        "Exercise didn't come naturally to me, either. When I started to feel my body declining with age, I took up yoga. Then, as I added machine Pilates to my routine, I came to enjoy walking and running, too.",
+        "That's why, even if you're thinking \"I can't do it anymore\" or \"It's too late now,\" I want you to know there's still plenty you can do. I'd be glad to help you get to know your body at your own pace.",
+      ] },
     ] },
     voice: { kicker: "Voice", title: "Client Results & Reviews", googleReviews: "17 Google Reviews", changesTitle: "Client Transformations", voiceTitle: "What Our Clients Say", disclaimer: "*Results vary by individual", dietLabel: "Female, 30s — Weight loss", bodymakeLabel: "Male, 40s — Body shaping", dietResult: "Weight -4.8kg　Body Fat -3.2%", bodymakeResult: "Weight +1.5kg (muscle gain)　Body Fat -4.1%", testimonials: [
       { label: "Female, 30s — Office Worker", comment: "The trainer gives precise, personal guidance — exactly what makes 1-on-1 training worth it. The pricing and session counts make it easy to start, even as a beginner." },
@@ -184,10 +201,17 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
-    trainer: { kicker: "Trainer", title: "教练介绍", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教练", qualLabel: "资格", qual: "营养师", careerLabel: "经历", career: "曾在四条乌丸的私人教练健身房担任店长，月指导140组以上客户。2024年11月起担任Salute御所南主教练。此外，他还拥有健体比赛的参赛经验，亲身经历了从减脂到塑形的完整过程，并将这份经验运用于针对每位客户（包括运动初学者）的个性化指导。", messageLabel: "留言", message: "「不擅长运动的朋友、第一次来健身房的朋友，都可以放心。我会全力支持您达成目标！」", greetingLabel: "教练寄语", greetingParagraphs: [
-      "在长期指导客户的过程中，我经常听到两个共同的困扰：「不知道哪种方法适合自己」、「无法长期坚持」。",
-      "在Salute御所南，我们会结合每位客户的生活方式，提供能够长期坚持的训练计划，以及合理可行的饮食建议。",
-      "让我们一起迈出健康改变身体的第一步。",
+    trainer: { kicker: "Trainer", title: "教练介绍", qualLabel: "资格", careerLabel: "经历", messageLabel: "留言", greetingLabel: "教练寄语", members: [
+      { name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教练", qual: "营养师", career: "曾在四条乌丸的私人教练健身房担任店长，月指导140组以上客户。2024年11月起担任Salute御所南主教练。此外，他还拥有健体比赛的参赛经验，亲身经历了从减脂到塑形的完整过程，并将这份经验运用于针对每位客户（包括运动初学者）的个性化指导。", message: "「不擅长运动的朋友、第一次来健身房的朋友，都可以放心。我会全力支持您达成目标！」", greetingParagraphs: [
+        "在长期指导客户的过程中，我经常听到两个共同的困扰：「不知道哪种方法适合自己」、「无法长期坚持」。",
+        "在Salute御所南，我们会结合每位客户的生活方式，提供能够长期坚持的训练计划，以及合理可行的饮食建议。",
+        "让我们一起迈出健康改变身体的第一步。",
+      ] },
+      { name: "米富 佳子", nameRoman: "Yonetomi Yoshiko", role: "器械普拉提教练", qual: "PYLA认证教练（器械普拉提）\n美国瑜伽联盟认证 RYT200", career: "2023年起担任瑜伽教练，在瑜伽馆、体育馆及线上等不同场景中，指导从初学者到长者的各类学员。2025年起，同时担任器械普拉提教练。此外，还拥有私人课程的指导经验。", message: "「不追求完美也没关系。我会站在和大家一样的视角，让我们一起开开心心地活动身体吧！」", greetingParagraphs: [
+        "指导器械普拉提时，我以解剖学为依据，注重「打好身体的基础」。即使是同样的动作，把意识放在不同的地方，身体的反应也会大不一样。我会细致地讲解「正在用的是哪个部位」「怎样动负担更小」，力求让不擅长运动的朋友也能找到练到目标部位的感觉。",
+        "我自己原本也不擅长运动。随着年龄增长，我感到身体渐渐不如从前，于是开始练习瑜伽。后来又把器械普拉提加入练习中，慢慢地，也能享受走路和跑步的乐趣了。",
+        "正因如此，我希望让那些觉得「已经不行了」「现在开始太晚了」的朋友也知道「能做的还有很多」。如果能在尊重每个人节奏的同时，帮助大家了解自己的身体，我会很开心。",
+      ] },
     ] },
     voice: { kicker: "Voice", title: "客户的变化与评价", googleReviews: "Google评价 17条", changesTitle: "客户的变化", voiceTitle: "客户的评价", disclaimer: "※效果因人而异", dietLabel: "30多岁女性・减脂", bodymakeLabel: "40多岁男性・塑形", dietResult: "体重 -4.8kg　体脂肪率 -3.2%", bodymakeResult: "体重 +1.5kg（肌肉增加）　体脂肪率 -4.1%", testimonials: [
       { label: "30多岁女性・上班族", comment: "教练能根据我的情况给出精准建议，这正是一对一训练的优势。价格和次数也都很合理，作为新手也很容易开始。" },
@@ -248,10 +272,17 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
-    trainer: { kicker: "Trainer", title: "教練介紹", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教練", qualLabel: "資格", qual: "營養師", careerLabel: "經歷", career: "曾在四條烏丸的私人教練健身房擔任店長，每月指導140組以上顧客。2024年11月起擔任Salute御所南主教練。此外，他也擁有健體比賽的參賽經驗，親身經歷了從減脂到體態雕塑的完整過程，並將這份經驗運用於針對每位顧客（包含運動初學者）的客製化指導。", messageLabel: "留言", message: "「不擅長運動的朋友、第一次來健身房的朋友，都可以放心。我會全力支持您達成目標！」", greetingLabel: "教練寄語", greetingParagraphs: [
-      "在長期指導顧客的過程中，我經常聽到兩個共同的困擾：「不知道哪種方法適合自己」、「無法長期堅持」。",
-      "在Salute御所南，我們會結合每位顧客的生活方式，提供能夠長期堅持的訓練計畫，以及合理可行的飲食建議。",
-      "讓我們一起邁出健康改變身體的第一步。",
+    trainer: { kicker: "Trainer", title: "教練介紹", qualLabel: "資格", careerLabel: "經歷", messageLabel: "留言", greetingLabel: "教練寄語", members: [
+      { name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute御所南 主教練", qual: "營養師", career: "曾在四條烏丸的私人教練健身房擔任店長，每月指導140組以上顧客。2024年11月起擔任Salute御所南主教練。此外，他也擁有健體比賽的參賽經驗，親身經歷了從減脂到體態雕塑的完整過程，並將這份經驗運用於針對每位顧客（包含運動初學者）的客製化指導。", message: "「不擅長運動的朋友、第一次來健身房的朋友，都可以放心。我會全力支持您達成目標！」", greetingParagraphs: [
+        "在長期指導顧客的過程中，我經常聽到兩個共同的困擾：「不知道哪種方法適合自己」、「無法長期堅持」。",
+        "在Salute御所南，我們會結合每位顧客的生活方式，提供能夠長期堅持的訓練計畫，以及合理可行的飲食建議。",
+        "讓我們一起邁出健康改變身體的第一步。",
+      ] },
+      { name: "米富 佳子", nameRoman: "Yonetomi Yoshiko", role: "器械皮拉提斯教練", qual: "PYLA認證講師（器械皮拉提斯）\n美國瑜伽聯盟認證 RYT200", career: "2023年起擔任瑜伽講師，於工作室、體育館及線上等場合授課，指導對象廣泛，從初學者到銀髮族皆有。2025年起也擔任器械皮拉提斯講師。此外，也具備私人課程的指導經驗。", message: "「不用追求完美也沒關係。讓我和大家站在同樣的立場，一起開心地活動身體吧！」", greetingParagraphs: [
+        "我在指導器械皮拉提斯時，會以解剖學為基礎，重視「打好身體的根基」。即使是同樣的動作，只要注意力放在不同的地方，身體的反應就會大不相同。我會仔細說明「現在用到的是哪個部位」、「怎麼動負擔比較小」，努力讓不擅長運動的人，也能抓到「有練到目標部位」的感覺。",
+        "其實我自己原本並不擅長運動。隨著年齡增長，感覺身體不如從前，於是開始練瑜伽；後來又加入器械皮拉提斯的練習，慢慢地，走路和跑步也成了一種享受。",
+        "正因如此，我也想告訴那些覺得「已經不行了」、「現在才開始太晚了」的人：「能做到的事還有很多」。在尊重每個人步調的同時，如果能幫助大家認識自己的身體，我會很開心。",
+      ] },
     ] },
     voice: { kicker: "Voice", title: "顧客的變化與評價", googleReviews: "Google評價 17則", changesTitle: "顧客的變化", voiceTitle: "顧客的評價", disclaimer: "※效果因人而異", dietLabel: "30多歲女性・減脂", bodymakeLabel: "40多歲男性・體態雕塑", dietResult: "體重 -4.8kg　體脂肪率 -3.2%", bodymakeResult: "體重 +1.5kg（肌肉增加）　體脂肪率 -4.1%", testimonials: [
       { label: "30多歲女性・上班族", comment: "教練能依照我的情況給出精準建議，這正是一對一訓練的優勢。價格與次數也都很合理，作為新手也很容易開始。" },
@@ -312,10 +343,17 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
-    trainer: { kicker: "Trainer", title: "트레이너 소개", name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute 고쇼미나미 대표 트레이너", qualLabel: "자격", qual: "영양사", careerLabel: "경력", career: "시조 카라스마의 퍼스널 트레이닝 짐에서 점장으로 근무. 월 140팀 이상 지도 경험. 2024년 11월부터 Salute 고쇼미나미 트레이너로 부임. 또한 피지크 대회 출전 경험이 있어 감량부터 몸만들기까지의 과정을 직접 경험했으며, 그 경험을 운동이 처음이신 분 한 분 한 분에게 맞춘 지도에 활용하고 있다.", messageLabel: "메시지", message: "「운동이 익숙하지 않으신 분, 헬스장이 처음이신 분도 안심하세요. 여러분의 목표를 향해 전력으로 서포트해 드리겠습니다!」", greetingLabel: "트레이너 인사말", greetingParagraphs: [
-      "오랫동안 많은 고객의 다이어트를 지도해 오면서, 공통된 두 가지 고민을 자주 들어 왔습니다. 「나에게 맞는 방법을 모르겠다」, 그리고 「운동을 꾸준히 이어가기 어렵다」는 것입니다.",
-      "Salute 고쇼미나미에서는 회원님 한 분 한 분의 라이프스타일에 맞춰, 무리 없이 지속할 수 있는 트레이닝과 결과로 이어지는 식습관 개선을 함께 제안합니다.",
-      "건강하고 멋진 몸을 만들기 위한 첫걸음을 함께 시작해 봅시다.",
+    trainer: { kicker: "Trainer", title: "트레이너 소개", qualLabel: "자격", careerLabel: "경력", messageLabel: "메시지", greetingLabel: "트레이너 인사말", members: [
+      { name: "宗本 寛太", nameRoman: "Munemoto Kanta", role: "Salute 고쇼미나미 대표 트레이너", qual: "영양사", career: "시조 카라스마의 퍼스널 트레이닝 짐에서 점장으로 근무. 월 140팀 이상 지도 경험. 2024년 11월부터 Salute 고쇼미나미 트레이너로 부임. 또한 피지크 대회 출전 경험이 있어 감량부터 몸만들기까지의 과정을 직접 경험했으며, 그 경험을 운동이 처음이신 분 한 분 한 분에게 맞춘 지도에 활용하고 있다.", message: "「운동이 익숙하지 않으신 분, 헬스장이 처음이신 분도 안심하세요. 여러분의 목표를 향해 전력으로 서포트해 드리겠습니다!」", greetingParagraphs: [
+        "오랫동안 많은 고객의 다이어트를 지도해 오면서, 공통된 두 가지 고민을 자주 들어 왔습니다. 「나에게 맞는 방법을 모르겠다」, 그리고 「운동을 꾸준히 이어가기 어렵다」는 것입니다.",
+        "Salute 고쇼미나미에서는 회원님 한 분 한 분의 라이프스타일에 맞춰, 무리 없이 지속할 수 있는 트레이닝과 결과로 이어지는 식습관 개선을 함께 제안합니다.",
+        "건강하고 멋진 몸을 만들기 위한 첫걸음을 함께 시작해 봅시다.",
+      ] },
+      { name: "米富 佳子", nameRoman: "Yonetomi Yoshiko", role: "머신 필라테스 담당 트레이너", qual: "PYLA 인증 강사(머신 필라테스)\n미국 요가 얼라이언스 인증 RYT200", career: "2023년부터 요가 강사로서 스튜디오, 체육관, 온라인 등에서 초보자부터 시니어까지 다양한 분들을 지도. 2025년부터는 머신 필라테스 강사로도 활동. 프라이빗 레슨 지도 경험도 있다.", message: "「완벽하게 하려고 하지 않으셔도 괜찮습니다. 여러분과 같은 눈높이에서 함께 즐겁게 몸을 움직여 봅시다!」", greetingParagraphs: [
+        "머신 필라테스를 지도할 때는 해부학을 바탕으로 「몸의 토대를 다지는 것」을 중요하게 생각합니다. 같은 동작이라도 어디를 의식하느냐에 따라 몸의 반응은 크게 달라집니다. 「어디를 쓰고 있는지」, 「어떻게 움직이면 부담이 적은지」를 꼼꼼하게 알려 드리며, 운동에 자신이 없으신 분도 의도한 부위에 자극이 오는 감각을 익히실 수 있도록 신경 쓰고 있습니다.",
+        "저 자신도 원래는 운동을 잘하는 편이 아니었습니다. 나이가 들면서 몸이 예전 같지 않다는 것을 느껴 요가를 시작했고, 머신 필라테스를 병행하다 보니 걷기와 달리기도 즐길 수 있게 되었습니다.",
+        "그렇기에 「이제는 무리다」, 「이미 늦었다」라고 느끼고 계신 분께도 「아직 충분히 할 수 있다」는 것을 전해 드리고 싶습니다. 한 분 한 분의 페이스를 존중하면서, 자신의 몸을 알아 가시는 데 도움이 될 수 있다면 기쁘겠습니다.",
+      ] },
     ] },
     voice: { kicker: "Voice", title: "고객의 변화와 후기", googleReviews: "Google 후기 17건", changesTitle: "고객의 변화", voiceTitle: "다니고 계신 고객의 후기", disclaimer: "※효과에는 개인차가 있습니다", dietLabel: "30대 여성・다이어트", bodymakeLabel: "40대 남성・바디 메이킹", dietResult: "체중 -4.8kg　체지방률 -3.2%", bodymakeResult: "체중 +1.5kg (근육 증가)　체지방률 -4.1%", testimonials: [
       { label: "30대 여성・회사원", comment: "저에게 맞춰 정확하게 지도해 주시는 점이 1:1 퍼스널 트레이닝의 장점이라고 느꼈습니다. 가격과 횟수도 부담이 적어 초보자도 시작하기 좋습니다." },
