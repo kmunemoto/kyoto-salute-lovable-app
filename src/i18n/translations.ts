@@ -130,7 +130,7 @@ export const translations: Record<Lang, Dict> = {
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
-    trainer: { kicker: "Trainer", title: "Your Trainer", qualLabel: "Qualifications", careerLabel: "Career", messageLabel: "Message", greetingLabel: "A Word from Your Trainer", members: [
+    trainer: { kicker: "Trainer", title: "Our Trainers", qualLabel: "Qualifications", careerLabel: "Career", messageLabel: "Message", greetingLabel: "A Word from Your Trainer", members: [
       { name: "Kanta Munemoto", nameRoman: "Munemoto Kanta", role: "Head Trainer, Salute Goshominami", qual: "Certified Nutritionist", career: "Former manager at a personal gym in Shijo-Karasuma, Kyoto, training 140+ clients per month. Joined Salute Goshominami as head trainer in November 2024. He has also competed in a physique competition, experiencing the full body-making process firsthand — from cutting to conditioning — and brings that experience to personalized guidance for every client, including those new to exercise.", message: "\"Even if you've never exercised before or this is your first time at a gym, don't worry. I'll fully support you toward your goal!\"", greetingParagraphs: [
         "Through years of supporting clients, I've heard two concerns repeatedly: \"I don't know what works for me\" and \"I can't keep it up.\"",
         "At Salute Goshominami, we solve these problems at the root — building training and eating habits that fit your lifestyle and that you can actually maintain.",

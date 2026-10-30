@@ -6,9 +6,9 @@ import type { TrainerProfile } from "@/i18n/translations";
 // 写真は translations の trainer.members の並び順で当てる。写真がまだない人は、文章だけで表示する。
 const photos: (string | undefined)[] = [trainerPhoto];
 
-// いったん非表示にしているトレーナー（nameRoman で指定）。ここから外すと、また表示される。
-// 表示が2人以上に戻るときは、英語の見出し（translations の en.trainer.title）も「Our Trainers」に戻す。
-const hidden = new Set(["Yonetomi Yoshiko"]);
+// いったん非表示にしたいトレーナーを nameRoman で入れる（例: "Yonetomi Yoshiko"）。外すと、また表示される。
+// 表示が1人になるときは英語の見出し（translations の en.trainer.title）を「Your Trainer」に、2人以上なら「Our Trainers」にする。
+const hidden = new Set<string>([]);
 
 const Field = ({ label, children }: { label: string; children: ReactNode }) => (
   <div>
