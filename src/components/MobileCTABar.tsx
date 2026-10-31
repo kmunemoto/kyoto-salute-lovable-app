@@ -3,15 +3,14 @@ import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 
 // 左のボタンは、ふだんは体験トレーニングの予約。ページによって予約先を変えたいときは url・label・location を渡す
-// （例：マシンピラティス体験のページでは、ピラティス体験の予約ページにする）。右の LINE ボタンの文言は lineLabel で変えられる。
-type Props = { url?: string; label?: string; location?: string; lineLabel?: string };
+// （例：マシンピラティス体験のページでは、ピラティス体験の予約ページにする）。
+type Props = { url?: string; label?: string; location?: string };
 
-const MobileCTABar = ({ url, label, location = "mobile_sticky_bar", lineLabel }: Props = {}) => {
+const MobileCTABar = ({ url, label, location = "mobile_sticky_bar" }: Props = {}) => {
   const { lang, t } = useT();
   const ctaUrl = url ?? "https://app.kyoto-salute.com/trial";
   const lineUrl = "https://lin.ee/UMVDzWF";
   const ctaText = label ?? (lang === "ja" ? "体験を予約" : t.mobileCta);
-  const lineText = lineLabel ?? t.cta.lineBtn;
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +27,8 @@ const MobileCTABar = ({ url, label, location = "mobile_sticky_bar", lineLabel }:
         <a href={ctaUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location, label: ctaText, url: ctaUrl, language: lang })} className="gold-gradient flex-1 flex items-center justify-center text-white font-medium font-body text-sm">
           {ctaText}
         </a>
-        <a href={lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location, label: lineText, url: lineUrl, language: lang })} className="flex-1 flex items-center justify-center text-white font-medium font-body text-sm" style={{ backgroundColor: "#06C755" }}>
-          {lineText}
+        <a href={lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location, label: t.cta.lineBtn, url: lineUrl, language: lang })} className="flex-1 flex items-center justify-center text-white font-medium font-body text-sm" style={{ backgroundColor: "#06C755" }}>
+          {t.cta.lineBtn}
         </a>
       </div>
     </div>

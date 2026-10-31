@@ -7,7 +7,8 @@ import { translations } from "@/i18n/translations";
 // ご入会後、月額プランの1回ごとにトレーニングかマシンピラティスを選べる（追加料金なし）。
 // 単発プラン（旅行者向け）は対象外。
 // マシンピラティスもトレーナーとの1対1で、トレーナーがバネの強さで負荷を調整する。呼吸に合わせてゆっくり動く。
-// マシンピラティスの体験（2026年11月25日から・60分・¥3,000、体験当日の入会で¥0）は、専用の予約ページから。
+// マシンピラティスの体験（2026年11月25日から・カウンセリングを含めて60分・¥3,000（当日払い）、体験当日の入会で¥0・手ぶらでOK）は、
+// 専用の予約ページから（LINE からも予約できる）。
 // 曜日・時間は担当トレーナーのシフトで変わるので、サイトには書かず「空き状況は予約ページで」とする。
 
 const LANGS = Object.keys(translations) as (keyof typeof translations)[];
@@ -171,8 +172,10 @@ describe("マシンピラティス（pilates）", () => {
       const links = [...screen.getAllByRole("link", { name: "空き状況を見て予約する" }), ...screen.getAllByRole("link", { name: "ピラティス体験を予約" })];
       expect(links.length).toBeGreaterThanOrEqual(4); // 上・下・ヘッダー（PC・タブレット）・固定バー
       for (const a of links) expect(a.getAttribute("href")).toBe(PILATES_TRIAL_URL);
-      // このページでは、LINE は「予約」ではなく「問い合わせ」
-      expect(screen.queryByRole("link", { name: "LINEから予約" })).toBeNull();
+      // ピラティス体験は LINE からも予約できる（上・下・固定バー）
+      const line = screen.getAllByRole("link", { name: "LINEから予約" });
+      expect(line.length).toBeGreaterThanOrEqual(3);
+      for (const a of line) expect(a.getAttribute("href")).toBe("https://lin.ee/UMVDzWF");
     } finally {
       window.scrollTo = scrollTo;
     }
@@ -186,6 +189,9 @@ describe("マシンピラティス（pilates）", () => {
     expect(page).toContain("前日まで");
     expect(page).toContain("確認メール");
     expect(page).toContain("60分");
+    expect(page).toContain("カウンセリングを含めて60分");
+    expect(page).toContain("手ぶら");
+    expect(page).toContain("当日払い");
     expect(page).not.toMatch(SCHEDULE);
     expect(read("index.html")).toContain('"url": "https://kyoto-salute.com/pilates-trial"');
   });

@@ -18,12 +18,12 @@ const TRAINING_TRIAL_URL = "https://app.kyoto-salute.com/trial";
 const LINE_URL = "https://lin.ee/UMVDzWF";
 const TITLE = "マシンピラティス体験｜京都・御所南のパーソナルジム Salute御所南";
 const DESCRIPTION =
-  "京都市中京区・御所南のパーソナルジムSalute御所南で、マシンピラティスの体験ができます。完全個室でトレーナーと1対1、リフォーマーを使った体験は60分。体験料¥3,000（体験当日のご入会で¥0）。丸太町駅から徒歩8分。";
+  "京都市中京区・御所南のパーソナルジムSalute御所南で、マシンピラティスの体験ができます。完全個室でトレーナーと1対1、カウンセリングを含めて60分。手ぶらでOK。体験料¥3,000（体験当日のご入会で¥0）。丸太町駅から徒歩8分。";
 
 const steps = [
   { title: "予約ページで日時を選ぶ", desc: "空いている日時を選んで予約します。予約が完了すると、確認メールが届きます。" },
-  { title: "マシンピラティスを体験", desc: "トレーナーと1対1で、リフォーマーを使ったマシンピラティスを体験していただきます。体験の時間は60分です。" },
-  { title: "ご入会（ご希望の方）", desc: "体験当日にご入会いただくと、体験料は¥0になります。ご入会後は、月額プランの1回ごとにパーソナルトレーニングとマシンピラティスを選べます。" },
+  { title: "マシンピラティスを体験", desc: "カウンセリングで目標やお悩みをお聞きした後、トレーナーと1対1で、リフォーマーを使ったマシンピラティスを体験していただきます。カウンセリングを含めて60分です。手ぶらでお越しください。" },
+  { title: "ご入会（ご希望の方）", desc: "体験当日にご入会いただくと、体験料は¥0になります（ご入会されない場合は、体験料¥3,000を当日お支払いいただきます）。ご入会後は、月額プランの1回ごとにパーソナルトレーニングとマシンピラティスを選べます。" },
 ];
 
 const PilatesTrial = () => {
@@ -39,8 +39,8 @@ const PilatesTrial = () => {
   const bookingWindow = beforeStart ? "現在は、11月25日〜12月4日のご予約を受け付けています。" : "10日先までの日時をご予約いただけます。";
 
   const prices = [
-    { label: "体験料", value: "¥3,000", note: "税込。体験当日にご入会いただいた場合は¥0です。" },
-    { label: "時間", value: "60分", note: "完全個室で、トレーナーと1対1で行います。" },
+    { label: "体験料", value: "¥3,000", note: "税込・当日払い。体験当日にご入会いただいた場合は¥0です。" },
+    { label: "時間", value: "60分", note: "カウンセリングを含みます。完全個室で、トレーナーと1対1で行います。" },
     { label: "予約", value: "前日まで", note: `${bookingWindow}日時・空き状況は予約ページでご確認ください。` },
   ];
 
@@ -48,6 +48,10 @@ const PilatesTrial = () => {
     {
       q: "予約できる日時はいつですか？",
       a: `マシンピラティス担当トレーナーのスケジュールに合わせて、予約できる日時を設けています。日時は変わることがあるため、空き状況は予約ページでご確認ください。ご予約は前日までにお願いします。${bookingWindow}`,
+    },
+    {
+      q: "LINEでも予約できますか？",
+      a: "はい。LINEからもご予約いただけます。",
     },
     {
       q: "運動が苦手でも大丈夫ですか？",
@@ -59,11 +63,15 @@ const PilatesTrial = () => {
     },
     {
       q: "持ち物は必要ですか？",
-      a: "ウェア・タオル・お水は無料でご用意しています。持ち物についてご不明な点は、LINEでお気軽にお問い合わせください。",
+      a: "手ぶらでお越しいただけます。ウェア・タオル・お水は無料でご用意しています。",
+    },
+    {
+      q: "体験料はいつ支払いますか？",
+      a: "体験当日にお支払いいただきます（現金・クレジットカード・QRコード決済）。体験当日にご入会いただいた場合、体験料は¥0です。",
     },
     {
       q: "ご入会後も、マシンピラティスを受けられますか？",
-      a: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスは1回50分（体験は60分）で、追加料金はかかりません。",
+      a: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスは1回50分（体験はカウンセリングを含めて60分）で、追加料金はかかりません。",
     },
     {
       q: "パーソナルトレーニングの体験もできますか？",
@@ -161,7 +169,7 @@ const PilatesTrial = () => {
               )}
               <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl text-foreground leading-tight">マシンピラティス体験</h1>
               <p className="mt-6 font-body text-muted-foreground leading-relaxed text-pretty">
-                京都・御所南のパーソナルジム Salute御所南で、マシンピラティスを体験できます。完全個室で、トレーナーと<span className="whitespace-nowrap">1対1</span>。リフォーマーというマシンを使った、1回60分の体験です。
+                京都・御所南のパーソナルジム Salute御所南で、マシンピラティスを体験できます。完全個室で、トレーナーと<span className="whitespace-nowrap">1対1</span>。カウンセリングのあと、リフォーマーというマシンを使ったマシンピラティスを体験していただけます（カウンセリングを含めて60分）。手ぶらでお越しください。
               </p>
               <p className="mt-4 font-body text-foreground">
                 体験料 <span className="font-heading text-2xl text-gold">¥3,000</span>（税込）
@@ -173,11 +181,11 @@ const PilatesTrial = () => {
                   href={LINE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackCtaClick({ type: "line", location: "pilates_trial_hero", label: "LINEで問い合わせる", url: LINE_URL, language: "ja" })}
+                  onClick={() => trackCtaClick({ type: "line", location: "pilates_trial_hero", label: "LINEから予約", url: LINE_URL, language: "ja" })}
                   className="px-8 py-4 text-white font-medium rounded-sm text-center font-body"
                   style={{ backgroundColor: "#06C755" }}
                 >
-                  LINEで問い合わせる
+                  LINEから予約
                 </a>
               </div>
               <p className="mt-4 font-body text-sm text-muted-foreground">日時・空き状況は、予約ページでご確認ください。</p>
@@ -289,7 +297,7 @@ const PilatesTrial = () => {
                   </div>
                 </div>
                 <ul className="space-y-2 font-body text-sm text-muted-foreground">
-                  {["完全個室・完全予約制", "入会金・事務手数料¥0"].map((x) => (
+                  {["完全個室・完全予約制", "入会金・事務手数料¥0", "手ぶらでOK（ウェア・タオル・お水を無料でご用意）"].map((x) => (
                     <li key={x} className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-gold shrink-0" />
                       {x}
@@ -314,9 +322,21 @@ const PilatesTrial = () => {
           <div className="max-w-3xl mx-auto text-center border border-gold/30 bg-secondary p-8 md:p-12 rounded-sm">
             <h2 className="font-heading text-2xl md:text-3xl text-foreground">マシンピラティスを体験してみませんか</h2>
             <p className="mt-4 font-body text-sm md:text-base text-muted-foreground leading-relaxed">
-              体験料は¥3,000（税込）、体験当日にご入会いただいた場合は¥0です。日時・空き状況は予約ページでご確認ください。予約が完了すると、確認メールが届きます。
+              体験料は¥3,000（税込）、体験当日にご入会いただいた場合は¥0です。日時・空き状況は予約ページでご確認ください。予約が完了すると、確認メールが届きます。LINEからもご予約いただけます。
             </p>
-            <div className="mt-8 flex justify-center">{bookButton("pilates_trial_bottom", "inline-block px-10")}</div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              {bookButton("pilates_trial_bottom", "px-10")}
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCtaClick({ type: "line", location: "pilates_trial_bottom", label: "LINEから予約", url: LINE_URL, language: "ja" })}
+                className="px-10 py-4 text-white font-medium rounded-sm text-center font-body"
+                style={{ backgroundColor: "#06C755" }}
+              >
+                LINEから予約
+              </a>
+            </div>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <a
                 href={TRAINING_TRIAL_URL}
@@ -333,7 +353,7 @@ const PilatesTrial = () => {
         </section>
       </main>
       <Footer />
-      <MobileCTABar url={PILATES_TRIAL_URL} label="ピラティス体験を予約" location="pilates_trial_sticky" lineLabel="LINEで問い合わせる" />
+      <MobileCTABar url={PILATES_TRIAL_URL} label="ピラティス体験を予約" location="pilates_trial_sticky" />
     </div>
   );
 };
