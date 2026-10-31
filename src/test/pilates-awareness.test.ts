@@ -185,7 +185,8 @@ describe("男性も受けられる（オーナー確認済み）", () => {
   it("体験ページ：説明文・リード・よくあるご質問", () => {
     expect(PILATES_TRIAL_SEO.description).toContain("男性の方も受けられます");
     const page = read("src/pages/PilatesTrial.tsx");
-    expect(page).toContain("男性の方も受けていただけます。");
+    // リード（FAQ の答えにも同じ文があるので、リードにしかない前の部分も含めて確かめる）
+    expect(page).toContain("（カウンセリングを含めて60分）。男性の方も受けていただけます。");
     expect(page).toContain('q: "男性も受けられますか？"');
   });
 });
@@ -218,7 +219,7 @@ describe("体験ページの担当トレーナー", () => {
 
 describe("マシンピラティスのブログ記事", () => {
   const posts = blogPosts.filter((p) => p.category === PILATES_CATEGORY);
-  // 手で書いて確かめた2本（このあと自動生成の記事が増えても、テストは落ちないようにする）
+  // 手で書いて確かめた3本（このあと自動生成の記事が増えても、テストは落ちないようにする）
   const HANDWRITTEN = ["personal-machine-pilates-kyoto", "machine-pilates-vs-personal-training-kyoto", "men-machine-pilates-kyoto"];
 
   it("手で書いた3本：1対1・カウンセリングを含めて60分・説明文は130字まで", () => {

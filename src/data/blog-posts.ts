@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "men-machine-pilates-kyoto",
-    title: "男性もマシンピラティスを受けられる？京都・御所南で受ける1対1のレッスン",
+    title: "男性もマシンピラティスを受けられる？京都・御所南の1対1レッスン",
     date: "2026-10-31",
     category: "マシンピラティス",
     readTime: "4分",
