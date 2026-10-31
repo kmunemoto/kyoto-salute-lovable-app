@@ -114,14 +114,15 @@ describe("マシンピラティス（pilates）", () => {
   });
 
   it.each(LANGS)("%s: よくあるご質問とピラティスの欄に、マシンピラティスの体験（60分・¥3,000）があり、曜日や時刻は書かない", (lang) => {
+    // ピラティスの質問は「選べますか？」と「男性も受けられますか？」の2つ。体験（60分・¥3,000）は、最初の「選べますか？」の答えに書く
     const items = translations[lang].faq.items.filter((i) => PILATES.test(i.question));
-    expect(items).toHaveLength(1);
+    expect(items).toHaveLength(2);
     expect(items[0].answer).toContain(PILATES_TRIAL[lang]);
     expect(items[0].answer).toContain("3,000");
     const p = translations[lang].pilates;
     expect(p.trialNote).toContain("60");
     expect(p.trialNote).toContain("3,000");
-    for (const s of [items[0].answer, p.trialNote, p.trialBtn, translations[lang].cta.pilatesLink]) {
+    for (const s of [...items.map((i) => i.answer), p.trialNote, p.trialBtn, translations[lang].cta.pilatesLink]) {
       expect(s.trim()).not.toBe("");
       expect(s, s).not.toMatch(SCHEDULE);
     }
