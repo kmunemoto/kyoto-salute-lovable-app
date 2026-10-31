@@ -101,7 +101,7 @@ const Terms = () => {
                   <li>
                     会員は、月額プランの各回で、パーソナルトレーニングまたはマシンピラティスのいずれかを選択できます。本規約で「トレーニング」というときは、マシンピラティスを含むものとします。
                   </li>
-                  <li>体験トレーニングは、パーソナルトレーニングのみとします。</li>
+                  <li>体験トレーニングでは、パーソナルトレーニングまたはマシンピラティスのいずれかを選択できます。ただし、マシンピラティスの体験トレーニングは、当ジムが定める日時に限り実施するものとします。</li>
                 </ol>
               </section>
 
@@ -271,7 +271,7 @@ const Terms = () => {
 
               <div className="pt-8 border-t border-border text-sm text-muted-foreground space-y-1">
                 <p>制定日：2024年11月</p>
-                <p>最終更新日：2026年10月29日</p>
+                <p>最終更新日：2026年10月31日</p>
               </div>
 
               <div className="bg-secondary/50 border border-border rounded-sm p-5 md:p-6 space-y-1">

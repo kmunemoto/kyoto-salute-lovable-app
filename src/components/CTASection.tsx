@@ -1,6 +1,7 @@
 import trialImage from "@/assets/trial-gym.jpg";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
+import { PILATES_TRIAL_URL } from "@/lib/booking";
 
 const CTASection = () => {
   const { lang, t } = useT();
@@ -32,6 +33,10 @@ const CTASection = () => {
               <a href={trialUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "cta_section", label: c.webBtn, url: trialUrl, language: lang })} className="bg-foreground hover:bg-foreground/90 px-10 py-4 text-white font-medium rounded-sm transition-colors font-body text-center">{c.webBtn}</a>
               <a href={lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "line", location: "cta_section", label: c.lineBtn, url: lineUrl, language: lang })} className="border border-foreground bg-transparent px-10 py-4 text-foreground font-medium rounded-sm hover:bg-foreground/5 transition-colors font-body text-center">{c.lineBtn}</a>
             </div>
+            {/* マシンピラティスの体験は、専用の予約ページ */}
+            <p className="mt-6 font-body text-sm">
+              <a href={PILATES_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCtaClick({ type: "trial", location: "cta_section_pilates", label: c.pilatesLink, url: PILATES_TRIAL_URL, language: lang })} className="underline underline-offset-4 hover:opacity-80">{c.pilatesLink} →</a>
+            </p>
           </div>
         </div>
       </div>

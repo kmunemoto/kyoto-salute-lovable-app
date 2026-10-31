@@ -19,13 +19,13 @@ type Dict = {
   concern: { kicker: string; title: string; items: string[]; footer: string };
   features: { kicker: string; title: string; items: { title: string; description: string }[]; note: string; cta: string; wearRentalTag?: string };
   goals: { kicker: string; title: string; sub: string; items: { title: string; description: string }[]; note: string };
-  pilates: { kicker: string; title: string; lead: string; points: { title: string; description: string }[]; imageAlt: string };
+  pilates: { kicker: string; title: string; lead: string; points: { title: string; description: string }[]; imageAlt: string; trialStart: string; trialNote: string; trialBtn: string };
   numbers: { kicker: string; title: string; items: { value: string; label: string }[] };
   trainer: { kicker: string; title: string; qualLabel: string; careerLabel: string; messageLabel: string; greetingLabel: string; members: TrainerProfile[] };
   voice: { kicker: string; title: string; googleReviews: string; changesTitle: string; voiceTitle: string; disclaimer: string; dietLabel: string; bodymakeLabel: string; dietResult: string; bodymakeResult: string; testimonials: { label: string; comment: string }[]; fromGoogle: string };
   pricing: { kicker: string; title: string; freeNote: string; sub: string; popular: string; perMonth: string; dropInUnit: string; dropInCta: string; description: string; plans: { name: string; price: string; perSession: string; description: string; features: string[] }[]; dropIn: { name: string; price: string; perSession: string; description: string; features: string[] }; cta: string };
   flow: { kicker: string; title: string; steps: { title: string; description: string; imageAlt: string }[]; footer: string; bookText: string; bookLinkLabel: string };
-  cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string };
+  cta: { kicker: string; title: string; paragraphs: string[]; bullets: string[]; webBtn: string; lineBtn: string; pilatesLink: string };
   faq: { kicker: string; title: string; items: { question: string; answer: string }[] };
   access: { kicker: string; title: string; intro: string; addressLabel: string; addressLines: string[]; stationLabel: string; stations: string[]; hoursLabel: string; hoursText: string; hoursSub: string; contactLabel: string; contactText: string; note: string; sponsorsLabel: string };
   footer: { blog: string; app: string; line: string; instagram: string; terms: string; privacy: string; tokusho: string; copyright: string; address: string };
@@ -55,7 +55,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "呼吸と体幹を意識して", description: "リフォーマーというマシンで、呼吸に合わせてゆっくり動きます。体の奥の筋肉（インナーマッスル）を意識しながら、体幹や姿勢づくりを目指します。" },
       { title: "1対1だから始めやすい", description: "トレーナーがバネの強さで負荷を調整し、動きを確認しながら進めます。体が硬い方や運動が久しぶりの方も、ご自分のペースで取り組めます。" },
       { title: "トレーニングと使い分けて", description: "しっかり鍛えたい日はトレーニング、体の使い方を見直したい日はマシンピラティス。別のスタジオに通わず、1回ごとに選べます。" },
-    ], imageAlt: "Salute御所南のスタジオで、リフォーマーを使ってマシンピラティスをする女性" },
+    ], imageAlt: "Salute御所南のスタジオで、リフォーマーを使ってマシンピラティスをする女性", trialStart: "体験は11月25日（水）スタート・予約受付中", trialNote: "マシンピラティスの体験（60分）も受け付けています。体験料は¥3,000、体験当日のご入会で¥0です。日時・空き状況は予約ページでご確認ください。", trialBtn: "マシンピラティス体験を予約する" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
@@ -86,11 +86,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "WEBで予約", description: "からご希望の日時を選んで送信。最短30秒で予約完了です。", imageAlt: "スマートフォンで体験トレーニングを予約している様子" },
       { title: "カウンセリング＋トレーニング", description: "カウンセリングで目標やお悩みをヒアリングした後、50分のパーソナルトレーニングを体験。手ぶらでOK。", imageAlt: "トレーナーがタブレットを見せながらカウンセリングをしている様子" },
     ], footer: "ウェア・シューズ・タオル・お水は無料でご用意しています。", bookText: "", bookLinkLabel: "予約フォーム" },
-    cta: { kicker: "Consultation", title: "体験トレーニングのご案内", paragraphs: ["まずは体験トレーニングでお試しください。体験料は¥3,000、体験当日のご入会で¥0です。", "ご入会前の様々な不安は、体験トレーニングで解消できます。", "ジムの雰囲気やトレーニングの内容を、ぜひ一度ご体感ください。"], bullets: ["運動が苦手で不安…", "トレーナーはどんな人だろう…"], webBtn: "WEBから体験を予約", lineBtn: "LINEから予約" },
+    cta: { kicker: "Consultation", title: "体験トレーニングのご案内", paragraphs: ["まずは体験トレーニングでお試しください。体験料は¥3,000、体験当日のご入会で¥0です。", "ご入会前の様々な不安は、体験トレーニングで解消できます。", "ジムの雰囲気やトレーニングの内容を、ぜひ一度ご体感ください。"], bullets: ["運動が苦手で不安…", "トレーナーはどんな人だろう…"], webBtn: "WEBから体験を予約", lineBtn: "LINEから予約", pilatesLink: "マシンピラティス体験のご予約はこちら" },
     faq: { kicker: "Q&A", title: "よくある質問", items: [
       { question: "体験トレーニングではどんなことをしますか？", answer: "カウンセリングで目標やお悩みをお聞きした後、実際の50分間のパーソナルトレーニングを体験していただきます。ウェアとシューズは無料レンタルがありますので、手ぶらでお越しください。" },
       { question: "体験トレーニングの料金はいくらですか？", answer: "体験トレーニングの料金は¥3,000です。体験当日にご入会いただいた場合は、体験料は¥0（無料）となります。体験当日にご入会されない場合は、¥3,000を頂戴します。" },
-      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。なお、体験トレーニングはパーソナルトレーニングのみとなります。" },
+      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。ご入会前に、マシンピラティスの体験（60分）を受けていただくこともできます。体験料は¥3,000で、体験当日にご入会いただいた場合は¥0です。" },
       { question: "運動経験がないのですが、大丈夫でしょうか？", answer: "もちろん大丈夫です！来店されるほとんどの方が初めての方ばかりです。一人一人の運動経験や体力・目的にあったトレーニングをトレーナーが丁寧に指導いたします。" },
       { question: "持ち物はありますか？", answer: "ウェアや靴に加えてお水もご用意しておりますので、手ぶらでお気軽にお越しいただけます。" },
       { question: "プランの有効期限はどうなっていますか？", answer: "プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。" },
@@ -126,7 +126,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "Focus on your breath and core", description: "On a machine called a reformer, you move slowly in time with your breathing. Staying aware of your deep muscles, you work toward a strong core and good posture." },
       { title: "Easy to start with 1-on-1 guidance", description: "Your trainer adjusts the load by changing the reformer's spring tension and checks your form as you go. Even if you're not very flexible or haven't exercised in a while, you can work at your own pace." },
       { title: "Switch between training and Pilates", description: "Choose personal training on days you want a solid workout, and machine Pilates on days you want to rethink how you move. No need to go to a separate studio — you decide session by session." },
-    ], imageAlt: "A woman doing machine Pilates on a reformer at the Salute Goshominami studio" },
+    ], imageAlt: "A woman doing machine Pilates on a reformer at the Salute Goshominami studio", trialStart: "Trials start Wed, Nov 25 — booking now open", trialNote: "Machine Pilates trial sessions (60 minutes) are also available. The trial fee is ¥3,000, waived if you join on the day. Please check the booking page for open dates and times.", trialBtn: "Book a Machine Pilates Trial" },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
@@ -156,11 +156,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "Book Online", description: " Choose your preferred date and time — it takes about 30 seconds.", imageAlt: "Someone booking a trial session on a smartphone" },
       { title: "Consultation + Training", description: "After a short consultation, enjoy a 50-minute personal training session. Just come as you are.", imageAlt: "A trainer going over a tablet with a client during a counseling session" },
     ], footer: "Sportswear, shoes, towels and water are all provided free of charge.", bookText: "Use the ", bookLinkLabel: "booking form" },
-    cta: { kicker: "Consultation", title: "Trial Session", paragraphs: ["Try a trial session before you commit — ¥3,000, waived if you join on the day.", "Any questions or concerns before signing up can be answered during the trial.", "Get a real feel for the training and the studio atmosphere."], bullets: ["Worried you're not fit enough?", "Curious what the trainer is like?"], webBtn: "Book a Trial Session", lineBtn: "Book via LINE" },
+    cta: { kicker: "Consultation", title: "Trial Session", paragraphs: ["Try a trial session before you commit — ¥3,000, waived if you join on the day.", "Any questions or concerns before signing up can be answered during the trial.", "Get a real feel for the training and the studio atmosphere."], bullets: ["Worried you're not fit enough?", "Curious what the trainer is like?"], webBtn: "Book a Trial Session", lineBtn: "Book via LINE", pilatesLink: "For a machine Pilates trial, book here" },
     faq: { kicker: "Q&A", title: "FAQ", items: [
       { question: "What happens during the trial session?", answer: "After a short consultation, you'll experience a real 50-minute personal training session. Sportswear, shoes, towels and water are all provided — just come as you are." },
       { question: "How much is the trial session?", answer: "The trial session is ¥3,000. If you sign up for a membership on the day of your trial, the fee is waived (¥0). If you decide not to join on the day, the ¥3,000 fee applies." },
-      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan. Machine Pilates sessions are also 50 minutes, at no extra cost. Please note that trial sessions are personal training only." },
+      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan. Machine Pilates sessions are also 50 minutes, at no extra cost. Machine Pilates trial sessions (60 minutes) are available as well. The trial fee is ¥3,000, waived if you join on the day." },
       { question: "I have no exercise experience. Is that OK?", answer: "Absolutely. Most of our clients had never trained before. Your trainer will guide you carefully based on your fitness level and goals." },
       { question: "What should I bring?", answer: "Nothing. Sportswear, shoes, towels and water are all provided free of charge." },
       { question: "Do you offer drop-in personal training for travelers?", answer: "Yes — our drop-in plan is ¥8,000 per session. No membership required, all training wear and equipment provided. You can book directly via our website or Instagram DM." },
@@ -197,7 +197,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "专注呼吸・感受核心", description: "在名为核心床的器械上，配合呼吸缓慢地活动身体。有意识地调动深层肌群，以强化核心、塑造体态为目标。" },
       { title: "一对一指导，容易上手", description: "教练会通过弹簧的强弱来调整负荷，并在课程中留意您的动作。身体僵硬或很久没运动的人，也能按照自己的节奏练习。" },
       { title: "训练与普拉提按需切换", description: "想好好锻炼的日子选私人训练，想重新审视自己如何使用身体的日子选器械普拉提。无需另去其他工作室，每次课程都可以选择。" },
-    ], imageAlt: "在Salute御所南工作室使用核心床进行器械普拉提的女性" },
+    ], imageAlt: "在Salute御所南工作室使用核心床进行器械普拉提的女性", trialStart: "体验课程11月25日（周三）开始，现已开放预约", trialNote: "也可以预约器械普拉提体验课程（60分钟）。体验费用3,000日元，当天入会则免费。可预约的日期和时间请在预约页面查看。", trialBtn: "预约器械普拉提体验" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
@@ -227,11 +227,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "在线预约", description: "请从预约表单选择希望的日期与时间，约30秒即可完成。", imageAlt: "正在用手机预约体验课程" },
       { title: "咨询 + 训练", description: "进行简短咨询后，体验50分钟的私人教练训练。空手前来即可。", imageAlt: "教练一边展示平板电脑一边进行咨询" },
     ], footer: "运动服・运动鞋・毛巾・饮用水均免费提供。", bookText: "通过", bookLinkLabel: "预约表单" },
-    cta: { kicker: "Consultation", title: "体验课程", paragraphs: ["欢迎先来体验一次。体验费用3,000日元，当天入会则免费。", "入会前的各种疑问都可以在体验课程中得到解答。", "亲身感受训练内容与健身房的氛围。"], bullets: ["担心自己不擅长运动…", "想了解教练是什么样的…"], webBtn: "在线预约体验课程", lineBtn: "通过LINE预约" },
+    cta: { kicker: "Consultation", title: "体验课程", paragraphs: ["欢迎先来体验一次。体验费用3,000日元，当天入会则免费。", "入会前的各种疑问都可以在体验课程中得到解答。", "亲身感受训练内容与健身房的氛围。"], bullets: ["担心自己不擅长运动…", "想了解教练是什么样的…"], webBtn: "在线预约体验课程", lineBtn: "通过LINE预约", pilatesLink: "器械普拉提体验请点此预约" },
     faq: { kicker: "Q&A", title: "常见问题", items: [
       { question: "体验课程都做些什么？", answer: "进行简短咨询后，体验50分钟的真实私人训练课程。运动服与鞋子免费提供，空手前来即可。" },
       { question: "体验课程的费用是多少？", answer: "体验课程费用为3,000日元。若您在体验当天办理入会，体验费用即为0日元（免费）。若当天未入会，则需支付3,000日元。" },
-      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提。器械普拉提同样为每次50分钟，无需额外费用。另外，体验课程仅提供私人训练。" },
+      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提。器械普拉提同样为每次50分钟，无需额外费用。另外，也可以预约器械普拉提体验课程（60分钟）。体验费用为3,000日元，若在体验当天入会则免费。" },
       { question: "没有运动经验也可以吗？", answer: "完全没问题。我们的大部分客户都是初学者，教练会根据您的体力与目标耐心指导。" },
       { question: "需要带什么吗？", answer: "无需准备任何物品。运动服・鞋・毛巾・饮用水全部免费提供。" },
       { question: "游客可以单次体验吗？", answer: "可以。单次训练每次8,000日元，无需会员注册，运动服与器材全部免费提供。可通过网站或Instagram DM预约。" },
@@ -268,7 +268,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "專注呼吸與核心", description: "在核心床（Reformer）上，配合呼吸緩慢地活動身體。有意識地運用身體深層的肌群，以鍛鍊核心、建立良好姿勢為目標。" },
       { title: "一對一，容易開始", description: "教練會調整彈簧的強度來改變負荷，並在過程中確認您的動作。身體較僵硬或很久沒運動的人，也能依照自己的步調練習。" },
       { title: "依目的選擇訓練或皮拉提斯", description: "想好好鍛鍊的日子就選私人訓練，想重新檢視身體使用方式的日子就選器械皮拉提斯。不需另外到其他工作室上課，每次課程都能選擇。" },
-    ], imageAlt: "在Salute御所南工作室使用核心床進行器械皮拉提斯的女性" },
+    ], imageAlt: "在Salute御所南工作室使用核心床進行器械皮拉提斯的女性", trialStart: "體驗課程11月25日（週三）開始，現已開放預約", trialNote: "也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。可預約的日期與時間請至預約頁面確認。", trialBtn: "預約器械皮拉提斯體驗" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
@@ -298,11 +298,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "線上預約", description: "請從預約表單選擇希望的日期與時間，約30秒即可完成。", imageAlt: "正在用手機預約體驗課程" },
       { title: "諮詢 + 訓練", description: "進行簡短諮詢後，體驗50分鐘的私人教練訓練。空手前來即可。", imageAlt: "教練一邊展示平板電腦一邊進行諮詢" },
     ], footer: "運動服・運動鞋・毛巾・飲用水皆免費提供。", bookText: "透過", bookLinkLabel: "預約表單" },
-    cta: { kicker: "Consultation", title: "體驗課程", paragraphs: ["歡迎先來體驗一次。體驗費用3,000日圓，當天入會則免費。", "入會前的各種疑問都可以在體驗課程中得到解答。", "親身感受訓練內容與健身房的氛圍。"], bullets: ["擔心自己不擅長運動…", "想了解教練是什麼樣的人…"], webBtn: "線上預約體驗課程", lineBtn: "透過LINE預約" },
+    cta: { kicker: "Consultation", title: "體驗課程", paragraphs: ["歡迎先來體驗一次。體驗費用3,000日圓，當天入會則免費。", "入會前的各種疑問都可以在體驗課程中得到解答。", "親身感受訓練內容與健身房的氛圍。"], bullets: ["擔心自己不擅長運動…", "想了解教練是什麼樣的人…"], webBtn: "線上預約體驗課程", lineBtn: "透過LINE預約", pilatesLink: "器械皮拉提斯體驗請點此預約" },
     faq: { kicker: "Q&A", title: "常見問題", items: [
       { question: "體驗課程會進行哪些內容？", answer: "進行簡短諮詢後，體驗50分鐘的真實私人訓練課程。運動服與鞋子免費提供，空手前來即可。" },
       { question: "體驗課程的費用是多少？", answer: "體驗課程費用為3,000日圓。若您於體驗當天辦理入會，體驗費用即為0日圓（免費）。若當天未入會，則需支付3,000日圓。" },
-      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯。器械皮拉提斯同樣為每次50分鐘，不需額外費用。另外，體驗課程僅提供私人訓練。" },
+      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯。器械皮拉提斯同樣為每次50分鐘，不需額外費用。另外，也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。" },
       { question: "沒有運動經驗也可以嗎？", answer: "完全沒問題。我們大部分的顧客都是初學者，教練會依照您的體力與目標耐心指導。" },
       { question: "需要帶什麼東西嗎？", answer: "無需準備任何物品。運動服・鞋・毛巾・飲用水全部免費提供。" },
       { question: "遊客可以單次體驗嗎？", answer: "可以。單次訓練每次8,000日圓，無需加入會員，運動服與器材全部免費提供。可透過網站或Instagram私訊預約。" },
@@ -339,7 +339,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "호흡과 코어에 집중", description: "리포머라는 머신 위에서 호흡에 맞춰 천천히 움직입니다. 몸 깊은 곳의 근육(속근육)을 의식하면서, 코어를 다지고 자세를 만들어 가는 것을 목표로 합니다." },
       { title: "1:1이라 시작하기 좋은 필라테스", description: "트레이너가 스프링 강도를 바꿔 부하를 조절하고, 동작을 확인하면서 진행합니다. 몸이 뻣뻣하거나 오랜만에 운동하시는 분도 자신의 페이스대로 하실 수 있습니다." },
       { title: "트레이닝과 필라테스, 목적에 맞게", description: "제대로 단련하고 싶은 날은 트레이닝, 몸 쓰는 법을 다시 살펴보고 싶은 날은 머신 필라테스. 다른 스튜디오에 다닐 필요 없이, 세션마다 선택하실 수 있습니다." },
-    ], imageAlt: "Salute 고쇼미나미 스튜디오에서 리포머로 머신 필라테스를 하는 여성" },
+    ], imageAlt: "Salute 고쇼미나미 스튜디오에서 리포머로 머신 필라테스를 하는 여성", trialStart: "체험은 11월 25일(수) 시작, 지금 예약 가능", trialNote: "머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다. 예약 가능한 날짜와 시간은 예약 페이지에서 확인해 주세요.", trialBtn: "머신 필라테스 체험 예약" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
@@ -369,11 +369,11 @@ export const translations: Record<Lang, Dict> = {
       { title: "온라인 예약", description: "예약 폼에서 원하시는 날짜와 시간을 선택해 주세요. 약 30초면 예약이 완료됩니다.", imageAlt: "스마트폰으로 체험 세션을 예약하는 모습" },
       { title: "카운셀링 + 트레이닝", description: "간단한 상담 후, 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 빈손으로 오시면 됩니다.", imageAlt: "트레이너가 태블릿을 보여 주며 상담하는 모습" },
     ], footer: "운동복・신발・수건・물은 무료로 준비되어 있습니다.", bookText: "", bookLinkLabel: "예약 폼" },
-    cta: { kicker: "Consultation", title: "체험 세션 안내", paragraphs: ["먼저 가볍게 체험해 보세요. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다.", "입회 전의 다양한 궁금증은 체험 세션에서 해소하실 수 있습니다.", "트레이닝 내용과 짐 분위기를 직접 느껴 보세요."], bullets: ["운동이 익숙하지 않아 걱정되시나요?", "트레이너가 어떤 사람인지 궁금하신가요?"], webBtn: "온라인으로 체험 예약", lineBtn: "LINE으로 예약" },
+    cta: { kicker: "Consultation", title: "체험 세션 안내", paragraphs: ["먼저 가볍게 체험해 보세요. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다.", "입회 전의 다양한 궁금증은 체험 세션에서 해소하실 수 있습니다.", "트레이닝 내용과 짐 분위기를 직접 느껴 보세요."], bullets: ["운동이 익숙하지 않아 걱정되시나요?", "트레이너가 어떤 사람인지 궁금하신가요?"], webBtn: "온라인으로 체험 예약", lineBtn: "LINE으로 예약", pilatesLink: "머신 필라테스 체험은 여기에서 예약하세요" },
     faq: { kicker: "Q&A", title: "자주 묻는 질문", items: [
       { question: "체험 세션에서는 무엇을 하나요?", answer: "간단한 상담 후 실제와 동일한 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 운동복・신발・수건・물 모두 무료로 제공되므로 빈손으로 오시면 됩니다." },
       { question: "체험 세션 요금은 얼마인가요?", answer: "체험 세션 요금은 ¥3,000입니다. 체험 당일에 회원 등록을 하시면 체험료는 ¥0(무료)이 됩니다. 당일에 등록하지 않으실 경우에는 ¥3,000을 받고 있습니다." },
-      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다. 머신 필라테스도 1회 50분이며, 추가 요금은 없습니다. 단, 체험 세션은 퍼스널 트레이닝만 가능합니다." },
+      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다. 머신 필라테스도 1회 50분이며, 추가 요금은 없습니다. 머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다." },
       { question: "운동 경험이 없는데 괜찮나요?", answer: "물론입니다. 대부분의 고객이 처음 시작하시는 분들입니다. 체력과 목표에 맞춰 트레이너가 꼼꼼하게 지도합니다." },
       { question: "준비물이 필요한가요?", answer: "필요 없습니다. 운동복・신발・수건・물 모두 무료로 준비되어 있습니다." },
       { question: "여행 중에 1회만 이용할 수도 있나요?", answer: "네, 가능합니다. 1회 이용 요금은 ¥8,000이며 회원가입은 필요하지 않습니다. 운동복과 장비 모두 무료로 제공되며, 웹사이트 또는 Instagram DM으로 예약하실 수 있습니다." },
