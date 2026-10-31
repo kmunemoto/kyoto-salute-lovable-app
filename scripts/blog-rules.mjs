@@ -3,22 +3,27 @@
 
 export const PILATES_CATEGORY = "マシンピラティス";
 
-// 画面に出る文（タイトル・本文）では「パーソナル」を重ねず「1対1」と書く（「パーソナルピラティス」は metaDescription だけ）
-const VISIBLE_NG = /パーソナルピラティス|パーソナルレッスン/;
-// 効果をうたう言い方・手ぶらを勧める言い方・確認が取れていない資格
-const CLAIM_NG = /手ぶら|PYLA|改善|治る|治り|痩せ|矯正|効果|効く|必ず|No\.?1|最安|相場|無理なく|バネが動きを支え/;
-// 曜日・時刻（担当トレーナーのシフトで変わるので書かない。開始日の「11月25日（水）」は対象外）
-const SCHEDULE_NG = /\d{1,2}[:：]\d{2}|\d{1,2}時|[月火水木金土日]曜|夕方|夜|午後|毎週/;
+// 画面に出る文（タイトル・本文）では「パーソナル」を重ねず「1対1」と書く（「パーソナルピラティス」は metaDescription だけ）。
+// 「パーソナルジム」「パーソナルトレーニング」は対象外
+const VISIBLE_NG = /パーソナル[\s・･のな]*(?:マシン)?[\s・･]*ピラティス|パーソナル(?:レッスン|セッション)/;
+// 効果をうたう言い方・最上級・手ぶらを勧める言い方・確認が取れていない資格・ピラティスの担当ではない「栄養士」
+const CLAIM_NG = /手ぶら|PYLA|改善|治[らりるれろすしせっ療]|痩せ|痩身|(?<![増燃])やせ|矯正|肩こり|腰痛|効果|効[かきくけこ]|必ず(?!しも)|No\.?\s*1|ナンバーワン|日本一|京都一|絶対|最安|相場|無理なく|バネが動きを支え|栄養士/i;
+// 曜日・時刻・時間帯（担当トレーナーのシフトで変わるので書かない）。開始日の「11月25日（水）」は先に除く
+const SCHEDULE_NG = /\d{1,2}:\d{2}|\d{1,2}時(?!間)|[月火水木金土日]曜|\([月火水木金土日]\)|平日|土日|週末|祝日|午前|午後|夕方|夜|仕事帰り/;
+// 体験ページ（/pilates-trial）へのリンク
+const TRIAL_LINK = /<a\s[^>]*href="(?:https:\/\/kyoto-salute\.com)?\/pilates-trial\/?"[^>]*>/;
 
-/** マシンピラティスの記事で、決まりに反する言葉を返す（なければ空の配列） */
+// 全角の数字・英字・括弧を半角にそろえ、開始日（2026年11月25日（水））を除く
+const normalize = (text) => text.normalize("NFKC").replace(/(?:2026年)?11月25日\(水\)/g, "");
+
+const matches = (re, text) => [...text.matchAll(new RegExp(re.source, `${re.flags}g`))].map((m) => m[0]);
+
+/** マシンピラティスの記事で、決まりに反するところを返す（なければ空の配列） */
 export function pilatesViolations(post) {
   if (post.category !== PILATES_CATEGORY) return [];
-  const visible = `${post.title}\n${post.content}`;
-  const all = `${post.title}\n${post.metaDescription}\n${post.content}`;
-  const found = [];
-  for (const [re, text] of [[VISIBLE_NG, visible], [CLAIM_NG, all], [SCHEDULE_NG, all]]) {
-    const g = new RegExp(re.source, "g");
-    for (const m of text.matchAll(g)) found.push(m[0]);
-  }
+  const visible = normalize(`${post.title}\n${post.content}`);
+  const all = normalize(`${post.title}\n${post.metaDescription}\n${post.content}`);
+  const found = [...matches(VISIBLE_NG, visible), ...matches(CLAIM_NG, all), ...matches(SCHEDULE_NG, all)];
+  if (!TRIAL_LINK.test(post.content)) found.push("体験ページ（/pilates-trial）へのリンクがない");
   return [...new Set(found)];
 }

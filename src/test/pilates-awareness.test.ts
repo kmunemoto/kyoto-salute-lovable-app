@@ -200,7 +200,7 @@ describe("マシンピラティスのブログ記事", () => {
     const { pilatesViolations } = await import("../../scripts/blog-rules.mjs");
     expect(posts.length).toBeGreaterThan(0);
     for (const p of posts) {
-      expect(p.content, p.slug).toMatch(/<a href="(https:\/\/kyoto-salute\.com)?\/pilates-trial">/);
+      expect(p.content, p.slug).toMatch(/<a\s[^>]*href="(?:https:\/\/kyoto-salute\.com)?\/pilates-trial\/?"[^>]*>/);
       expect(pilatesViolations(p), p.slug).toEqual([]);
       expect(fs.existsSync(path.join(root, `src/assets/blog/${p.slug}.webp`)), p.slug).toBe(true);
     }
@@ -210,11 +210,21 @@ describe("マシンピラティスのブログ記事", () => {
 
   it("自動生成の記事は、決まりに反する言葉があれば止まる", async () => {
     const { pilatesViolations } = await import("../../scripts/blog-rules.mjs");
-    const base = { category: PILATES_CATEGORY, title: "マシンピラティスの始め方", metaDescription: "京都でパーソナルピラティスを探している方へ。", content: "<p>トレーナーと1対1で行います。</p>" };
+    const link = '<a href="https://kyoto-salute.com/pilates-trial">マシンピラティス体験</a>';
+    const base = { category: PILATES_CATEGORY, title: "マシンピラティスの始め方", metaDescription: "京都でパーソナルピラティスを探している方へ。", content: `<p>トレーナーと1対1で行います。${link}</p>` };
+    const withText = (text: string) => ({ ...base, content: `<p>${text}</p>${link}` });
     expect(pilatesViolations(base)).toEqual([]);
+    // 画面の文の「パーソナル」の重ね（#126 で外した「パーソナルマシンピラティス」も）
     expect(pilatesViolations({ ...base, title: "京都のパーソナルピラティス" })).toEqual(["パーソナルピラティス"]);
-    expect(pilatesViolations({ ...base, content: "<p>手ぶらでOK。夜も通えます。</p>" })).toEqual(["手ぶら", "夜"]);
-    expect(pilatesViolations({ ...base, content: "<p>姿勢改善の効果があります。</p>" })).toEqual(["改善", "効果"]);
+    expect(pilatesViolations({ ...base, title: "京都・御所南のパーソナルマシンピラティス" })).toEqual(["パーソナルマシンピラティス"]);
+    // 手ぶら・効果・曜日や時間帯（全角や括弧の曜日も）
+    expect(pilatesViolations(withText("手ぶらでOK。夜も通えます。"))).toEqual(["手ぶら", "夜"]);
+    expect(pilatesViolations(withText("姿勢改善の効果があります。体幹に効きます。"))).toEqual(["改善", "効果", "効き"]);
+    expect(pilatesViolations(withText("平日も土日も、11月28日（土）も、１０：００から"))).toEqual(["平日", "土日", "(土)", "10:00"]);
+    // 決まりに反しない言い方は止めない（開始日・時間の長さ・「必ずしも」）
+    expect(pilatesViolations(withText("体験は2026年11月25日（水）から。約1時間、24時間受付。経験は必ずしも必要ありません。"))).toEqual([]);
+    // 体験ページへのリンクがない記事も止める
+    expect(pilatesViolations({ ...base, content: "<p>トレーナーと1対1で行います。</p>" })).toEqual(["体験ページ（/pilates-trial）へのリンクがない"]);
     // ほかのカテゴリーの記事は、この決まりの対象外
     expect(pilatesViolations({ ...base, category: "ダイエット", content: "<p>手ぶらでOK</p>" })).toEqual([]);
     const gen = read("scripts/generate-blog-post.mjs");
