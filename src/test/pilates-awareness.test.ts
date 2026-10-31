@@ -143,7 +143,8 @@ describe("FAQ・ピラティス欄", () => {
   it.each(Object.keys(translations) as (keyof typeof translations)[])("%s: よくあるご質問で、マシンピラティスも1対1だと答えている", (lang) => {
     const faq = translations[lang].faq.items.find((i) => /ピラティス|Pilates|普拉提|皮拉提斯|필라테스/.test(i.question))!;
     expect(faq.answer).toContain(ONE_ON_ONE[lang]);
-    expect(translations[lang].pilates.kicker).toBe("Personal Pilates");
+    // 画面の文に「パーソナル」を重ねない（#126 のオーナーの指摘）。見出しの上の英字も「Pilates」のまま
+    expect(translations[lang].pilates.kicker).not.toMatch(/personal/i);
   });
 
   it("体験ページ：グループレッスンかどうかの質問に「1対1」と答え、見出しも「1対1の」", () => {
@@ -173,7 +174,7 @@ describe("体験ページの担当トレーナー", () => {
       // 「々」の前に改行しない印（U+2060）を除けば、ホームと同じ経歴の文
       expect(container.textContent!.replace(/\u2060/g, "")).toContain(m.career);
       expect(container.textContent).not.toContain("PYLA");
-      expect(screen.getByRole("link", { name: "トレーナー紹介をくわしく見る →" }).getAttribute("href")).toBe("/#trainer");
+      expect(screen.getByRole("link", { name: "トレーナー紹介を見る →" }).getAttribute("href")).toBe("/#trainer");
       expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("1対1のマシンピラティス体験");
     } finally {
       window.scrollTo = scrollTo;
@@ -183,21 +184,42 @@ describe("体験ページの担当トレーナー", () => {
 
 describe("マシンピラティスのブログ記事", () => {
   const posts = blogPosts.filter((p) => p.category === PILATES_CATEGORY);
-  // 曜日・時刻は書かない（体験の開始日「11月25日（水）」はサイトと同じ書き方なので対象外）
-  const SCHEDULE = /\d{1,2}[:：]\d{2}|\d{1,2}時|[月火水木金土日]曜|夕方|夜|午後|毎週/;
-  const NG = /手ぶら|PYLA|改善|治る|治り|痩せ|矯正|No\.?1|最安|相場|効果|効く|必ず|無理なく|バネが動きを支え/;
+  // 手で書いて確かめた2本（このあと自動生成の記事が増えても、テストは落ちないようにする）
+  const HANDWRITTEN = ["personal-machine-pilates-kyoto", "machine-pilates-vs-personal-training-kyoto"];
 
-  it("2本あり、どちらも体験ページにリンクしている", () => {
-    expect(posts.map((p) => p.slug).sort()).toEqual(["machine-pilates-vs-personal-training-kyoto", "personal-machine-pilates-kyoto"]);
-    for (const p of posts) {
-      expect(p.content, p.slug).toContain('<a href="/pilates-trial">');
+  it("手で書いた2本：1対1・カウンセリングを含めて60分・説明文は130字まで", () => {
+    expect(posts.map((p) => p.slug)).toEqual(expect.arrayContaining(HANDWRITTEN));
+    for (const p of posts.filter((x) => HANDWRITTEN.includes(x.slug))) {
       expect(p.content, p.slug).toContain("1対1");
       expect(p.content, p.slug).toContain("カウンセリングを含めて60分");
-      expect(p.content, p.slug).not.toMatch(SCHEDULE);
-      expect(p.content + p.title + p.metaDescription, p.slug).not.toMatch(NG);
       expect(p.metaDescription.length, p.slug).toBeLessThanOrEqual(130);
+    }
+  });
+
+  it("どの記事も体験ページにリンクし、画面の文に「パーソナルピラティス」・効果の言い方・曜日や時刻・手ぶらがない", async () => {
+    const { pilatesViolations } = await import("../../scripts/blog-rules.mjs");
+    expect(posts.length).toBeGreaterThan(0);
+    for (const p of posts) {
+      expect(p.content, p.slug).toMatch(/<a href="(https:\/\/kyoto-salute\.com)?\/pilates-trial">/);
+      expect(pilatesViolations(p), p.slug).toEqual([]);
       expect(fs.existsSync(path.join(root, `src/assets/blog/${p.slug}.webp`)), p.slug).toBe(true);
     }
+    // 検索向けの説明文には「パーソナルピラティス」を使ってよい
+    expect(posts.find((p) => p.slug === HANDWRITTEN[0])!.metaDescription).toContain("パーソナルピラティス");
+  });
+
+  it("自動生成の記事は、決まりに反する言葉があれば止まる", async () => {
+    const { pilatesViolations } = await import("../../scripts/blog-rules.mjs");
+    const base = { category: PILATES_CATEGORY, title: "マシンピラティスの始め方", metaDescription: "京都でパーソナルピラティスを探している方へ。", content: "<p>トレーナーと1対1で行います。</p>" };
+    expect(pilatesViolations(base)).toEqual([]);
+    expect(pilatesViolations({ ...base, title: "京都のパーソナルピラティス" })).toEqual(["パーソナルピラティス"]);
+    expect(pilatesViolations({ ...base, content: "<p>手ぶらでOK。夜も通えます。</p>" })).toEqual(["手ぶら", "夜"]);
+    expect(pilatesViolations({ ...base, content: "<p>姿勢改善の効果があります。</p>" })).toEqual(["改善", "効果"]);
+    // ほかのカテゴリーの記事は、この決まりの対象外
+    expect(pilatesViolations({ ...base, category: "ダイエット", content: "<p>手ぶらでOK</p>" })).toEqual([]);
+    const gen = read("scripts/generate-blog-post.mjs");
+    expect(gen).toContain("const violations = pilatesViolations(post);");
+    expect(read(".github/workflows/weekly-blog.yml")).toMatch(/- name: Run tests\n\s+if: steps\.generate\.outputs\.created == 'true'\n\s+run: npm test/);
   });
 
   it("記事の下の案内は、マシンピラティス体験の予約ページ", async () => {
@@ -209,14 +231,27 @@ describe("マシンピラティスのブログ記事", () => {
     const scrollTo = window.scrollTo;
     window.scrollTo = () => {};
     try {
-      render(
-        h(HelmetProvider, null,
-          h(MemoryRouter, { initialEntries: [`/blog/${posts[0].slug}`] },
-            h(Routes, null, h(Route, { path: "/blog/:slug", element: h(BlogPost) })))),
-      );
+      const open = (slug: string) =>
+        render(
+          h(HelmetProvider, null,
+            h(MemoryRouter, { initialEntries: [`/blog/${slug}`] },
+              h(Routes, null, h(Route, { path: "/blog/:slug", element: h(BlogPost) })))),
+        );
+      const pilates = open(HANDWRITTEN[0]);
       expect(screen.getByRole("link", { name: "マシンピラティス体験を予約する" }).getAttribute("href")).toBe(PILATES_TRIAL_URL);
       expect(screen.getByRole("link", { name: "体験の詳細を見る →" }).getAttribute("href")).toBe(PILATES_TRIAL_PAGE);
       expect(screen.queryByRole("link", { name: "体験トレーニングを予約する" })).toBeNull();
+      // ヘッダーの予約ボタンとスマホ下の固定ボタンも、マシンピラティス体験の予約ページ
+      const sticky = screen.getAllByRole("link", { name: "ピラティス体験を予約" });
+      expect(sticky.length).toBeGreaterThanOrEqual(2);
+      for (const a of sticky) expect(a.getAttribute("href")).toBe(PILATES_TRIAL_URL);
+      expect(screen.queryByRole("link", { name: "体験を予約" })).toBeNull();
+      pilates.unmount();
+      // ほかの記事は、これまでどおり体験トレーニング。その下に、マシンピラティス体験へのリンク
+      open("strength-training-longevity-weekly-minutes-kyoto");
+      expect(screen.getByRole("link", { name: "体験トレーニングを予約する" }).getAttribute("href")).toBe("https://app.kyoto-salute.com/trial");
+      expect(screen.getByRole("link", { name: "体験を予約" }).getAttribute("href")).toBe("https://app.kyoto-salute.com/trial");
+      expect(screen.getByRole("link", { name: "1対1のマシンピラティス体験はこちら →" }).getAttribute("href")).toBe(PILATES_TRIAL_PAGE);
     } finally {
       window.scrollTo = scrollTo;
     }

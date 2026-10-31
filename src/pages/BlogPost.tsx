@@ -16,6 +16,7 @@ const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE}$
 const BlogPost = () => {
   const { slug } = useParams();
   const post = getBlogPost(slug);
+  const isPilatesPost = post?.category === PILATES_CATEGORY;
 
   // Restore scroll when navigating between posts (e.g. via related articles).
   useEffect(() => {
@@ -124,7 +125,8 @@ const BlogPost = () => {
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
-      <Header />
+      {/* マシンピラティスの記事は、ヘッダーの予約ボタンとスマホ下の固定ボタンも、マシンピラティス体験の予約にする */}
+      <Header cta={isPilatesPost ? { url: PILATES_TRIAL_URL, label: "ピラティス体験を予約", location: "blog_post_pilates_header" } : undefined} />
       <main className="section-padding pt-32 md:pt-36">
         <article className="mx-auto max-w-[720px]">
           <div className="mb-6 flex flex-wrap items-center gap-3 text-xs font-body text-muted-foreground">
@@ -159,7 +161,7 @@ const BlogPost = () => {
                 Book Now
               </a>
             </div>
-          ) : post.category === PILATES_CATEGORY ? (
+          ) : isPilatesPost ? (
             // マシンピラティスの記事は、記事の下の案内をマシンピラティス体験にする
             <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
               <p className="font-heading text-2xl text-foreground">マシンピラティス体験はこちら</p>
@@ -234,7 +236,7 @@ const BlogPost = () => {
         </article>
       </main>
       <Footer />
-      <MobileCTABar />
+      {isPilatesPost ? <MobileCTABar url={PILATES_TRIAL_URL} label="ピラティス体験を予約" location="blog_post_pilates_sticky" /> : <MobileCTABar />}
     </div>
   );
 };

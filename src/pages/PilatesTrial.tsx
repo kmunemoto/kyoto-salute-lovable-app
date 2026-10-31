@@ -253,7 +253,7 @@ const PilatesTrial = () => {
                 <p className="mt-6 font-body text-muted-foreground leading-relaxed text-pretty">{keepIterationMark(trainer.career)}</p>
                 <p className="mt-4 font-body text-foreground leading-relaxed text-pretty">{keepIterationMark(trainer.message)}</p>
                 <Link to="/#trainer" className="mt-6 inline-block font-body text-sm text-gold hover:underline">
-                  トレーナー紹介をくわしく見る →
+                  トレーナー紹介を見る →
                 </Link>
               </div>
             </div>
