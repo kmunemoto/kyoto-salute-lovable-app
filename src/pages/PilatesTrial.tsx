@@ -18,11 +18,11 @@ const TRAINING_TRIAL_URL = "https://app.kyoto-salute.com/trial";
 const LINE_URL = "https://lin.ee/UMVDzWF";
 const TITLE = "マシンピラティス体験｜京都・御所南のパーソナルジム Salute御所南";
 const DESCRIPTION =
-  "京都市中京区・御所南のパーソナルジムSalute御所南で、マシンピラティスの体験ができます。完全個室でトレーナーと1対1、カウンセリングを含めて60分。手ぶらでOK。体験料¥3,000（体験当日のご入会で¥0）。丸太町駅から徒歩8分。";
+  "京都市中京区・御所南のパーソナルジムSalute御所南で、マシンピラティスの体験ができます。完全個室でトレーナーと1対1、カウンセリングを含めて60分。体験料¥3,000（体験当日のご入会で¥0）。丸太町駅から徒歩8分。";
 
 const steps = [
   { title: "予約ページで日時を選ぶ", desc: "空いている日時を選んで予約します。予約が完了すると、確認メールが届きます。" },
-  { title: "マシンピラティスを体験", desc: "カウンセリングで目標やお悩みをお聞きした後、トレーナーと1対1で、リフォーマーを使ったマシンピラティスを体験していただきます。カウンセリングを含めて60分です。手ぶらでも大丈夫です。" },
+  { title: "マシンピラティスを体験", desc: "カウンセリングで目標やお悩みをお聞きした後、トレーナーと1対1で、リフォーマーを使ったマシンピラティスを体験していただきます。カウンセリングを含めて60分です。" },
   { title: "ご入会（ご希望の方）", desc: "体験当日にご入会いただくと、体験料は¥0になります（ご入会されない場合は、体験料¥3,000を当日お支払いいただきます）。ご入会後は、月額プランの1回ごとにパーソナルトレーニングとマシンピラティスを選べます。" },
 ];
 
@@ -169,7 +169,7 @@ const PilatesTrial = () => {
               )}
               <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl text-foreground leading-tight">マシンピラティス体験</h1>
               <p className="mt-6 font-body text-muted-foreground leading-relaxed text-pretty">
-                京都・御所南のパーソナルジム Salute御所南で、マシンピラティスを体験できます。完全個室で、トレーナーと<span className="whitespace-nowrap">1対1</span>。カウンセリングのあと、リフォーマーというマシンを使ったマシンピラティスを体験していただけます（カウンセリングを含めて60分）。手ぶらでも大丈夫です。
+                京都・御所南のパーソナルジム Salute御所南で、マシンピラティスを体験できます。完全個室で、トレーナーと<span className="whitespace-nowrap">1対1</span>。カウンセリングのあと、リフォーマーというマシンを使ったマシンピラティスを体験していただけます（カウンセリングを含めて60分）。
               </p>
               <p className="mt-4 font-body text-foreground">
                 体験料 <span className="font-heading text-2xl text-gold">¥3,000</span>（税込）
@@ -297,7 +297,7 @@ const PilatesTrial = () => {
                   </div>
                 </div>
                 <ul className="space-y-2 font-body text-sm text-muted-foreground">
-                  {["完全個室・完全予約制", "入会金・事務手数料¥0", "手ぶらでOK（ウェア・タオル・お水を無料でご用意）"].map((x) => (
+                  {["完全個室・完全予約制", "入会金・事務手数料¥0", "ウェア・タオル・お水を無料でご用意"].map((x) => (
                     <li key={x} className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-gold shrink-0" />
                       {x}
