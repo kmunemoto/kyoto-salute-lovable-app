@@ -38,31 +38,37 @@
   </url>
   <url>
     <loc>https://kyoto-salute.com/drop-in</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://kyoto-salute.com/pilates-trial</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kyoto-salute.com/area/marutamachi</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/karasuma-oike</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/kyoto-shiyakusho-mae</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyoto-salute.com/area/jingu-marutamachi</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -20,7 +20,8 @@
     <title>御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中</title>
     <meta name="description" content="御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーが、ダイエット・ボディメイク・姿勢改善をマンツーマンで指導。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。">
     <meta name="keywords" content="パーソナルジム,京都,安い,京都市中京区,御所南,体験トレーニング,パーソナルトレーニング,ダイエット,ボディメイク,姿勢改善,マシンピラティス,ピラティス,マンツーマン,入会金無料,初心者,手ぶら,栄養士,月額制,都度払い" />
-    <link rel="canonical" href="https://kyoto-salute.com/" />
+    <!-- canonical はここには書かず、各ページが react-helmet-async で出す（ホームと各言語は Index.tsx）。
+         ここに書くと、/pilates-trial などでも読み込み直後の HTML に「/」の canonical が残り、描画後の canonical と食い違う -->
     <link rel="alternate" hreflang="ja" href="https://kyoto-salute.com/" />
     <link rel="alternate" hreflang="en" href="https://kyoto-salute.com/en" />
     <link rel="alternate" hreflang="zh-Hans" href="https://kyoto-salute.com/zh" />
@@ -123,6 +124,16 @@
           "priceCurrency": "JPY",
           "availability": "https://schema.org/InStock",
           "url": "https://kyoto-salute.com/#consultation"
+        },
+        {
+          "@type": "Offer",
+          "name": "マシンピラティス体験（60分）",
+          "description": "京都市中京区・御所南のパーソナルジムSalute御所南の、マシンピラティス（リフォーマー）の体験。完全個室でトレーナーと1対1、60分。体験当日にご入会いただいた場合、体験料は¥0となります。",
+          "price": "3000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "availabilityStarts": "2026-11-25",
+          "url": "https://kyoto-salute.com/pilates-trial"
         }
       ]
     },
@@ -213,7 +224,7 @@
         "name": "マシンピラティスは選べますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。なお、体験トレーニングはパーソナルトレーニングのみとなります。"
+          "text": "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。ご入会前に、マシンピラティスの体験（60分）を受けていただくこともできます。体験料は¥3,000で、体験当日にご入会いただいた場合は¥0です。"
         }
       },
       {

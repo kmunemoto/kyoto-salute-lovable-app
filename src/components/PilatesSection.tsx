@@ -1,6 +1,9 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import pilatesImage from "@/assets/pilates-reformer.webp";
 import { useT } from "@/i18n/LanguageContext";
+import { trackCtaClick } from "@/lib/analytics";
+import { PILATES_TRIAL_PAGE, PILATES_TRIAL_URL, isBeforePilatesTrialStart } from "@/lib/booking";
 
 // "\n\n" はいつも改行、"\n" はスマホでだけ改行する（言葉の途中で折り返さないように）
 const withBreaks = (text: string) =>
@@ -46,6 +49,30 @@ const PilatesSection = () => {
               </li>
             ))}
           </ol>
+        </div>
+        {/* マシンピラティス体験の予約（曜日・時間は先生のシフトで変わるので書かず、空き状況は予約ページで見てもらう） */}
+        <div className="mt-12 md:mt-16 text-center">
+          {isBeforePilatesTrialStart() && (
+            <p className="inline-block mb-4 px-4 py-1 rounded-full border border-gold/40 text-gold text-sm font-body">{p.trialStart}</p>
+          )}
+          <p className={`text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6 text-pretty${keep}`}>{p.trialNote}</p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center">
+            <a
+              href={PILATES_TRIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCtaClick({ type: "trial", location: "pilates_section", label: p.trialBtn, url: PILATES_TRIAL_URL, language: lang })}
+              className="gold-gradient inline-block px-10 py-4 text-white font-medium rounded-sm font-body"
+            >
+              {p.trialBtn}
+            </a>
+            {/* 体験の案内ページは日本語だけ */}
+            {lang === "ja" && (
+              <Link to={PILATES_TRIAL_PAGE} className="font-body text-sm text-gold hover:underline">
+                体験の詳細を見る →
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </section>

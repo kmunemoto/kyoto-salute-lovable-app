@@ -42,6 +42,7 @@ export function writeSitemap() {
   push(`${BASE}/ko`, latest, "weekly", "0.9");
   push(`${BASE}/blog`, latest, "weekly", "0.8");
   push(`${BASE}/drop-in`, today, "monthly", "0.7");
+  push(`${BASE}/pilates-trial`, today, "monthly", "0.8");
   for (const slug of areas) push(`${BASE}/area/${slug}`, today, "monthly", "0.8");
   for (const p of posts) push(`${BASE}/blog/${p.slug}`, p.date, "monthly", "0.7");
   push(`${BASE}/terms`, "2026-04-25", "monthly", "0.3");

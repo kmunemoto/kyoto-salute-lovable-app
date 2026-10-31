@@ -4,8 +4,15 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 
-const Header = () => {
+// 予約ボタンは、ふだんは体験トレーニングの予約。ページによって予約先を変えたいときは cta を渡す
+// （例：マシンピラティス体験のページでは、ピラティス体験の予約ページにする）。計測の location は「cta.location_desktop」などになる。
+type Props = { cta?: { url: string; label: string; location: string } };
+
+const Header = ({ cta }: Props = {}) => {
   const { lang, t } = useT();
+  const ctaUrl = cta?.url ?? "https://app.kyoto-salute.com/trial";
+  const ctaLabel = cta?.label ?? t.header.ctaBtn;
+  const ctaLocation = (where: string) => `${cta?.location ?? "header"}_${where}`;
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
@@ -133,26 +140,26 @@ const Header = () => {
           )}
           <LanguageSwitcher />
           <a
-            href="https://app.kyoto-salute.com/trial"
+            href={ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackCtaClick({ type: "trial", location: "header_desktop", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang })}
+            onClick={() => trackCtaClick({ type: "trial", location: ctaLocation("desktop"), label: ctaLabel, url: ctaUrl, language: lang })}
             className="gold-gradient px-5 py-2.5 text-sm font-medium text-white rounded-sm transition-opacity whitespace-nowrap"
           >
-            {t.header.ctaBtn}
+            {ctaLabel}
           </a>
         </nav>
 
         <div className="flex xl:hidden items-center gap-3">
           {/* タブレット〜小さめの PC（768〜1279px）は、PC のメニューも下の予約バーも出ないので、予約ボタンをここに出す */}
           <a
-            href="https://app.kyoto-salute.com/trial"
+            href={ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackCtaClick({ type: "trial", location: "header_tablet", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang })}
+            onClick={() => trackCtaClick({ type: "trial", location: ctaLocation("tablet"), label: ctaLabel, url: ctaUrl, language: lang })}
             className="hidden md:inline-block gold-gradient px-4 py-2 text-sm font-medium text-white rounded-sm transition-opacity whitespace-nowrap"
           >
-            {t.header.ctaBtn}
+            {ctaLabel}
           </a>
           <LanguageSwitcher />
           <button
@@ -269,13 +276,13 @@ const Header = () => {
 
             <div className="p-6 border-t border-border">
               <a
-                href="https://app.kyoto-salute.com/trial"
+                href={ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => { trackCtaClick({ type: "trial", location: "header_mobile", label: t.header.ctaBtn, url: "https://app.kyoto-salute.com/trial", language: lang }); closeDrawer(); }}
+                onClick={() => { trackCtaClick({ type: "trial", location: ctaLocation("mobile"), label: ctaLabel, url: ctaUrl, language: lang }); closeDrawer(); }}
                 className="block text-center gold-gradient px-5 py-3 text-sm font-medium text-white rounded-sm"
               >
-                {t.header.ctaBtn}
+                {ctaLabel}
               </a>
             </div>
         </div>
