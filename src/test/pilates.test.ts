@@ -91,7 +91,7 @@ describe("マシンピラティス（pilates）", () => {
 
   it("日本語の見出しとリード", () => {
     expect(translations.ja.pilates.title.replace("\n", "")).toBe("マシンピラティスも選べます");
-    expect(translations.ja.pilates.lead.replace(/\n/g, "")).toBe("パーソナルトレーニングとパーソナルマシンピラティス、どちらも選べます。追加料金はかかりません。");
+    expect(translations.ja.pilates.lead.replace(/\n/g, "")).toBe("トレーニングとマシンピラティス、どちらも選べます。追加料金はかかりません。");
   });
 
   it("日本語の 01〜03 の見出し", () => {
