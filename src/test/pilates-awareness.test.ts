@@ -156,6 +156,41 @@ describe("FAQ・ピラティス欄", () => {
   });
 });
 
+describe("男性も受けられる（オーナー確認済み）", () => {
+  const MEN: Record<keyof typeof translations, { q: string; a: string; note: string }> = {
+    ja: { q: "男性もマシンピラティスを受けられますか？", a: "男性の方も受けていただけます", note: "男性の方も受けられます" },
+    en: { q: "Can men take machine Pilates too?", a: "men are welcome too", note: "men are welcome too" },
+    zh: { q: "男性也可以上器械普拉提吗？", a: "男性也可以参加", note: "男性也可以参加" },
+    zhTW: { q: "男性也可以上器械皮拉提斯嗎？", a: "男性也可以參加", note: "男性也可以參加" },
+    ko: { q: "남성도 머신 필라테스를 받을 수 있나요?", a: "남성분도 받으실 수 있습니다", note: "남성분도 받으실 수 있습니다" },
+  };
+  it.each(Object.keys(translations) as (keyof typeof translations)[])("%s: よくあるご質問とピラティス欄に、男性も受けられると書いてある", (lang) => {
+    const tr = translations[lang];
+    const item = tr.faq.items.find((i) => i.question === MEN[lang].q);
+    expect(item, MEN[lang].q).toBeTruthy();
+    expect(item!.answer).toContain(MEN[lang].a);
+    expect(tr.pilates.trialNote).toContain(MEN[lang].note);
+    // 「マシンピラティスは選べますか？」が先（ほかのテストは最初のピラティスの質問を見ている）
+    const idx = (re: RegExp) => tr.faq.items.findIndex((i) => re.test(i.question));
+    expect(idx(/ピラティス|Pilates|普拉提|皮拉提斯|필라테스/)).toBeLessThan(tr.faq.items.indexOf(item!));
+  });
+
+  it("index.html の FAQPage にも、画面と同じ文面で入っている", () => {
+    const ja = translations.ja.faq.items.find((i) => i.question === "男性もマシンピラティスを受けられますか？")!;
+    const m = indexHtml().match(/"name": "男性もマシンピラティスを受けられますか？",\s*"acceptedAnswer": \{\s*"@type": "Answer",\s*"text": "([^"]*)"/);
+    expect(m).not.toBeNull();
+    expect(m![1]).toBe(ja.answer);
+  });
+
+  it("体験ページ：説明文・リード・よくあるご質問", () => {
+    expect(PILATES_TRIAL_SEO.description).toContain("男性の方も受けられます");
+    const page = read("src/pages/PilatesTrial.tsx");
+    // リード（FAQ の答えにも同じ文があるので、リードにしかない前の部分も含めて確かめる）
+    expect(page).toContain("（カウンセリングを含めて60分）。男性の方も受けていただけます。");
+    expect(page).toContain('q: "男性も受けられますか？"');
+  });
+});
+
 describe("体験ページの担当トレーナー", () => {
   it("名前・担当・経歴を出し、資格の欄は出さない", async () => {
     const { createElement: h } = await import("react");
@@ -184,10 +219,10 @@ describe("体験ページの担当トレーナー", () => {
 
 describe("マシンピラティスのブログ記事", () => {
   const posts = blogPosts.filter((p) => p.category === PILATES_CATEGORY);
-  // 手で書いて確かめた2本（このあと自動生成の記事が増えても、テストは落ちないようにする）
-  const HANDWRITTEN = ["personal-machine-pilates-kyoto", "machine-pilates-vs-personal-training-kyoto"];
+  // 手で書いて確かめた3本（このあと自動生成の記事が増えても、テストは落ちないようにする）
+  const HANDWRITTEN = ["personal-machine-pilates-kyoto", "machine-pilates-vs-personal-training-kyoto", "men-machine-pilates-kyoto"];
 
-  it("手で書いた2本：1対1・カウンセリングを含めて60分・説明文は130字まで", () => {
+  it("手で書いた3本：1対1・カウンセリングを含めて60分・説明文は130字まで", () => {
     expect(posts.map((p) => p.slug)).toEqual(expect.arrayContaining(HANDWRITTEN));
     for (const p of posts.filter((x) => HANDWRITTEN.includes(x.slug))) {
       expect(p.content, p.slug).toContain("1対1");
