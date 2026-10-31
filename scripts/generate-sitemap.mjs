@@ -11,6 +11,8 @@ const POSTS_FILE = path.join(ROOT, "src/data/blog-posts.ts");
 const AREA_FILE = path.join(ROOT, "src/data/area-pages.ts");
 const SITEMAP_FILE = path.join(ROOT, "public/sitemap.xml");
 const BASE = "https://kyoto-salute.com";
+// マシンピラティス体験の案内ページ（/pilates-trial）の内容を変えて公開した日。ページを直したら更新する
+const PILATES_TRIAL_UPDATED = "2026-10-31";
 
 // Post objects list `slug` then `date` (both quoted); the type declaration uses
 // `slug: string;` / `date: string;` (no quotes) so it is not matched.
@@ -42,7 +44,7 @@ export function writeSitemap() {
   push(`${BASE}/ko`, latest, "weekly", "0.9");
   push(`${BASE}/blog`, latest, "weekly", "0.8");
   push(`${BASE}/drop-in`, today, "monthly", "0.7");
-  push(`${BASE}/pilates-trial`, today, "monthly", "0.8");
+  push(`${BASE}/pilates-trial`, PILATES_TRIAL_UPDATED, "monthly", "0.8");
   for (const slug of areas) push(`${BASE}/area/${slug}`, today, "monthly", "0.8");
   for (const p of posts) push(`${BASE}/blog/${p.slug}`, p.date, "monthly", "0.7");
   push(`${BASE}/terms`, "2026-04-25", "monthly", "0.3");

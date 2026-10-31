@@ -9,16 +9,23 @@ import pilatesImage from "@/assets/pilates-reformer.webp";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 import { PILATES_TRIAL_PAGE, PILATES_TRIAL_URL, isBeforePilatesTrialStart } from "@/lib/booking";
+import { PILATES_TRIAL_SEO, SITE_URL } from "@/lib/seo-pages";
+import { HIDDEN_TRAINERS } from "@/data/trainers";
 
 // マシンピラティス体験の案内ページ（日本語のみ）。
 // 曜日・時間は担当トレーナーのシフトで変わるので書かず、空き状況は予約ページで見てもらう。
-const BASE = "https://kyoto-salute.com";
+const BASE = SITE_URL;
 const PAGE_URL = `${BASE}${PILATES_TRIAL_PAGE}`;
 const TRAINING_TRIAL_URL = "https://app.kyoto-salute.com/trial";
 const LINE_URL = "https://lin.ee/UMVDzWF";
-const TITLE = "マシンピラティス体験｜京都・御所南のパーソナルジム Salute御所南";
-const DESCRIPTION =
-  "京都市中京区・御所南のパーソナルジムSalute御所南で、マシンピラティスの体験ができます。完全個室でトレーナーと1対1、カウンセリングを含めて60分。体験料¥3,000（体験当日のご入会で¥0）。丸太町駅から徒歩8分。";
+// タイトル・説明文・共有画像は src/lib/seo-pages.ts（ビルドのときに書き出す pilates-trial.html と同じものを使う）
+const TITLE = PILATES_TRIAL_SEO.title;
+const DESCRIPTION = PILATES_TRIAL_SEO.description;
+const OG_IMAGE = PILATES_TRIAL_SEO.image;
+// 担当トレーナー（ホームのトレーナー紹介と同じ文面を translations から読む。資格の欄は、ここでは出さない）
+const PILATES_TRAINER = "Yonetomi Yoshiko";
+// Chrome の文節改行（auto-phrase）は「方々」の「々」の前で改行することがあるので、「々」の前に改行しない印（WORD JOINER）を入れる
+const keepIterationMark = (text: string) => text.replace(/々/g, "\u2060々");
 
 const steps = [
   { title: "予約ページで日時を選ぶ", desc: "空いている日時を選んで予約します。予約が完了すると、確認メールが届きます。" },
@@ -29,6 +36,7 @@ const steps = [
 const PilatesTrial = () => {
   const { t } = useT();
   const beforeStart = isBeforePilatesTrialStart();
+  const trainer = HIDDEN_TRAINERS.has(PILATES_TRAINER) ? undefined : t.trainer.members.find((m) => m.nameRoman === PILATES_TRAINER);
 
   // 別のページから移ってきたときに、ページの途中から表示されないようにする
   useEffect(() => {
@@ -45,6 +53,10 @@ const PilatesTrial = () => {
   ];
 
   const faqs = [
+    {
+      q: "マシンピラティスは、グループレッスンですか？",
+      a: "いいえ。完全個室で、トレーナーと1対1で行います。ご入会後のマシンピラティス（1回50分）も、同じく1対1です。",
+    },
     {
       q: "予約できる日時はいつですか？",
       a: `マシンピラティス担当トレーナーのスケジュールに合わせて、予約できる日時を設けています。日時は変わることがあるため、空き状況は予約ページでご確認ください。ご予約は前日までにお願いします。${bookingWindow}`,
@@ -91,13 +103,15 @@ const PilatesTrial = () => {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "マシンピラティス体験",
-    serviceType: "マシンピラティス（リフォーマー）",
+    name: "マシンピラティス体験（トレーナーと1対1）",
+    alternateName: "パーソナルピラティス体験",
+    serviceType: "パーソナルピラティス（マシンピラティス・リフォーマー）",
     description: DESCRIPTION,
     url: PAGE_URL,
     areaServed: { "@type": "City", name: "京都市" },
     provider: {
       "@type": "HealthClub",
+      "@id": `${BASE}/#gym`,
       name: "パーソナルジム Salute御所南",
       url: `${BASE}/`,
       telephone: "+81-90-8386-0894",
@@ -149,10 +163,12 @@ const PilatesTrial = () => {
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content={PAGE_URL} />
-        <meta property="og:image" content={`${BASE}/og-image.jpg`} />
+        <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:locale" content="ja_JP" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={`${BASE}/og-image.jpg`} />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
         <script type="application/ld+json">{JSON.stringify(service)}</script>
         <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
@@ -167,9 +183,14 @@ const PilatesTrial = () => {
               {beforeStart && (
                 <p className="inline-block mb-4 px-4 py-1 rounded-full border border-gold/40 text-gold text-sm font-body">2026年11月25日（水）スタート・予約受付中</p>
               )}
-              <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl text-foreground leading-tight">マシンピラティス体験</h1>
+              {/* 「1対1の」と「マシンピラティス体験」の間でだけ改行する */}
+              <h1 className="font-heading text-[clamp(1.5rem,8vw,1.875rem)] sm:text-4xl md:text-6xl lg:text-4xl xl:text-5xl text-foreground leading-tight">
+                <span className="whitespace-nowrap">1対1の</span>
+                <wbr />
+                <span className="whitespace-nowrap">マシンピラティス体験</span>
+              </h1>
               <p className="mt-6 font-body text-muted-foreground leading-relaxed text-pretty">
-                京都・御所南のパーソナルジム Salute御所南で、マシンピラティスを体験できます。完全個室で、トレーナーと<span className="whitespace-nowrap">1対1</span>。カウンセリングのあと、リフォーマーというマシンを使ったマシンピラティスを体験していただけます（カウンセリングを含めて60分）。
+                京都・御所南のパーソナルジム Salute御所南の完全個室で、リフォーマーというマシンを使ったマシンピラティスを体験できます。カウンセリングのあと、トレーナーが動きを確認しながら進めます（カウンセリングを含めて60分）。
               </p>
               <p className="mt-4 font-body text-foreground">
                 体験料 <span className="font-heading text-2xl text-gold">¥3,000</span>（税込）
@@ -216,6 +237,28 @@ const PilatesTrial = () => {
             </ol>
           </div>
         </section>
+
+        {/* 担当トレーナー */}
+        {trainer && (
+          <section className="section-padding bg-secondary">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3 font-body">Trainer</p>
+                <h2 className="font-heading text-3xl md:text-4xl text-foreground">担当トレーナー</h2>
+              </div>
+              <div className="bg-background rounded-sm p-6 md:p-10">
+                <p className="font-body text-sm text-gold">{trainer.role}</p>
+                <p className="mt-1 font-heading text-2xl md:text-3xl text-foreground">{trainer.name}</p>
+                <p className="mt-1 font-body text-sm text-muted-foreground">{trainer.nameRoman}</p>
+                <p className="mt-6 font-body text-muted-foreground leading-relaxed text-pretty">{keepIterationMark(trainer.career)}</p>
+                <p className="mt-4 font-body text-foreground leading-relaxed text-pretty">{keepIterationMark(trainer.message)}</p>
+                <Link to="/#trainer" className="mt-6 inline-block font-body text-sm text-gold hover:underline">
+                  トレーナー紹介を見る →
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 料金・時間・予約 */}
         <section className="section-padding section-dark">

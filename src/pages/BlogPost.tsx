@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
-import { getBlogPost, blogPosts } from "@/data/blog-posts";
+import { getBlogPost, blogPosts, PILATES_CATEGORY } from "@/data/blog-posts";
 import { trackCtaClick } from "@/lib/analytics";
+import { PILATES_TRIAL_PAGE, PILATES_TRIAL_URL } from "@/lib/booking";
 
 const BASE = "https://kyoto-salute.com";
 const PUBLISHER_LOGO = "https://kyoto-salute.com/og-image.jpg";
@@ -15,6 +16,7 @@ const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE}$
 const BlogPost = () => {
   const { slug } = useParams();
   const post = getBlogPost(slug);
+  const isPilatesPost = post?.category === PILATES_CATEGORY;
 
   // Restore scroll when navigating between posts (e.g. via related articles).
   useEffect(() => {
@@ -123,7 +125,8 @@ const BlogPost = () => {
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
-      <Header />
+      {/* マシンピラティスの記事は、ヘッダーの予約ボタンとスマホ下の固定ボタンも、マシンピラティス体験の予約にする */}
+      <Header cta={isPilatesPost ? { url: PILATES_TRIAL_URL, label: "ピラティス体験を予約", location: "blog_post_pilates_header" } : undefined} />
       <main className="section-padding pt-32 md:pt-36">
         <article className="mx-auto max-w-[720px]">
           <div className="mb-6 flex flex-wrap items-center gap-3 text-xs font-body text-muted-foreground">
@@ -158,6 +161,28 @@ const BlogPost = () => {
                 Book Now
               </a>
             </div>
+          ) : isPilatesPost ? (
+            // マシンピラティスの記事は、記事の下の案内をマシンピラティス体験にする
+            <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
+              <p className="font-heading text-2xl text-foreground">マシンピラティス体験はこちら</p>
+              <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                京都・御所南のSalute御所南で、トレーナーと1対1のマシンピラティスを体験できます。カウンセリングを含めて60分、体験料は¥3,000、体験当日のご入会で¥0になります。日時・空き状況は予約ページでご確認ください。
+              </p>
+              <a
+                href={PILATES_TRIAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCtaClick({ type: "trial", location: "blog_post_pilates", label: "マシンピラティス体験を予約する", url: PILATES_TRIAL_URL, language: "ja" })}
+                className="mt-6 inline-block w-full sm:w-auto rounded-sm gold-gradient px-4 sm:px-8 py-3 font-body text-sm font-medium text-primary-foreground"
+              >
+                マシンピラティス体験を予約する
+              </a>
+              <p className="mt-5 font-body text-sm">
+                <Link to={PILATES_TRIAL_PAGE} className="text-gold hover:underline">
+                  体験の詳細を見る →
+                </Link>
+              </p>
+            </div>
           ) : (
             <div className="mt-12 border border-gold/30 bg-secondary p-8 text-center">
               <p className="font-heading text-2xl text-foreground">体験トレーニングはこちら</p>
@@ -173,6 +198,11 @@ const BlogPost = () => {
               >
                 体験トレーニングを予約する
               </a>
+              <p className="mt-5 font-body text-sm">
+                <Link to={PILATES_TRIAL_PAGE} className="text-gold hover:underline">
+                  1対1のマシンピラティス体験はこちら →
+                </Link>
+              </p>
             </div>
           )}
 
@@ -206,7 +236,7 @@ const BlogPost = () => {
         </article>
       </main>
       <Footer />
-      <MobileCTABar />
+      {isPilatesPost ? <MobileCTABar url={PILATES_TRIAL_URL} label="ピラティス体験を予約" location="blog_post_pilates_sticky" /> : <MobileCTABar />}
     </div>
   );
 };

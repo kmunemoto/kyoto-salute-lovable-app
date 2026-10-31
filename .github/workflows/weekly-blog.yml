@@ -43,6 +43,11 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: npm run blog:generate
 
+      # 料金・キャンセル・マシンピラティスの書き方などの決まりを、テストで確かめてから公開する
+      - name: Run tests
+        if: steps.generate.outputs.created == 'true'
+        run: npm test
+
       - name: Verify build
         if: steps.generate.outputs.created == 'true'
         run: npm run build

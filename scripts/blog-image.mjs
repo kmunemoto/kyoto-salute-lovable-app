@@ -39,6 +39,7 @@ const CATEGORY_LABEL = {
   "体験トレーニング": "TRIAL SESSION",
   "食事アドバイス": "NUTRITION",
   "ジム選び": "CHOOSING A GYM",
+  "マシンピラティス": "MACHINE PILATES",
   "For Visitors": "FOR VISITORS",
 };
 
@@ -171,6 +172,7 @@ const SCENE = {
   "ジム選び": "a modern, tidy private gym interior with neat equipment, soft light",
   "エリアガイド": "a serene Kyoto townscape with traditional machiya houses and a quiet street",
   "体験トレーニング": "a bright, welcoming reception area of a boutique fitness studio",
+  "マシンピラティス": "a wooden Pilates reformer machine in a calm, bright private studio with soft daylight",
   "For Visitors": "a stylish boutique gym interior with a subtle Kyoto aesthetic, soft natural light",
 };
 

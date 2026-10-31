@@ -8,7 +8,7 @@ import { blogPosts } from "@/data/blog-posts";
 const BASE = "https://kyoto-salute.com";
 const TITLE = "ブログ | 京都で安いパーソナルジムなSalute御所南";
 const DESCRIPTION =
-  "京都市中京区・御所南のパーソナルジムSalute御所南のブログ。料金、初心者向け情報、ダイエット、食事サポートについて発信しています。";
+  "京都市中京区・御所南のパーソナルジムSalute御所南のブログ。料金、初心者向け情報、ダイエット、食事サポート、マシンピラティスについて発信しています。";
 
 const Blog = () => {
   const itemListSchema = {

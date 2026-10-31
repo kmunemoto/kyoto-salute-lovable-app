@@ -2,13 +2,12 @@ import type { ReactNode } from "react";
 import trainerPhoto from "@/assets/trainer.jpg";
 import { useT } from "@/i18n/LanguageContext";
 import type { TrainerProfile } from "@/i18n/translations";
+import { HIDDEN_TRAINERS } from "@/data/trainers";
 
 // 写真は translations の trainer.members の並び順で当てる。写真がまだない人は、文章だけで表示する。
 const photos: (string | undefined)[] = [trainerPhoto];
 
-// いったん非表示にしたいトレーナーを nameRoman で入れる（例: "Yonetomi Yoshiko"）。外すと、また表示される。
-// 表示が1人になるときは英語の見出し（translations の en.trainer.title）を「Your Trainer」に、2人以上なら「Our Trainers」にする。
-const hidden = new Set<string>([]);
+// いったん非表示にしたいトレーナーは、src/data/trainers.ts の HIDDEN_TRAINERS に入れる
 
 const Field = ({ label, children }: { label: string; children: ReactNode }) => (
   <div>
@@ -63,7 +62,7 @@ const TrainerSection = () => {
         <div className={`max-w-4xl mx-auto${keep}`}>
           {tr.members
             .map((m, i) => ({ m, photo: photos[i] }))
-            .filter(({ m }) => !hidden.has(m.nameRoman))
+            .filter(({ m }) => !HIDDEN_TRAINERS.has(m.nameRoman))
             .map(({ m, photo }, i) => (
               <div key={m.name} className={i > 0 ? "mt-8 pt-12 lg:pt-16 border-t border-gym-dark-foreground/10" : ""}>
                 {photo ? (

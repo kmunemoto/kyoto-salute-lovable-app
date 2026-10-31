@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
+import { PILATES_TRIAL_PAGE } from "@/lib/booking";
 
 // 予約ボタンは、ふだんは体験トレーニングの予約。ページによって予約先を変えたいときは cta を渡す
 // （例：マシンピラティス体験のページでは、ピラティス体験の予約ページにする）。計測の location は「cta.location_desktop」などになる。
@@ -33,6 +34,8 @@ const Header = ({ cta }: Props = {}) => {
     { label: t.nav.consultation, href: `${prefix || ""}/#consultation` },
   ];
   const mobileNavItems = [...navItems, { label: t.nav.blog, href: "/blog" }];
+  // スマホ・タブレットのメニューだけに足す（PC のメニューは1行に収めるため増やさない）。案内ページは日本語だけ
+  const drawerItems = lang === "ja" ? [...mobileNavItems, { label: "マシンピラティス体験", href: PILATES_TRIAL_PAGE }] : mobileNavItems;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -241,7 +244,7 @@ const Header = ({ cta }: Props = {}) => {
             </div>
 
             <nav className="flex-1 overflow-y-auto px-6 pb-4">
-              {mobileNavItems.map((item, i) => (
+              {drawerItems.map((item, i) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -266,7 +269,7 @@ const Header = ({ cta }: Props = {}) => {
                     opacity: animateIn ? 1 : 0,
                     transform: animateIn ? "translateX(0)" : "translateX(12px)",
                     transition: itemTransition,
-                    transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + mobileNavItems.length * 55}ms`,
+                    transitionDelay: reduceMotion || !animateIn ? "0ms" : `${120 + drawerItems.length * 55}ms`,
                   }}
                 >
                   日本語サイトへ

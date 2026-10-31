@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 import { generateBlogImage } from "./blog-image.mjs";
 import { writeSitemap } from "./generate-sitemap.mjs";
+import { pilatesViolations } from "./blog-rules.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const POSTS_FILE = path.join(ROOT, "src/data/blog-posts.ts");
@@ -31,6 +32,7 @@ const CATEGORIES = [
   "体験トレーニング",
   "食事アドバイス",
   "ジム選び",
+  "マシンピラティス",
 ];
 
 function today() {
@@ -92,6 +94,8 @@ SEOに強く、お客様（見込み客）の役に立つ日本語のブログ�
 - カテゴリーは次から1つ選ぶ：${CATEGORIES.join(" / ")}
 - slugは内容を表す英小文字とハイフンのみ（例：personal-gym-stretch-routine-kyoto）。末尾に -kyoto を付けてよい。
 - metaDescriptionは110〜130文字程度。末尾に「完全個室・栄養士トレーナー・体験¥3,000（当日入会で¥0）。」のような訴求を入れる。
+- カテゴリーが「マシンピラティス」の記事では、metaDescriptionの末尾を「完全個室・トレーナーと1対1・マシンピラティス体験¥3,000（当日入会で¥0）。」のようにし、「栄養士トレーナー」は付けない（マシンピラティスの担当は栄養士ではない）。最後の段落の誘導は、体験トレーニングではなくマシンピラティス体験（<a href="https://kyoto-salute.com/pilates-trial">マシンピラティス体験</a>）にする。担当トレーナーの名前や資格名は書かない。
+- カテゴリーが「マシンピラティス」の記事では、次も守る。「パーソナルピラティス」「パーソナルマシンピラティス」はmetaDescriptionだけで使い、タイトル・見出し・本文では「トレーナーと1対1」と書く。「平日」「土日」「週末」「午前」「仕事帰り」のような日や時間帯も書かない。上の基本情報のうち「手ぶらOK」「営業時間」「栄養士資格」は書かず、「ウェア・タオル・お水は無料で用意している」「日時・空き状況は予約ページで確認できる」と書く。「改善」「治る」「痩せる」「矯正」「肩こり」「腰痛」「効果」「効く」「必ず」「No.1」「最安」「相場」は使わない。本文の最後の段落で、マシンピラティス体験のページ（https://kyoto-salute.com/pilates-trial）にリンクする。
 - readTimeは「5分」「6分」のような表記。
 
 # 既存記事のタイトル（テーマが重複しないようにする）
@@ -187,6 +191,13 @@ async function main() {
     .replace(/[^a-z0-9-]+/g, "-")
     .replace(/^-+|-+$/g, "");
   if (!post.slug) throw new Error("Model returned an empty slug");
+
+  // マシンピラティスの記事は、決まりに反する言葉があれば書き込まずに止める（レビューなしで公開されるため）
+  const violations = pilatesViolations(post);
+  if (violations.length) {
+    console.error(`マシンピラティスの記事に、使わない言葉がありました（公開しません）：${violations.join("、")}`);
+    process.exit(1);
+  }
 
   if (slugs.has(post.slug)) {
     console.log(`Slug "${post.slug}" already exists. Skipping to avoid a duplicate.`);

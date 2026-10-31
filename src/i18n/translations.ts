@@ -35,10 +35,10 @@ type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   ja: {
-    meta: { title: "御所南のパーソナルジム Salute｜中京区・丸太町駅徒歩8分｜体験トレーニング受付中", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーが、ダイエット・ボディメイク・姿勢改善をマンツーマンで指導。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
+    meta: { title: "御所南のパーソナルジム Salute｜1対1のマシンピラティスも選べる｜丸太町駅徒歩8分", description: "御所南・中京区の完全個室パーソナルジム Salute御所南。丸太町駅徒歩8分。栄養士トレーナーのダイエット・ボディメイク指導に加え、1対1のマシンピラティスも選べます（追加料金なし）。1回¥4,750〜・入会金¥0。体験¥3,000（体験当日のご入会で¥0）。" },
     nav: { features: "特徴", pilates: "ピラティス", trainer: "トレーナー", voice: "お客様の声", plan: "料金プラン", faq: "よくあるご質問", access: "アクセス", consultation: "体験トレーニング", blog: "ブログ" },
     header: { ctaBtn: "体験トレーニング受付中" },
-    hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,750～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,750～・入会金¥0で通えるパーソナルジムです。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
+    hero: { kicker: "京都市中京区・御所南で安いパーソナルジム Salute御所南｜体験トレーニング受付中", title1: "運動が続かなかったあなたへ。", titleAccent: "御所南の完全マンツーマンジム。", sub: "過去の自分を超える、史上最高のカラダで充実した人生を", desc: "栄養士資格を持つトレーナーが、あなたのペースに合わせて丁寧にサポート。¥4,750～の通いやすい価格で、入会金・レンタル費用もすべて無料です。", seoNote: "烏丸丸太町・御所南エリアで安いパーソナルジムをお探しの方へ。Salute御所南は丸太町駅から徒歩8分、1回¥4,750～・入会金¥0で通えるパーソナルジムです。ご入会後は、1対1のマシンピラティスも1回ごとに選べます。体験トレーニングを実施中（体験料¥3,000・体験当日のご入会で¥0）。", cta1: "まずは体験してみる", cta2: "Salute御所南の特徴を見る" },
     concern: { kicker: "Concern", title: "こんなお悩みありませんか？", items: ["ジムに通ったけど続かなかった", "何をすればいいかわからない", "食事制限がつらくて挫折した", "大手ジムは人目が気になる"], footer: "Salute御所南は、こうしたお悩みを解決するために生まれたパーソナルジムです。" },
     features: { kicker: "Features", title: "Salute御所南が選ばれる理由", items: [
       { title: "あなただけの空間で、集中できる", description: "他のお客様と顔を合わせることはありません。周りの目を気にせず、トレーナーと二人だけの空間でトレーニングに集中できます。" },
@@ -55,7 +55,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "呼吸と体幹を意識して", description: "リフォーマーというマシンで、呼吸に合わせてゆっくり動きます。体の奥の筋肉（インナーマッスル）を意識しながら、体幹や姿勢づくりを目指します。" },
       { title: "1対1だから始めやすい", description: "トレーナーがバネの強さで負荷を調整し、動きを確認しながら進めます。体が硬い方や運動が久しぶりの方も、ご自分のペースで取り組めます。" },
       { title: "トレーニングと使い分けて", description: "しっかり鍛えたい日はトレーニング、体の使い方を見直したい日はマシンピラティス。別のスタジオに通わず、1回ごとに選べます。" },
-    ], imageAlt: "Salute御所南のスタジオで、リフォーマーを使ってマシンピラティスをする女性", trialStart: "体験は11月25日（水）スタート・予約受付中", trialNote: "マシンピラティスの体験（60分）も受け付けています。体験料は¥3,000、体験当日のご入会で¥0です。日時・空き状況は予約ページでご確認ください。", trialBtn: "マシンピラティス体験を予約する" },
+    ], imageAlt: "京都・御所南のパーソナルジム Salute御所南の個室で、リフォーマーを使ってマシンピラティスをする女性", trialStart: "体験は11月25日（水）スタート・予約受付中", trialNote: "マシンピラティスの体験（60分）も受け付けています。体験料は¥3,000、体験当日のご入会で¥0です。日時・空き状況は予約ページでご確認ください。", trialBtn: "マシンピラティス体験を予約する" },
     numbers: { kicker: "Numbers", title: "数字で見るSalute御所南", items: [
       { value: "¥0", label: "入会金・事務手数料" }, { value: "¥4,750〜", label: "1回あたりの料金" }, { value: "5.0", label: "Google口コミ評価" }, { value: "140組+", label: "月間指導実績" },
     ] },
@@ -90,7 +90,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "よくある質問", items: [
       { question: "体験トレーニングではどんなことをしますか？", answer: "カウンセリングで目標やお悩みをお聞きした後、実際の50分間のパーソナルトレーニングを体験していただきます。ウェアとシューズは無料レンタルがありますので、手ぶらでお越しください。" },
       { question: "体験トレーニングの料金はいくらですか？", answer: "体験トレーニングの料金は¥3,000です。体験当日にご入会いただいた場合は、体験料は¥0（無料）となります。体験当日にご入会されない場合は、¥3,000を頂戴します。" },
-      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスも1回50分で、追加料金はかかりません。ご入会前に、マシンピラティスの体験（60分）を受けていただくこともできます。体験料は¥3,000で、体験当日にご入会いただいた場合は¥0です。" },
+      { question: "マシンピラティスは選べますか？", answer: "はい。ご入会後は、月額プランの1回ごとに、パーソナルトレーニングとマシンピラティスのどちらかを選べます。マシンピラティスもトレーナーと1対1で、1回50分、追加料金はかかりません。ご入会前に、マシンピラティスの体験（60分）を受けていただくこともできます。体験料は¥3,000で、体験当日にご入会いただいた場合は¥0です。" },
       { question: "運動経験がないのですが、大丈夫でしょうか？", answer: "もちろん大丈夫です！来店されるほとんどの方が初めての方ばかりです。一人一人の運動経験や体力・目的にあったトレーニングをトレーナーが丁寧に指導いたします。" },
       { question: "持ち物はありますか？", answer: "ウェアや靴に加えてお水もご用意しておりますので、手ぶらでお気軽にお越しいただけます。" },
       { question: "プランの有効期限はどうなっていますか？", answer: "プランの有効期間は、その月の1回目のトレーニング日から起算して1ヶ月間となります。" },
@@ -126,7 +126,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "Focus on your breath and core", description: "On a machine called a reformer, you move slowly in time with your breathing. Staying aware of your deep muscles, you work toward a strong core and good posture." },
       { title: "Easy to start with 1-on-1 guidance", description: "Your trainer adjusts the load by changing the reformer's spring tension and checks your form as you go. Even if you're not very flexible or haven't exercised in a while, you can work at your own pace." },
       { title: "Switch between training and Pilates", description: "Choose personal training on days you want a solid workout, and machine Pilates on days you want to rethink how you move. No need to go to a separate studio — you decide session by session." },
-    ], imageAlt: "A woman doing machine Pilates on a reformer at the Salute Goshominami studio", trialStart: "Trials start Wed, Nov 25 — booking now open", trialNote: "Machine Pilates trial sessions (60 minutes) are also available. The trial fee is ¥3,000, waived if you join on the day. Please check the booking page for open dates and times.", trialBtn: "Book a Machine Pilates Trial" },
+    ], imageAlt: "A woman doing machine Pilates on a reformer in a private room at Salute Goshominami, a personal gym in Kyoto", trialStart: "Trials start Wed, Nov 25 — booking now open", trialNote: "Machine Pilates trial sessions (60 minutes) are also available. The trial fee is ¥3,000, waived if you join on the day. Please check the booking page for open dates and times.", trialBtn: "Book a Machine Pilates Trial" },
     numbers: { kicker: "Numbers", title: "Salute in Numbers", items: [
       { value: "¥0", label: "Enrollment Fee" }, { value: "¥4,750~", label: "Per Session" }, { value: "5.0", label: "Google Rating" }, { value: "140+", label: "Monthly Clients" },
     ] },
@@ -160,7 +160,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "FAQ", items: [
       { question: "What happens during the trial session?", answer: "After a short consultation, you'll experience a real 50-minute personal training session. Sportswear, shoes, towels and water are all provided — just come as you are." },
       { question: "How much is the trial session?", answer: "The trial session is ¥3,000. If you sign up for a membership on the day of your trial, the fee is waived (¥0). If you decide not to join on the day, the ¥3,000 fee applies." },
-      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan. Machine Pilates sessions are also 50 minutes, at no extra cost. Machine Pilates trial sessions (60 minutes) are available as well. The trial fee is ¥3,000, waived if you join on the day." },
+      { question: "Can I choose machine Pilates?", answer: "Yes. After joining, you can choose either personal training or machine Pilates for each session of your monthly plan. Machine Pilates is also 1-on-1 with your trainer, 50 minutes per session, at no extra cost. Machine Pilates trial sessions (60 minutes) are available as well. The trial fee is ¥3,000, waived if you join on the day." },
       { question: "I have no exercise experience. Is that OK?", answer: "Absolutely. Most of our clients had never trained before. Your trainer will guide you carefully based on your fitness level and goals." },
       { question: "What should I bring?", answer: "Nothing. Sportswear, shoes, towels and water are all provided free of charge." },
       { question: "Do you offer drop-in personal training for travelers?", answer: "Yes — our drop-in plan is ¥8,000 per session. No membership required, all training wear and equipment provided. You can book directly via our website or Instagram DM." },
@@ -197,7 +197,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "专注呼吸・感受核心", description: "在名为核心床的器械上，配合呼吸缓慢地活动身体。有意识地调动深层肌群，以强化核心、塑造体态为目标。" },
       { title: "一对一指导，容易上手", description: "教练会通过弹簧的强弱来调整负荷，并在课程中留意您的动作。身体僵硬或很久没运动的人，也能按照自己的节奏练习。" },
       { title: "训练与普拉提按需切换", description: "想好好锻炼的日子选私人训练，想重新审视自己如何使用身体的日子选器械普拉提。无需另去其他工作室，每次课程都可以选择。" },
-    ], imageAlt: "在Salute御所南工作室使用核心床进行器械普拉提的女性", trialStart: "体验课程11月25日（周三）开始，现已开放预约", trialNote: "也可以预约器械普拉提体验课程（60分钟）。体验费用3,000日元，当天入会则免费。可预约的日期和时间请在预约页面查看。", trialBtn: "预约器械普拉提体验" },
+    ], imageAlt: "在京都御所南的私人教练健身房 Salute 的私人房间里，使用核心床进行器械普拉提的女性", trialStart: "体验课程11月25日（周三）开始，现已开放预约", trialNote: "也可以预约器械普拉提体验课程（60分钟）。体验费用3,000日元，当天入会则免费。可预约的日期和时间请在预约页面查看。", trialBtn: "预约器械普拉提体验" },
     numbers: { kicker: "Numbers", title: "数字了解Salute", items: [
       { value: "¥0", label: "入会费" }, { value: "¥4,750~", label: "每次费用" }, { value: "5.0", label: "Google评价" }, { value: "140组+", label: "月指导数" },
     ] },
@@ -231,7 +231,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "常见问题", items: [
       { question: "体验课程都做些什么？", answer: "进行简短咨询后，体验50分钟的真实私人训练课程。运动服与鞋子免费提供，空手前来即可。" },
       { question: "体验课程的费用是多少？", answer: "体验课程费用为3,000日元。若您在体验当天办理入会，体验费用即为0日元（免费）。若当天未入会，则需支付3,000日元。" },
-      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提。器械普拉提同样为每次50分钟，无需额外费用。另外，也可以预约器械普拉提体验课程（60分钟）。体验费用为3,000日元，若在体验当天入会则免费。" },
+      { question: "可以选择器械普拉提吗？", answer: "可以。入会后，月度方案的每次课程都可以选择私人训练或器械普拉提。器械普拉提同样由教练一对一指导，每次50分钟，无需额外费用。另外，也可以预约器械普拉提体验课程（60分钟）。体验费用为3,000日元，若在体验当天入会则免费。" },
       { question: "没有运动经验也可以吗？", answer: "完全没问题。我们的大部分客户都是初学者，教练会根据您的体力与目标耐心指导。" },
       { question: "需要带什么吗？", answer: "无需准备任何物品。运动服・鞋・毛巾・饮用水全部免费提供。" },
       { question: "游客可以单次体验吗？", answer: "可以。单次训练每次8,000日元，无需会员注册，运动服与器材全部免费提供。可通过网站或Instagram DM预约。" },
@@ -268,7 +268,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "專注呼吸與核心", description: "在核心床（Reformer）上，配合呼吸緩慢地活動身體。有意識地運用身體深層的肌群，以鍛鍊核心、建立良好姿勢為目標。" },
       { title: "一對一，容易開始", description: "教練會調整彈簧的強度來改變負荷，並在過程中確認您的動作。身體較僵硬或很久沒運動的人，也能依照自己的步調練習。" },
       { title: "依目的選擇訓練或皮拉提斯", description: "想好好鍛鍊的日子就選私人訓練，想重新檢視身體使用方式的日子就選器械皮拉提斯。不需另外到其他工作室上課，每次課程都能選擇。" },
-    ], imageAlt: "在Salute御所南工作室使用核心床進行器械皮拉提斯的女性", trialStart: "體驗課程11月25日（週三）開始，現已開放預約", trialNote: "也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。可預約的日期與時間請至預約頁面確認。", trialBtn: "預約器械皮拉提斯體驗" },
+    ], imageAlt: "在京都御所南的私人教練健身房 Salute 的私人房間裡，使用核心床進行器械皮拉提斯的女性", trialStart: "體驗課程11月25日（週三）開始，現已開放預約", trialNote: "也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。可預約的日期與時間請至預約頁面確認。", trialBtn: "預約器械皮拉提斯體驗" },
     numbers: { kicker: "Numbers", title: "從數字了解Salute", items: [
       { value: "¥0", label: "入會費" }, { value: "¥4,750~", label: "每次費用" }, { value: "5.0", label: "Google評價" }, { value: "140組+", label: "每月指導數" },
     ] },
@@ -302,7 +302,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "常見問題", items: [
       { question: "體驗課程會進行哪些內容？", answer: "進行簡短諮詢後，體驗50分鐘的真實私人訓練課程。運動服與鞋子免費提供，空手前來即可。" },
       { question: "體驗課程的費用是多少？", answer: "體驗課程費用為3,000日圓。若您於體驗當天辦理入會，體驗費用即為0日圓（免費）。若當天未入會，則需支付3,000日圓。" },
-      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯。器械皮拉提斯同樣為每次50分鐘，不需額外費用。另外，也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。" },
+      { question: "可以選擇器械皮拉提斯嗎？", answer: "可以。入會後，月度方案的每次課程都可以選擇私人訓練或器械皮拉提斯。器械皮拉提斯同樣由教練一對一指導，每次50分鐘，不需額外費用。另外，也可以預約器械皮拉提斯體驗課程（60分鐘）。體驗費用3,000日圓，當天入會則免費。" },
       { question: "沒有運動經驗也可以嗎？", answer: "完全沒問題。我們大部分的顧客都是初學者，教練會依照您的體力與目標耐心指導。" },
       { question: "需要帶什麼東西嗎？", answer: "無需準備任何物品。運動服・鞋・毛巾・飲用水全部免費提供。" },
       { question: "遊客可以單次體驗嗎？", answer: "可以。單次訓練每次8,000日圓，無需加入會員，運動服與器材全部免費提供。可透過網站或Instagram私訊預約。" },
@@ -339,7 +339,7 @@ export const translations: Record<Lang, Dict> = {
       { title: "호흡과 코어에 집중", description: "리포머라는 머신 위에서 호흡에 맞춰 천천히 움직입니다. 몸 깊은 곳의 근육(속근육)을 의식하면서, 코어를 다지고 자세를 만들어 가는 것을 목표로 합니다." },
       { title: "1:1이라 시작하기 좋은 필라테스", description: "트레이너가 스프링 강도를 바꿔 부하를 조절하고, 동작을 확인하면서 진행합니다. 몸이 뻣뻣하거나 오랜만에 운동하시는 분도 자신의 페이스대로 하실 수 있습니다." },
       { title: "트레이닝과 필라테스, 목적에 맞게", description: "제대로 단련하고 싶은 날은 트레이닝, 몸 쓰는 법을 다시 살펴보고 싶은 날은 머신 필라테스. 다른 스튜디오에 다닐 필요 없이, 세션마다 선택하실 수 있습니다." },
-    ], imageAlt: "Salute 고쇼미나미 스튜디오에서 리포머로 머신 필라테스를 하는 여성", trialStart: "체험은 11월 25일(수) 시작, 지금 예약 가능", trialNote: "머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다. 예약 가능한 날짜와 시간은 예약 페이지에서 확인해 주세요.", trialBtn: "머신 필라테스 체험 예약" },
+    ], imageAlt: "교토 고쇼미나미의 퍼스널 트레이닝 짐 Salute의 개인실에서 리포머로 머신 필라테스를 하는 여성", trialStart: "체험은 11월 25일(수) 시작, 지금 예약 가능", trialNote: "머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다. 예약 가능한 날짜와 시간은 예약 페이지에서 확인해 주세요.", trialBtn: "머신 필라테스 체험 예약" },
     numbers: { kicker: "Numbers", title: "숫자로 보는 Salute", items: [
       { value: "¥0", label: "입회비" }, { value: "¥4,750~", label: "1회 요금" }, { value: "5.0", label: "Google 평점" }, { value: "140+", label: "월간 지도 실적" },
     ] },
@@ -373,7 +373,7 @@ export const translations: Record<Lang, Dict> = {
     faq: { kicker: "Q&A", title: "자주 묻는 질문", items: [
       { question: "체험 세션에서는 무엇을 하나요?", answer: "간단한 상담 후 실제와 동일한 50분간의 퍼스널 트레이닝을 체험하실 수 있습니다. 운동복・신발・수건・물 모두 무료로 제공되므로 빈손으로 오시면 됩니다." },
       { question: "체험 세션 요금은 얼마인가요?", answer: "체험 세션 요금은 ¥3,000입니다. 체험 당일에 회원 등록을 하시면 체험료는 ¥0(무료)이 됩니다. 당일에 등록하지 않으실 경우에는 ¥3,000을 받고 있습니다." },
-      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다. 머신 필라테스도 1회 50분이며, 추가 요금은 없습니다. 머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다." },
+      { question: "머신 필라테스도 선택할 수 있나요?", answer: "네. 입회 후에는 월간 플랜의 매 회차마다 퍼스널 트레이닝과 머신 필라테스 중 하나를 선택하실 수 있습니다. 머신 필라테스도 트레이너와 1:1로 진행되며, 1회 50분이고 추가 요금은 없습니다. 머신 필라테스 체험(60분)도 예약하실 수 있습니다. 체험 요금은 ¥3,000이며, 당일 등록 시 무료입니다." },
       { question: "운동 경험이 없는데 괜찮나요?", answer: "물론입니다. 대부분의 고객이 처음 시작하시는 분들입니다. 체력과 목표에 맞춰 트레이너가 꼼꼼하게 지도합니다." },
       { question: "준비물이 필요한가요?", answer: "필요 없습니다. 운동복・신발・수건・물 모두 무료로 준비되어 있습니다." },
       { question: "여행 중에 1회만 이용할 수도 있나요?", answer: "네, 가능합니다. 1회 이용 요금은 ¥8,000이며 회원가입은 필요하지 않습니다. 운동복과 장비 모두 무료로 제공되며, 웹사이트 또는 Instagram DM으로 예약하실 수 있습니다." },

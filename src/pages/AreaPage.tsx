@@ -7,6 +7,7 @@ import MobileCTABar from "@/components/MobileCTABar";
 import gymInterior from "@/assets/gym-interior.jpg";
 import { getAreaPage } from "@/data/area-pages";
 import { trackCtaClick } from "@/lib/analytics";
+import { PILATES_TRIAL_PAGE } from "@/lib/booking";
 
 const BASE = "https://kyoto-salute.com";
 const TRIAL_URL = "https://app.kyoto-salute.com/trial";
@@ -15,10 +16,10 @@ const LINE_URL = "https://lin.ee/UMVDzWF";
 const reasons = [
   { title: "完全個室のマンツーマン指導", desc: "他のお客様と顔を合わせない完全個室。人目を気にせず、自分のペースで取り組めます。" },
   { title: "栄養士トレーナーが在籍", desc: "トレーニングだけでなく、我慢ではなく工夫でつくる食事アドバイスも受けられます。" },
+  { title: "マシンピラティスも選べる", desc: "ご入会後は、月額プランの1回ごとに、トレーニングとマシンピラティスのどちらかを選べます（追加料金なし）。マシンピラティスもトレーナーと1対1です。日時・空き状況は予約ページでご確認ください。" },
   { title: "入会金¥0・1回¥4,750〜", desc: "初期費用は0円。縛りのない月額制で、続けやすい料金設定です。" },
   { title: "手ぶらでOK", desc: "ウェア・シューズ・タオル・お水を無料でご用意。仕事帰りにそのまま通えます。" },
-  { title: "予約の変更はアプリで簡単", desc: "予約の変更は専用アプリからいつでもOK。空き枠があれば、当日でも日時を変更できます。" },
-  { title: "10:00〜22:00の完全予約制", desc: "夜21時からの予約も可能なので、残業後でも間に合います。" },
+  { title: "10:00〜22:00の完全予約制", desc: "夜21時からの予約も可能なので、残業後でも間に合います。空き枠があれば、当日でも専用アプリから日時を変更できます。" },
 ];
 
 const AreaPage = () => {
@@ -188,6 +189,7 @@ const AreaPage = () => {
             </div>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link to="/" className="text-gold hover:underline font-body">トップページ</Link>
+              <Link to={PILATES_TRIAL_PAGE} className="text-gold hover:underline font-body">マシンピラティス体験</Link>
               {area.relatedBlog && (
                 <Link to={`/blog/${area.relatedBlog}`} className="text-gold hover:underline font-body">エリアの詳しい記事を読む</Link>
               )}
