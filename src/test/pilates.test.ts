@@ -7,7 +7,7 @@ import { translations } from "@/i18n/translations";
 // ご入会後、月額プランの1回ごとにトレーニングかマシンピラティスを選べる（追加料金なし）。
 // 単発プラン（旅行者向け）は対象外。
 // マシンピラティスもトレーナーとの1対1で、トレーナーがバネの強さで負荷を調整する。呼吸に合わせてゆっくり動く。
-// マシンピラティスの体験（2026年11月25日から・カウンセリングを含めて60分・¥3,000（当日払い）、体験当日の入会で¥0・手ぶらでOK）は、
+// マシンピラティスの体験（2026年11月25日から・カウンセリングを含めて60分・¥3,000（当日払い）、体験当日の入会で¥0・持ち物は不要）は、
 // 専用の予約ページから（LINE からも予約できる）。
 // 曜日・時間は担当トレーナーのシフトで変わるので、サイトには書かず「空き状況は予約ページで」とする。
 
@@ -190,7 +190,11 @@ describe("マシンピラティス（pilates）", () => {
     expect(page).toContain("確認メール");
     expect(page).toContain("60分");
     expect(page).toContain("カウンセリングを含めて60分");
-    expect(page).toContain("手ぶら");
+    // 持ち物は不要だが、手ぶらを勧める書き方はしない（「手ぶらでも大丈夫です」と答えるのは、よくあるご質問の1か所だけ）
+    expect(page.match(/手ぶら/g)).toHaveLength(1);
+    expect(page).toContain("手ぶらでも大丈夫です。ウェア・タオル・お水は無料でご用意しています。");
+    expect(page).not.toMatch(/手ぶらで?OK|手ぶらでお越しください/);
+    expect(read("scripts/generate-blog-post.mjs")).toContain("手ぶらを勧める書き方はしない");
     expect(page).toContain("当日払い");
     expect(page).not.toMatch(SCHEDULE);
     expect(read("index.html")).toContain('"url": "https://kyoto-salute.com/pilates-trial"');
