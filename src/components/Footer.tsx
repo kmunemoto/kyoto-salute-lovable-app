@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
 import { trackCtaClick } from "@/lib/analytics";
 import { AREA_PAGES } from "@/data/area-pages";
+import { PILATES_TRIAL_PAGE } from "@/lib/booking";
 
 const Footer = () => {
   const { lang, t } = useT();
@@ -16,6 +17,10 @@ const Footer = () => {
         <div className="w-full flex flex-col items-center gap-5">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             <Link to="/blog" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">{f.blog}</Link>
+            {/* マシンピラティス体験の案内ページは日本語だけ */}
+            {lang === "ja" && (
+              <Link to={PILATES_TRIAL_PAGE} className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">マシンピラティス体験</Link>
+            )}
             {lang !== "ja" && (
               <Link to="/drop-in" className="text-footer-foreground/70 hover:text-gold text-sm transition-colors font-body">Drop-in for travelers</Link>
             )}

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -28,23 +27,11 @@ const Row = ({ label, children }: { label: string; children: React.ReactNode }) 
 );
 
 const Tokusho = () => {
-  useEffect(() => {
-    document.title = "特定商取引法に基づく表記 | パーソナルジム Salute御所南｜京都市中京区";
-    const meta = document.querySelector('meta[name="description"]');
-    const original = meta?.getAttribute("content") ?? "";
-    meta?.setAttribute(
-      "content",
-      "パーソナルジムSalute御所南の特定商取引法に基づく表記。販売事業者、料金、支払方法、キャンセル・返金ポリシー等をご案内します。",
-    );
-    return () => {
-      if (meta && original) meta.setAttribute("content", original);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
         <title>特定商取引法に基づく表記 | パーソナルジム Salute御所南</title>
+        <meta name="description" content="パーソナルジムSalute御所南の特定商取引法に基づく表記。販売事業者、料金、支払方法、キャンセル・返金ポリシー等をご案内します。" />
         <link rel="canonical" href="https://kyoto-salute.com/tokusho" />
       </Helmet>
       <Header />

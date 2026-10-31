@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,23 +16,11 @@ const sections = [
 ];
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    document.title = "プライバシーポリシー | パーソナルジム Salute御所南｜京都市中京区";
-    const meta = document.querySelector('meta[name="description"]');
-    const original = meta?.getAttribute("content") ?? "";
-    meta?.setAttribute(
-      "content",
-      "パーソナルジムSalute御所南のプライバシーポリシー。お客様の個人情報の取得・利用・管理に関する方針をご案内します。",
-    );
-    return () => {
-      if (meta && original) meta.setAttribute("content", original);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
         <title>プライバシーポリシー | パーソナルジム Salute御所南｜京都市中京区</title>
+        <meta name="description" content="パーソナルジムSalute御所南のプライバシーポリシー。お客様の個人情報の取得・利用・管理に関する方針をご案内します。" />
         <link rel="canonical" href="https://kyoto-salute.com/privacy-policy" />
       </Helmet>
       <Header />

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -33,23 +32,11 @@ const ArticleHeading = ({ id, num, title }: { id: string; num: string; title: st
 );
 
 const Terms = () => {
-  useEffect(() => {
-    document.title = "利用規約 | パーソナルジム Salute御所南｜京都市中京区";
-    const meta = document.querySelector('meta[name="description"]');
-    const original = meta?.getAttribute("content") ?? "";
-    meta?.setAttribute(
-      "content",
-      "パーソナルジムSalute御所南の利用規約。ご入会・料金・予約・キャンセル・解約等、サービス利用条件をご案内します。",
-    );
-    return () => {
-      if (meta && original) meta.setAttribute("content", original);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
         <title>利用規約 | パーソナルジム Salute御所南</title>
+        <meta name="description" content="パーソナルジムSalute御所南の利用規約。ご入会・料金・予約・キャンセル・解約等、サービス利用条件をご案内します。" />
         <link rel="canonical" href="https://kyoto-salute.com/terms" />
       </Helmet>
       <Header />

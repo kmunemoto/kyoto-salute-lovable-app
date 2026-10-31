@@ -69,7 +69,7 @@ const PilatesSection = () => {
             {/* 体験の案内ページは日本語だけ */}
             {lang === "ja" && (
               <Link to={PILATES_TRIAL_PAGE} className="font-body text-sm text-gold hover:underline">
-                体験の詳細を見る →
+                マシンピラティス体験の詳細を見る →
               </Link>
             )}
           </div>
