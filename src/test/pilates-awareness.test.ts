@@ -5,7 +5,7 @@ import { translations } from "@/i18n/translations";
 import { blogPosts, PILATES_CATEGORY } from "@/data/blog-posts";
 import { PILATES_TRIAL_PAGE, PILATES_TRIAL_URL } from "@/lib/booking";
 import { PILATES_TRIAL_SEO, PRERENDER_PAGES, SITE_URL } from "@/lib/seo-pages";
-import { pageFileName, rewriteHead } from "@/lib/prerender-head";
+import { pageFileName, redirectsFile, rewriteHead } from "@/lib/prerender-head";
 
 // 「パーソナル（1対1）のピラティスもやっている」ことを、検索結果・共有したときの表示・サイト内のリンク・ブログで伝える。
 // 「パーソナル」は検索向けの欄（タイトル・説明文・構造化データ）で使い、画面の文では「1対1」と書く。
@@ -111,6 +111,22 @@ describe("共有したときの表示（ビルドのときに書き出す pilate
     expect(config).toContain("PRERENDER_PAGES");
     expect(config).toContain("rewriteHead");
     expect(config).toContain("prerenderPageHeads()");
+  });
+
+  // 🔴 公開先のサーバーは /pilates-trial に pilates-trial.html を自動では返さない（2026-11-05 に本番で確認）。
+  // 書き換えルールが無いと、書き出した HTML は /pilates-trial.html でしか読まれない
+  it("書き換えルール（_redirects）で、/pilates-trial に pilates-trial.html を返す", () => {
+    const rules = redirectsFile(PRERENDER_PAGES)
+      .split("\n")
+      .filter((line) => line.trim() && !line.startsWith("#"));
+    expect(rules).toContain(`${PILATES_TRIAL_PAGE} /pilates-trial.html 200`);
+    // 書き出すページ1つにつき1行。転送（301 など）ではなく、URL はそのままの 200
+    expect(rules).toEqual(PRERENDER_PAGES.map((page) => `${page.path} /${pageFileName(page)} 200`));
+    // 全部の URL をまとめて index.html に向ける行は書かない（サーバーによっては JavaScript のファイルより先に効き、サイトが表示されなくなる）
+    expect(rules.some((line) => line.startsWith("/*"))).toBe(false);
+    expect(read("vite.config.ts")).toContain('fileName: "_redirects", source: redirectsFile(PRERENDER_PAGES)');
+    // public/_redirects があるとビルドの書き出しとぶつかるので置かない
+    expect(fs.existsSync(path.join(root, "public/_redirects"))).toBe(false);
   });
 });
 
