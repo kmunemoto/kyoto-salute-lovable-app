@@ -17,24 +17,6 @@ const setMeta = (html: string, attr: "name" | "property", key: string, value: st
 
 export const pageFileName = (page: PageSeo) => `${page.path.replace(/^\//, "")}.html`;
 
-/**
- * 公開先のサーバーへの書き換えルール（_redirects）。ページの URL で、そのページ用の HTML を返してもらう。
- *
- * 🔴 公開先（Lovable のサーバー）は /pilates-trial に pilates-trial.html を返さない（2026-11-05 に本番で確認）。
- * /pilates-trial.html という URL でだけ正しい HTML が返り、/pilates-trial ではホームの index.html が返っていた。
- * そのため、LINE・X で共有したときも、検索エンジンが最初に読む HTML でも、ホームのタイトルと説明文になっていた。
- *
- * ステータス 200 は「転送ではなく、URL はそのままで中身だけ差し替える」の意味（301 などにすると URL が .html に変わる）。
- * 全部の URL をまとめて index.html に向ける行（/* /index.html 200）は書かない。サーバーによってはこの規則が
- * JavaScript などのファイルより先に効き、サイトが表示されなくなる。ページのない URL は、これまでどおりサーバーが index.html を返す。
- */
-export const redirectsFile = (pages: PageSeo[]) =>
-  [
-    "# ページ用の HTML（ビルドで書き出す）を、そのページの URL で返す（src/lib/prerender-head.ts の redirectsFile）",
-    ...pages.map((page) => `${page.path} /${pageFileName(page)} 200`),
-    "",
-  ].join("\n");
-
 export function rewriteHead(indexHtml: string, page: PageSeo): string {
   const url = `${SITE_URL}${page.path}`;
   let html = indexHtml;
