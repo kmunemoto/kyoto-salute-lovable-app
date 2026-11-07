@@ -47,9 +47,9 @@ export function writeSitemap() {
   push(`${BASE}/pilates-trial`, PILATES_TRIAL_UPDATED, "monthly", "0.8");
   for (const slug of areas) push(`${BASE}/area/${slug}`, today, "monthly", "0.8");
   for (const p of posts) push(`${BASE}/blog/${p.slug}`, p.date, "monthly", "0.7");
-  push(`${BASE}/terms`, "2026-04-25", "monthly", "0.3");
+  push(`${BASE}/terms`, "2026-11-07", "monthly", "0.3");
   push(`${BASE}/privacy-policy`, "2026-04-25", "monthly", "0.3");
-  push(`${BASE}/tokusho`, "2026-04-25", "monthly", "0.3");
+  push(`${BASE}/tokusho`, "2026-11-07", "monthly", "0.3");
 
   const body = urls
     .map(
