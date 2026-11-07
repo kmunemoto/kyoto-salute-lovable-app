@@ -140,14 +140,14 @@ const Terms = () => {
                 <ol className="space-y-3 list-decimal pl-5 marker:text-accent">
                   <li>本サービスは完全予約制です。事前にご予約のうえお越しください。</li>
                   <li>
-                    予約の変更・キャンセルは、専用アプリからいつでもお手続きいただけます。
+                    予約の変更・キャンセルは、予約日の前日23時59分までに専用アプリからお手続きいただいた場合、セッションを消化しないものとします。
                   </li>
                   <li>
-                    予約日時の変更は、空き枠がある場合に限り、当日でもお手続きいただけます。この場合、セッションは消費されません。
+                    <strong className="text-foreground">予約日の当日（0時以降）の変更・キャンセル、および予約日当日にご来店がない場合は、1回分のセッションを消化したものとして取り扱います</strong>。当日に予約の日程を変更する場合も、変更前の予約を消化したものとして取り扱います。
                   </li>
-                  <li>
-                    <strong className="text-foreground">当日のキャンセルは、1回分のセッションを消費したものとして取り扱います</strong>。なお、キャンセル料（金銭のお支払い）は発生しません。
-                  </li>
+                  <li>振替の予約は、空き状況に応じて先着順で承ります。</li>
+                  <li>当ジムの都合により予約の変更をお願いする場合は、セッションを消化したものとして取り扱いません。</li>
+                  <li>キャンセル料（金銭のお支払い）は発生しません。</li>
                 </ol>
               </section>
 
@@ -258,7 +258,7 @@ const Terms = () => {
 
               <div className="pt-8 border-t border-border text-sm text-muted-foreground space-y-1">
                 <p>制定日：2024年11月</p>
-                <p>最終更新日：2026年10月31日</p>
+                <p>最終更新日：2026年11月7日</p>
               </div>
 
               <div className="bg-secondary/50 border border-border rounded-sm p-5 md:p-6 space-y-1">
