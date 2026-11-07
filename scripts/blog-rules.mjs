@@ -14,7 +14,13 @@ const SCHEDULE_NG = /\d{1,2}:\d{2}|\d{1,2}時(?!間)|[月火水木金土日]曜|
 const TRIAL_LINK = /<a\s[^>]*href="(?:https:\/\/kyoto-salute\.com)?\/pilates-trial\/?"[^>]*>/;
 
 // 全角の数字・英字・括弧を半角にそろえ、開始日（2026年11月25日（水））を除く
-const normalize = (text) => text.normalize("NFKC").replace(/(?:2026年)?11月25日\(水\)/g, "");
+// 予約の変更・キャンセルのルール（前日23:59まで・当日0:00以降）も、ピラティスの日時ではないので除く
+const normalize = (text) =>
+  text
+    .normalize("NFKC")
+    .replace(/(?:2026年)?11月25日\(水\)/g, "")
+    .replace(/前日23:59/g, "前日")
+    .replace(/当日\(0:00以降\)/g, "当日");
 
 const matches = (re, text) => [...text.matchAll(new RegExp(re.source, `${re.flags}g`))].map((m) => m[0]);
 

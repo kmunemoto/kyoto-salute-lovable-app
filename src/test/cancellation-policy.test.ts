@@ -38,16 +38,20 @@ const STALE = [
   /不會產生取消費用或消耗/,
   /세션 차감이 발생하지/,
   // 「空き枠があれば当日でも日時を変更できる（消費なし）」という、前のルールの説明
-  /空き枠があれば[^。]*当日/,
+  /空き(枠)?が(あれば|ある場合)[^。]*当日/,
   /当日でも[^。]*変更(でき|が可能|可能|いただけ)/,
   /Same-day changes to another time are possible/i,
   /当天也可以更改/,
   /當天也可以更改/,
   /당일에도 일정 변경이 가능/,
   // 当日も含めて「いつでも」変更・キャンセルできるように読める言い方
-  /変更・キャンセル[^。]{0,24}いつでも/,
-  /いつでも予約を変更/,
-  /change or cancel your reservation anytime/i,
+  /(変更|キャンセル|振替)[^。]{0,24}いつでも/,
+  /いつでも[^。]{0,20}(変更|キャンセル|振替|振り替)/,
+  /any ?time[^.]{0,30}(change|cancel|reschedul)|(change|cancel|reschedul)[^.]{0,30}any ?time/i,
+  // 当日でも消化されない・当日でも振替できる・直前でも変更できる、といった言い方
+  /当日[^。]*(消費|消化)(され(ない|ません)|しない|しません|なし)/,
+  /当日でも[^。]*(振替|振り替)/,
+  /直前(でも|まで)[^。]{0,20}(変更|キャンセル)/,
 ];
 
 const CANCEL_QUESTION: Record<keyof typeof translations, string> = {
@@ -75,6 +79,28 @@ const RULES: Record<keyof typeof translations, string[]> = {
 };
 
 describe("予約の変更・キャンセル（前日23:59まで・当日は1回消化）", () => {
+  it("古い言い方の例は、語順や助詞が違っても見つかる（新しいルールの文は見つけない）", () => {
+    const stale = [
+      "アプリからいつでも変更・キャンセルできる",
+      "アプリでいつでも予約変更できる柔軟さ",
+      "いつでも予約の変更・キャンセルができます",
+      "予約の変更はいつでも可能です",
+      "当日の予約変更も可能です（セッションは消費されません）",
+      "当日でも振替できます",
+      "直前でも予約を変更できます",
+      "予約日時の変更は、空き枠がある場合に限り、当日でもお手続きいただけます。",
+      "You can reschedule anytime in the app.",
+    ];
+    for (const s of stale) expect(STALE.some((re) => re.test(s)), s).toBe(true);
+    const current = [
+      "ご予約の変更・キャンセルは、前日23:59までにアプリからお手続きいただければ、回数を消化せずに承ります。",
+      "当日の日程変更の場合も、変更前のご予約が消化扱いとなります。",
+      "なお、当ジムの都合により変更をお願いする場合は、消化扱いにはいたしません。",
+      "いつでも予約できます。",
+    ];
+    for (const s of current) expect(STALE.some((re) => re.test(s)), s).toBe(false);
+  });
+
   it.each(SITE_FILES)("%s に、前のルールや「当日キャンセル無料」などの古い説明が残っていない", (file) => {
     const s = read(file);
     for (const re of STALE) expect(s, `${file}: ${re}`).not.toMatch(re);
